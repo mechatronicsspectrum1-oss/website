@@ -115,23 +115,42 @@
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
   .hamburger span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: 0.3s; }
 
-  /* ─── HERO / VIDEO SCROLL ─── */
+  /* ─── STICKY CINEMATIC HERO ─── */
   #hero {
     position: relative;
+    height: 160vh; /* Scroll track for cinematic effect */
+    background: var(--navy);
+  }
+  .sticky-wrapper {
+    position: sticky;
+    top: 0;
     height: 100vh;
-    display: flex; align-items: center; justify-content: center;
+    width: 100%;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cinematic-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform, border-radius;
+    transition: border-radius 0.1s ease-out;
   }
   #hero-video {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    opacity: 0.55;
+    opacity: 0.65;
     z-index: 0;
   }
   .hero-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to bottom, rgba(5,10,24,0.3) 0%, rgba(5,10,24,0.5) 60%, var(--navy) 100%);
+    background: linear-gradient(to bottom, rgba(5,10,24,0.2) 0%, rgba(5,10,24,0.4) 60%, var(--navy) 100%);
     z-index: 1;
   }
   .hero-content {
@@ -140,6 +159,7 @@
     padding: 0 1.5rem;
     animation: fadeUp 1s ease both;
     animation-delay: 0.3s;
+    will-change: transform, opacity;
   }
   @keyframes fadeUp {
     from { opacity:0; transform:translateY(30px); }
@@ -473,12 +493,10 @@
 
 <!-- NAV -->
 <nav id="navbar">
-  <!-- Logo: far RIGHT -->
   <div class="nav-logo">
     <img src="spectrum.png" alt="Spectrum Logo" onerror="this.style.display='none'; this.nextSibling.style.display='block'">
     <span style="display:none; font-family:'Cairo',sans-serif; font-weight:900; font-size:1.2rem; color:var(--cyan);">SPECTRUM</span>
   </div>
-  <!-- Nav links: CENTERED -->
   <ul class="nav-links" id="navLinks">
     <li><a href="#" onclick="showPage('home')" class="active" id="nav-home">الرئيسية</a></li>
     <li><a href="#" onclick="showPage('library')" id="nav-library">المكتبة</a></li>
@@ -488,7 +506,6 @@
     <li><a href="#" onclick="showPage('software')" id="nav-software">برامج</a></li>
     <li><a href="#" onclick="showPage('about')" id="nav-about">من نحن</a></li>
   </ul>
-  <!-- Members button: far LEFT -->
   <div class="nav-members-wrap">
     <a href="#" class="btn-members">للأعضاء</a>
   </div>
@@ -499,23 +516,26 @@
 
 <!-- ═══════════════ HOME PAGE ═══════════════ -->
 <div id="home-page">
-  <!-- Hero -->
+  <!-- Sticky Cinematic Hero Container -->
   <section id="hero">
-    <video id="hero-video" autoplay muted loop playsinline>
-      <source src="website_homepage_background.mp4" type="video/mp4">
-      <source src="website_homepage_background.mov" type="video/quicktime">
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Mechatronics · Spectrum · Team</p>
-      <h1 class="hero-title">فريق <span>سبيكتروم</span><br>للميكاترونكس</h1>
-      <p class="hero-sub">نقود مستقبل الهندسة بدمج الميكانيكا والإلكترونيات والبرمجة في بيئة أكاديمية متكاملة</p>
-      <div class="hero-cta">
-        <a href="#" class="btn-primary" onclick="showPage('about')">اعرف أكثر عنا</a>
-        <a href="#" class="btn-outline" onclick="showPage('library')">استكشف المكتبة</a>
+    <div class="sticky-wrapper">
+      <div class="cinematic-container" id="cinematicContainer">
+        <video id="hero-video" autoplay muted loop playsinline>
+          <source src="homepagevideo.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
       </div>
+      <div class="hero-content" id="heroContent">
+        <p class="hero-eyebrow">Mechatronics · Spectrum · Team</p>
+        <h1 class="hero-title">فريق <span>سبيكتروم</span><br>للميكاترونكس</h1>
+        <p class="hero-sub">نقود مستقبل الهندسة بدمج الميكانيكا والإلكترونيات والبرمجة في بيئة أكاديمية متكاملة</p>
+        <div class="hero-cta">
+          <a href="#" class="btn-primary" onclick="showPage('about')">اعرف أكثر عنا</a>
+          <a href="#" class="btn-outline" onclick="showPage('library')">استكشف المكتبة</a>
+        </div>
+      </div>
+      <div class="scroll-hint">SCROLL</div>
     </div>
-    <div class="scroll-hint">SCROLL</div>
   </section>
 
   <!-- University Links (above services) -->
@@ -948,20 +968,17 @@ const pageMap = {
 };
 
 function showPage(page) {
-  // hide all
   document.getElementById('home-page').style.display = 'none';
   pages.forEach(p => {
     const el = document.getElementById(pageMap[p]);
     if (el) el.classList.remove('active-section');
   });
 
-  // remove active from nav
   pages.forEach(p => {
     const navEl = document.getElementById('nav-' + p);
     if (navEl) navEl.classList.remove('active');
   });
 
-  // show target
   if (page === 'home') {
     document.getElementById('home-page').style.display = 'block';
   } else {
@@ -969,15 +986,12 @@ function showPage(page) {
     if (target) target.classList.add('active-section');
   }
 
-  // activate nav link
   const navEl = document.getElementById('nav-' + page);
   if (navEl) navEl.classList.add('active');
 
-  // close mobile menu & scroll to top
   document.getElementById('navLinks').classList.remove('open');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  // re-trigger reveals
   setTimeout(triggerReveal, 100);
 }
 
@@ -992,15 +1006,32 @@ function triggerReveal() {
 window.addEventListener('scroll', triggerReveal);
 triggerReveal();
 
-// ─── VIDEO SCROLL PARALLAX ───
-const heroVideo = document.getElementById('hero-video');
+// ─── STICKY CINEMATIC SCROLL PARALLAX ───
+const cinematicContainer = document.getElementById('cinematicContainer');
+const heroContent = document.getElementById('heroContent');
+const heroSection = document.getElementById('hero');
+
 window.addEventListener('scroll', () => {
-  if (!heroVideo) return;
-  const scrollY = window.scrollY;
-  const vh = window.innerHeight;
-  const progress = Math.min(scrollY / vh, 1);
-  heroVideo.style.transform = `scale(${1 + progress * 0.08}) translateY(${progress * 30}px)`;
-  heroVideo.style.opacity = 0.55 - progress * 0.3;
+  if (!cinematicContainer || document.getElementById('home-page').style.display === 'none') return;
+  
+  const rect = heroSection.getBoundingClientRect();
+  const scrollTrack = heroSection.offsetHeight - window.innerHeight;
+  const scrolled = Math.max(0, Math.min(-rect.top / scrollTrack, 1));
+  
+  // Shrink the cinematic container into a rounded viewport frame on scroll down
+  const scaleValue = 1 - scrolled * 0.15;
+  const radiusValue = scrolled * 24; 
+  const paddingValue = scrolled * 2.5; 
+  
+  cinematicContainer.style.transform = `scale(${scaleValue})`;
+  cinematicContainer.style.borderRadius = `${radiusValue}px`;
+  cinematicContainer.style.inset = `${paddingValue}rem`;
+  
+  // Fade and push up the hero typography text tracking the layout frame
+  if (heroContent) {
+    heroContent.style.transform = `translateY(${scrolled * -40}px)`;
+    heroContent.style.opacity = 1 - scrolled * 0.8;
+  }
 });
 </script>
 </body>
