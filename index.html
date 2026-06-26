@@ -33,11 +33,26 @@
     overflow-x: hidden;
   }
 
+  /* ─── CURSOR GLOW ─── */
+  #cursor-glow {
+    position: fixed;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(41,184,216,0.09) 0%, rgba(41,184,216,0.03) 45%, transparent 70%);
+    transition: left 0.03s linear, top 0.03s linear;
+    mix-blend-mode: screen;
+  }
+
   /* ─── NAVBAR ─── */
   nav {
     position: fixed; top: 0; right: 0; left: 0; z-index: 1000;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0 2rem;
     height: 70px;
     background: rgba(5, 10, 24, 0.85);
     backdrop-filter: blur(20px);
@@ -48,36 +63,50 @@
     height: 60px;
     background: rgba(5, 10, 24, 0.97);
   }
+  .nav-logo {
+    display: flex;
+    justify-content: flex-start;
+  }
   .nav-logo img {
     height: 48px;
     object-fit: contain;
     filter: drop-shadow(0 0 8px rgba(41,184,216,0.4));
   }
   .nav-links {
-    display: flex; align-items: center; gap: 0.2rem;
+    display: flex; align-items: center; gap: 0.15rem;
     list-style: none;
+    justify-content: center;
   }
   .nav-links a {
     color: var(--white2);
     text-decoration: none;
     font-family: 'Cairo', sans-serif;
-    font-size: 0.88rem;
+    font-size: 0.83rem;
     font-weight: 600;
-    padding: 0.45rem 0.85rem;
+    padding: 0.4rem 0.65rem;
     border-radius: 6px;
     transition: color 0.2s, background 0.2s;
     white-space: nowrap;
   }
   .nav-links a:hover { color: var(--cyan); background: var(--cyan-glow); }
   .nav-links a.active { color: var(--cyan); }
+  .nav-members-wrap {
+    display: flex;
+    justify-content: flex-end;
+  }
   .btn-members {
     background: var(--cyan);
     color: var(--navy) !important;
+    font-family: 'Cairo', sans-serif;
     font-weight: 700 !important;
-    border-radius: 8px !important;
-    padding: 0.5rem 1.1rem !important;
-    transition: background 0.2s, box-shadow 0.2s !important;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    text-decoration: none;
+    transition: background 0.2s, box-shadow 0.2s;
     box-shadow: 0 0 16px rgba(41,184,216,0.3);
+    white-space: nowrap;
+    display: inline-block;
   }
   .btn-members:hover {
     background: var(--cyan2) !important;
@@ -439,22 +468,30 @@
 </head>
 <body>
 
+<!-- CURSOR GLOW -->
+<div id="cursor-glow"></div>
+
 <!-- NAV -->
 <nav id="navbar">
+  <!-- Logo: far RIGHT -->
   <div class="nav-logo">
     <img src="spectrum.png" alt="Spectrum Logo" onerror="this.style.display='none'; this.nextSibling.style.display='block'">
     <span style="display:none; font-family:'Cairo',sans-serif; font-weight:900; font-size:1.2rem; color:var(--cyan);">SPECTRUM</span>
   </div>
+  <!-- Nav links: CENTERED -->
   <ul class="nav-links" id="navLinks">
-    <li><a href="#" onclick="showPage('home')" class="active" id="nav-home">الصفحة الرئيسية</a></li>
-    <li><a href="#" onclick="showPage('library')" id="nav-library">المكتبة التخصصية</a></li>
+    <li><a href="#" onclick="showPage('home')" class="active" id="nav-home">الرئيسية</a></li>
+    <li><a href="#" onclick="showPage('library')" id="nav-library">المكتبة</a></li>
     <li><a href="#" onclick="showPage('plan')" id="nav-plan">الخطة الدراسية</a></li>
-    <li><a href="#" onclick="showPage('articles')" id="nav-articles">مقالات هندسية</a></li>
-    <li><a href="#" onclick="showPage('courses')" id="nav-courses">دورات هندسية</a></li>
-    <li><a href="#" onclick="showPage('software')" id="nav-software">برامج هندسية</a></li>
+    <li><a href="#" onclick="showPage('articles')" id="nav-articles">مقالات</a></li>
+    <li><a href="#" onclick="showPage('courses')" id="nav-courses">دورات</a></li>
+    <li><a href="#" onclick="showPage('software')" id="nav-software">برامج</a></li>
     <li><a href="#" onclick="showPage('about')" id="nav-about">من نحن</a></li>
-    <li><a href="#" class="btn-members">للأعضاء</a></li>
   </ul>
+  <!-- Members button: far LEFT -->
+  <div class="nav-members-wrap">
+    <a href="#" class="btn-members">للأعضاء</a>
+  </div>
   <div class="hamburger" onclick="toggleMenu()" id="hamburger">
     <span></span><span></span><span></span>
   </div>
@@ -465,7 +502,8 @@
   <!-- Hero -->
   <section id="hero">
     <video id="hero-video" autoplay muted loop playsinline>
-      <source src="website_homepage_background.mov" type="video/mp4">
+      <source src="website_homepage_background.mp4" type="video/mp4">
+      <source src="website_homepage_background.mov" type="video/quicktime">
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -480,16 +518,34 @@
     <div class="scroll-hint">SCROLL</div>
   </section>
 
-  <!-- Stats -->
-  <div id="stats-bar" class="reveal">
-    <div class="stat-item"><div class="stat-num">+200</div><div class="stat-label">طالب مستفيد</div></div>
-    <div class="stat-item"><div class="stat-num">+50</div><div class="stat-label">مقال هندسي</div></div>
-    <div class="stat-item"><div class="stat-num">+30</div><div class="stat-label">دورة تدريبية</div></div>
-    <div class="stat-item"><div class="stat-num">+15</div><div class="stat-label">برنامج هندسي</div></div>
-  </div>
+  <!-- University Links (above services) -->
+  <section style="display:block; padding: 4rem 3rem 2rem; background: var(--navy2); border-bottom: 1px solid var(--glass-border);">
+    <div class="section-header reveal" style="margin-bottom:2rem;">
+      <p class="section-eyebrow">روابط الجامعة</p>
+      <h2 class="section-title" style="font-size:1.7rem;">البوابة الأكاديمية</h2>
+    </div>
+    <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap:1rem;">
+      <a href="https://www.bau.edu.jo" target="_blank" class="qlink reveal">
+        <div class="qlink-icon">🏛️</div>
+        <div><div class="qlink-text">جامعة البلقاء</div><div class="qlink-sub">الموقع الرسمي</div></div>
+      </a>
+      <a href="#" class="qlink reveal">
+        <div class="qlink-icon">📋</div>
+        <div><div class="qlink-text">نظام الطالب</div><div class="qlink-sub">السجل الأكاديمي</div></div>
+      </a>
+      <a href="#" class="qlink reveal">
+        <div class="qlink-icon">📅</div>
+        <div><div class="qlink-text">الجدول الدراسي</div><div class="qlink-sub">جداول الفصل الحالي</div></div>
+      </a>
+      <a href="#" class="qlink reveal">
+        <div class="qlink-icon">📢</div>
+        <div><div class="qlink-text">إعلانات الكلية</div><div class="qlink-sub">آخر الأخبار</div></div>
+      </a>
+    </div>
+  </section>
 
-  <!-- Quick Links -->
-  <section style="display:block; padding: 5rem 3rem; background: var(--navy);">
+  <!-- Quick Links / Services -->
+  <section style="display:block; padding: 4rem 3rem 5rem; background: var(--navy);">
     <div class="section-header reveal">
       <p class="section-eyebrow">ماذا نقدم</p>
       <h2 class="section-title">كل ما تحتاجه في مكان واحد</h2>
@@ -861,6 +917,13 @@
 </footer>
 
 <script>
+// ─── CURSOR GLOW ───
+const glow = document.getElementById('cursor-glow');
+document.addEventListener('mousemove', e => {
+  glow.style.left = e.clientX + 'px';
+  glow.style.top = e.clientY + 'px';
+});
+
 // ─── NAV SCROLL ───
 window.addEventListener('scroll', () => {
   const nav = document.getElementById('navbar');
@@ -901,7 +964,6 @@ function showPage(page) {
   // show target
   if (page === 'home') {
     document.getElementById('home-page').style.display = 'block';
-    document.getElementById('stats-bar').style.display = 'grid';
   } else {
     const target = document.getElementById(pageMap[page]);
     if (target) target.classList.add('active-section');
