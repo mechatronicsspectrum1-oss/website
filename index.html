@@ -115,42 +115,23 @@
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
   .hamburger span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: 0.3s; }
 
-  /* ─── STICKY CINEMATIC HERO ─── */
+  /* ─── HERO / VIDEO SCROLL ─── */
   #hero {
     position: relative;
-    height: 160vh; /* مساحة مسار التمرير لإنشاء التأثير السينمائي */
-    background: var(--navy);
-  }
-  .sticky-wrapper {
-    position: sticky;
-    top: 0;
     height: 100vh;
-    width: 100%;
+    display: flex; align-items: center; justify-content: center;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .cinematic-container {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    will-change: transform, border-radius;
-    transition: border-radius 0.1s ease-out;
   }
   #hero-video {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
     object-fit: cover;
-    opacity: 0.65;
+    opacity: 0.55;
     z-index: 0;
   }
   .hero-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to bottom, rgba(5,10,24,0.2) 0%, rgba(5,10,24,0.4) 60%, var(--navy) 100%);
+    background: linear-gradient(to bottom, rgba(5,10,24,0.3) 0%, rgba(5,10,24,0.5) 60%, var(--navy) 100%);
     z-index: 1;
   }
   .hero-content {
@@ -159,7 +140,6 @@
     padding: 0 1.5rem;
     animation: fadeUp 1s ease both;
     animation-delay: 0.3s;
-    will-change: transform, opacity;
   }
   @keyframes fadeUp {
     from { opacity:0; transform:translateY(30px); }
@@ -488,13 +468,17 @@
 </head>
 <body>
 
+<!-- CURSOR GLOW -->
 <div id="cursor-glow"></div>
 
+<!-- NAV -->
 <nav id="navbar">
+  <!-- Logo: far RIGHT -->
   <div class="nav-logo">
     <img src="spectrum.png" alt="Spectrum Logo" onerror="this.style.display='none'; this.nextSibling.style.display='block'">
     <span style="display:none; font-family:'Cairo',sans-serif; font-weight:900; font-size:1.2rem; color:var(--cyan);">SPECTRUM</span>
   </div>
+  <!-- Nav links: CENTERED -->
   <ul class="nav-links" id="navLinks">
     <li><a href="#" onclick="showPage('home')" class="active" id="nav-home">الرئيسية</a></li>
     <li><a href="#" onclick="showPage('library')" id="nav-library">المكتبة</a></li>
@@ -504,6 +488,7 @@
     <li><a href="#" onclick="showPage('software')" id="nav-software">برامج</a></li>
     <li><a href="#" onclick="showPage('about')" id="nav-about">من نحن</a></li>
   </ul>
+  <!-- Members button: far LEFT -->
   <div class="nav-members-wrap">
     <a href="#" class="btn-members">للأعضاء</a>
   </div>
@@ -512,28 +497,28 @@
   </div>
 </nav>
 
+<!-- ═══════════════ HOME PAGE ═══════════════ -->
 <div id="home-page">
+  <!-- Hero -->
   <section id="hero">
-    <div class="sticky-wrapper">
-      <div class="cinematic-container" id="cinematicContainer">
-        <video id="hero-video" muted playsinline preload="auto">
-          <source src="homepagevideo.mp4" type="video/mp4">
-        </video>
-        <div class="hero-overlay"></div>
+    <video id="hero-video" autoplay muted loop playsinline>
+      <source src="website_homepage_background.mp4" type="video/mp4">
+      <source src="website_homepage_background.mov" type="video/quicktime">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Mechatronics · Spectrum · Team</p>
+      <h1 class="hero-title">فريق <span>سبيكتروم</span><br>للميكاترونكس</h1>
+      <p class="hero-sub">نقود مستقبل الهندسة بدمج الميكانيكا والإلكترونيات والبرمجة في بيئة أكاديمية متكاملة</p>
+      <div class="hero-cta">
+        <a href="#" class="btn-primary" onclick="showPage('about')">اعرف أكثر عنا</a>
+        <a href="#" class="btn-outline" onclick="showPage('library')">استكشف المكتبة</a>
       </div>
-      <div class="hero-content" id="heroContent">
-        <p class="hero-eyebrow">Mechatronics · Spectrum · Team</p>
-        <h1 class="hero-title">فريق <span>سبيكتروم</span><br>للميكاترونكس</h1>
-        <p class="hero-sub">نقود مستقبل الهندسة بدمج الميكانيكا والإلكترونيات والبرمجة في بيئة أكاديمية متكاملة</p>
-        <div class="hero-cta">
-          <a href="#" class="btn-primary" onclick="showPage('about')">اعرف أكثر عنا</a>
-          <a href="#" class="btn-outline" onclick="showPage('library')">استكشف المكتبة</a>
-        </div>
-      </div>
-      <div class="scroll-hint">SCROLL</div>
     </div>
+    <div class="scroll-hint">SCROLL</div>
   </section>
 
+  <!-- University Links (above services) -->
   <section style="display:block; padding: 4rem 3rem 2rem; background: var(--navy2); border-bottom: 1px solid var(--glass-border);">
     <div class="section-header reveal" style="margin-bottom:2rem;">
       <p class="section-eyebrow">روابط الجامعة</p>
@@ -559,6 +544,7 @@
     </div>
   </section>
 
+  <!-- Quick Links / Services -->
   <section style="display:block; padding: 4rem 3rem 5rem; background: var(--navy);">
     <div class="section-header reveal">
       <p class="section-eyebrow">ماذا نقدم</p>
@@ -593,6 +579,7 @@
   </section>
 </div>
 
+<!-- ═══════════════ LIBRARY PAGE ═══════════════ -->
 <section id="library-page">
   <div class="section-header reveal">
     <p class="section-eyebrow">موارد علمية</p>
@@ -633,4 +620,388 @@
     <div class="card reveal">
       <div class="card-icon">🧠</div>
       <h3>الذكاء الاصطناعي في الهندسة</h3>
-      <p>تط
+      <p>تطبيقات التعلم الآلي والشبكات العصبية في الأنظمة الهندسية</p>
+      <span class="card-tag">AI</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ STUDY PLAN PAGE ═══════════════ -->
+<section id="plan-page">
+  <div class="section-header reveal">
+    <p class="section-eyebrow">المسار الأكاديمي</p>
+    <h2 class="section-title">الخطة الدراسية</h2>
+    <p class="section-desc">خطة دراسية منظمة لتخصص الميكاترونكس موزعة على الفصول الدراسية</p>
+  </div>
+
+  <div style="background:var(--glass); border:1px solid var(--glass-border); border-radius:16px; overflow:hidden;" class="reveal">
+    <div style="padding:1.2rem 1.5rem; background:var(--navy3); border-bottom:1px solid var(--glass-border); font-family:'Cairo',sans-serif; font-size:1rem; font-weight:700; color:var(--cyan);">
+      🗓 السنة الأولى — الفصل الأول
+    </div>
+    <table class="plan-table">
+      <thead><tr><th>رمز المساق</th><th>اسم المساق</th><th>الساعات</th><th>النوع</th></tr></thead>
+      <tbody>
+        <tr><td>MATH101</td><td>التفاضل والتكامل 1</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>PHYS101</td><td>الفيزياء العامة 1</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>EE101</td><td>أساسيات الهندسة الكهربائية</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>ME101</td><td>رسم هندسي</td><td>2</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>CS101</td><td>برمجة الحاسوب</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="background:var(--glass); border:1px solid var(--glass-border); border-radius:16px; overflow:hidden; margin-top:1.5rem;" class="reveal">
+    <div style="padding:1.2rem 1.5rem; background:var(--navy3); border-bottom:1px solid var(--glass-border); font-family:'Cairo',sans-serif; font-size:1rem; font-weight:700; color:var(--cyan);">
+      🗓 السنة الأولى — الفصل الثاني
+    </div>
+    <table class="plan-table">
+      <thead><tr><th>رمز المساق</th><th>اسم المساق</th><th>الساعات</th><th>النوع</th></tr></thead>
+      <tbody>
+        <tr><td>MATH102</td><td>التفاضل والتكامل 2</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>PHYS102</td><td>الفيزياء العامة 2</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>ME201</td><td>ميكانيكا هندسية</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>EE201</td><td>الدوائر الكهربائية</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>FREE01</td><td>مساق إختياري حر</td><td>3</td><td><span class="badge badge-free">اختياري</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="background:var(--glass); border:1px solid var(--glass-border); border-radius:16px; overflow:hidden; margin-top:1.5rem;" class="reveal">
+    <div style="padding:1.2rem 1.5rem; background:var(--navy3); border-bottom:1px solid var(--glass-border); font-family:'Cairo',sans-serif; font-size:1rem; font-weight:700; color:var(--cyan);">
+      🗓 السنة الثانية — الفصل الأول
+    </div>
+    <table class="plan-table">
+      <thead><tr><th>رمز المساق</th><th>اسم المساق</th><th>الساعات</th><th>النوع</th></tr></thead>
+      <tbody>
+        <tr><td>MECH301</td><td>مقاومة المواد</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>EE301</td><td>الإلكترونيات 1</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>MT301</td><td>أساسيات الميكاترونكس</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>PROG201</td><td>برمجة C++</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>ELEC01</td><td>اختياري تخصصي</td><td>3</td><td><span class="badge badge-elec">تخصصي</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════ ARTICLES PAGE ═══════════════ -->
+<section id="articles-page">
+  <div class="section-header reveal">
+    <p class="section-eyebrow">معرفة ومحتوى</p>
+    <h2 class="section-title">مقالات هندسية</h2>
+    <p class="section-desc">مقالات تقنية ومعرفية يكتبها أعضاء الفريق وخبراء في مجالات الهندسة المختلفة</p>
+  </div>
+  <div class="cards-grid">
+    <div class="article-card reveal">
+      <div class="article-img">🤖</div>
+      <div class="article-body">
+        <h3>مستقبل الروبوتات في الصناعة الأردنية</h3>
+        <p>نظرة تحليلية على توجهات التصنيع الذكي وكيف تغير الروبوتات خطوط الإنتاج...</p>
+        <div class="article-meta"><span class="tag">روبوتات</span><span>📅 يناير 2025</span></div>
+      </div>
+    </div>
+    <div class="article-card reveal">
+      <div class="article-img">⚡</div>
+      <div class="article-body">
+        <h3>الأنظمة الكهربائية الضوئية: مقدمة شاملة</h3>
+        <p>شرح تفصيلي لمكونات الأنظمة الكهروضوئية وطريقة عملها واستخداماتها...</p>
+        <div class="article-meta"><span class="tag">كهرباء</span><span>📅 فبراير 2025</span></div>
+      </div>
+    </div>
+    <div class="article-card reveal">
+      <div class="article-img">🧠</div>
+      <div class="article-body">
+        <h3>كيف تتعلم الآلات؟ مقدمة للذكاء الاصطناعي</h3>
+        <p>شرح مبسط لخوارزميات التعلم الآلي وتطبيقاتها في حل المشكلات الهندسية...</p>
+        <div class="article-meta"><span class="tag">AI</span><span>📅 مارس 2025</span></div>
+      </div>
+    </div>
+    <div class="article-card reveal">
+      <div class="article-img">🔩</div>
+      <div class="article-body">
+        <h3>أنظمة التحكم التكيفي وتطبيقاتها</h3>
+        <p>مراجعة شاملة لتقنيات التحكم التكيفي والأنظمة غير الخطية في بيئات صناعية...</p>
+        <div class="article-meta"><span class="tag">تحكم</span><span>📅 أبريل 2025</span></div>
+      </div>
+    </div>
+    <div class="article-card reveal">
+      <div class="article-img">📡</div>
+      <div class="article-body">
+        <h3>إنترنت الأشياء في الهندسة الصناعية</h3>
+        <p>كيف تحوّل أجهزة IoT المصانع التقليدية إلى بيئات ذكية ومتصلة...</p>
+        <div class="article-meta"><span class="tag">IoT</span><span>📅 مايو 2025</span></div>
+      </div>
+    </div>
+    <div class="article-card reveal">
+      <div class="article-img">🖨️</div>
+      <div class="article-body">
+        <h3>الطباعة ثلاثية الأبعاد في النماذج الهندسية</h3>
+        <p>دليل عملي للطباعة ثلاثية الأبعاد من اختيار المواد إلى إعداد النماذج...</p>
+        <div class="article-meta"><span class="tag">تصنيع</span><span>📅 يونيو 2025</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ COURSES PAGE ═══════════════ -->
+<section id="courses-page">
+  <div class="section-header reveal">
+    <p class="section-eyebrow">تطوير المهارات</p>
+    <h2 class="section-title">دورات هندسية</h2>
+    <p class="section-desc">دورات تدريبية مصممة لتطوير المهارات العملية والتقنية لطلاب الهندسة</p>
+  </div>
+  <div class="cards-grid">
+    <div class="card reveal">
+      <div class="card-icon">🔌</div>
+      <h3>Arduino من الصفر</h3>
+      <p>تعلم برمجة المتحكمات الدقيقة بخطوات مبسطة من إضاءة LED حتى أنظمة التحكم الكاملة</p>
+      <span class="card-tag">مستوى: مبتدئ</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🖥️</div>
+      <h3>SolidWorks للمبتدئين</h3>
+      <p>تصميم النماذج ثلاثية الأبعاد وإعداد الرسومات الهندسية باستخدام SolidWorks</p>
+      <span class="card-tag">مستوى: مبتدئ</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">⚙️</div>
+      <h3>MATLAB للمهندسين</h3>
+      <p>البرمجة والمحاكاة والتحليل الرياضي باستخدام بيئة MATLAB الاحترافية</p>
+      <span class="card-tag">مستوى: متوسط</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🤖</div>
+      <h3>ROS — نظام تشغيل الروبوت</h3>
+      <p>مقدمة شاملة لـ ROS وبناء أنظمة روبوتية متكاملة مع محاكاة Gazebo</p>
+      <span class="card-tag">مستوى: متقدم</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🧪</div>
+      <h3>Proteus للمحاكاة الإلكترونية</h3>
+      <p>تصميم الدوائر الإلكترونية ومحاكاتها وتحليل أدائها بأدوات احترافية</p>
+      <span class="card-tag">مستوى: متوسط</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">📐</div>
+      <h3>Python في الهندسة</h3>
+      <p>تطبيقات Python في حل المسائل الهندسية والتحليل الرقمي ومعالجة البيانات</p>
+      <span class="card-tag">مستوى: متوسط</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SOFTWARE PAGE ═══════════════ -->
+<section id="software-page">
+  <div class="section-header reveal">
+    <p class="section-eyebrow">أدوات احترافية</p>
+    <h2 class="section-title">برامج هندسية</h2>
+    <p class="section-desc">قائمة بأهم البرامج والأدوات الهندسية المستخدمة في مجال الميكاترونكس</p>
+  </div>
+  <div class="cards-grid">
+    <div class="card reveal">
+      <div class="card-icon">🏭</div>
+      <h3>SolidWorks</h3>
+      <p>برنامج التصميم ثلاثي الأبعاد الأكثر استخداماً في صناعة التصنيع والهندسة الميكانيكية</p>
+      <span class="card-tag">تصميم ميكانيكي</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">📊</div>
+      <h3>MATLAB / Simulink</h3>
+      <p>بيئة البرمجة والمحاكاة الرياضية المتكاملة لنمذجة الأنظمة الديناميكية والتحكم</p>
+      <span class="card-tag">محاكاة</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🔬</div>
+      <h3>Proteus Design Suite</h3>
+      <p>محاكاة وتصميم الدوائر الإلكترونية مع دعم واسع للمتحكمات الدقيقة</p>
+      <span class="card-tag">إلكترونيات</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🌐</div>
+      <h3>AutoCAD</h3>
+      <p>الرسم الهندسي ثنائي وثلاثي الأبعاد لمختلف تخصصات الهندسة والبناء</p>
+      <span class="card-tag">رسم هندسي</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">⚡</div>
+      <h3>ANSYS</h3>
+      <p>تحليل العناصر المحدودة وأنظمة ديناميكا الموائع والهيكلية والحرارية</p>
+      <span class="card-tag">تحليل هندسي</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🔧</div>
+      <h3>LabVIEW</h3>
+      <p>برمجة الأنظمة المدمجة واكتساب البيانات وأتمتة الاختبارات والقياسات</p>
+      <span class="card-tag">قياس وتحكم</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ABOUT PAGE ═══════════════ -->
+<section id="about-page">
+  <div class="about-split">
+    <div class="about-visual reveal">
+      <img src="spectrum.png" alt="Spectrum Team Logo" onerror="this.outerHTML='<div style=\'font-size:5rem\'>🤖</div>'">
+    </div>
+    <div class="about-text reveal">
+      <p class="section-eyebrow">نبذة عنا</p>
+      <h2 class="section-title">من نحن</h2>
+      <p class="section-desc">
+        فريق سبيكتروم للميكاترونكس هو فريق طلابي أكاديمي تأسس في كلية الهندسة التقنية في جامعة البلقاء التطبيقية. يجمع الفريق نخبة من طلاب الهندسة المتميزين الشغوفين بمجال الميكاترونكس ودمج تخصصات الهندسة الميكانيكية والإلكترونية والبرمجية.
+      </p>
+      <div class="team-values">
+        <div class="value-item">
+          <div class="value-dot"></div>
+          <div><div class="value-label">الابتكار</div><div class="value-sub">نبتكر حلولاً هندسية مبدعة</div></div>
+        </div>
+        <div class="value-item">
+          <div class="value-dot"></div>
+          <div><div class="value-label">التعاون</div><div class="value-sub">فريق متكامل يدعم بعضه</div></div>
+        </div>
+        <div class="value-item">
+          <div class="value-dot"></div>
+          <div><div class="value-label">التميز</div><div class="value-sub">نسعى للمستوى الأعلى دائماً</div></div>
+        </div>
+        <div class="value-item">
+          <div class="value-dot"></div>
+          <div><div class="value-label">المعرفة</div><div class="value-sub">نشر العلم في البيئة الأكاديمية</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:5rem;">
+    <div class="section-header reveal" style="text-align:center;">
+      <p class="section-eyebrow">فريقنا</p>
+      <h2 class="section-title">أعضاء سبيكتروم</h2>
+    </div>
+    <div class="cards-grid">
+      <div class="card reveal" style="text-align:center;">
+        <div style="width:70px;height:70px;border-radius:50%;background:var(--cyan-glow);border:2px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;">👨‍💻</div>
+        <h3>رئيس الفريق</h3>
+        <p>مسؤول عن التنسيق العام وقيادة مبادرات الفريق والتواصل مع الجامعة</p>
+        <span class="card-tag">قيادة</span>
+      </div>
+      <div class="card reveal" style="text-align:center;">
+        <div style="width:70px;height:70px;border-radius:50%;background:var(--cyan-glow);border:2px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;">👩‍🔧</div>
+        <h3>قسم المحتوى التقني</h3>
+        <p>إعداد المقالات الهندسية والمواد التعليمية والمكتبة التخصصية</p>
+        <span class="card-tag">محتوى</span>
+      </div>
+      <div class="card reveal" style="text-align:center;">
+        <div style="width:70px;height:70px;border-radius:50%;background:var(--cyan-glow);border:2px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;">👨‍🎓</div>
+        <h3>قسم التدريب والدورات</h3>
+        <p>تصميم وتنفيذ الدورات التدريبية وورش العمل الهندسية</p>
+        <span class="card-tag">تدريب</span>
+      </div>
+      <div class="card reveal" style="text-align:center;">
+        <div style="width:70px;height:70px;border-radius:50%;background:var(--cyan-glow);border:2px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;">🎨</div>
+        <h3>قسم التصميم والإعلام</h3>
+        <p>إدارة الهوية البصرية ووسائل التواصل الاجتماعي والتسويق</p>
+        <span class="card-tag">إبداع</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="spectrum.png" alt="Spectrum" onerror="this.style.display='none'">
+  <div class="footer-links">
+    <a href="#" onclick="showPage('home')">الصفحة الرئيسية</a>
+    <a href="#" onclick="showPage('library')">المكتبة</a>
+    <a href="#" onclick="showPage('articles')">المقالات</a>
+    <a href="#" onclick="showPage('courses')">الدورات</a>
+    <a href="#" onclick="showPage('about')">من نحن</a>
+  </div>
+  <p>© 2025 فريق سبيكتروم للميكاترونكس — كلية الهندسة التقنية، جامعة البلقاء التطبيقية</p>
+</footer>
+
+<script>
+// ─── CURSOR GLOW ───
+const glow = document.getElementById('cursor-glow');
+document.addEventListener('mousemove', e => {
+  glow.style.left = e.clientX + 'px';
+  glow.style.top = e.clientY + 'px';
+});
+
+// ─── NAV SCROLL ───
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ─── HAMBURGER ───
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+// ─── PAGE ROUTING ───
+const pages = ['home', 'library', 'plan', 'articles', 'courses', 'software', 'about'];
+const pageMap = {
+  home: 'home-page',
+  library: 'library-page',
+  plan: 'plan-page',
+  articles: 'articles-page',
+  courses: 'courses-page',
+  software: 'software-page',
+  about: 'about-page'
+};
+
+function showPage(page) {
+  // hide all
+  document.getElementById('home-page').style.display = 'none';
+  pages.forEach(p => {
+    const el = document.getElementById(pageMap[p]);
+    if (el) el.classList.remove('active-section');
+  });
+
+  // remove active from nav
+  pages.forEach(p => {
+    const navEl = document.getElementById('nav-' + p);
+    if (navEl) navEl.classList.remove('active');
+  });
+
+  // show target
+  if (page === 'home') {
+    document.getElementById('home-page').style.display = 'block';
+  } else {
+    const target = document.getElementById(pageMap[page]);
+    if (target) target.classList.add('active-section');
+  }
+
+  // activate nav link
+  const navEl = document.getElementById('nav-' + page);
+  if (navEl) navEl.classList.add('active');
+
+  // close mobile menu & scroll to top
+  document.getElementById('navLinks').classList.remove('open');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // re-trigger reveals
+  setTimeout(triggerReveal, 100);
+}
+
+// ─── REVEAL ON SCROLL ───
+function triggerReveal() {
+  const reveals = document.querySelectorAll('.reveal:not(.visible)');
+  reveals.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 60) el.classList.add('visible');
+  });
+}
+window.addEventListener('scroll', triggerReveal);
+triggerReveal();
+
+// ─── VIDEO SCROLL PARALLAX ───
+const heroVideo = document.getElementById('hero-video');
+window.addEventListener('scroll', () => {
+  if (!heroVideo) return;
+  const scrollY = window.scrollY;
+  const vh = window.innerHeight;
+  const progress = Math.min(scrollY / vh, 1);
+  heroVideo.style.transform = `scale(${1 + progress * 0.08}) translateY(${progress * 30}px)`;
+  heroVideo.style.opacity = 0.55 - progress * 0.3;
+});
+</script>
+</body>
+</html>
