@@ -438,8 +438,8 @@
     background: var(--navy2);
     border: 1px solid var(--glass-border);
     border-radius: 18px;
-    max-width: 760px; width: 100%;
-    max-height: 85vh; overflow-y: auto;
+    max-width: 820px; width: 100%;
+    max-height: 88vh; overflow-y: auto;
     padding: 2rem;
     box-shadow: 0 0 60px rgba(41,184,216,0.15);
   }
@@ -448,42 +448,111 @@
     background: var(--glass); border: 1px solid var(--glass-border);
     color: var(--white); width: 36px; height: 36px; border-radius: 50%;
     cursor: pointer; font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
   }
   .subject-modal-close:hover { color: var(--cyan); border-color: var(--cyan); }
+
+  /* Header: title on the RIGHT, close btn on the LEFT (RTL layout) */
   .subject-modal-header {
-    display: flex; align-items: center; gap: 1.5rem;
-    margin-bottom: 1.5rem; padding-bottom: 1.5rem;
+    display: flex; align-items: center; justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 1.5rem; padding-bottom: 1.2rem;
     border-bottom: 1px solid var(--glass-border);
   }
-  .subject-book-img { width: 90px; height: auto; filter: drop-shadow(0 0 14px rgba(41,184,216,0.25)); }
+  .subject-header-text { text-align: right; }
   .subject-eyebrow {
-    font-family: 'Cairo', sans-serif; font-size: 0.75rem; letter-spacing: 0.15em;
-    color: var(--cyan); margin-bottom: 0.3rem;
+    font-family: 'Cairo', sans-serif; font-size: 0.72rem; letter-spacing: 0.15em;
+    color: var(--cyan); margin-bottom: 0.25rem; text-transform: uppercase;
   }
-  #subjectTitle { font-family: 'Cairo', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--white); }
-  .subject-block { margin-bottom: 1.6rem; }
-  .subject-block h3 {
-    font-family: 'Cairo', sans-serif; font-size: 1rem; color: var(--cyan);
-    margin-bottom: 0.7rem;
+  #subjectTitle {
+    font-family: 'Cairo', sans-serif; font-size: 1.5rem; font-weight: 900; color: var(--white);
   }
-  .subject-list { display: flex; flex-direction: column; gap: 0.5rem; }
-  .subject-list-empty { color: var(--white2); font-size: 0.85rem; }
-  .subject-item {
-    display: flex; align-items: center; justify-content: space-between;
-    background: var(--glass); border: 1px solid var(--glass-border);
-    border-radius: 8px; padding: 0.6rem 1rem;
-    color: var(--white); text-decoration: none; font-size: 0.9rem;
-    transition: border-color 0.2s, color 0.2s;
+  .subject-title-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: var(--cyan-glow); border: 1px solid var(--glass-border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; flex-shrink: 0;
   }
-  .subject-item:hover { border-color: var(--cyan); color: var(--cyan); }
-  .subject-papers { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-  .subject-papers-label {
-    font-family: 'Cairo', sans-serif; font-weight: 700; font-size: 0.85rem;
-    color: var(--white2); margin-bottom: 0.5rem;
+
+  /* Section blocks */
+  .subject-block { margin-bottom: 1.8rem; }
+  .subject-block-title {
+    font-family: 'Cairo', sans-serif; font-size: 0.95rem; font-weight: 700;
+    color: var(--cyan); margin-bottom: 0.85rem;
+    display: flex; align-items: center; gap: 0.5rem;
   }
+
+  /* BOOKS: grid of clickable cover mockups */
+  .subject-books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 1rem;
+  }
+  .subject-book-card {
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    text-decoration: none; cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .subject-book-card:hover { transform: translateY(-4px); }
+  .subject-book-cover {
+    width: 100%; aspect-ratio: 3/4;
+    border-radius: 8px; overflow: hidden;
+    border: 1px solid var(--glass-border);
+    background: linear-gradient(135deg, var(--navy3), var(--navy2));
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    box-shadow: 3px 4px 14px rgba(0,0,0,0.45);
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .subject-book-card:hover .subject-book-cover {
+    box-shadow: 4px 6px 22px rgba(41,184,216,0.3);
+    border-color: rgba(41,184,216,0.5);
+  }
+  .subject-book-cover img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  /* Fallback placeholder when no image */
+  .subject-book-cover-placeholder {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 100%; height: 100%; gap: 0.3rem; padding: 0.5rem;
+  }
+  .subject-book-cover-placeholder span:first-child { font-size: 2rem; }
+  .subject-book-cover-placeholder span:last-child {
+    font-family: 'Cairo', sans-serif; font-size: 0.62rem; color: var(--white2);
+    text-align: center; line-height: 1.3;
+  }
+  .subject-book-label {
+    font-family: 'Cairo', sans-serif; font-size: 0.75rem; color: var(--white2);
+    text-align: center; line-height: 1.4;
+  }
+
+  /* Simple link list (summaries, videos, papers) */
+  .subject-link-list { display: flex; flex-direction: column; gap: 0.45rem; }
+  .subject-link-item {
+    display: flex; align-items: center; gap: 0.6rem;
+    color: var(--white); text-decoration: none;
+    font-family: 'Cairo', sans-serif; font-size: 0.9rem;
+    padding: 0.5rem 0.75rem; border-radius: 8px;
+    transition: background 0.15s, color 0.15s;
+  }
+  .subject-link-item:hover { background: var(--cyan-glow); color: var(--cyan); }
+  .subject-link-item .link-arrow { color: var(--cyan); font-size: 0.75rem; margin-right: auto; }
+  .subject-list-empty { color: var(--white2); font-size: 0.82rem; padding: 0.3rem 0; }
+
+  /* Past papers: mid + final side by side */
+  .subject-papers-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+  }
+  .subject-papers-col-title {
+    font-family: 'Cairo', sans-serif; font-weight: 700; font-size: 0.82rem;
+    color: var(--white2); margin-bottom: 0.6rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid var(--glass-border);
+  }
+
   @media (max-width: 600px) {
-    .subject-papers { grid-template-columns: 1fr; }
-    .subject-modal-header { flex-direction: column; text-align: center; }
+    .subject-papers-grid { grid-template-columns: 1fr; }
+    .subject-books-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); }
   }
 
   /* ─── ARTICLE CARD ─── */
@@ -955,35 +1024,51 @@
 <div id="subjectModalOverlay" class="subject-modal-overlay" onclick="closeSubjectModal(event)">
   <div class="subject-modal" onclick="event.stopPropagation()">
     <button class="subject-modal-close" onclick="closeSubjectModal()">✕</button>
+
+    <!-- Header: icon + title pushed to the RIGHT -->
     <div class="subject-modal-header">
-      <img id="subjectBookImg" src="book_mockup.png" class="subject-book-img" alt="book">
-      <div>
+      <div class="subject-header-text">
         <p class="subject-eyebrow">صفحة المادة</p>
         <h2 id="subjectTitle">اسم المادة</h2>
       </div>
+      <div class="subject-title-icon" id="subjectTitleIcon">📖</div>
     </div>
+
     <div class="subject-modal-body">
-      <div class="subject-block">
-        <h3>📕 ملخصات</h3>
-        <div id="subjectSummaries" class="subject-list"></div>
+
+      <!-- BOOKS -->
+      <div class="subject-block" id="subjectBooksBlock">
+        <div class="subject-block-title">📚 الكتب</div>
+        <div id="subjectBooks" class="subject-books-grid"></div>
       </div>
-      <div class="subject-block">
-        <h3>🎬 شروحات</h3>
-        <div id="subjectVideos" class="subject-list"></div>
+
+      <!-- SUMMARIES -->
+      <div class="subject-block" id="subjectSummariesBlock">
+        <div class="subject-block-title">📕 ملخصات</div>
+        <div id="subjectSummaries" class="subject-link-list"></div>
       </div>
-      <div class="subject-block">
-        <h3>📝 أوراق سابقة</h3>
-        <div class="subject-papers">
+
+      <!-- VIDEOS -->
+      <div class="subject-block" id="subjectVideosBlock">
+        <div class="subject-block-title">🎬 شروحات</div>
+        <div id="subjectVideos" class="subject-link-list"></div>
+      </div>
+
+      <!-- PAST PAPERS: mid + final -->
+      <div class="subject-block" id="subjectPapersBlock">
+        <div class="subject-block-title">📝 أوراق سابقة</div>
+        <div class="subject-papers-grid">
           <div>
-            <p class="subject-papers-label">منتصف الفصل</p>
-            <div id="subjectMid" class="subject-list"></div>
+            <div class="subject-papers-col-title">منتصف الفصل</div>
+            <div id="subjectMid" class="subject-link-list"></div>
           </div>
           <div>
-            <p class="subject-papers-label">النهائي</p>
-            <div id="subjectFinal" class="subject-list"></div>
+            <div class="subject-papers-col-title">النهائي</div>
+            <div id="subjectFinal" class="subject-link-list"></div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>
@@ -1522,50 +1607,222 @@ const planHotspots = [
 ];
 
 // بيانات كل مادة (مفتاح كل مادة subj1, subj2 ... يطابق subject: في planHotspots أعلاه)
-// title: اسم المادة
-// summaries / videos / mid / final: كل عنصر هو { label:'اسم العنصر', url:'الرابط' }
+// ─────────────────────────────────────────────────────────────────────────────
+// كيفية الإضافة:
+//
+// title  : اسم المادة
+// icon   : إيموجي يظهر في رأس النافذة (اختياري، الافتراضي 📖)
+//
+// books  : كل كتاب هو { label:'اسم الكتاب', url:'رابط الكتاب', cover:'مسار/رابط صورة الغلاف (اختياري)' }
+// summaries / videos / mid / final :
+//          كل عنصر هو { label:'اسم العنصر', url:'رابط PDF أو الفيديو' }
+// ─────────────────────────────────────────────────────────────────────────────
 const subjectsData = {
-  subj1: { title:'مادة 1', summaries:[], videos:[], mid:[], final:[] },
-  subj2: { title:'مادة 2', summaries:[], videos:[], mid:[], final:[] },
-  subj3: { title:'مادة 3', summaries:[], videos:[], mid:[], final:[] },
-  subj4: { title:'مادة 4', summaries:[], videos:[], mid:[], final:[] },
-  subj5: { title:'مادة 5', summaries:[], videos:[], mid:[], final:[] },
-  subj6: { title:'مادة 6', summaries:[], videos:[], mid:[], final:[] },
-  subj7: { title:'مادة 7', summaries:[], videos:[], mid:[], final:[] },
-  subj8: { title:'مادة 8', summaries:[], videos:[], mid:[], final:[] },
-  subj9: { title:'مادة 9', summaries:[], videos:[], mid:[], final:[] },
-  subj10: { title:'مادة 10', summaries:[], videos:[], mid:[], final:[] },
-  subj11: { title:'مادة 11', summaries:[], videos:[], mid:[], final:[] },
-  subj12: { title:'مادة 12', summaries:[], videos:[], mid:[], final:[] },
-  subj13: { title:'مادة 13', summaries:[], videos:[], mid:[], final:[] },
-  subj14: { title:'مادة 14', summaries:[], videos:[], mid:[], final:[] },
-  subj15: { title:'مادة 15', summaries:[], videos:[], mid:[], final:[] },
-  subj16: { title:'مادة 16', summaries:[], videos:[], mid:[], final:[] },
-  subj17: { title:'مادة 17', summaries:[], videos:[], mid:[], final:[] },
-  subj18: { title:'مادة 18', summaries:[], videos:[], mid:[], final:[] },
-  subj19: { title:'مادة 19', summaries:[], videos:[], mid:[], final:[] },
-  subj20: { title:'مادة 20', summaries:[], videos:[], mid:[], final:[] },
-  subj21: { title:'مادة 21', summaries:[], videos:[], mid:[], final:[] },
-  subj22: { title:'مادة 22', summaries:[], videos:[], mid:[], final:[] },
-  subj23: { title:'مادة 23', summaries:[], videos:[], mid:[], final:[] },
-  subj24: { title:'مادة 24', summaries:[], videos:[], mid:[], final:[] },
-  subj25: { title:'مادة 25', summaries:[], videos:[], mid:[], final:[] },
-  subj26: { title:'مادة 26', summaries:[], videos:[], mid:[], final:[] },
-  subj27: { title:'مادة 27', summaries:[], videos:[], mid:[], final:[] },
-  subj28: { title:'مادة 28', summaries:[], videos:[], mid:[], final:[] },
-  subj29: { title:'مادة 29', summaries:[], videos:[], mid:[], final:[] },
-  subj30: { title:'مادة 30', summaries:[], videos:[], mid:[], final:[] },
-  subj31: { title:'مادة 31', summaries:[], videos:[], mid:[], final:[] },
-  subj32: { title:'مادة 32', summaries:[], videos:[], mid:[], final:[] },
-  subj33: { title:'مادة 33', summaries:[], videos:[], mid:[], final:[] },
-  subj34: { title:'مادة 34', summaries:[], videos:[], mid:[], final:[] },
-  subj35: { title:'مادة 35', summaries:[], videos:[], mid:[], final:[] },
-  subj36: { title:'مادة 36', summaries:[], videos:[], mid:[], final:[] },
-  subj37: { title:'مادة 37', summaries:[], videos:[], mid:[], final:[] },
-  subj38: { title:'مادة 38', summaries:[], videos:[], mid:[], final:[] },
-  subj39: { title:'مادة 39', summaries:[], videos:[], mid:[], final:[] },
-  subj40: { title:'مادة 40', summaries:[], videos:[], mid:[], final:[] },
-  subj41: { title:'مادة 41', summaries:[], videos:[], mid:[], final:[] },
+  subj1: {
+    title: 'مادة 1', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj2: {
+    title: 'مادة 2', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj3: {
+    title: 'مادة 3', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj4: {
+    title: 'مادة 4', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj5: {
+    title: 'مادة 5', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj6: {
+    title: 'مادة 6', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj7: {
+    title: 'مادة 7', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj8: {
+    title: 'مادة 8', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj9: {
+    title: 'مادة 9', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj10: {
+    title: 'مادة 10', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj11: {
+    title: 'مادة 11', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj12: {
+    title: 'مادة 12', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj13: {
+    title: 'مادة 13', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj14: {
+    title: 'مادة 14', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj15: {
+    title: 'مادة 15', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj16: {
+    title: 'مادة 16', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj17: {
+    title: 'مادة 17', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj18: {
+    title: 'مادة 18', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj19: {
+    title: 'مادة 19', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj20: {
+    title: 'مادة 20', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj21: {
+    title: 'مادة 21', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj22: {
+    title: 'مادة 22', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj23: {
+    title: 'مادة 23', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj24: {
+    title: 'مادة 24', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj25: {
+    title: 'مادة 25', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj26: {
+    title: 'مادة 26', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj27: {
+    title: 'مادة 27', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj28: {
+    title: 'مادة 28', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj29: {
+    title: 'مادة 29', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj30: {
+    title: 'مادة 30', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj31: {
+    title: 'مادة 31', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj32: {
+    title: 'مادة 32', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj33: {
+    title: 'مادة 33', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj34: {
+    title: 'مادة 34', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj35: {
+    title: 'مادة 35', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj36: {
+    title: 'مادة 36', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj37: {
+    title: 'مادة 37', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj38: {
+    title: 'مادة 38', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj39: {
+    title: 'مادة 39', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj40: {
+    title: 'مادة 40', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
+  subj41: {
+    title: 'مادة 41', icon: '📖',
+    books: [],
+    summaries: [], videos: [], mid: [], final: []
+  },
 };
 
 // ─── RENDER HOTSPOTS ───
@@ -1582,7 +1839,7 @@ function renderPlanHotspots() {
 }
 
 function handleHotspotClick(id) {
-  if (calibrationMode) return; // في وضع التحديد لا تنفّذ الإجراء، فقط نعرض الموقع
+  if (calibrationMode) return;
   const h = planHotspots.find(x => x.id === id);
   if (!h) return;
   if (h.type === 'link') {
@@ -1594,23 +1851,86 @@ function handleHotspotClick(id) {
 }
 
 // ─── SUBJECT MODAL ───
-function buildSubjectList(containerId, items) {
+
+// Render a simple link list (summaries, videos, mid, final)
+function buildLinkList(containerId, items, emptyText) {
   const el = document.getElementById(containerId);
   if (!items || items.length === 0) {
-    el.innerHTML = `<span class="subject-list-empty">لا يوجد محتوى مضاف بعد</span>`;
+    el.innerHTML = `<span class="subject-list-empty">${emptyText || 'لا يوجد محتوى مضاف بعد'}</span>`;
     return;
   }
-  el.innerHTML = items.map(it => `<a class="subject-item" href="${it.url || '#'}" target="_blank" rel="noopener">${it.label} <span>↗</span></a>`).join('');
+  el.innerHTML = items.map(it => `
+    <a class="subject-link-item" href="${it.url || '#'}" target="_blank" rel="noopener">
+      <span>${it.label}</span>
+      <span class="link-arrow">↗</span>
+    </a>
+  `).join('');
+}
+
+// Render book covers grid
+function buildBooksGrid(containerId, books) {
+  const el = document.getElementById(containerId);
+  if (!books || books.length === 0) {
+    el.innerHTML = `<span class="subject-list-empty">لا يوجد كتب مضافة بعد</span>`;
+    return;
+  }
+  el.innerHTML = books.map(b => {
+    const coverContent = b.cover
+      ? `<img src="${b.cover}" alt="${b.label}" onerror="this.parentElement.innerHTML=this.parentElement.getAttribute('data-fallback')">`
+      : `<div class="subject-book-cover-placeholder"><span>📗</span><span>${b.label}</span></div>`;
+    return `
+      <a class="subject-book-card" href="${b.url || '#'}" target="_blank" rel="noopener">
+        <div class="subject-book-cover" data-fallback='<div class="subject-book-cover-placeholder"><span>📗</span><span>${b.label}</span></div>'>
+          ${coverContent}
+        </div>
+        <span class="subject-book-label">${b.label}</span>
+      </a>
+    `;
+  }).join('');
 }
 
 function openSubjectModal(subjectKey) {
   const data = subjectsData[subjectKey];
   if (!data) return;
+
+  // Header
   document.getElementById('subjectTitle').textContent = data.title;
-  buildSubjectList('subjectSummaries', data.summaries);
-  buildSubjectList('subjectVideos', data.videos);
-  buildSubjectList('subjectMid', data.mid);
-  buildSubjectList('subjectFinal', data.final);
+  document.getElementById('subjectTitleIcon').textContent = data.icon || '📖';
+
+  // Books
+  buildBooksGrid('subjectBooks', data.books);
+  document.getElementById('subjectBooksBlock').style.display =
+    (data.books && data.books.length > 0) ? '' : 'none';
+
+  // Summaries
+  buildLinkList('subjectSummaries', data.summaries);
+  document.getElementById('subjectSummariesBlock').style.display =
+    (data.summaries && data.summaries.length > 0) ? '' : 'none';
+
+  // Videos
+  buildLinkList('subjectVideos', data.videos);
+  document.getElementById('subjectVideosBlock').style.display =
+    (data.videos && data.videos.length > 0) ? '' : 'none';
+
+  // Past papers
+  const hasPapers = (data.mid && data.mid.length > 0) || (data.final && data.final.length > 0);
+  buildLinkList('subjectMid', data.mid);
+  buildLinkList('subjectFinal', data.final);
+  document.getElementById('subjectPapersBlock').style.display = hasPapers ? '' : 'none';
+
+  // If nothing at all, show a message somewhere
+  const hasAny = (data.books && data.books.length) ||
+    (data.summaries && data.summaries.length) ||
+    (data.videos && data.videos.length) ||
+    (data.mid && data.mid.length) ||
+    (data.final && data.final.length);
+  if (!hasAny) {
+    // Show all blocks hidden but add a general message
+    document.getElementById('subjectBooksBlock').style.display = '';
+    document.getElementById('subjectBooks').innerHTML =
+      `<span class="subject-list-empty">لا يوجد محتوى مضاف لهذه المادة بعد</span>`;
+  }
+
   document.getElementById('subjectModalOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
