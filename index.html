@@ -533,8 +533,138 @@
     .team-values { grid-template-columns: 1fr; }
     #stats-bar { padding: 2rem 1.5rem; }
   }
+  /* ─── GPA MODAL ─── */
+  .gpa-overlay {
+    display: none;
+    position: fixed; inset: 0; z-index: 5000;
+    background: rgba(5,10,24,0.88);
+    backdrop-filter: blur(12px);
+    align-items: center; justify-content: center;
+    padding: 1rem;
+  }
+  .gpa-overlay.open { display: flex; }
+  .gpa-modal {
+    background: var(--navy2);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    width: 100%; max-width: 680px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 0 60px rgba(41,184,216,0.12);
+    animation: modalIn 0.3s ease;
+  }
+  @keyframes modalIn {
+    from { opacity:0; transform: translateY(20px) scale(0.97); }
+    to   { opacity:1; transform: translateY(0) scale(1); }
+  }
+  .gpa-close {
+    position: absolute; top: 1.2rem; left: 1.2rem;
+    background: var(--glass); border: 1px solid var(--glass-border);
+    color: var(--white2); width: 34px; height: 34px;
+    border-radius: 50%; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; transition: all 0.2s;
+  }
+  .gpa-close:hover { background: rgba(255,107,107,0.15); color: var(--coral); border-color: var(--coral); }
+  .gpa-modal h2 {
+    font-family: 'Cairo', sans-serif; font-weight: 900;
+    font-size: 1.5rem; color: var(--cyan);
+    margin-bottom: 1.5rem; text-align: center;
+  }
+  .gpa-current {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  .gpa-field label {
+    display: block; font-family: 'Cairo', sans-serif;
+    font-size: 0.82rem; color: var(--white2); margin-bottom: 0.4rem; font-weight: 600;
+  }
+  .gpa-field input, .gpa-field select {
+    width: 100%; background: rgba(0,0,0,0.3);
+    border: 1px solid var(--glass-border); color: var(--white);
+    padding: 0.65rem 0.9rem; border-radius: 8px;
+    font-family: 'Cairo', sans-serif; font-size: 0.95rem;
+    outline: none; transition: border-color 0.2s;
+  }
+  .gpa-field input:focus, .gpa-field select:focus { border-color: var(--cyan); }
+  .gpa-field select { background-color: var(--navy3); }
+  .gpa-course {
+    background: var(--glass); border: 1px solid var(--glass-border);
+    border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 0.8rem;
+    transition: opacity 0.2s;
+  }
+  .gpa-course.off { opacity: 0.4; }
+  .gpa-course-header {
+    display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem;
+  }
+  .gpa-toggle {
+    position: relative; width: 40px; height: 22px; flex-shrink: 0;
+  }
+  .gpa-toggle input { opacity:0; width:0; height:0; }
+  .gpa-toggle-slider {
+    position: absolute; inset: 0; background: #334155;
+    border-radius: 34px; cursor: pointer; transition: 0.3s;
+  }
+  .gpa-toggle-slider::before {
+    content:''; position:absolute;
+    width:16px; height:16px; left:3px; bottom:3px;
+    background:#fff; border-radius:50%; transition:0.3s;
+  }
+  .gpa-toggle input:checked + .gpa-toggle-slider { background: var(--cyan); }
+  .gpa-toggle input:checked + .gpa-toggle-slider::before { transform: translateX(18px); }
+  .gpa-course-name {
+    background: transparent; border: none; color: var(--white);
+    font-family: 'Cairo', sans-serif; font-size: 0.95rem;
+    flex: 1; outline: none;
+  }
+  .gpa-course-name:focus { color: var(--cyan); }
+  .gpa-course-name::placeholder { color: var(--white2); }
+  .gpa-course-body {
+    display: grid; grid-template-columns: 1fr 1.5fr; gap: 0.8rem;
+  }
+  .gpa-rep-row {
+    display: flex; align-items: center; gap: 0.5rem; margin-top: 0.8rem;
+    font-family: 'Cairo', sans-serif; font-size: 0.85rem; color: var(--white2);
+  }
+  .gpa-rep-row input[type=checkbox] { accent-color: var(--cyan); width:15px; height:15px; }
+  .gpa-old-section {
+    margin-top: 0.8rem; padding: 0.8rem;
+    background: rgba(0,0,0,0.2); border-radius: 8px;
+  }
+  .gpa-radio-row {
+    display: flex; gap: 1rem; margin-bottom: 0.6rem;
+    font-family: 'Cairo', sans-serif; font-size: 0.8rem; color: var(--white2);
+  }
+  .gpa-radio-row label { display:flex; align-items:center; gap:4px; cursor:pointer; }
+  .gpa-radio-row input { accent-color: var(--cyan); }
+  .gpa-result-bar {
+    position: sticky; bottom: -2rem; margin: 1.5rem -2rem -2rem;
+    background: rgba(10,20,40,0.97); border-top: 1px solid var(--glass-border);
+    padding: 1rem 2rem; display: flex; align-items: center;
+    justify-content: space-around; gap: 1rem;
+    border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;
+  }
+  .gpa-res-item { text-align: center; }
+  .gpa-res-label { font-size: 0.72rem; color: var(--white2); margin-bottom: 2px; font-family:'Cairo',sans-serif; }
+  .gpa-res-value { font-family:'Cairo',sans-serif; font-size: 1.5rem; font-weight: 900; color: var(--cyan); }
+  .gpa-res-value.white { color: #fff; font-size: 1.2rem; }
+  .gpa-divider { width:1px; height:36px; background: var(--glass-border); }
+  .gpa-reset-btn {
+    background: transparent; border: 1px solid var(--coral);
+    color: var(--coral); width: 32px; height: 32px; border-radius: 50%;
+    cursor: pointer; display: flex; align-items:center; justify-content:center;
+    font-size: 0.9rem; transition: all 0.2s;
+  }
+  .gpa-reset-btn:hover { background: rgba(255,107,107,0.15); }
+  .gpa-warn {
+    display:none; color: var(--coral); font-size: 0.82rem;
+    background: rgba(255,107,107,0.08); border: 1px solid rgba(255,107,107,0.25);
+    padding: 0.6rem 0.9rem; border-radius: 8px; margin-bottom: 0.8rem;
+    font-family:'Cairo',sans-serif;
+  }
 </style>
-</head>
 <body>
 
 <!-- CURSOR GLOW -->
@@ -609,14 +739,14 @@
         </div>
         <div><div class="qlink-text">elearning</div><div class="qlink-sub">نظام التعلم الالكتروني للجامعة</div></div>
       </a>
-      <a href="#" class="qlink reveal">
+      <a href="https://www.bau.edu.jo/bauar/units/reg/media/kk2026.pdf" target="_blank" class="qlink reveal">
         <div class="qlink-icon">📅</div>
         <div><div class="qlink-text">التقويم الجامعي</div><div class="qlink-sub">التقويم للفصل الحالي</div></div>
       </a>
-      <a href="#" class="qlink reveal">
-        <div class="qlink-icon">📢</div>
-        <div><div class="qlink-text">إعلانات الكلية</div><div class="qlink-sub">آخر الأخبار</div></div>
-      </a>
+      <div class="qlink reveal" onclick="openGPA()" style="cursor:pointer;">
+        <div class="qlink-icon">🎓</div>
+        <div><div class="qlink-text">حساب المعدل</div><div class="qlink-sub">احسب معدلك التراكمي</div></div>
+      </div>
     </div>
   </section>
 
@@ -1003,6 +1133,47 @@
   <p>© 2025 فريق سبيكتروم للميكاترونكس — البوليتكنك | كلية الهندسة التكنولوجية، جامعة البلقاء التطبيقية</p>
 </footer>
 
+<!-- ═══════════════ GPA CALCULATOR MODAL ═══════════════ -->
+<div class="gpa-overlay" id="gpaOverlay" onclick="handleOverlayClick(event)">
+  <div class="gpa-modal" id="gpaModal">
+    <button class="gpa-close" onclick="closeGPA()">✕</button>
+    <h2>🎓 حساب المعدل التراكمي</h2>
+
+    <div class="gpa-current">
+      <div class="gpa-field">
+        <label>الساعات المقطوعة</label>
+        <input type="number" id="gpa-curH" placeholder="0" inputmode="decimal" oninput="gpaCalc()">
+      </div>
+      <div class="gpa-field">
+        <label>المعدل الحالي</label>
+        <input type="number" id="gpa-curG" placeholder="0.00" step="0.01" inputmode="decimal" oninput="gpaCalc()">
+      </div>
+    </div>
+
+    <div id="gpa-warn" class="gpa-warn">⚠️ لا يمكن حساب مادة معادة إذا كانت الساعات السابقة 0</div>
+
+    <div id="gpa-courses"></div>
+
+    <div class="gpa-result-bar">
+      <div class="gpa-res-item">
+        <div class="gpa-res-label">المعدل المتوقع</div>
+        <div class="gpa-res-value" id="gpa-resGPA">4.00</div>
+      </div>
+      <div class="gpa-divider"></div>
+      <div class="gpa-res-item">
+        <div class="gpa-res-label">التقدير</div>
+        <div class="gpa-res-value white" id="gpa-resRate">امتياز</div>
+      </div>
+      <div class="gpa-divider"></div>
+      <div class="gpa-res-item">
+        <div class="gpa-res-label">ساعات جديدة</div>
+        <div class="gpa-res-value white" id="gpa-resH">12</div>
+      </div>
+      <button class="gpa-reset-btn" onclick="gpaReset()" title="إعادة تعيين">↺</button>
+    </div>
+  </div>
+</div>
+
 <script>
 // ─── CURSOR GLOW ───
 const glow = document.getElementById('cursor-glow');
@@ -1038,46 +1209,27 @@ const pageMap = {
 };
 
 function showPage(page) {
-  // Hide home wrapper
   document.getElementById('home-page').style.display = 'none';
-
-  // Hide all section pages
   pages.forEach(p => {
     if (p === 'home') return;
     const el = document.getElementById(pageMap[p]);
-    if (el) {
-      el.classList.remove('active-section');
-      el.style.display = 'none';
-    }
+    if (el) { el.classList.remove('active-section'); el.style.display = 'none'; }
   });
-
-  // Remove active from nav
   pages.forEach(p => {
     const navEl = document.getElementById('nav-' + p);
     if (navEl) navEl.classList.remove('active');
   });
-
-  // Show target
   if (page === 'home') {
     document.getElementById('home-page').style.display = 'block';
   } else {
     const target = document.getElementById(pageMap[page]);
-    if (target) {
-      target.style.display = 'block';
-      target.classList.add('active-section');
-    }
+    if (target) { target.style.display = 'block'; target.classList.add('active-section'); }
   }
-
-  // Activate nav link
   const navEl = document.getElementById('nav-' + page);
   if (navEl) navEl.classList.add('active');
-
-  // Close mobile menu
   document.getElementById('navLinks').classList.remove('open');
   document.getElementById('hamburger').classList.remove('open');
   window.scrollTo({ top: 0, behavior: 'smooth' });
-
-  // Re-trigger reveals
   setTimeout(triggerReveal, 100);
 }
 
@@ -1102,6 +1254,149 @@ window.addEventListener('scroll', () => {
   heroVideo.style.transform = `scale(${1 + progress * 0.08}) translateY(${progress * 30}px)`;
   heroVideo.style.opacity = 0.55 - progress * 0.3;
 });
+
+// ═══════════════ GPA CALCULATOR ═══════════════
+const GPA_COURSES = 9;
+const gradeLabels = ["A","A-","B+","B","B-","C+","C","C-","D+","D","D-","F"];
+const newW = [4,3.75,3.5,3.25,3,2.75,2.5,2,1.75,1.25,1,0.5];
+const oldW = [4,3.75,3.5,3,2.75,2.5,2,1.75,1.5,1,0.75,0.5];
+
+function gpaOpts(weights) {
+  return gradeLabels.map((l,i) => `<option value="${i}">${l} (${weights[i]})</option>`).join('');
+}
+
+function gpaInit() {
+  let html = '';
+  for (let i = 0; i < GPA_COURSES; i++) {
+    const active = i < 4;
+    html += `
+    <div class="gpa-course${active?'':' off'}" id="gpac-${i}">
+      <div class="gpa-course-header">
+        <label class="gpa-toggle">
+          <input type="checkbox" id="gpa-en-${i}" ${active?'checked':''} onchange="gpaToggle(${i});gpaCalc()">
+          <span class="gpa-toggle-slider"></span>
+        </label>
+        <input class="gpa-course-name" type="text" placeholder="المادة ${i+1}" ${active?'':'disabled'}>
+      </div>
+      <div class="gpa-course-body">
+        <div class="gpa-field">
+          <label>الساعات</label>
+          <select id="gpa-h-${i}" onchange="gpaCalc()" ${active?'':'disabled'}>
+            <option value="3">3 ساعات</option>
+            <option value="2">2 ساعة</option>
+            <option value="1">1 ساعة</option>
+            <option value="0">0 ساعة</option>
+          </select>
+        </div>
+        <div class="gpa-field">
+          <label>العلامة المتوقعة</label>
+          <select id="gpa-g-${i}" onchange="gpaCalc()" ${active?'':'disabled'}>${gpaOpts(newW)}</select>
+        </div>
+      </div>
+      <div class="gpa-rep-row">
+        <input type="checkbox" id="gpa-rep-${i}" onchange="gpaToggleRep(${i});gpaCalc()">
+        <label for="gpa-rep-${i}">مادة معادة؟</label>
+      </div>
+      <div class="gpa-old-section" id="gpa-old-sect-${i}" style="display:none;">
+        <div class="gpa-radio-row">
+          <label><input type="radio" name="gpa-ws-${i}" value="new" checked onchange="gpaUpdateOld(${i});gpaCalc()"> وزن جديد</label>
+          <label><input type="radio" name="gpa-ws-${i}" value="old" onchange="gpaUpdateOld(${i});gpaCalc()"> وزن قديم</label>
+        </div>
+        <div class="gpa-field">
+          <select id="gpa-old-${i}" onchange="gpaCalc()" style="width:100%;">
+            <option disabled selected value="-1">اختر العلامة السابقة</option>
+            ${gpaOpts(newW)}
+          </select>
+        </div>
+      </div>
+    </div>`;
+  }
+  document.getElementById('gpa-courses').innerHTML = html;
+  gpaCalc();
+}
+
+function gpaToggle(i) {
+  const on = document.getElementById(`gpa-en-${i}`).checked;
+  const card = document.getElementById(`gpac-${i}`);
+  card.classList.toggle('off', !on);
+  card.querySelectorAll('select, input[type=text]').forEach(el => el.disabled = !on);
+  document.getElementById(`gpa-en-${i}`).disabled = false;
+  if (on) gpaToggleRep(i); else document.getElementById(`gpa-old-sect-${i}`).style.display = 'none';
+}
+
+function gpaToggleRep(i) {
+  const isRep = document.getElementById(`gpa-rep-${i}`).checked;
+  const isOn = document.getElementById(`gpa-en-${i}`).checked;
+  document.getElementById(`gpa-old-sect-${i}`).style.display = (isRep && isOn) ? 'block' : 'none';
+}
+
+function gpaUpdateOld(i) {
+  const sel = document.getElementById(`gpa-old-${i}`);
+  const cur = sel.value;
+  const isOld = [...document.getElementsByName(`gpa-ws-${i}`)].some(r => r.checked && r.value === 'old');
+  sel.innerHTML = `<option disabled value="-1">اختر العلامة السابقة</option>${gpaOpts(isOld ? oldW : newW)}`;
+  sel.value = (cur !== '-1' && cur !== '') ? cur : '-1';
+}
+
+function gpaCalc() {
+  const curH = parseFloat(document.getElementById('gpa-curH').value) || 0;
+  const curG = parseFloat(document.getElementById('gpa-curG').value) || 0;
+  let totalPts = curH * curG, totalH = curH, warnShown = false;
+
+  for (let i = 0; i < GPA_COURSES; i++) {
+    if (!document.getElementById(`gpa-en-${i}`).checked) continue;
+    const h = parseFloat(document.getElementById(`gpa-h-${i}`).value);
+    const g = newW[parseInt(document.getElementById(`gpa-g-${i}`).value)];
+    let isRep = document.getElementById(`gpa-rep-${i}`).checked;
+    if (isRep && curH === 0) { warnShown = true; isRep = false; }
+    if (isRep) {
+      const oldIdx = parseInt(document.getElementById(`gpa-old-${i}`).value);
+      if (oldIdx >= 0) {
+        const isOld = [...document.getElementsByName(`gpa-ws-${i}`)].some(r => r.checked && r.value === 'old');
+        totalPts = totalPts - (h * (isOld ? oldW[oldIdx] : newW[oldIdx])) + (h * g);
+      } else { totalPts += h * g; totalH += h; }
+    } else { totalPts += h * g; totalH += h; }
+  }
+
+  document.getElementById('gpa-warn').style.display = warnShown ? 'block' : 'none';
+  let res = totalH > 0 ? Math.min(Math.max(totalPts / totalH, 0), 4) : 0;
+  document.getElementById('gpa-resGPA').textContent = res.toFixed(2);
+  document.getElementById('gpa-resH').textContent = totalH;
+  let rate = '---';
+  if (totalH > 0) {
+    if (res >= 3.65) rate = 'امتياز';
+    else if (res >= 3.00) rate = 'جيد جداً';
+    else if (res >= 2.50) rate = 'جيد';
+    else if (res >= 2.00) rate = 'مقبول';
+    else rate = 'ضعيف';
+  }
+  document.getElementById('gpa-resRate').textContent = rate;
+}
+
+function gpaReset() {
+  document.getElementById('gpa-curH').value = '';
+  document.getElementById('gpa-curG').value = '';
+  gpaInit();
+}
+
+function openGPA() {
+  const overlay = document.getElementById('gpaOverlay');
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  if (!document.getElementById('gpa-courses').innerHTML) gpaInit();
+}
+
+function closeGPA() {
+  document.getElementById('gpaOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('gpaOverlay')) closeGPA();
+}
+
+// Close on Escape
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeGPA(); });
 </script>
 </body>
 </html>
