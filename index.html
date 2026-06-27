@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>فريق سبيكتروم للميكاترونكس</title>
+<!-- Favicon Link -->
 <link rel="icon" type="image/x-icon" href="Favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -34,6 +35,7 @@
     overflow-x: hidden;
   }
 
+  /* ─── CURSOR GLOW ─── */
   #cursor-glow {
     position: fixed;
     width: 300px; height: 300px;
@@ -46,6 +48,7 @@
     mix-blend-mode: screen;
   }
 
+  /* ─── NAVBAR ─── */
   nav {
     position: fixed; top: 0; right: 0; left: 0; z-index: 1000;
     display: flex;
@@ -111,7 +114,6 @@
     background: var(--cyan2) !important;
     box-shadow: 0 0 24px rgba(41,184,216,0.5) !important;
   }
-  
   .hamburger { 
     display: none; 
     flex-direction: column; 
@@ -121,10 +123,12 @@
   }
   .hamburger span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: 0.3s; }
   
+  /* Hamburger Animation */
   .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
+  /* ─── HERO / VIDEO SCROLL ─── */
   #hero {
     position: relative;
     height: 100vh;
@@ -202,4 +206,1197 @@
     font-size: 1rem;
     font-weight: 600;
     padding: 0.85rem 2.2rem;
-    border
+    border-radius: 10px;
+    text-decoration: none;
+    border: 1.5px solid var(--glass-border);
+    transition: all 0.25s;
+  }
+  .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); }
+  .scroll-hint {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 6px;
+    font-size: 0.72rem; color: var(--white2); letter-spacing: 0.15em;
+    animation: bounce 2s infinite;
+  }
+  .scroll-hint::after {
+    content: '';
+    width: 1px; height: 50px;
+    background: linear-gradient(to bottom, var(--cyan), transparent);
+  }
+  @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 7rem 3rem; }
+  /* Non-hero standalone sections are hidden by default; only shown when active */
+  section[id$="-page"] { display: none; }
+  section[id$="-page"].active-section { display: block !important; }
+  #home-page { display: block; }
+  #home-page section { display: block; }
+
+  .section-eyebrow {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 0.6rem;
+  }
+  .section-title {
+    font-family: 'Cairo', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  .section-desc {
+    color: var(--white2);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    max-width: 580px;
+  }
+  .section-header { margin-bottom: 3.5rem; }
+
+  /* ─── STATS BAR ─── */
+  #stats-bar {
+    background: var(--navy2);
+    padding: 3rem;
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem;
+    text-align: center;
+  }
+  .stat-item .stat-num {
+    font-family: 'Cairo', sans-serif;
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: var(--cyan);
+    line-height: 1;
+  }
+  .stat-item .stat-label {
+    font-size: 0.9rem;
+    color: var(--white2);
+    margin-top: 0.4rem;
+  }
+
+  /* ─── GRID CARDS ─── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    cursor: default;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(41,184,216,0.12);
+    border-color: rgba(41,184,216,0.4);
+  }
+  .card-icon {
+    width: 52px; height: 52px;
+    background: var(--cyan-glow);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+  .card h3 {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.6rem;
+  }
+  .card p { font-size: 0.92rem; color: var(--white2); line-height: 1.8; }
+  .card-tag {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    background: var(--cyan-glow);
+    border: 1px solid var(--glass-border);
+    color: var(--cyan);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-family: 'Cairo', sans-serif;
+  }
+
+  /* ─── QUICK LINKS (HOME) ─── */
+  .quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.2rem;
+  }
+  .qlink {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    padding: 1.8rem 1.5rem;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 1rem;
+    transition: all 0.25s;
+    cursor: pointer;
+  }
+  .qlink:hover {
+    border-color: rgba(41,184,216,0.5);
+    background: rgba(41,184,216,0.06);
+    transform: translateY(-3px);
+  }
+  .qlink-icon { font-size: 1.8rem; flex-shrink: 0; }
+  .qlink-text { font-family: 'Cairo', sans-serif; font-size: 1rem; font-weight: 700; color: var(--white); }
+  .qlink-sub { font-size: 0.8rem; color: var(--white2); margin-top: 0.2rem; }
+
+  /* ─── TABLE (Study Plan) ─── */
+  .plan-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+  .plan-table th {
+    background: var(--navy3);
+    color: var(--cyan);
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    padding: 1rem 1.2rem;
+    text-align: right;
+    border-bottom: 2px solid var(--glass-border);
+  }
+  .plan-table td {
+    padding: 0.85rem 1.2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: var(--white2);
+  }
+  .plan-table tr:hover td { background: rgba(41,184,216,0.04); color: var(--white); }
+  .plan-table .badge {
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-family: 'Cairo', sans-serif;
+  }
+  .badge-core { background: rgba(41,184,216,0.15); color: var(--cyan); }
+  .badge-elec { background: rgba(255,107,107,0.12); color: var(--coral); }
+  .badge-free { background: rgba(100,255,150,0.12); color: #6dffaa; }
+
+  /* ─── ARTICLE CARD ─── */
+  .article-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.25s;
+  }
+  .article-card:hover { transform:translateY(-5px); box-shadow:0 12px 40px rgba(41,184,216,0.12); border-color:rgba(41,184,216,0.4); }
+  .article-img {
+    height: 180px;
+    background: linear-gradient(135deg, var(--navy3) 0%, var(--navy2) 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3rem;
+    border-bottom: 1px solid var(--glass-border);
+  }
+  .article-body { padding: 1.5rem; }
+  .article-body h3 { font-family: 'Cairo', sans-serif; font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+  .article-body p { font-size: 0.88rem; color: var(--white2); line-height: 1.75; }
+  .article-meta { margin-top: 1rem; display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
+  .article-meta span { font-size: 0.75rem; color: var(--white2); }
+  .article-meta .tag { background: var(--cyan-glow); color: var(--cyan); border: 1px solid var(--glass-border); padding: 0.2rem 0.65rem; border-radius: 20px; font-family: 'Cairo', sans-serif; }
+
+  /* ─── ABOUT ─── */
+  .about-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .about-visual {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 3rem;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 340px;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-visual img { max-width: 100%; max-height: 280px; object-fit: contain; filter: drop-shadow(0 0 30px rgba(41,184,216,0.3)); }
+  .about-visual::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(41,184,216,0.08) 0%, transparent 70%);
+  }
+  .about-text .section-desc { max-width: 100%; }
+  .team-values {
+    margin-top: 2rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  }
+  .value-item {
+    display: flex; gap: 0.75rem; align-items: flex-start;
+  }
+  .value-dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--cyan);
+    margin-top: 7px; flex-shrink: 0;
+    box-shadow: 0 0 8px var(--cyan);
+  }
+  .value-label { font-family: 'Cairo', sans-serif; font-size: 0.9rem; font-weight: 600; color: var(--white); }
+  .value-sub { font-size: 0.8rem; color: var(--white2); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--navy2);
+    border-top: 1px solid var(--glass-border);
+    padding: 3rem;
+    text-align: center;
+  }
+  footer img { height: 50px; margin-bottom: 1rem; filter: drop-shadow(0 0 8px rgba(41,184,216,0.3)); }
+  footer p { color: var(--white2); font-size: 0.85rem; margin-top: 1.2rem; }
+  .footer-socials { display: flex; justify-content: center; gap: 1.2rem; margin: 1.4rem 0 0.5rem; flex-wrap: wrap; }
+  .footer-socials a {
+    display: flex; align-items: center; gap: 0.5rem;
+    color: var(--white2); text-decoration: none;
+    font-family: 'Cairo', sans-serif; font-size: 0.88rem;
+    background: var(--glass); border: 1px solid var(--glass-border);
+    border-radius: 10px; padding: 0.55rem 1rem;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+  }
+  .footer-socials a:hover { color: var(--cyan); border-color: rgba(41,184,216,0.4); background: var(--cyan-glow); }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── MOBILE RESPONSIVENESS ─── */
+  @media (max-width: 860px) {
+    nav { padding: 0 1.5rem; }
+    
+    /* Completely reworked mobile nav tray */
+    .nav-links { 
+      display: flex;
+      flex-direction: column; 
+      position: absolute; 
+      top: 70px; right: 0; left: 0; 
+      background: rgba(5, 10, 24, 0.96); 
+      backdrop-filter: blur(25px);
+      padding: 1.5rem; 
+      gap: 0.5rem; 
+      border-bottom: 1px solid var(--glass-border);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* When navigation menu is open on mobile */
+    .nav-links.open { 
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    /* Make active links look structured inside the dropdown menu */
+    .nav-links li { width: 100%; text-align: center; }
+    .nav-links a { 
+      display: block; 
+      padding: 0.75rem 1rem; 
+      font-size: 1rem;
+    }
+    
+    /* Hide the standalone left-side button to avoid overlapping */
+    .nav-members-wrap { display: none; }
+    
+    /* Create a dedicated item variant for "للأعضاء" within the mobile tray */
+    .nav-links .mobile-member-li {
+      display: block;
+      margin-top: 0.5rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1rem;
+    }
+    .nav-links .mobile-member-li .btn-members {
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+
+    .hamburger { display: flex; }
+    section { padding: 5rem 1.5rem; }
+    .about-split { grid-template-columns: 1fr; gap: 2.5rem; }
+    .team-values { grid-template-columns: 1fr; }
+    #stats-bar { padding: 2rem 1.5rem; }
+  }
+  /* ─── GPA MODAL ─── */
+  .gpa-overlay {
+    display: none;
+    position: fixed; inset: 0; z-index: 5000;
+    background: rgba(5,10,24,0.88);
+    backdrop-filter: blur(12px);
+    align-items: center; justify-content: center;
+    padding: 1rem;
+  }
+  .gpa-overlay.open { display: flex; }
+  .gpa-modal {
+    background: var(--navy2);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    width: 100%; max-width: 680px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 0 60px rgba(41,184,216,0.12);
+    animation: modalIn 0.3s ease;
+  }
+  @keyframes modalIn {
+    from { opacity:0; transform: translateY(20px) scale(0.97); }
+    to   { opacity:1; transform: translateY(0) scale(1); }
+  }
+  .gpa-close {
+    position: absolute; top: 1.2rem; left: 1.2rem;
+    background: var(--glass); border: 1px solid var(--glass-border);
+    color: var(--white2); width: 34px; height: 34px;
+    border-radius: 50%; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; transition: all 0.2s;
+  }
+  .gpa-close:hover { background: rgba(255,107,107,0.15); color: var(--coral); border-color: var(--coral); }
+  .gpa-modal h2 {
+    font-family: 'Cairo', sans-serif; font-weight: 900;
+    font-size: 1.5rem; color: var(--cyan);
+    margin-bottom: 1.5rem; text-align: center;
+  }
+  .gpa-current {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  .gpa-field label {
+    display: block; font-family: 'Cairo', sans-serif;
+    font-size: 0.82rem; color: var(--white2); margin-bottom: 0.4rem; font-weight: 600;
+  }
+  .gpa-field input, .gpa-field select {
+    width: 100%; background: rgba(0,0,0,0.3);
+    border: 1px solid var(--glass-border); color: var(--white);
+    padding: 0.65rem 0.9rem; border-radius: 8px;
+    font-family: 'Cairo', sans-serif; font-size: 0.95rem;
+    outline: none; transition: border-color 0.2s;
+  }
+  .gpa-field input:focus, .gpa-field select:focus { border-color: var(--cyan); }
+  .gpa-field select { background-color: var(--navy3); }
+  .gpa-course {
+    background: var(--glass); border: 1px solid var(--glass-border);
+    border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 0.8rem;
+    transition: opacity 0.2s;
+  }
+  .gpa-course.off { opacity: 0.4; }
+  .gpa-course-header {
+    display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem;
+  }
+  .gpa-toggle {
+    position: relative; width: 40px; height: 22px; flex-shrink: 0;
+  }
+  .gpa-toggle input { opacity:0; width:0; height:0; }
+  .gpa-toggle-slider {
+    position: absolute; inset: 0; background: #334155;
+    border-radius: 34px; cursor: pointer; transition: 0.3s;
+  }
+  .gpa-toggle-slider::before {
+    content:''; position:absolute;
+    width:16px; height:16px; left:3px; bottom:3px;
+    background:#fff; border-radius:50%; transition:0.3s;
+  }
+  .gpa-toggle input:checked + .gpa-toggle-slider { background: var(--cyan); }
+  .gpa-toggle input:checked + .gpa-toggle-slider::before { transform: translateX(18px); }
+  .gpa-course-name {
+    background: transparent; border: none; color: var(--white);
+    font-family: 'Cairo', sans-serif; font-size: 0.95rem;
+    flex: 1; outline: none;
+  }
+  .gpa-course-name:focus { color: var(--cyan); }
+  .gpa-course-name::placeholder { color: var(--white2); }
+  .gpa-course-body {
+    display: grid; grid-template-columns: 1fr 1.5fr; gap: 0.8rem;
+  }
+  .gpa-rep-row {
+    display: flex; align-items: center; gap: 0.5rem; margin-top: 0.8rem;
+    font-family: 'Cairo', sans-serif; font-size: 0.85rem; color: var(--white2);
+  }
+  .gpa-rep-row input[type=checkbox] { accent-color: var(--cyan); width:15px; height:15px; }
+  .gpa-old-section {
+    margin-top: 0.8rem; padding: 0.8rem;
+    background: rgba(0,0,0,0.2); border-radius: 8px;
+  }
+  .gpa-radio-row {
+    display: flex; gap: 1rem; margin-bottom: 0.6rem;
+    font-family: 'Cairo', sans-serif; font-size: 0.8rem; color: var(--white2);
+  }
+  .gpa-radio-row label { display:flex; align-items:center; gap:4px; cursor:pointer; }
+  .gpa-radio-row input { accent-color: var(--cyan); }
+  .gpa-result-bar {
+    position: sticky; bottom: -2rem; margin: 1.5rem -2rem -2rem;
+    background: rgba(10,20,40,0.97); border-top: 1px solid var(--glass-border);
+    padding: 1rem 2rem; display: flex; align-items: center;
+    justify-content: space-around; gap: 1rem;
+    border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;
+  }
+  .gpa-res-item { text-align: center; }
+  .gpa-res-label { font-size: 0.72rem; color: var(--white2); margin-bottom: 2px; font-family:'Cairo',sans-serif; }
+  .gpa-res-value { font-family:'Cairo',sans-serif; font-size: 1.5rem; font-weight: 900; color: var(--cyan); }
+  .gpa-res-value.white { color: #fff; font-size: 1.2rem; }
+  .gpa-divider { width:1px; height:36px; background: var(--glass-border); }
+  .gpa-reset-btn {
+    background: transparent; border: 1px solid var(--coral);
+    color: var(--coral); width: 32px; height: 32px; border-radius: 50%;
+    cursor: pointer; display: flex; align-items:center; justify-content:center;
+    font-size: 0.9rem; transition: all 0.2s;
+  }
+  .gpa-reset-btn:hover { background: rgba(255,107,107,0.15); }
+  .gpa-warn {
+    display:none; color: var(--coral); font-size: 0.82rem;
+    background: rgba(255,107,107,0.08); border: 1px solid rgba(255,107,107,0.25);
+    padding: 0.6rem 0.9rem; border-radius: 8px; margin-bottom: 0.8rem;
+    font-family:'Cairo',sans-serif;
+  }
+</style>
+<body>
+
+<!-- CURSOR GLOW -->
+<div id="cursor-glow"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <!-- Logo -->
+  <div class="nav-logo">
+    <img src="spectrum.png" alt="Spectrum Logo" onerror="this.style.display='none'; this.nextSibling.style.display='block'">
+    <span style="display:none; font-family:'Cairo',sans-serif; font-weight:900; font-size:1.2rem; color:var(--cyan);">SPECTRUM</span>
+  </div>
+  
+  <!-- Nav links -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#" onclick="showPage('home')" class="active" id="nav-home">الرئيسية</a></li>
+    <li><a href="#" onclick="showPage('library')" id="nav-library">المكتبة</a></li>
+    <li><a href="#" onclick="showPage('plan')" id="nav-plan">الخطة الدراسية</a></li>
+    <li><a href="#" onclick="showPage('articles')" id="nav-articles">مقالات</a></li>
+    <li><a href="#" onclick="showPage('courses')" id="nav-courses">دورات</a></li>
+    <li><a href="#" onclick="showPage('software')" id="nav-software">برامج</a></li>
+    <li><a href="#" onclick="showPage('about')" id="nav-about">من نحن</a></li>
+    <!-- Embedded clone of the member button that only reveals on smaller phones -->
+    <li class="mobile-member-li"><a href="https://spectrum.moodiy.club/login/index.php" target="_blank" class="btn-members">للأعضاء</a></li>
+  </ul>
+  
+<div class="nav-members-wrap"></div>
+  
+  <!-- Hamburger Toggle -->
+  <div class="hamburger" onclick="toggleMenu()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ═══════════════ HOME PAGE ═══════════════ -->
+<div id="home-page">
+  <!-- Hero -->
+  <section id="hero">
+    <video id="hero-video" autoplay muted loop playsinline>
+      <source src="website_homepage_background.mp4" type="video/mp4">
+      <source src="website_homepage_background.mov" type="video/quicktime">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Mechatronics · Spectrum · Team</p>
+      <h1 class="hero-title">فريق <span>سبيكتروم</span><br>للميكاترونكس</h1>
+      <p class="hero-sub">نقود مستقبل الهندسة بدمج الميكانيكا والإلكترونيات والبرمجة في بيئة أكاديمية متكاملة</p>
+      <div class="hero-cta">
+        <a href="#" class="btn-primary" onclick="showPage('about')">اعرف أكثر عنا</a>
+        <a href="#" class="btn-outline" onclick="showPage('library')">استكشف المكتبة</a>
+      </div>
+    </div>
+    <div class="scroll-hint">SCROLL</div>
+  </section>
+
+  <!-- University Links -->
+  <section style="display:block; padding: 4rem 3rem 2rem; background: var(--navy2); border-bottom: 1px solid var(--glass-border);">
+    <div class="section-header reveal" style="margin-bottom:2rem;">
+      <p class="section-eyebrow">روابط الجامعة</p>
+      <h2 class="section-title" style="font-size:1.7rem;">البوابة الأكاديمية</h2>
+    </div>
+    <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap:1rem;">
+      <a href="https://www.bau.edu.jo/Services/Reg.aspx" target="_blank" class="qlink reveal">
+        <div class="qlink-icon">
+          <img src="bau-logo.png" alt="BAU" style="height:36px;width:auto;object-fit:contain;" onerror="this.outerHTML='🏛️'">
+        </div>
+        <div><div class="qlink-text">بوابة الطالب</div><div class="qlink-sub">نظام التسجيل</div></div>
+      </a>
+      <a href="https://s3.ebalqa.courses/fet/login/index.php" target="_blank" class="qlink reveal">
+        <div class="qlink-icon">
+          <img src="moodle-logo.png" alt="Moodle" style="height:36px;width:auto;object-fit:contain;" onerror="this.outerHTML='📋'">
+        </div>
+        <div><div class="qlink-text">elearning</div><div class="qlink-sub">نظام التعلم الالكتروني للجامعة</div></div>
+      </a>
+      <a href="https://www.bau.edu.jo/bauar/units/reg/media/kk2026.pdf" target="_blank" class="qlink reveal">
+        <div class="qlink-icon">📅</div>
+        <div><div class="qlink-text">التقويم الجامعي</div><div class="qlink-sub">التقويم للفصل الحالي</div></div>
+      </a>
+      <div class="qlink reveal" onclick="openGPA()" style="cursor:pointer;">
+        <div class="qlink-icon">🎓</div>
+        <div><div class="qlink-text">حساب المعدل</div><div class="qlink-sub">احسب معدلك التراكمي</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links / Services -->
+  <section style="display:block; padding: 4rem 3rem 5rem; background: var(--navy);">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">ماذا نقدم</p>
+      <h2 class="section-title">كل ما تحتاجه في مكان واحد</h2>
+    </div>
+    <div class="quick-links-grid">
+      <div class="qlink reveal" onclick="showPage('library')">
+        <div class="qlink-icon">📚</div>
+        <div><div class="qlink-text">المكتبة التخصصية</div><div class="qlink-sub">كتب ومراجع هندسية مختارة</div></div>
+      </div>
+      <div class="qlink reveal" onclick="showPage('plan')">
+        <div class="qlink-icon">🗓️</div>
+        <div><div class="qlink-text">الخطة الدراسية</div><div class="qlink-sub">جدول المساقات حسب الفصول</div></div>
+      </div>
+      <div class="qlink reveal" onclick="showPage('articles')">
+        <div class="qlink-icon">📝</div>
+        <div><div class="qlink-text">مقالات هندسية</div><div class="qlink-sub">محتوى تقني ومعرفي متجدد</div></div>
+      </div>
+      <div class="qlink reveal" onclick="showPage('courses')">
+        <div class="qlink-icon">🎓</div>
+        <div><div class="qlink-text">دورات هندسية</div><div class="qlink-sub">تدريب عملي ومتخصص</div></div>
+      </div>
+      <div class="qlink reveal" onclick="showPage('software')">
+        <div class="qlink-icon">💻</div>
+        <div><div class="qlink-text">برامج هندسية</div><div class="qlink-sub">أدوات لكل مجال</div></div>
+      </div>
+      <div class="qlink reveal" onclick="showPage('about')">
+        <div class="qlink-icon">🤖</div>
+        <div><div class="qlink-text">من نحن</div><div class="qlink-sub">تعرف على فريق سبيكتروم</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════ LIBRARY PAGE ═══════════════ -->
+<section id="library-page">
+  <div class="section-header reveal">
+    <p class="section-eyebrow">موارد علمية</p>
+    <h2 class="section-title">المكتبة التخصصية</h2>
+    <p class="section-desc">مجموعة منتقاة من الكتب والمراجع العلمية في مجالات الميكاترونكس والهندسة الكهربائية والميكانيكية</p>
+  </div>
+  <div class="cards-grid">
+    <div class="card reveal">
+      <div class="card-icon">⚙️</div>
+      <h3>ميكانيكا الآلات</h3>
+      <p>مرجع شامل في نظرية الآلات والمحركات وتحليل الحركة الديناميكية</p>
+      <span class="card-tag">ميكانيكا</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">⚡</div>
+      <h3>الإلكترونيات التطبيقية</h3>
+      <p>أساسيات الدوائر الإلكترونية والمكثفات والمقاومات والترانزستورات</p>
+      <span class="card-tag">إلكترونيات</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🤖</div>
+      <h3>برمجة الأنظمة المدمجة</h3>
+      <p>برمجة المتحكمات الدقيقة Arduino وSTM32 مع تطبيقات عملية</p>
+      <span class="card-tag">برمجة</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🔧</div>
+      <h3>ديناميكا الموائع</h3>
+      <p>أسس ميكانيكا الموائع وتطبيقاتها في الأنظمة الهيدروليكية والهوائية</p>
+      <span class="card-tag">ميكانيكا</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">📡</div>
+      <h3>أنظمة التحكم التلقائي</h3>
+      <p>نظرية التحكم التلقائي ومشغلات PID والتحكم بالحلقة المغلقة</p>
+      <span class="card-tag">تحكم</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🧠</div>
+      <h3>الذكاء الاصطناعي في الهندسة</h3>
+      <p>تطبيقات التعلم الآلي والشبكات العصبية في الأنظمة الهندسية</p>
+      <span class="card-tag">AI</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ STUDY PLAN PAGE ═══════════════ -->
+<section id="plan-page">
+  <div class="section-header reveal">
+    <p class="section-eyebrow">المسار الأكاديمي</p>
+    <h2 class="section-title">الخطة الدراسية</h2>
+    <p class="section-desc">خطة دراسية منظمة لتخصص الميكاترونكس موزعة على الفصول الدراسية</p>
+  </div>
+
+  <div style="background:var(--glass); border:1px solid var(--glass-border); border-radius:16px; overflow:hidden;" class="reveal">
+    <div style="padding:1.2rem 1.5rem; background:var(--navy3); border-bottom:1px solid var(--glass-border); font-family:'Cairo',sans-serif; font-size:1rem; font-weight:700; color:var(--cyan);">
+      🗓 السنة الأولى — الفصل الأول
+    </div>
+    <table class="plan-table">
+      <thead><tr><th>رمز المساق</th><th>اسم المساق</th><th>الساعات</th><th>النوع</th></tr></thead>
+      <tbody>
+        <tr><td>MATH101</td><td>التفاضل والتكامل 1</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>PHYS101</td><td>الفيزياء العامة 1</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>EE101</td><td>أساسيات الهندسة الكهربائية</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>ME101</td><td>رسم هندسي</td><td>2</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>CS101</td><td>برمجة الحاسوب</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="background:var(--glass); border:1px solid var(--glass-border); border-radius:16px; overflow:hidden; margin-top:1.5rem;" class="reveal">
+    <div style="padding:1.2rem 1.5rem; background:var(--navy3); border-bottom:1px solid var(--glass-border); font-family:'Cairo',sans-serif; font-size:1rem; font-weight:700; color:var(--cyan);">
+      🗓 السنة الأولى — الفصل الثاني
+    </div>
+    <table class="plan-table">
+      <thead><tr><th>رمز المساق</th><th>اسم المساق</th><th>الساعات</th><th>النوع</th></tr></thead>
+      <tbody>
+        <tr><td>MATH102</td><td>التفاضل والتكامل 2</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>PHYS102</td><td>الفيزياء العامة 2</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>ME201</td><td>ميكانيكا هندسية</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>EE201</td><td>الدوائر الكهربائية</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>FREE01</td><td>مساق إختياري حر</td><td>3</td><td><span class="badge badge-free">اختياري</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="background:var(--glass); border:1px solid var(--glass-border); border-radius:16px; overflow:hidden; margin-top:1.5rem;" class="reveal">
+    <div style="padding:1.2rem 1.5rem; background:var(--navy3); border-bottom:1px solid var(--glass-border); font-family:'Cairo',sans-serif; font-size:1rem; font-weight:700; color:var(--cyan);">
+      🗓 السنة الثانية — الفصل الأول
+    </div>
+    <table class="plan-table">
+      <thead><tr><th>رمز المساق</th><th>اسم المساق</th><th>الساعات</th><th>النوع</th></tr></thead>
+      <tbody>
+        <tr><td>MECH301</td><td>مقاومة المواد</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>EE301</td><td>الإلكترونيات 1</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>MT301</td><td>أساسيات الميكاترونكس</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>PROG201</td><td>برمجة C++</td><td>3</td><td><span class="badge badge-core">إجباري</span></td></tr>
+        <tr><td>ELEC01</td><td>اختياري تخصصي</td><td>3</td><td><span class="badge badge-elec">تخصصي</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════ ARTICLES PAGE ═══════════════ -->
+<section id="articles-page">
+  <div class="section-header reveal">
+    <p class="section-eyebrow">معرفة ومحتوى</p>
+    <h2 class="section-title">مقالات هندسية</h2>
+    <p class="section-desc">مقالات تقنية ومعرفية يكتبها أعضاء الفريق وخبراء في مجالات الهندسة المختلفة</p>
+  </div>
+  <div class="cards-grid">
+    <div class="article-card reveal">
+      <div class="article-img">🤖</div>
+      <div class="article-body">
+        <h3>مستقبل الروبوتات في الصناعة الأردنية</h3>
+        <p>نظرة تحليلية على توجهات التصنيع الذكي وكيف تغير الروبوتات خطوط الإنتاج...</p>
+        <div class="article-meta"><span class="tag">روبوتات</span><span>📅 يناير 2025</span></div>
+      </div>
+    </div>
+    <div class="article-card reveal">
+      <div class="article-img">⚡</div>
+      <div class="article-body">
+        <h3>الأنظمة الكهربائية الضوئية: مقدمة شاملة</h3>
+        <p>شرح تفصيلي لمكونات الأنظمة الكهروضوئية وطريقة عملها واستخداماتها...</p>
+        <div class="article-meta"><span class="tag">كهرباء</span><span>📅 فبراير 2025</span></div>
+      </div>
+    </div>
+    <div class="article-card reveal">
+      <div class="article-img">🧠</div>
+      <div class="article-body">
+        <h3>كيف تتعلم الآلات؟ مقدمة للذكاء الاصطناعي</h3>
+        <p>شرح مبسط لخوارزميات التعلم الآلي وتطبيقاتها في حل المشكلات الهندسية...</p>
+        <div class="article-meta"><span class="tag">AI</span><span>📅 مارس 2025</span></div>
+      </div>
+    </div>
+    <div class="article-card reveal">
+      <div class="article-img">🔩</div>
+      <div class="article-body">
+        <h3>أنظمة التحكم التكيفي وتطبيقاتها</h3>
+        <p>مراجعة شاملة لتقنيات التحكم التكيفي والأنظمة غير الخطية في بيئات صناعية...</p>
+        <div class="article-meta"><span class="tag">تحكم</span><span>📅 أبريل 2025</span></div>
+      </div>
+    </div>
+    <div class="article-card reveal">
+      <div class="article-img">📡</div>
+      <div class="article-body">
+        <h3>إنترنت الأشياء في الهندسة الصناعية</h3>
+        <p>كيف تحوّل أجهزة IoT المصانع التقليدية إلى بيئات ذكية ومتصلة...</p>
+        <div class="article-meta"><span class="tag">IoT</span><span>📅 مايو 2025</span></div>
+      </div>
+    </div>
+    <div class="article-card reveal">
+      <div class="article-img">🖨️</div>
+      <div class="article-body">
+        <h3>الطباعة ثلاثية الأبعاد في النماذج الهندسية</h3>
+        <p>دليل عملي للطباعة ثلاثية الأبعاد من اختيار المواد إلى إعداد النماذج...</p>
+        <div class="article-meta"><span class="tag">تصنيع</span><span>📅 يونيو 2025</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ COURSES PAGE ═══════════════ -->
+<section id="courses-page">
+  <div class="section-header reveal">
+    <p class="section-eyebrow">تطوير المهارات</p>
+    <h2 class="section-title">دورات هندسية</h2>
+    <p class="section-desc">دورات تدريبية مصممة لتطوير المهارات العملية والتقنية لطلاب الهندسة</p>
+  </div>
+  <div class="cards-grid">
+    <div class="card reveal">
+      <div class="card-icon">🔌</div>
+      <h3>Arduino من الصفر</h3>
+      <p>تعلم برمجة المتحكمات الدقيقة بخطوات مبسطة من إضاءة LED حتى أنظمة التحكم الكاملة</p>
+      <span class="card-tag">مستوى: مبتدئ</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🖥️</div>
+      <h3>SolidWorks للمبتدئين</h3>
+      <p>تصميم النماذج ثلاثية الأبعاد وإعداد الرسومات الهندسية باستخدام SolidWorks</p>
+      <span class="card-tag">مستوى: مبتدئ</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">⚙️</div>
+      <h3>MATLAB للمهندسين</h3>
+      <p>البرمجة والمحاكاة والتحليل الرياضي باستخدام بيئة MATLAB الاحترافية</p>
+      <span class="card-tag">مستوى: متوسط</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🤖</div>
+      <h3>ROS — نظام تشغيل الروبوت</h3>
+      <p>مقدمة شاملة لـ ROS وبناء أنظمة روبوتية متكاملة مع محاكاة Gazebo</p>
+      <span class="card-tag">مستوى: متقدم</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🧪</div>
+      <h3>Proteus للمحاكاة الإلكترونية</h3>
+      <p>تصميم الدوائر الإلكترونية ومحاكاتها وتحليل أدائها بأدوات احترافية</p>
+      <span class="card-tag">مستوى: متوسط</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">📐</div>
+      <h3>Python في الهندسة</h3>
+      <p>تطبيقات Python في حل المسائل الهندسية والتحليل الرقمي ومعالجة البيانات</p>
+      <span class="card-tag">مستوى: متوسط</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SOFTWARE PAGE ═══════════════ -->
+<section id="software-page">
+  <div class="section-header reveal">
+    <p class="section-eyebrow">أدوات احترافية</p>
+    <h2 class="section-title">برامج هندسية</h2>
+    <p class="section-desc">قائمة بأهم البرامج والأدوات الهندسية المستخدمة في مجال الميكاترونكس</p>
+  </div>
+  <div class="cards-grid">
+    <div class="card reveal">
+      <div class="card-icon">🏭</div>
+      <h3>SolidWorks</h3>
+      <p>برنامج التصميم ثلاثي الأبعاد الأكثر استخداماً في صناعة التصنيع والهندسة الميكانيكية</p>
+      <span class="card-tag">تصميم ميكانيكي</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">📊</div>
+      <h3>MATLAB / Simulink</h3>
+      <p>بيئة البرمجة والمحاكاة الرياضية المتكاملة لنمذجة الأنظمة الديناميكية والتحكم</p>
+      <span class="card-tag">محاكاة</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🔬</div>
+      <h3>Proteus Design Suite</h3>
+      <p>محاكاة وتصميم الدوائر الإلكترونية مع دعم واسع للمتحكمات الدقيقة</p>
+      <span class="card-tag">إلكترونيات</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🌐</div>
+      <h3>AutoCAD</h3>
+      <p>الرسم الهندسي ثنائي وثلاثي الأبعاد لمختلف تخصصات الهندسة والبناء</p>
+      <span class="card-tag">رسم هندسي</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">⚡</div>
+      <h3>ANSYS</h3>
+      <p>تحليل العناصر المحدودة وأنظمة ديناميكا الموائع والهيكلية والحرارية</p>
+      <span class="card-tag">تحليل هندسي</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🔧</div>
+      <h3>LabVIEW</h3>
+      <p>برمجة الأنظمة المدمجة واكتساب البيانات وأتمتة الاختبارات والقياسات</p>
+      <span class="card-tag">قياس وتحكم</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ABOUT PAGE ═══════════════ -->
+<section id="about-page">
+  <div class="about-split">
+    <div class="about-visual reveal">
+      <img src="spectrum.png" alt="Spectrum Team Logo" onerror="this.outerHTML='<div style=\'font-size:5rem\'>🤖</div>'">
+    </div>
+    <div class="about-text reveal">
+      <p class="section-eyebrow">نبذة عنا</p>
+      <h2 class="section-title">من نحن</h2>
+      <p class="section-desc">
+        فريق سبيكتروم للميكاترونكس هو فريق طلابي أكاديمي تأسس في كلية الهندسة التقنية في جامعة البلقاء التطبيقية. يجمع الفريق نخبة من طلاب الهندسة المتميزين الشغوفين بمجال الميكاترونكس ودمج تخصصات الهندسة الميكانيكية والإلكترونية والبرمجية.
+      </p>
+      <div class="team-values">
+        <div class="value-item">
+          <div class="value-dot"></div>
+          <div><div class="value-label">الابتكار</div><div class="value-sub">نبتكر حلولاً هندسية مبدعة</div></div>
+        </div>
+        <div class="value-item">
+          <div class="value-dot"></div>
+          <div><div class="value-label">التعاون</div><div class="value-sub">فريق متكامل يدعم بعضه</div></div>
+        </div>
+        <div class="value-item">
+          <div class="value-dot"></div>
+          <div><div class="value-label">التميز</div><div class="value-sub">نسعى للمستوى الأعلى دائماً</div></div>
+        </div>
+        <div class="value-item">
+          <div class="value-dot"></div>
+          <div><div class="value-label">المعرفة</div><div class="value-sub">نشر العلم في البيئة الأكاديمية</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:5rem;">
+    <div class="section-header reveal" style="text-align:center;">
+      <p class="section-eyebrow">فريقنا</p>
+      <h2 class="section-title">أعضاء سبيكتروم</h2>
+    </div>
+    <div class="cards-grid">
+      <div class="card reveal" style="text-align:center;">
+        <div style="width:70px;height:70px;border-radius:50%;background:var(--cyan-glow);border:2px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;">👨‍💻</div>
+        <h3>رئيس الفريق</h3>
+        <p>مسؤول عن التنسيق العام وقيادة مبادرات الفريق والتواصل مع الجامعة</p>
+        <span class="card-tag">قيادة</span>
+      </div>
+      <div class="card reveal" style="text-align:center;">
+        <div style="width:70px;height:70px;border-radius:50%;background:var(--cyan-glow);border:2px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;">👩‍🔧</div>
+        <h3>قسم المحتوى التقني</h3>
+        <p>إعداد المقالات الهندسية والمواد التعليمية والمكتبة التخصصية</p>
+        <span class="card-tag">محتوى</span>
+      </div>
+      <div class="card reveal" style="text-align:center;">
+        <div style="width:70px;height:70px;border-radius:50%;background:var(--cyan-glow);border:2px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;">👨‍🎓</div>
+        <h3>قسم التدريب والدورات</h3>
+        <p>تصميم وتنفيذ الدورات التدريبية وورش العمل الهندسية</p>
+        <span class="card-tag">تدريب</span>
+      </div>
+      <div class="card reveal" style="text-align:center;">
+        <div style="width:70px;height:70px;border-radius:50%;background:var(--cyan-glow);border:2px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;">🎨</div>
+        <h3>قسم التصميم والإعلام</h3>
+        <p>إدارة الهوية البصرية ووسائل التواصل الاجتماعي والتسويق</p>
+        <span class="card-tag">إبداع</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="spectrum.png" alt="Spectrum" onerror="this.style.display='none'">
+  <div class="footer-socials">
+    <a href="https://wa.me/962781462863" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      واتساب
+    </a>
+    <a href="https://www.instagram.com/spectrum_.team?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      إنستغرام
+    </a>
+    <a href="https://www.facebook.com/share/g/1GsxnkoGcF/" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      مجموعة فيسبوك
+    </a>
+    <a href="https://www.youtube.com/@MechatronicsSpectrum" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+      يوتيوب
+    </a>
+  </div>
+  <p>© 2025 فريق سبيكتروم للميكاترونكس — البوليتكنك | كلية الهندسة التكنولوجية، جامعة البلقاء التطبيقية</p>
+</footer>
+
+<!-- ═══════════════ GPA CALCULATOR MODAL ═══════════════ -->
+<div class="gpa-overlay" id="gpaOverlay" onclick="handleOverlayClick(event)">
+  <div class="gpa-modal" id="gpaModal">
+    <button class="gpa-close" onclick="closeGPA()">✕</button>
+    <h2>🎓 حساب المعدل التراكمي</h2>
+
+    <div class="gpa-current">
+      <div class="gpa-field">
+        <label>الساعات المقطوعة</label>
+        <input type="number" id="gpa-curH" placeholder="0" inputmode="decimal" oninput="gpaCalc()">
+      </div>
+      <div class="gpa-field">
+        <label>المعدل الحالي</label>
+        <input type="number" id="gpa-curG" placeholder="0.00" step="0.01" inputmode="decimal" oninput="gpaCalc()">
+      </div>
+    </div>
+
+    <div id="gpa-warn" class="gpa-warn">⚠️ لا يمكن حساب مادة معادة إذا كانت الساعات السابقة 0</div>
+
+    <div id="gpa-courses"></div>
+
+    <div class="gpa-result-bar">
+      <div class="gpa-res-item">
+        <div class="gpa-res-label">المعدل المتوقع</div>
+        <div class="gpa-res-value" id="gpa-resGPA">4.00</div>
+      </div>
+      <div class="gpa-divider"></div>
+      <div class="gpa-res-item">
+        <div class="gpa-res-label">التقدير</div>
+        <div class="gpa-res-value white" id="gpa-resRate">امتياز</div>
+      </div>
+      <div class="gpa-divider"></div>
+      <div class="gpa-res-item">
+        <div class="gpa-res-label">ساعات جديدة</div>
+        <div class="gpa-res-value white" id="gpa-resH">12</div>
+      </div>
+      <button class="gpa-reset-btn" onclick="gpaReset()" title="إعادة تعيين">↺</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── CURSOR GLOW ───
+const glow = document.getElementById('cursor-glow');
+document.addEventListener('mousemove', e => {
+  glow.style.left = e.clientX + 'px';
+  glow.style.top = e.clientY + 'px';
+});
+
+// ─── NAV SCROLL ───
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ─── HAMBURGER ───
+function toggleMenu() {
+  const navLinks = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  navLinks.classList.toggle('open');
+  hamburger.classList.toggle('open');
+}
+
+// ─── PAGE ROUTING ───
+const pages = ['home', 'library', 'plan', 'articles', 'courses', 'software', 'about'];
+const pageMap = {
+  home: 'home-page',
+  library: 'library-page',
+  plan: 'plan-page',
+  articles: 'articles-page',
+  courses: 'courses-page',
+  software: 'software-page',
+  about: 'about-page'
+};
+
+function showPage(page) {
+  document.getElementById('home-page').style.display = 'none';
+  pages.forEach(p => {
+    if (p === 'home') return;
+    const el = document.getElementById(pageMap[p]);
+    if (el) { el.classList.remove('active-section'); el.style.display = 'none'; }
+  });
+  pages.forEach(p => {
+    const navEl = document.getElementById('nav-' + p);
+    if (navEl) navEl.classList.remove('active');
+  });
+  if (page === 'home') {
+    document.getElementById('home-page').style.display = 'block';
+  } else {
+    const target = document.getElementById(pageMap[page]);
+    if (target) { target.style.display = 'block'; target.classList.add('active-section'); }
+  }
+  const navEl = document.getElementById('nav-' + page);
+  if (navEl) navEl.classList.add('active');
+  document.getElementById('navLinks').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  setTimeout(triggerReveal, 100);
+}
+
+// ─── REVEAL ON SCROLL ───
+function triggerReveal() {
+  const reveals = document.querySelectorAll('.reveal:not(.visible)');
+  reveals.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 60) el.classList.add('visible');
+  });
+}
+window.addEventListener('scroll', triggerReveal);
+triggerReveal();
+
+// ─── VIDEO SCROLL PARALLAX ───
+const heroVideo = document.getElementById('hero-video');
+window.addEventListener('scroll', () => {
+  if (!heroVideo) return;
+  const scrollY = window.scrollY;
+  const vh = window.innerHeight;
+  const progress = Math.min(scrollY / vh, 1);
+  heroVideo.style.transform = `scale(${1 + progress * 0.08}) translateY(${progress * 30}px)`;
+  heroVideo.style.opacity = 0.55 - progress * 0.3;
+});
+
+// ═══════════════ GPA CALCULATOR ═══════════════
+const GPA_COURSES = 9;
+const gradeLabels = ["A","A-","B+","B","B-","C+","C","C-","D+","D","D-","F"];
+const newW = [4,3.75,3.5,3.25,3,2.75,2.5,2,1.75,1.25,1,0.5];
+const oldW = [4,3.75,3.5,3,2.75,2.5,2,1.75,1.5,1,0.75,0.5];
+
+function gpaOpts(weights) {
+  return gradeLabels.map((l,i) => `<option value="${i}">${l} (${weights[i]})</option>`).join('');
+}
+
+function gpaInit() {
+  let html = '';
+  for (let i = 0; i < GPA_COURSES; i++) {
+    const active = i < 4;
+    html += `
+    <div class="gpa-course${active?'':' off'}" id="gpac-${i}">
+      <div class="gpa-course-header">
+        <label class="gpa-toggle">
+          <input type="checkbox" id="gpa-en-${i}" ${active?'checked':''} onchange="gpaToggle(${i});gpaCalc()">
+          <span class="gpa-toggle-slider"></span>
+        </label>
+        <input class="gpa-course-name" type="text" placeholder="المادة ${i+1}" ${active?'':'disabled'}>
+      </div>
+      <div class="gpa-course-body">
+        <div class="gpa-field">
+          <label>الساعات</label>
+          <select id="gpa-h-${i}" onchange="gpaCalc()" ${active?'':'disabled'}>
+            <option value="3">3 ساعات</option>
+            <option value="2">2 ساعة</option>
+            <option value="1">1 ساعة</option>
+            <option value="0">0 ساعة</option>
+          </select>
+        </div>
+        <div class="gpa-field">
+          <label>العلامة المتوقعة</label>
+          <select id="gpa-g-${i}" onchange="gpaCalc()" ${active?'':'disabled'}>${gpaOpts(newW)}</select>
+        </div>
+      </div>
+      <div class="gpa-rep-row">
+        <input type="checkbox" id="gpa-rep-${i}" onchange="gpaToggleRep(${i});gpaCalc()">
+        <label for="gpa-rep-${i}">مادة معادة؟</label>
+      </div>
+      <div class="gpa-old-section" id="gpa-old-sect-${i}" style="display:none;">
+        <div class="gpa-radio-row">
+          <label><input type="radio" name="gpa-ws-${i}" value="new" checked onchange="gpaUpdateOld(${i});gpaCalc()"> وزن جديد</label>
+          <label><input type="radio" name="gpa-ws-${i}" value="old" onchange="gpaUpdateOld(${i});gpaCalc()"> وزن قديم</label>
+        </div>
+        <div class="gpa-field">
+          <select id="gpa-old-${i}" onchange="gpaCalc()" style="width:100%;">
+            <option disabled selected value="-1">اختر العلامة السابقة</option>
+            ${gpaOpts(newW)}
+          </select>
+        </div>
+      </div>
+    </div>`;
+  }
+  document.getElementById('gpa-courses').innerHTML = html;
+  gpaCalc();
+}
+
+function gpaToggle(i) {
+  const on = document.getElementById(`gpa-en-${i}`).checked;
+  const card = document.getElementById(`gpac-${i}`);
+  card.classList.toggle('off', !on);
+  card.querySelectorAll('select, input[type=text]').forEach(el => el.disabled = !on);
+  document.getElementById(`gpa-en-${i}`).disabled = false;
+  if (on) gpaToggleRep(i); else document.getElementById(`gpa-old-sect-${i}`).style.display = 'none';
+}
+
+function gpaToggleRep(i) {
+  const isRep = document.getElementById(`gpa-rep-${i}`).checked;
+  const isOn = document.getElementById(`gpa-en-${i}`).checked;
+  document.getElementById(`gpa-old-sect-${i}`).style.display = (isRep && isOn) ? 'block' : 'none';
+}
+
+function gpaUpdateOld(i) {
+  const sel = document.getElementById(`gpa-old-${i}`);
+  const cur = sel.value;
+  const isOld = [...document.getElementsByName(`gpa-ws-${i}`)].some(r => r.checked && r.value === 'old');
+  sel.innerHTML = `<option disabled value="-1">اختر العلامة السابقة</option>${gpaOpts(isOld ? oldW : newW)}`;
+  sel.value = (cur !== '-1' && cur !== '') ? cur : '-1';
+}
+
+function gpaCalc() {
+  const curH = parseFloat(document.getElementById('gpa-curH').value) || 0;
+  const curG = parseFloat(document.getElementById('gpa-curG').value) || 0;
+  let totalPts = curH * curG, totalH = curH, warnShown = false;
+
+  for (let i = 0; i < GPA_COURSES; i++) {
+    if (!document.getElementById(`gpa-en-${i}`).checked) continue;
+    const h = parseFloat(document.getElementById(`gpa-h-${i}`).value);
+    const g = newW[parseInt(document.getElementById(`gpa-g-${i}`).value)];
+    let isRep = document.getElementById(`gpa-rep-${i}`).checked;
+    if (isRep && curH === 0) { warnShown = true; isRep = false; }
+    if (isRep) {
+      const oldIdx = parseInt(document.getElementById(`gpa-old-${i}`).value);
+      if (oldIdx >= 0) {
+        const isOld = [...document.getElementsByName(`gpa-ws-${i}`)].some(r => r.checked && r.value === 'old');
+        totalPts = totalPts - (h * (isOld ? oldW[oldIdx] : newW[oldIdx])) + (h * g);
+      } else { totalPts += h * g; totalH += h; }
+    } else { totalPts += h * g; totalH += h; }
+  }
+
+  document.getElementById('gpa-warn').style.display = warnShown ? 'block' : 'none';
+  let res = totalH > 0 ? Math.min(Math.max(totalPts / totalH, 0), 4) : 0;
+  document.getElementById('gpa-resGPA').textContent = res.toFixed(2);
+  document.getElementById('gpa-resH').textContent = totalH;
+  let rate = '---';
+  if (totalH > 0) {
+    if (res >= 3.65) rate = 'امتياز';
+    else if (res >= 3.00) rate = 'جيد جداً';
+    else if (res >= 2.50) rate = 'جيد';
+    else if (res >= 2.00) rate = 'مقبول';
+    else rate = 'ضعيف';
+  }
+  document.getElementById('gpa-resRate').textContent = rate;
+}
+
+function gpaReset() {
+  document.getElementById('gpa-curH').value = '';
+  document.getElementById('gpa-curG').value = '';
+  gpaInit();
+}
+
+function openGPA() {
+  const overlay = document.getElementById('gpaOverlay');
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  if (!document.getElementById('gpa-courses').innerHTML) gpaInit();
+}
+
+function closeGPA() {
+  document.getElementById('gpaOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('gpaOverlay')) closeGPA();
+}
+
+// Close on Escape
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeGPA(); });
+</script>
+</body>
+</html>
