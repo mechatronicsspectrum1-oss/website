@@ -95,8 +95,9 @@ const subjectsData = {
     summaries: [], videos: [], mid: [], final: []
   },
   subj3: {
-    title: 'مادة 3', icon: '📖',
-    books: [],
+    title: 'Circuit 1', icon: '📖',
+    books: [ { label: 'Fundamentals of electrical cicrcuits',  url: 'https://drive.google.com/file/d/1IYDPjuonxeDNEXt5d2vko5fodOlxzuNA/view', cover: 'Fundamentals of electrical cicrcuits.png' },
+    { label: 'Fundamentals of electrical cicrcuits solutions', url: 'https://drive.google.com/file/d/1GJUtYpl3m1z1v86Z06MXDrkJvYfxXVAl/view', cover: 'Fundamentals of electrical cicrcuits solutions.png' }],
     summaries: [], videos: [], mid: [], final: []
   },
   subj4: {
@@ -170,8 +171,9 @@ const subjectsData = {
     summaries: [], videos: [], mid: [], final: []
   },
   subj18: {
-    title: 'مادة 18', icon: '📖',
-    books: [],
+    title: 'Control systems', icon: '📖',
+    books: [ { label: 'Modern control engineering',  url: 'https://drive.google.com/file/d/1IYDPjuonxeDNEXt5d2vko5fodOlxzuNA/view', cover: 'Modern control engineering.png' },
+    { label: 'Modern control engineering solutions', url: 'https://drive.google.com/file/d/1GJUtYpl3m1z1v86Z06MXDrkJvYfxXVAl/view', cover: 'Modern control engineering solutions.png' }],
     summaries: [], videos: [], mid: [], final: []
   },
   subj19: {
