@@ -1497,30 +1497,30 @@ function handleOverlayClick(e) {
 // Close on Escape
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeGPA(); });
 
-// ═══════════════════════════════════════════════════════════
-// ═══════════════ STUDY PLAN HOTSPOTS ═══════════════
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════--------------------------------------------------------------------------------------------------------------------------------------------
+// ═══════════════ STUDY PLAN HOTSPOTS ═══════════════----------------------------------------------------------------------------------------------------------------------------------------------------
+// ═══════════════════════════════════════════════════════════--------------------------------------------------------------------------------------------------------------------------------------------
 // كل عنصر هو زر فوق صورة الخطة. النِسَب (top/left/w/h) محسوبة آليًا
 // من موقع الصندوق في الصورة (٪ من أبعاد الصورة).
 // type:'link'    (الأزرار الزرقاء)  -> اكتب الرابط داخل url: ''
 // type:'subject' (الأزرار السوداء)  -> عدّل بيانات المادة في subjectsData بالأسفل
 const planHotspots = [
-  { id:'hs1', type:'link', top:11.74, left:89.53, w:6.84, h:4.14, url:'' },
-  { id:'hs2', type:'link', top:11.93, left:78.45, w:7.96, h:3.96, url:'' },
-  { id:'hs3', type:'link', top:11.78, left:67.75, w:7.01, h:4.13, url:'' },
-  { id:'hs4', type:'link', top:11.94, left:45.95, w:7.56, h:3.96, url:'' },
-  { id:'hs5', type:'link', top:11.72, left:35.27, w:7.30, h:3.96, url:'' },
-  { id:'hs6', type:'link', top:11.91, left:24.80, w:7.70, h:3.94, url:'' },
-  { id:'hs7', type:'link', top:12.15, left:13.73, w:7.56, h:3.94, url:'' },
-  { id:'hs8', type:'link', top:11.91, left:2.70, w:8.09, h:3.94, url:'' },
-  { id:'hs9', type:'link', top:21.36, left:89.64, w:6.50, h:3.94, url:'' },
-  { id:'hs10', type:'link', top:21.11, left:78.33, w:7.42, h:3.96, url:'' },
-  { id:'hs11', type:'link', top:21.60, left:68.30, w:6.76, h:3.96, url:'' },
-  { id:'hs12', type:'link', top:21.19, left:57.26, w:6.90, h:3.96, url:'' },
-  { id:'hs13', type:'link', top:21.56, left:35.40, w:7.03, h:3.96, url:'' },
-  { id:'hs14', type:'link', top:21.56, left:24.65, w:7.69, h:3.96, url:'' },
-  { id:'hs15', type:'link', top:21.56, left:13.73, w:7.56, h:3.96, url:'' },
-  { id:'hs16', type:'link', top:21.32, left:2.94, w:8.09, h:3.96, url:'' },
+  { id:'hs1', type:'link', top:11.74, left:89.53, w:6.84, h:4.14, url:'https://lagnetalsanafer.com/materials/general-chemistry/' },
+  { id:'hs2', type:'link', top:11.93, left:78.45, w:7.96, h:3.96, url:'https://lagnetalsanafer.com/materials/engineering-economy/' },
+  { id:'hs3', type:'link', top:11.78, left:67.75, w:7.01, h:4.13, url:'https://lagnetalsanafer.com/materials/physics101/' },
+  { id:'hs4', type:'link', top:11.94, left:45.95, w:7.56, h:3.96, url:'https://lagnetalsanafer.com/materials/probability/' },
+  { id:'hs5', type:'link', top:11.72, left:35.27, w:7.30, h:3.96, url:'https://lagnetalsanafer.com/materials/calculus101/' },
+  { id:'hs6', type:'link', top:11.91, left:24.80, w:7.70, h:3.94, url:'https://lagnetalsanafer.com/materials/calculus102/' },
+  { id:'hs7', type:'link', top:12.15, left:13.73, w:7.56, h:3.94, url:'https://lagnetalsanafer.com/materials/differential-equations/' },
+  { id:'hs8', type:'link', top:11.91, left:2.70, w:8.09, h:3.94, url:'https://lagnetalsanafer.com/materials/engineering-workshop/' },
+  { id:'hs9', type:'link', top:21.36, left:89.64, w:6.50, h:3.94, url:'https://lagnetalsanafer.com/materials/chemistry-lab/' },
+  { id:'hs10', type:'link', top:21.11, left:78.33, w:7.42, h:3.96, url:'https://lagnetalsanafer.com/materials/military-sciences/' },
+  { id:'hs11', type:'link', top:21.60, left:68.30, w:6.76, h:3.96, url:'https://lagnetalsanafer.com/materials/physics102/' },
+  { id:'hs12', type:'link', top:21.19, left:57.26, w:6.90, h:3.96, url:'https://lagnetalsanafer.com/materials/physics-lab1/' },
+  { id:'hs13', type:'link', top:21.56, left:35.40, w:7.03, h:3.96, url:'https://lagnetalsanafer.com/materials/statics/' },
+  { id:'hs14', type:'link', top:21.56, left:24.65, w:7.69, h:3.96, url:'https://lagnetalsanafer.com/materials/linear-algebra/' },
+  { id:'hs15', type:'link', top:21.56, left:13.73, w:7.56, h:3.96, url:'https://lagnetalsanafer.com/materials/numerical-methods/' },
+  { id:'hs16', type:'link', top:21.32, left:2.94, w:8.09, h:3.96, url:'https://lagnetalsanafer.com/materials/computer-science/' },
   { id:'hs17', type:'subject', top:31.20, left:90.05, w:6.89, h:3.94, subject:'subj1' },
   { id:'hs18', type:'subject', top:30.77, left:78.45, w:7.60, h:3.94, subject:'subj2' },
   { id:'hs19', type:'subject', top:31.13, left:67.54, w:7.69, h:3.94, subject:'subj3' },
@@ -1528,8 +1528,8 @@ const planHotspots = [
   { id:'hs21', type:'subject', top:30.96, left:46.42, w:6.89, h:3.94, subject:'subj5' },
   { id:'hs22', type:'subject', top:31.37, left:35.35, w:7.55, h:3.94, subject:'subj6' },
   { id:'hs23', type:'subject', top:30.77, left:24.43, w:7.44, h:3.94, subject:'subj7' },
-  { id:'hs24', type:'link', top:31.22, left:13.73, w:7.56, h:3.96, url:'' },
-  { id:'hs25', type:'link', top:31.22, left:2.81, w:7.83, h:3.94, url:'' },
+  { id:'hs24', type:'link', top:31.22, left:13.73, w:7.56, h:3.96, url:'https://lagnetalsanafer.com/materials/autocad/' },
+  { id:'hs25', type:'link', top:31.22, left:2.81, w:7.83, h:3.94, url:'https://lagnetalsanafer.com/materials/programming/' },
   { id:'hs26', type:'subject', top:40.65, left:90.15, w:6.22, h:3.94, subject:'subj8' },
   { id:'hs27', type:'subject', top:40.47, left:78.67, w:7.29, h:3.94, subject:'subj9' },
   { id:'hs28', type:'subject', top:40.65, left:67.60, w:7.56, h:3.94, subject:'subj10' },
@@ -1564,12 +1564,12 @@ const planHotspots = [
   { id:'hs57', type:'subject', top:69.17, left:35.56, w:7.34, h:3.94, subject:'subj39' },
   { id:'hs58', type:'subject', top:69.42, left:24.62, w:7.66, h:3.94, subject:'subj40' },
   { id:'hs59', type:'subject', top:68.80, left:14.35, w:6.89, h:4.69, subject:'subj41' },
-  { id:'hs60', type:'link', top:78.68, left:24.65, w:7.17, h:3.96, url:'' },
-  { id:'hs61', type:'link', top:78.68, left:13.90, w:7.83, h:3.96, url:'' },
-  { id:'hs62', type:'link', top:78.87, left:3.26, w:7.16, h:3.96, url:'' },
-  { id:'hs63', type:'link', top:88.28, left:24.81, w:7.04, h:3.96, url:'' },
-  { id:'hs64', type:'link', top:88.52, left:13.90, w:7.45, h:3.96, url:'' },
-  { id:'hs65', type:'link', top:88.77, left:3.23, w:7.56, h:3.96, url:'' },
+  { id:'hs60', type:'link', top:78.68, left:24.65, w:7.17, h:3.96, url:'https://lagnetalsanafer.com/materials/english101/' },
+  { id:'hs61', type:'link', top:78.68, left:13.90, w:7.83, h:3.96, url:'https://lagnetalsanafer.com/materials/english102/' },
+  { id:'hs62', type:'link', top:78.87, left:3.26, w:7.16, h:3.96, url:'https://lagnetalsanafer.com/materials/technical-writing/' },
+  { id:'hs63', type:'link', top:88.28, left:24.81, w:7.04, h:3.96, url:'https://lagnetalsanafer.com/materials/arabic/' },
+  { id:'hs64', type:'link', top:88.52, left:13.90, w:7.45, h:3.96, url:'https://lagnetalsanafer.com/materials/national-education/' },
+  { id:'hs65', type:'link', top:88.77, left:3.23, w:7.56, h:3.96, url:'https://lagnetalsanafer.com/materials/invention/' },
 ];
 
 // بيانات كل مادة (مفتاح كل مادة subj1, subj2 ... يطابق subject: في planHotspots أعلاه)
