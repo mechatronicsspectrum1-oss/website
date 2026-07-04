@@ -881,3 +881,166 @@
     transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(41,184,216,0.4), 0 0 0 3px var(--cyan);
 }
+/* ─── GRID SECTION (HOME) ─── */
+.grid-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--navy);
+}
+
+/* 3D viewport */
+.perspective-bg {
+    position: absolute;
+    inset: 0;
+    perspective: 2000px;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Rotated grid */
+.grid-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 80rem;
+    aspect-ratio: 1 / 1;
+    display: grid;
+    /* adjusted transform for better hover coverage */
+    transform: translate(-50%, -50%)
+               rotateX(25deg)
+               rotateY(-3deg)
+               rotateZ(15deg)
+               scale(1);
+    transform-style: preserve-3d;
+}
+
+/* Individual tiles (created by JS) */
+.grid-tile {
+  border: 1px solid var(--glass-border);
+  background: transparent;
+  /* faster transition – feels instantaneous */
+  transition: background-color 0.1s ease-out;
+  /* remove will-change – it hurts performance with thousands of tiles */
+  will-change: auto;
+  pointer-events: auto;
+}
+
+.grid-tile:hover {
+  transition-duration: 0s;   /* instantly turn on */
+  background-color: var(--cyan-glow);
+}
+
+/* Fade the edges of the grid */
+.grid-fade {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;   /* ✅ never blocks */
+    z-index: 1;
+    background: radial-gradient(
+        circle,
+        transparent 15%,
+        var(--navy) 85%
+    );
+}
+
+/* Content layer (text + buttons) */
+.section-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    color: var(--white);
+    pointer-events: none;   /* ✅ let clicks/hovers pass to grid */
+}
+
+/* Re-enable pointer events ONLY on interactive elements */
+.section-content a,
+.section-content button,
+.section-content .btn-primary,
+.section-content .btn-outline {
+    pointer-events: auto;
+}
+
+/* Typography (your original sizes) */
+.content-eyebrow {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    color: var(--cyan);
+}
+.content-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--white);
+    text-shadow: 0 0 40px rgba(41,184,216,0.25);
+}
+.content-title span { color: var(--cyan); }
+.content-sub {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    color: var(--white2);
+    line-height: 1.8;
+}
+.content-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Buttons */
+.btn-primary, .btn-outline {
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s, border-color 0.2s;
+}
+.btn-primary {
+    background: var(--cyan);
+    color: var(--navy);
+    box-shadow: 0 0 24px rgba(41,184,216,0.4);
+}
+.btn-primary:hover { background: var(--cyan2); }
+.btn-outline {
+    border: 2px solid var(--cyan);
+    color: var(--cyan);
+    background: transparent;
+}
+.btn-outline:hover {
+    background: var(--cyan-glow);
+    color: var(--white);
+}
+
+/* Scroll hint */
+.scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: var(--white2);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    pointer-events: none;   /* ✅ never blocks the grid */
+    animation: bounce 2s infinite;
+}
+.scroll-hint::after {
+    content: '';
+    width: 1px; height: 50px;
+    background: linear-gradient(to bottom, var(--cyan), transparent);
+    display: block;
+    margin-top: 6px;
+}
+@keyframes bounce {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50%     { transform: translateX(-50%) translateY(6px); }
+}
