@@ -96,8 +96,8 @@ const subjectsData = {
   },
   subj3: {
     title: 'Circuit 1', icon: '📖',
-    books: [ { label: 'Fundamentals of electrical cicrcuits',  url: 'https://drive.google.com/file/d/1IYDPjuonxeDNEXt5d2vko5fodOlxzuNA/view', cover: 'Fundamentals of electrical cicrcuits.png' },
-    { label: 'Fundamentals of electrical cicrcuits solutions', url: 'https://drive.google.com/file/d/1GJUtYpl3m1z1v86Z06MXDrkJvYfxXVAl/view', cover: 'Fundamentals of electrical cicrcuits solutions.png' }],
+    books: [ { label: 'Fundamentals of electrical cicrcuits',  url: 'https://drive.google.com/file/d/1IYDPjuonxeDNEXt5d2vko5fodOlxzuNA/view', cover: 'books mockups/Fundamentals of electrical cicrcuits.png' },
+    { label: 'Fundamentals of electrical cicrcuits solutions', url: 'https://drive.google.com/file/d/1GJUtYpl3m1z1v86Z06MXDrkJvYfxXVAl/view', cover: 'books mockups/Fundamentals of electrical cicrcuits solutions.png' }],
     summaries: [], videos: [], mid: [], final: []
   },
   subj4: {
@@ -172,8 +172,8 @@ const subjectsData = {
   },
   subj18: {
     title: 'Control systems', icon: '📖',
-    books: [ { label: 'Modern control engineering',  url: 'https://drive.google.com/drive/folders/1dwU_9bNs5So3XGK4hN3hQhXXAAAaTuEm', cover: 'Modern control engineering.png' },
-    { label: 'Modern control engineering solutions', url: 'https://drive.google.com/drive/folders/1IxOwEZ2ym7hLi8PNLwLGOWCiIgnVT1X-', cover: 'Modern control engineering solutions.png' }],
+    books: [ { label: 'Modern control engineering',  url: 'https://drive.google.com/drive/folders/1dwU_9bNs5So3XGK4hN3hQhXXAAAaTuEm', cover: 'books mockups/Modern control engineering.png' },
+    { label: 'Modern control engineering solutions', url: 'https://drive.google.com/drive/folders/1IxOwEZ2ym7hLi8PNLwLGOWCiIgnVT1X-', cover: 'books mockups/Modern control engineering solutions.png' }],
     summaries: [ { label: 'سلايدات المادة', url: 'https://drive.google.com/drive/folders/1wjytH0OrjVi4b06_Flbez3hHsoKOJMn2' }, { label: 'مرجع عربي للمادة', url: 'https://drive.google.com/drive/folders/1N0pdQhTVJeNWr_1kOpirHQNbsDL32CwM' }, { label: 'دوسية المادة', url: 'https://drive.google.com/file/d/1RT2Xxt8szWKIAaASmrl0dT3ITsxmUhrM/view' }, { label: 'دفاتر المادة', url: 'https://drive.google.com/drive/folders/1-6YNC_Qo50_1NJs-Wyxmo6488iAqqarQ' }], videos: [ { label: 'شرح سبيكتروم', url: 'https://www.youtube.com/playlist?list=PLRNaExsfJ1qs6LF5rdDHq9w0S3YueJQwS' }], mid: [ { label: 'اسئلة سنوات الكتروني', url: 'https://drive.google.com/drive/folders/1EZfrqC35wE8xltmmdrd3_-et4mC90W8W' },  { label: 'اسئلة سنوات فريق سبارك', url: 'https://drive.google.com/drive/folders/1OlRE0jhoQ5Jn5EwdFA3UNlCCkcV2sW5V' }], final: [{ label: 'اسئلة سنوات سبيكتروم', url: 'https://drive.google.com/drive/folders/1rtgPqs_aTl8bJQSly3nfky6hLePyjk3K' }]
   },
   subj19: {
