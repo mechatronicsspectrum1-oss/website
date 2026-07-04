@@ -553,7 +553,7 @@ section { padding: 7rem 3rem; }
 }
 .subject-modal-close:hover { color: var(--cyan); border-color: var(--cyan); }
 
-  /* ─── GPA MODAL ─── */
+/* ─── GPA MODAL ─── */
   .gpa-overlay {
     display: none;
     position: fixed; inset: 0; z-index: 5000;
@@ -684,6 +684,7 @@ section { padding: 7rem 3rem; }
     padding: 0.6rem 0.9rem; border-radius: 8px; margin-bottom: 0.8rem;
     font-family:'Cairo',sans-serif;
   }
+
 /* ─── WATCH-STYLE DRAGGABLE GRID ─── */
 .watch-grid-section { margin-top: 4rem; padding: 2rem 0; }
 .watch-grid-stage {
