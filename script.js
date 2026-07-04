@@ -50,7 +50,137 @@ window.addEventListener('scroll', () => {
   heroVideo.style.transform = `scale(${1 + progress * 0.08}) translateY(${progress * 30}px)`;
   heroVideo.style.opacity = 0.55 - progress * 0.3;
 });
+/* ========== 3D Cylinder Carousel Init ========== */
+(function() {
+    // ----- CONFIG: edit these image paths -----
+    const carouselImages = [
+        'about us photos/1.jpg',
+        'about us photos/2.jpg',
+        'about us photos/3.jpg',
+        'about us photos/4.jpg',
+        'about us photos/5.jpg',
+        'about us photos/6.jpg',
+        'about us photos/7.jpg',
+        'about us photos/8.jpg'
+        // Add more as needed...
+    ];
 
+    const ring = document.getElementById('carousel3DRing');
+    const stage = document.getElementById('carousel3DStage');
+    if (!ring || !stage || carouselImages.length === 0) return;
+
+    // ----- Helper: get current card width from CSS variable -----
+    function getCardWidth() {
+        const style = getComputedStyle(document.documentElement);
+        const raw = style.getPropertyValue('--card-w').trim();
+        if (raw) return parseFloat(raw);
+        const vw = window.innerWidth;
+        if (vw <= 480) return 130;
+        if (vw <= 768) return 160;
+        return 220;
+    }
+
+    // ----- Build the carousel -----
+    function buildCarousel() {
+        ring.innerHTML = '';
+        const n = carouselImages.length;
+        const cardWidth = getCardWidth();
+        const angleStepDeg = 360 / n;
+        const angleStepRad = (angleStepDeg * Math.PI) / 180;
+
+        // Cylinder radius so cards touch edge-to-edge
+        const radius = (cardWidth / 2) / Math.tan(angleStepRad / 2);
+
+        ring.style.setProperty('--card-w', cardWidth + 'px');
+        ring.style.setProperty('--radius', radius + 'px');
+        ring.style.setProperty('--anim-speed', Math.max(24, n * 4) + 's');
+
+        carouselImages.forEach((src, i) => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = 'صورة للفريق ' + (i + 1);
+            img.className = 'carousel-3d-card';
+            img.loading = 'lazy';
+            img.draggable = false;
+
+            const rotateY = i * angleStepDeg;
+            img.style.transform = `rotateY(${rotateY}deg) translateZ(${radius}px)`;
+
+            img.onerror = function() {
+                this.style.display = 'none';
+            };
+
+            ring.appendChild(img);
+        });
+
+        // Restart animation
+        ring.style.animation = 'none';
+        ring.offsetHeight;
+        ring.style.animation = '';
+    }
+
+    buildCarousel();
+
+    // ----- Rebuild on resize (debounced) -----
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(buildCarousel, 250);
+    });
+
+    // ----- Drag to rotate -----
+    let isDragging = false;
+    let startX = 0;
+    let dragRotation = 0;
+
+    stage.addEventListener('mousedown', onDragStart);
+    stage.addEventListener('touchstart', onDragStart, { passive: false });
+    window.addEventListener('mousemove', onDragMove);
+    window.addEventListener('touchmove', onDragMove, { passive: false });
+    window.addEventListener('mouseup', onDragEnd);
+    window.addEventListener('touchend', onDragEnd);
+
+    function onDragStart(e) {
+        isDragging = true;
+        startX = e.touches ? e.touches[0].clientX : e.clientX;
+        ring.style.animationPlayState = 'paused';
+
+        const computed = getComputedStyle(ring).transform;
+        if (computed && computed !== 'none') {
+            const matrix = new DOMMatrixReadOnly(computed);
+            const decompose = matrix.decompose ? matrix.decompose() : null;
+            if (decompose && decompose.rotate) {
+                const q = decompose.rotate;
+                const siny = 2 * (q.w * q.y + q.z * q.x);
+                const cosy = 1 - 2 * (q.y * q.y + q.z * q.z);
+                dragRotation = Math.atan2(siny, cosy) * (180 / Math.PI);
+            }
+        }
+        e.preventDefault();
+    }
+
+    function onDragMove(e) {
+        if (!isDragging) return;
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const deltaX = clientX - startX;
+        const sensitivity = 0.4;
+        const newRotation = dragRotation + deltaX * sensitivity;
+        ring.style.transform = `rotateY(${newRotation}deg)`;
+    }
+
+    function onDragEnd() {
+        if (!isDragging) return;
+        isDragging = false;
+        setTimeout(() => {
+            if (!isDragging) {
+                ring.style.animationPlayState = '';
+                ring.style.transition = 'transform 0.6s ease-out';
+                ring.style.transform = '';
+                setTimeout(() => { ring.style.transition = ''; }, 650);
+            }
+        }, 300);
+    }
+})();
 // ═══════════════ GPA CALCULATOR ═══════════════
 const GPA_COURSES = 9;
 const gradeLabels = ["A","A-","B+","B","B-","C+","C","C-","D+","D","D-","F"];
