@@ -523,17 +523,17 @@ section { padding: 7rem 3rem; }
     color: var(--cyan); font-size: 0.85rem;
 }
 
-/* ─── SUBJECT MODAL ─── */
-.subject-modal-overlay {
+  /* ─── SUBJECT MODAL ─── */
+  .subject-modal-overlay {
     position: fixed; inset: 0; z-index: 2000;
     background: rgba(5,10,24,0.85);
     backdrop-filter: blur(6px);
     display: none;
     align-items: center; justify-content: center;
     padding: 1.5rem;
-}
-.subject-modal-overlay.open { display: flex; }
-.subject-modal {
+  }
+  .subject-modal-overlay.open { display: flex; }
+  .subject-modal {
     position: relative;
     background: var(--navy2);
     border: 1px solid var(--glass-border);
@@ -542,16 +542,180 @@ section { padding: 7rem 3rem; }
     max-height: 88vh; overflow-y: auto;
     padding: 2rem;
     box-shadow: 0 0 60px rgba(41,184,216,0.15);
-}
-.subject-modal-close {
+  }
+  .subject-modal-close {
     position: absolute; top: 1rem; left: 1rem;
     background: var(--glass); border: 1px solid var(--glass-border);
     color: var(--white); width: 36px; height: 36px; border-radius: 50%;
     cursor: pointer; font-size: 1rem;
     display: flex; align-items: center; justify-content: center;
     transition: all 0.2s;
-}
-.subject-modal-close:hover { color: var(--cyan); border-color: var(--cyan); }
+  }
+  .subject-modal-close:hover { color: var(--cyan); border-color: var(--cyan); }
+
+  /* Header: title on the RIGHT, close btn on the LEFT (RTL layout) */
+  .subject-modal-header {
+    display: flex; align-items: center; justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 1.5rem; padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--glass-border);
+  }
+  .subject-header-text { text-align: right; }
+  .subject-eyebrow {
+    font-family: 'Cairo', sans-serif; font-size: 0.72rem; letter-spacing: 0.15em;
+    color: var(--cyan); margin-bottom: 0.25rem; text-transform: uppercase;
+  }
+  #subjectTitle {
+    font-family: 'Cairo', sans-serif; font-size: 1.5rem; font-weight: 900; color: var(--white);
+  }
+  .subject-title-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: var(--cyan-glow); border: 1px solid var(--glass-border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; flex-shrink: 0;
+  }
+
+  /* Section blocks */
+  .subject-block { margin-bottom: 1.8rem; }
+  .subject-block-title {
+    font-family: 'Cairo', sans-serif; font-size: 0.95rem; font-weight: 700;
+    color: var(--cyan); margin-bottom: 0.85rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+
+  /* BOOKS: grid of clickable cover mockups */
+  .subject-books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 1rem;
+  }
+  .subject-book-card {
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    text-decoration: none; cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .subject-book-card:hover { transform: translateY(-4px); }
+  .subject-book-cover {
+    width: 100%; aspect-ratio: 3/4;
+    border-radius: 8px; overflow: hidden;
+    border: 1px solid var(--glass-border);
+    background: linear-gradient(135deg, var(--navy3), var(--navy2));
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    box-shadow: 3px 4px 14px rgba(0,0,0,0.45);
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .subject-book-card:hover .subject-book-cover {
+    box-shadow: 4px 6px 22px rgba(41,184,216,0.3);
+    border-color: rgba(41,184,216,0.5);
+  }
+  .subject-book-cover img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  /* Fallback placeholder when no image */
+  .subject-book-cover-placeholder {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 100%; height: 100%; gap: 0.3rem; padding: 0.5rem;
+  }
+  .subject-book-cover-placeholder span:first-child { font-size: 2rem; }
+  .subject-book-cover-placeholder span:last-child {
+    font-family: 'Cairo', sans-serif; font-size: 0.62rem; color: var(--white2);
+    text-align: center; line-height: 1.3;
+  }
+  .subject-book-label {
+    font-family: 'Cairo', sans-serif; font-size: 0.75rem; color: var(--white2);
+    text-align: center; line-height: 1.4;
+  }
+
+  /* Simple link list (summaries, videos, papers) */
+  .subject-link-list { display: flex; flex-direction: column; gap: 0.45rem; }
+  .subject-link-item {
+    display: flex; align-items: center; gap: 0.6rem;
+    color: var(--white); text-decoration: none;
+    font-family: 'Cairo', sans-serif; font-size: 0.9rem;
+    padding: 0.5rem 0.75rem; border-radius: 8px;
+    transition: background 0.15s, color 0.15s;
+  }
+  .subject-link-item:hover { background: var(--cyan-glow); color: var(--cyan); }
+  .subject-link-item .link-arrow { color: var(--cyan); font-size: 0.75rem; margin-right: auto; }
+  .subject-list-empty { color: var(--white2); font-size: 0.82rem; padding: 0.3rem 0; }
+
+  /* Past papers: mid + final side by side */
+  .subject-papers-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+  }
+  .subject-papers-col-title {
+    font-family: 'Cairo', sans-serif; font-weight: 700; font-size: 0.82rem;
+    color: var(--white2); margin-bottom: 0.6rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid var(--glass-border);
+  }
+
+  @media (max-width: 600px) {
+    .subject-papers-grid { grid-template-columns: 1fr; }
+    .subject-books-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); }
+  }
+
+  /* ─── ARTICLE CARD ─── */
+  .article-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.25s;
+  }
+  .article-card:hover { transform:translateY(-5px); box-shadow:0 12px 40px rgba(41,184,216,0.12); border-color:rgba(41,184,216,0.4); }
+  .article-img {
+    height: 180px;
+    background: linear-gradient(135deg, var(--navy3) 0%, var(--navy2) 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3rem;
+    border-bottom: 1px solid var(--glass-border);
+  }
+  .article-body { padding: 1.5rem; }
+  .article-body h3 { font-family: 'Cairo', sans-serif; font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+  .article-body p { font-size: 0.88rem; color: var(--white2); line-height: 1.75; }
+  .article-meta { margin-top: 1rem; display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
+  .article-meta span { font-size: 0.75rem; color: var(--white2); }
+  .article-meta .tag { background: var(--cyan-glow); color: var(--cyan); border: 1px solid var(--glass-border); padding: 0.2rem 0.65rem; border-radius: 20px; font-family: 'Cairo', sans-serif; }
+
+  /* ─── ABOUT ─── */
+  .about-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .about-visual {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 3rem;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 340px;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-visual img { max-width: 100%; max-height: 280px; object-fit: contain; filter: drop-shadow(0 0 30px rgba(41,184,216,0.3)); }
+  .about-visual::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(41,184,216,0.08) 0%, transparent 70%);
+  }
+  .about-text .section-desc { max-width: 100%; }
+  .team-values {
+    margin-top: 2rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  }
+  .value-item {
+    display: flex; gap: 0.75rem; align-items: flex-start;
+  }
+  .value-dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--cyan);
+    margin-top: 7px; flex-shrink: 0;
+    box-shadow: 0 0 8px var(--cyan);
+  }
+  .value-label { font-family: 'Cairo', sans-serif; font-size: 0.9rem; font-weight: 600; color: var(--white); }
+  .value-sub { font-size: 0.8rem; color: var(--white2); }
 
 /* ─── GPA MODAL ─── */
   .gpa-overlay {
