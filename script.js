@@ -389,3 +389,22 @@ function handleOverlayClick(e) {
 
 // Close on Escape
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeGPA(); });
+// ═══════════════ PERSPECTIVE GRID ═══════════════
+(function() {
+  const GRID_SIZE = 30;                 // Change density (e.g., 30, 50)
+  const container = document.getElementById('perspectiveGrid');
+  if (!container) return;
+
+  // Set CSS grid dimensions
+  container.style.gridTemplateColumns = `repeat(${GRID_SIZE}, 1fr)`;
+  container.style.gridTemplateRows = `repeat(${GRID_SIZE}, 1fr)`;
+
+  // Create tiles
+  const fragment = document.createDocumentFragment();
+  for (let i = 0; i < GRID_SIZE * GRID_SIZE; i++) {
+    const tile = document.createElement('div');
+    tile.className = 'grid-tile';
+    fragment.appendChild(tile);
+  }
+  container.appendChild(fragment);
+})();
