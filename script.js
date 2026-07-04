@@ -54,14 +54,14 @@ window.addEventListener('scroll', () => {
 (function() {
     // ----- CONFIG: edit these image paths -----
     const carouselImages = [
-        'about us photos/1.jpg',
-        'about us photos/2.jpg',
-        'about us photos/3.jpg',
-        'about us photos/4.jpg',
-        'about us photos/5.jpg',
-        'about us photos/6.jpg',
-        'about us photos/7.jpg',
-        'about us photos/8.jpg'
+        'about us photos/photo_10_2026-07-04_13-57-58.jpg',
+        'about us photos/photo_11_2026-07-04_13-57-58.jpg',
+        'about us photos/photo_12_2026-07-04_13-57-58.jpg',
+        'about us photos/photo_14_2026-07-04_13-57-58.jpg',
+        'about us photos/photo_15_2026-07-04_13-57-58.jpg',
+        'about us photos/photo_16_2026-07-04_13-57-58.jpg',
+        'about us photos/photo_17_2026-07-04_13-57-58.jpg',
+        'about us photos/photo_18_2026-07-04_13-57-58.jpg'
         // Add more as needed...
     ];
 
