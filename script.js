@@ -76,8 +76,8 @@ window.addEventListener('scroll', () => {
         const n = gridImages.length;
         const cols = Math.ceil(Math.sqrt(n * 1.5));   // roughly a honeycomb shape
         const rows = Math.ceil(n / cols);
-        const spacingX = 110;   // horizontal spacing between centers
-        const spacingY = 100;   // vertical spacing (tighter due to hexagonal packing)
+        const spacingX = 120;   // horizontal spacing between centers
+        const spacingY = 108;   // vertical spacing (tighter due to hexagonal packing)
 
         // Offset every other row for hex effect
         gridImages.forEach((src, i) => {
