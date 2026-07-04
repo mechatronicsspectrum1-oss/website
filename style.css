@@ -1,4 +1,4 @@
- :root {
+  :root {
     --navy: #050A18;
     --navy2: #0A1428;
     --navy3: #0F1E3A;
@@ -601,7 +601,93 @@
   .value-label { font-family: 'Cairo', sans-serif; font-size: 0.9rem; font-weight: 600; color: var(--white); }
   .value-sub { font-size: 0.8rem; color: var(--white2); }
 
-/* ─── GPA MODAL ─── */
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--navy2);
+    border-top: 1px solid var(--glass-border);
+    padding: 3rem;
+    text-align: center;
+  }
+  footer img { height: 50px; margin-bottom: 1rem; filter: drop-shadow(0 0 8px rgba(41,184,216,0.3)); }
+  footer p { color: var(--white2); font-size: 0.85rem; margin-top: 1.2rem; }
+  .footer-socials { display: flex; justify-content: center; gap: 1.2rem; margin: 1.4rem 0 0.5rem; flex-wrap: wrap; }
+  .footer-socials a {
+    display: flex; align-items: center; gap: 0.5rem;
+    color: var(--white2); text-decoration: none;
+    font-family: 'Cairo', sans-serif; font-size: 0.88rem;
+    background: var(--glass); border: 1px solid var(--glass-border);
+    border-radius: 10px; padding: 0.55rem 1rem;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+  }
+  .footer-socials a:hover { color: var(--cyan); border-color: rgba(41,184,216,0.4); background: var(--cyan-glow); }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── MOBILE RESPONSIVENESS ─── */
+  @media (max-width: 860px) {
+    nav { padding: 0 1.5rem; }
+    
+    /* Completely reworked mobile nav tray */
+    .nav-links { 
+      display: flex;
+      flex-direction: column; 
+      position: absolute; 
+      top: 70px; right: 0; left: 0; 
+      background: rgba(5, 10, 24, 0.96); 
+      backdrop-filter: blur(25px);
+      padding: 1.5rem; 
+      gap: 0.5rem; 
+      border-bottom: 1px solid var(--glass-border);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* When navigation menu is open on mobile */
+    .nav-links.open { 
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    /* Make active links look structured inside the dropdown menu */
+    .nav-links li { width: 100%; text-align: center; }
+    .nav-links a { 
+      display: block; 
+      padding: 0.75rem 1rem; 
+      font-size: 1rem;
+    }
+    
+    /* Hide the standalone left-side button to avoid overlapping */
+    .nav-members-wrap { display: none; }
+    
+    /* Create a dedicated item variant for "للأعضاء" within the mobile tray */
+    .nav-links .mobile-member-li {
+      display: block;
+      margin-top: 0.5rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1rem;
+    }
+    .nav-links .mobile-member-li .btn-members {
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+
+    .hamburger { display: flex; }
+    section { padding: 5rem 1.5rem; }
+    .about-split { grid-template-columns: 1fr; gap: 2.5rem; }
+    .team-values { grid-template-columns: 1fr; }
+    #stats-bar { padding: 2rem 1.5rem; }
+  }
+  /* ─── GPA MODAL ─── */
   .gpa-overlay {
     display: none;
     position: fixed; inset: 0; z-index: 5000;
@@ -732,131 +818,66 @@
     padding: 0.6rem 0.9rem; border-radius: 8px; margin-bottom: 0.8rem;
     font-family:'Cairo',sans-serif;
   }
+/* ========== WATCH-STYLE DRAGGABLE GRID ========== */
+.watch-grid-section {
+    margin-top: 4rem;
+    padding: 2rem 0;
+}
+.watch-grid-section .section-header {
+    margin-bottom: 1.5rem;
+}
 
-/* ─── WATCH-STYLE DRAGGABLE GRID ─── */
-.watch-grid-section { margin-top: 4rem; padding: 2rem 0; }
 .watch-grid-stage {
     position: relative;
-    width: 100%; height: 500px;
+    width: 100%;
+    height: 500px;
     overflow: hidden;
-    background: var(--glass);
+    background: var(--glass, rgba(255,255,255,0.05));
     border-radius: 24px;
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--glass-border, rgba(255,255,255,0.1));
     cursor: grab;
     user-select: none;
     -webkit-mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
     mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
 }
+.watch-grid-stage:active {
+    cursor: grabbing;
+}
+
 .watch-grid-container {
     position: absolute;
-    top: 50%; left: 50%;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
     will-change: transform;
-    transition: transform 0.15s ease-out;
+    transition: transform 0.15s ease-out;  /* smooth snap when releasing */
 }
+
+/* Square thumbnail with rounded corners */
 .watch-grid-item {
     position: absolute;
-    width: 88px; height: 88px;
-    border-radius: 18px;
+    width: 88px;
+    height: 88px;
+    border-radius: 18px;                  /* rounded square, not a circle */
     background: linear-gradient(145deg, #1e2a3a, #0f1a26);
     box-shadow: 0 4px 15px rgba(0,0,0,0.4), 0 0 0 2px rgba(41,184,216,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform-origin: center center;
     pointer-events: auto;
 }
 .watch-grid-item img {
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 18px;
+    border-radius: 18px;                 /* match parent */
 }
 .watch-grid-item:hover,
 .watch-grid-stage:active .watch-grid-item {
     transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(41,184,216,0.4), 0 0 0 3px var(--cyan);
-}
-
-/* ─── FOOTER ─── */
-footer {
-    background: var(--navy2);
-    border-top: 1px solid var(--glass-border);
-    padding: 3rem;
-    text-align: center;
-}
-footer img { height: 50px; margin-bottom: 1rem; filter: drop-shadow(0 0 8px rgba(41,184,216,0.3)); }
-footer p { color: var(--white2); font-size: 0.85rem; margin-top: 1.2rem; }
-.footer-socials { display: flex; justify-content: center; gap: 1.2rem; margin: 1.4rem 0 0.5rem; flex-wrap: wrap; }
-.footer-socials a {
-    display: flex; align-items: center; gap: 0.5rem;
-    color: var(--white2); text-decoration: none;
-    font-family: 'Cairo', sans-serif; font-size: 0.88rem;
-    background: var(--glass); border: 1px solid var(--glass-border);
-    border-radius: 10px; padding: 0.55rem 1rem;
-    transition: color 0.2s, border-color 0.2s, background 0.2s;
-}
-.footer-socials a:hover { color: var(--cyan); border-color: rgba(41,184,216,0.4); background: var(--cyan-glow); }
-
-/* ─── SCROLL REVEAL ─── */
-.reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-/* ─── MOBILE ─── */
-@media (max-width: 860px) {
-    nav { padding: 0 1.5rem; }
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 70px; right: 0; left: 0;
-        background: rgba(5, 10, 24, 0.96);
-        backdrop-filter: blur(25px);
-        padding: 1.5rem;
-        gap: 0.5rem;
-        border-bottom: 1px solid var(--glass-border);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .nav-links.open {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-    .nav-links li { width: 100%; text-align: center; }
-    .nav-links a { display: block; padding: 0.75rem 1rem; font-size: 1rem; }
-    .nav-members-wrap { display: none; }
-    .nav-links .mobile-member-li {
-        display: block;
-        margin-top: 0.5rem;
-        border-top: 1px solid rgba(255,255,255,0.08);
-        padding-top: 1rem;
-    }
-    .hamburger { display: flex; }
-    section { padding: 5rem 1.5rem; }
-    .about-split { grid-template-columns: 1fr; gap: 2.5rem; }
-    .team-values { grid-template-columns: 1fr; }
-    #stats-bar { padding: 2rem 1.5rem; }
-}
-.about-card-img-logo {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.about-card-img-logo img {
-  max-width: 140px;
-  max-height: 140px;
-  object-fit: contain;
-}
-.logo-fallback {
-  display: none;
-  font-size: 3rem;
-  opacity: 0.7;
-}
-.about-card-img-logo img[style*="display: none"] ~ .logo-fallback {
-  display: block;   /* show when image is hidden */
 }
