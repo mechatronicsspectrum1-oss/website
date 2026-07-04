@@ -792,3 +792,23 @@ footer p { color: var(--white2); font-size: 0.85rem; margin-top: 1.2rem; }
     .team-values { grid-template-columns: 1fr; }
     #stats-bar { padding: 2rem 1.5rem; }
 }
+.about-card-img-logo {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-card-img-logo img {
+  max-width: 140px;
+  max-height: 140px;
+  object-fit: contain;
+}
+.logo-fallback {
+  display: none;
+  font-size: 3rem;
+  opacity: 0.7;
+}
+.about-card-img-logo img[style*="display: none"] ~ .logo-fallback {
+  display: block;   /* show when image is hidden */
+}
