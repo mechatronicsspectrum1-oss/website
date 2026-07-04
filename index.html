@@ -44,23 +44,27 @@
 </nav>
 
 <div id="home-page">
-  <section id="hero">
-    <video id="hero-video" autoplay muted loop playsinline>
-      <source src="website_homepage_background.mp4" type="video/mp4">
-      <source src="website_homepage_background.mov" type="video/quicktime">
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Mechatronics · Spectrum · Team</p>
-      <h1 class="hero-title">فريق <span>سبيكتروم</span><br>طيف الميكاترونكس</h1>
-      <p class="hero-sub">نقود مستقبل الهندسة بدمج الميكانيكا والإلكترونيات والبرمجة في بيئة أكاديمية متكاملة</p>
-      <div class="hero-cta">
-        <a href="about.html" class="btn-primary">اعرف أكثر عنا</a>
-        <a href="library.html" class="btn-outline">استكشف المكتبة</a>
-      </div>
+<section id="home-section" class="grid-section">
+  <!-- ========== Grid background ========== -->
+  <div class="perspective-bg">
+    <!-- The rotated grid (tiles injected by JS) -->
+    <div class="grid-container" id="perspectiveGrid"></div>
+    <!-- Subtle overlay to fade grid edges into the navy background -->
+    <div class="grid-fade"></div>
+  </div>
+
+  <!-- ========== Your text & buttons ========== -->
+  <div class="section-content">
+    <p class="content-eyebrow">Mechatronics · Spectrum · Team</p>
+    <h1 class="content-title">فريق <span>سبيكتروم</span><br>طيف الميكاترونكس</h1>
+    <p class="content-sub">نقود مستقبل الهندسة بدمج الميكانيكا والإلكترونيات والبرمجة في بيئة أكاديمية متكاملة</p>
+    <div class="content-cta">
+      <a href="about.html" class="btn-primary">اعرف أكثر عنا</a>
+      <a href="library.html" class="btn-outline">استكشف المكتبة</a>
     </div>
-    <div class="scroll-hint">SCROLL</div>
-  </section>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
 
   <!-- University Links -->
   <section style="display:block; padding: 4rem 3rem 2rem; background: var(--navy2); border-bottom: 1px solid var(--glass-border);">
