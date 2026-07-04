@@ -818,99 +818,66 @@
     padding: 0.6rem 0.9rem; border-radius: 8px; margin-bottom: 0.8rem;
     font-family:'Cairo',sans-serif;
   }
-/* ========== 3D Cylinder Carousel ========== */
-.carousel-3d-section {
+/* ========== WATCH-STYLE DRAGGABLE GRID ========== */
+.watch-grid-section {
     margin-top: 4rem;
     padding: 2rem 0;
 }
-.carousel-3d-section .section-header {
+.watch-grid-section .section-header {
     margin-bottom: 1.5rem;
 }
 
-/* The stage gives perspective + edge fade */
-.carousel-3d-stage {
+.watch-grid-stage {
     position: relative;
     width: 100%;
-    height: 420px;
-    display: grid;
-    place-items: center;
+    height: 500px;
     overflow: hidden;
-    perspective: 900px;
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 12% 88%, transparent);
-    mask-image: linear-gradient(90deg, transparent, #000 12% 88%, transparent);
+    background: var(--glass, rgba(255,255,255,0.05));
+    border-radius: 24px;
+    border: 1px solid var(--glass-border, rgba(255,255,255,0.1));
     cursor: grab;
     user-select: none;
+    -webkit-mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+    mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
 }
-.carousel-3d-stage:active {
+.watch-grid-stage:active {
     cursor: grabbing;
 }
 
-/* The rotating ring */
-.carousel-3d-ring {
-    position: relative;
+.watch-grid-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 0;
     height: 0;
-    transform-style: preserve-3d;
+    will-change: transform;
+    transition: transform 0.15s ease-out;  /* smooth snap when releasing */
+}
+
+/* Circular photo card */
+.watch-grid-item {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #1e2a3a, #0f1a26);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4), 0 0 0 2px rgba(41,184,216,0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: carousel-spin var(--anim-speed, 36s) linear infinite;
-    will-change: transform;
-}
-
-/* Pause on hover */
-.carousel-3d-stage:hover .carousel-3d-ring {
-    animation-play-state: paused;
-}
-
-@keyframes carousel-spin {
-    from { transform: rotateY(0deg); }
-    to   { transform: rotateY(360deg); }
-}
-
-/* Each image card */
-.carousel-3d-card {
-    position: absolute;
-    width: var(--card-w, 220px);
-    aspect-ratio: 7 / 10;
-    object-fit: cover;
-    border-radius: 1rem;
-    backface-visibility: hidden;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 0 2px rgba(0,230,250,0.15);
-    transition: box-shadow 0.4s ease;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform-origin: center center;
     pointer-events: auto;
-    -webkit-user-drag: none;
-    user-select: none;
 }
-.carousel-3d-stage:hover .carousel-3d-card {
-    box-shadow: 0 12px 40px rgba(0,230,250,0.25), 0 0 0 3px rgba(0,230,250,0.3);
+.watch-grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-    .carousel-3d-stage {
-        height: 340px;
-        perspective: 650px;
-    }
-    .carousel-3d-card {
-        --card-w: 160px;
-        border-radius: 0.75rem;
-    }
-}
-@media (max-width: 480px) {
-    .carousel-3d-stage {
-        height: 280px;
-        perspective: 500px;
-    }
-    .carousel-3d-card {
-        --card-w: 130px;
-        border-radius: 0.6rem;
-    }
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    .carousel-3d-ring {
-        animation-duration: 120s !important;
-    }
+.watch-grid-item:hover,
+.watch-grid-stage:active .watch-grid-item {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(41,184,216,0.4), 0 0 0 3px var(--cyan);
 }
