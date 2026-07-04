@@ -50,10 +50,11 @@ window.addEventListener('scroll', () => {
   heroVideo.style.transform = `scale(${1 + progress * 0.08}) translateY(${progress * 30}px)`;
   heroVideo.style.opacity = 0.55 - progress * 0.3;
 });
-/* ========== 3D Cylinder Carousel Init ========== */
+
+/* ========== WATCH-STYLE DRAGGABLE GRID ========== */
 (function() {
-    // ----- CONFIG: edit these image paths -----
-    const carouselImages = [
+    // ----- EDIT THESE IMAGE PATHS -----
+    const gridImages = [
         'about us photos/photo_10_2026-07-04_13-57-58.jpg',
         'about us photos/photo_11_2026-07-04_13-57-58.jpg',
         'about us photos/photo_12_2026-07-04_13-57-58.jpg',
@@ -65,122 +66,144 @@ window.addEventListener('scroll', () => {
         // Add more as needed...
     ];
 
-    const ring = document.getElementById('carousel3DRing');
-    const stage = document.getElementById('carousel3DStage');
-    if (!ring || !stage || carouselImages.length === 0) return;
+    const container = document.getElementById('watchGridContainer');
+    const stage = document.getElementById('watchGridStage');
+    if (!container || !stage || gridImages.length === 0) return;
 
-    // ----- Helper: get current card width from CSS variable -----
-    function getCardWidth() {
-        const style = getComputedStyle(document.documentElement);
-        const raw = style.getPropertyValue('--card-w').trim();
-        if (raw) return parseFloat(raw);
-        const vw = window.innerWidth;
-        if (vw <= 480) return 130;
-        if (vw <= 768) return 160;
-        return 220;
-    }
+    // --- Build the honeycomb grid ---
+    function buildGrid() {
+        container.innerHTML = '';
+        const n = gridImages.length;
+        const cols = Math.ceil(Math.sqrt(n * 1.5));   // roughly a honeycomb shape
+        const rows = Math.ceil(n / cols);
+        const spacingX = 110;   // horizontal spacing between centers
+        const spacingY = 100;   // vertical spacing (tighter due to hexagonal packing)
 
-    // ----- Build the carousel -----
-    function buildCarousel() {
-        ring.innerHTML = '';
-        const n = carouselImages.length;
-        const cardWidth = getCardWidth();
-        const angleStepDeg = 360 / n;
-        const angleStepRad = (angleStepDeg * Math.PI) / 180;
+        // Offset every other row for hex effect
+        gridImages.forEach((src, i) => {
+            const row = Math.floor(i / cols);
+            const col = i % cols;
+            const offsetX = (col - (cols-1)/2) * spacingX;
+            const offsetY = (row - (rows-1)/2) * spacingY;
+            const hexShift = row % 2 === 0 ? spacingX / 2 : 0;
 
-        // Cylinder radius so cards touch edge-to-edge
-        const radius = (cardWidth / 2) / Math.tan(angleStepRad / 2);
+            const item = document.createElement('div');
+            item.className = 'watch-grid-item';
+            item.style.left = (offsetX + hexShift) + 'px';
+            item.style.top = offsetY + 'px';
 
-        ring.style.setProperty('--card-w', cardWidth + 'px');
-        ring.style.setProperty('--radius', radius + 'px');
-        ring.style.setProperty('--anim-speed', Math.max(24, n * 4) + 's');
-
-        carouselImages.forEach((src, i) => {
             const img = document.createElement('img');
             img.src = src;
-            img.alt = 'صورة للفريق ' + (i + 1);
-            img.className = 'carousel-3d-card';
+            img.alt = 'صورة ' + (i+1);
             img.loading = 'lazy';
             img.draggable = false;
-
-            const rotateY = i * angleStepDeg;
-            img.style.transform = `rotateY(${rotateY}deg) translateZ(${radius}px)`;
 
             img.onerror = function() {
                 this.style.display = 'none';
             };
 
-            ring.appendChild(img);
+            item.appendChild(img);
+            container.appendChild(item);
         });
 
-        // Restart animation
-        ring.style.animation = 'none';
-        ring.offsetHeight;
-        ring.style.animation = '';
+        // Reset grid position to center
+        container.style.transform = 'translate(0px, 0px)';
+        currentTranslate = { x: 0, y: 0 };
     }
 
-    buildCarousel();
-
-    // ----- Rebuild on resize (debounced) -----
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(buildCarousel, 250);
-    });
-
-    // ----- Drag to rotate -----
+    // --- Drag & inertia logic ---
     let isDragging = false;
-    let startX = 0;
-    let dragRotation = 0;
+    let startX = 0, startY = 0;
+    let currentTranslate = { x: 0, y: 0 };
+    let dragStartTranslate = { x: 0, y: 0 };
+    let velocity = { x: 0, y: 0 };
+    let lastMoveTime = Date.now();
+    let lastMoveX = 0, lastMoveY = 0;
+    let inertiaFrame;
 
-    stage.addEventListener('mousedown', onDragStart);
-    stage.addEventListener('touchstart', onDragStart, { passive: false });
-    window.addEventListener('mousemove', onDragMove);
-    window.addEventListener('touchmove', onDragMove, { passive: false });
-    window.addEventListener('mouseup', onDragEnd);
-    window.addEventListener('touchend', onDragEnd);
+    function applyTransform() {
+        container.style.transform = `translate(${currentTranslate.x}px, ${currentTranslate.y}px)`;
+    }
 
-    function onDragStart(e) {
+    function startDrag(e) {
         isDragging = true;
-        startX = e.touches ? e.touches[0].clientX : e.clientX;
-        ring.style.animationPlayState = 'paused';
-
-        const computed = getComputedStyle(ring).transform;
-        if (computed && computed !== 'none') {
-            const matrix = new DOMMatrixReadOnly(computed);
-            const decompose = matrix.decompose ? matrix.decompose() : null;
-            if (decompose && decompose.rotate) {
-                const q = decompose.rotate;
-                const siny = 2 * (q.w * q.y + q.z * q.x);
-                const cosy = 1 - 2 * (q.y * q.y + q.z * q.z);
-                dragRotation = Math.atan2(siny, cosy) * (180 / Math.PI);
-            }
-        }
+        stage.style.cursor = 'grabbing';
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        startX = clientX;
+        startY = clientY;
+        dragStartTranslate = { ...currentTranslate };
+        velocity = { x: 0, y: 0 };
+        cancelAnimationFrame(inertiaFrame);
+        // Disable snap transition while dragging
+        container.style.transition = 'none';
         e.preventDefault();
     }
 
-    function onDragMove(e) {
+    function onDrag(e) {
         if (!isDragging) return;
         const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
         const deltaX = clientX - startX;
-        const sensitivity = 0.4;
-        const newRotation = dragRotation + deltaX * sensitivity;
-        ring.style.transform = `rotateY(${newRotation}deg)`;
+        const deltaY = clientY - startY;
+
+        currentTranslate.x = dragStartTranslate.x + deltaX;
+        currentTranslate.y = dragStartTranslate.y + deltaY;
+        applyTransform();
+
+        // Capture velocity
+        const now = Date.now();
+        const dt = now - lastMoveTime;
+        if (dt > 0) {
+            velocity.x = (clientX - lastMoveX) / dt * 15;  // scale for inertia
+            velocity.y = (clientY - lastMoveY) / dt * 15;
+        }
+        lastMoveTime = now;
+        lastMoveX = clientX;
+        lastMoveY = clientY;
     }
 
-    function onDragEnd() {
+    function endDrag() {
         if (!isDragging) return;
         isDragging = false;
-        setTimeout(() => {
-            if (!isDragging) {
-                ring.style.animationPlayState = '';
-                ring.style.transition = 'transform 0.6s ease-out';
-                ring.style.transform = '';
-                setTimeout(() => { ring.style.transition = ''; }, 650);
+        stage.style.cursor = 'grab';
+        container.style.transition = 'transform 0.15s ease-out';
+
+        // Apply inertia
+        if (Math.abs(velocity.x) > 0.5 || Math.abs(velocity.y) > 0.5) {
+            let vx = velocity.x;
+            let vy = velocity.y;
+            function step() {
+                if (Math.abs(vx) < 0.05 && Math.abs(vy) < 0.05) {
+                    container.style.transition = 'transform 0.15s ease-out';
+                    return;
+                }
+                currentTranslate.x += vx;
+                currentTranslate.y += vy;
+                vx *= 0.95;
+                vy *= 0.95;
+                applyTransform();
+                inertiaFrame = requestAnimationFrame(step);
             }
-        }, 300);
+            container.style.transition = 'none';
+            inertiaFrame = requestAnimationFrame(step);
+        }
     }
+
+    stage.addEventListener('mousedown', startDrag);
+    stage.addEventListener('touchstart', startDrag, { passive: false });
+    window.addEventListener('mousemove', onDrag);
+    window.addEventListener('touchmove', onDrag, { passive: false });
+    window.addEventListener('mouseup', endDrag);
+    window.addEventListener('touchend', endDrag);
+
+    // Prevent default drag on images inside the grid
+    container.addEventListener('dragstart', e => e.preventDefault());
+
+    // Build on load
+    buildGrid();
 })();
+
 // ═══════════════ GPA CALCULATOR ═══════════════
 const GPA_COURSES = 9;
 const gradeLabels = ["A","A-","B+","B","B-","C+","C","C-","D+","D","D-","F"];
