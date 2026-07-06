@@ -106,6 +106,7 @@ window.addEventListener('scroll', () => {
         'about us photos/photo_7_2026-07-04_13-57-58.jpg',
         'about us photos/photo_8_2026-07-04_13-57-58.jpg',
         'about us photos/photo_9_2026-07-04_13-57-58.jpg',
+        'about us photos/image wcrc.png',
         // Add more as needed...
     ];
 
