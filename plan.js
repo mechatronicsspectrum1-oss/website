@@ -90,12 +90,19 @@ const subjectsData = {
     summaries: [], videos: [], mid: [], final: []
   },
   subj2: {
-    title: 'مادة 2', icon: '📖',
-    books: [],
+    title: 'Circuit 2', icon: '⚡',
+    books: [{ label: 'Fundamentals of electrical cicrcuits',  url: 'academic papers/circuits 1 and 2/fundementals of circuits 7th edition.pdf', cover: 'books mockups/Fundamentals of electrical cicrcuits.png' },
+    { label: 'Fundamentals of electrical cicrcuits solutions', url: 'academic papers/circuits 1 and 2/solution of fundementals of circuits 7th edition.pdf', cover: 'books mockups/Fundamentals of electrical cicrcuits solutions.png' },
+    { label: 'Engineering circuit analysis', url: 'academic papers/circuits 1 and 2/Engineering circuit analysis 9th edition.pdf', cover: 'books mockups/engineering circuit analysis.png' },
+    { label: 'Engineering circuit analysis solutions', url: 'academic papers/circuits 1 and 2/solutions of engineering circuit analysis 9th edition.pdf', cover: 'books mockups/engineering circuit analysis solutions.png' },
+    { label: 'Introductory circuit analysis', url: 'academic papers/circuits 1 and 2/Introductory circuit analysis 13th edition.pdf', cover: 'books mockups/introductory circuit analysis.png' },      
+    { label: 'electric circuits', url: 'academic papers/circuits 1 and 2/electric circuits 11th edition.pdf', cover: 'books mockups/electric circuits.png' },
+    { label: 'تحليل الدوائر الكهربائية والالكترونية', url: 'academic papers/circuits 1 and 2/تحليل الدوائر الكهربائية والالكترونية.pdf', cover: 'books mockups/تحليل الدوائر الكهربائية.png' },
+    { label: 'تحليل الدوائر الكهربائية والالكترونية حلول', url: 'academic papers/circuits 1 and 2/حلول كتاب تحليل الدوائر الكهربائية والالكترونية.pdf', cover: 'books mockups/حلول تحليل الدوائر الكهربائية.png' }],
     summaries: [], videos: [], mid: [], final: []
   },
   subj3: { 
-   title: 'Circuit 1', icon: '📖',
+   title: 'Circuit 1', icon: '⚡',
     books: [ { label: 'Fundamentals of electrical cicrcuits',  url: 'academic papers/circuits 1 and 2/fundementals of circuits 7th edition.pdf', cover: 'books mockups/Fundamentals of electrical cicrcuits.png' },
     { label: 'Fundamentals of electrical cicrcuits solutions', url: 'academic papers/circuits 1 and 2/solution of fundementals of circuits 7th edition.pdf', cover: 'books mockups/Fundamentals of electrical cicrcuits solutions.png' },
     { label: 'Engineering circuit analysis', url: 'academic papers/circuits 1 and 2/Engineering circuit analysis 9th edition.pdf', cover: 'books mockups/engineering circuit analysis.png' },
