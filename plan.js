@@ -96,7 +96,7 @@ const subjectsData = {
   },
   subj3: {
     title: 'Circuit 1', icon: '📖',
-    books: [ { label: 'Fundamentals of electrical cicrcuits',  url: 'academicbooksandsolutions/fundementals of circuits 7th edition', cover: 'books mockups/Fundamentals of electrical cicrcuits.png' },
+    books: [ { label: 'Fundamentals of electrical cicrcuits',  url: 'academicbooksandsolutions/fundementals of circuits 7th edition.pdf', cover: 'books mockups/Fundamentals of electrical cicrcuits.png' },
     { label: 'Fundamentals of electrical cicrcuits solutions', url: 'https://drive.google.com/file/d/1GJUtYpl3m1z1v86Z06MXDrkJvYfxXVAl/view', cover: 'books mockups/Fundamentals of electrical cicrcuits solutions.png' }],
     summaries: [], videos: [], mid: [], final: []
   },
