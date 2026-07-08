@@ -85,7 +85,7 @@ const planHotspots = [
 // ─────────────────────────────────────────────────────────────────────────────
 const subjectsData = {
   subj1: {
-    title: 'مادة 1', icon: '📖',
+    title: 'Circuit Lab', icon: '⚡',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
@@ -114,193 +114,194 @@ const subjectsData = {
     summaries: [{ label: 'سلايدات م.ياسين', url: 'academic papers/circuits 1 and 2/sumaries/سلايدات مهندس ياسين سيركت 1.pdf' },{ label: 'دفتر د.امجد الهندي', url: 'academic papers/circuits 1 and 2/sumaries/دفتر د.امجد الهندي.pdf' },{ label: 'سبارك جديد', url: 'academic papers/circuits 1 and 2/sumaries/ملخص سبارك جديد سيركت 1.pdf' },{ label: 'زيرو ون', url: 'academic papers/circuits 1 and 2/sumaries/زيرو ون سيركت 1.pdf' },{ label: 'سبارك', url: 'academic papers/circuits 1 and 2/sumaries/ملخص سبارك سيركت 1.pdf' }], videos: [{ label: 'سبارك', url: 'https://www.youtube.com/playlist?list=PL4Itv3LsZJuyWPRdr8mR849IKdb05XNX1' },{ label: 'سامر عيسى', url: 'https://www.youtube.com/playlist?list=PLawhbyHTpbgG2VR16b5y8v05-yW4kB-jP' },{ label: 'تسلا', url: 'https://www.youtube.com/playlist?list=PL2C_OpeEqP-LgiDcixQR4QyN2n9EQTwuR' },{ label: 'SREE', url: 'https://www.youtube.com/playlist?list=PLNBj23z192s-4nPfxC8jTxyayuuJRyTGz' }], mid: [{ label: '2026', url: 'academic papers/circuits 1 and 2/pastpapers/ميد 2026 سيركت 1.pdf' },{ label: 'ميكاب 2025', url: 'academic papers/circuits 1 and 2/pastpapers/ميد ميكاب 2025 سيركت 1.pdf' },{ label: '2025', url: 'academic papers/circuits 1 and 2/pastpapers/ميد2025  سيركت 1.pdf' },{ label: '2025', url: 'academic papers/circuits 1 and 2/pastpapers/ميد 2025 سيركت 1.pdf' },{ label: '2024', url: 'academic papers/circuits 1 and 2/pastpapers/ميد 2024 سيركت 1.pdf' },{ label: 'ميد', url: 'academic papers/circuits 1 and 2/pastpapers/امتحان ميد سيركت 1.pdf' },{ label: 'ميد', url: 'academic papers/circuits 1 and 2/pastpapers/ميد سيركت 1.pdf' },{ label: 'شاشات', url: 'academic papers/circuits 1 and 2/pastpapers/ميد شاشات 2020-2021 سيركت 1.pdf' },{ label: '2015', url: 'academic papers/circuits 1 and 2/pastpapers/ميد 2015 سيركت 1.pdf' },{ label: '2014', url: 'academic papers/circuits 1 and 2/pastpapers/ميد 2014 سيركت 1.pdf' }], final: [{ label: '2024', url: 'academic papers/circuits 1 and 2/pastpapers/فاينل 2024 سيركت 1.pdf' },{ label: '2015-2018', url: 'academic papers/circuits 1 and 2/pastpapers/فاينل 2018-2015 سيركت 1.pdf' }]
   },
   subj4: {
-    title: 'مادة 4', icon: '📖',
+    title: 'Electronics device (1)', icon: '💡',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj5: {
-    title: 'مادة 5', icon: '📖',
+    title: 'Electronics 1 Lab', icon: '💡',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj6: {
-    title: 'مادة 6', icon: '📖',
+    title: 'Machine components', icon: '⚙️',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj7: {
-    title: 'مادة 7', icon: '📖',
+    title: 'Communications and data messaging', icon: '📶',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj8: {
-    title: 'مادة 8', icon: '📖',
+    
+    title: 'Electrical machines Lab', icon: '⚡',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj9: {
-    title: 'مادة 9', icon: '📖',
+    title: 'Electrical machines 1', icon: '⚡',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj10: {
-    title: 'مادة 10', icon: '📖',
+    title: 'Signal and Systems', icon: '📡',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj11: {
-    title: 'مادة 11', icon: '📖',
+    title: 'Power electronics', icon: '⚡',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj12: {
-    title: 'مادة 12', icon: '📖',
+    title: 'Power electronics Lab', icon: '⚡',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj13: {
-    title: 'مادة 13', icon: '📖',
+    title: 'Dynamics and vibration', icon: '🌀',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj14: {
-    title: 'مادة 14', icon: '📖',
+    title: 'Mechatronics applications in renewable energy', icon: '🪫🍃',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj15: {
-    title: 'مادة 15', icon: '📖',
+    title: 'Digital logic design', icon: '1️⃣ 0️⃣ ',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj16: {
-    title: 'مادة 16', icon: '📖',
+    title: 'Advance control systems', icon: '🧠',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj17: {
-    title: 'مادة 17', icon: '📖',
+    title: 'Control systems Lab', icon: '🧠',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj18: {
-    title: 'Control systems', icon: '📖',
+    title: 'Control systems', icon: '🧠',
     books: [ { label: 'Modern control engineering',  url: 'https://drive.google.com/drive/folders/1dwU_9bNs5So3XGK4hN3hQhXXAAAaTuEm', cover: 'books mockups/Modern control engineering.png' },
     { label: 'Modern control engineering solutions', url: 'https://drive.google.com/drive/folders/1IxOwEZ2ym7hLi8PNLwLGOWCiIgnVT1X-', cover: 'books mockups/Modern control engineering solutions.png' }],
     summaries: [ { label: 'سلايدات المادة', url: 'https://drive.google.com/drive/folders/1wjytH0OrjVi4b06_Flbez3hHsoKOJMn2' }, { label: 'مرجع عربي للمادة', url: 'https://drive.google.com/drive/folders/1N0pdQhTVJeNWr_1kOpirHQNbsDL32CwM' }, { label: 'دوسية المادة', url: 'https://drive.google.com/file/d/1RT2Xxt8szWKIAaASmrl0dT3ITsxmUhrM/view' }, { label: 'دفاتر المادة', url: 'https://drive.google.com/drive/folders/1-6YNC_Qo50_1NJs-Wyxmo6488iAqqarQ' }], videos: [ { label: 'شرح سبيكتروم', url: 'https://www.youtube.com/playlist?list=PLRNaExsfJ1qs6LF5rdDHq9w0S3YueJQwS' }], mid: [ { label: 'اسئلة سنوات الكتروني', url: 'https://drive.google.com/drive/folders/1EZfrqC35wE8xltmmdrd3_-et4mC90W8W' },  { label: 'اسئلة سنوات فريق سبارك', url: 'https://drive.google.com/drive/folders/1OlRE0jhoQ5Jn5EwdFA3UNlCCkcV2sW5V' }], final: [{ label: 'اسئلة سنوات سبيكتروم', url: 'https://drive.google.com/drive/folders/1rtgPqs_aTl8bJQSly3nfky6hLePyjk3K' }]
   },
   subj19: {
-    title: 'مادة 19', icon: '📖',
+    title: 'Electrical drive', icon: '⚡',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj20: {
-    title: 'مادة 20', icon: '📖',
+    title: 'Electrical drive Lab', icon: '⚡',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj21: {
-    title: 'مادة 21', icon: '📖',
+    title: 'Mechatronics Systems Design', icon: '🦾',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj22: {
-    title: 'مادة 22', icon: '📖',
+    title: 'Digital computerized machines', icon: '🖥️',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj23: {
-    title: 'مادة 23', icon: '📖',
+    title: 'Assembly Lab', icon: '💾 ',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj24: {
-    title: 'مادة 24', icon: '📖',
+    title: 'Assembly', icon: '💾 ',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj25: {
-    title: 'مادة 25', icon: '📖',
+    title: 'Protection', icon: '🔌',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj26: {
-    title: 'مادة 26', icon: '📖',
+    title: 'SCADA', icon: '📊',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj27: {
-    title: 'مادة 27', icon: '📖',
+    title: 'PLC', icon: '🎛️',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj28: {
-    title: 'مادة 28', icon: '📖',
+    title: 'Industrial Processes', icon: '🏭',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj29: {
-    title: 'مادة 29', icon: '📖',
+    title: 'Hydraulic drives', icon: '🔩',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj30: {
-    title: 'مادة 30', icon: '📖',
+    title: 'Hydraulic drives Lab', icon: '🔩',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj31: {
-    title: 'مادة 31', icon: '📖',
+    title: 'Microelectromechanical systems', icon: '⚙️',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj32: {
-    title: 'مادة 32', icon: '📖',
+    title: 'Sensors and Actuators Lab', icon: '📏',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj33: {
-    title: 'مادة 33', icon: '📖',
+    title: 'Sensors and Actuators', icon: '📏',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj34: {
-    title: 'مادة 34', icon: '📖',
+    title: 'Applied Engineering Materials', icon: '🏗️ ',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj35: {
-    title: 'مادة 35', icon: '📖',
+    title: 'Machine element design and computer-aided design', icon: '🖥️ 🧊',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj36: {
-    title: 'مادة 36', icon: '📖',
+    title: 'PLC Lab', icon: '🎛️',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj37: {
-    title: 'مادة 37', icon: '📖',
+    title: 'Industrial Processes', icon: '🏭',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj38: {
-    title: 'مادة 38', icon: '📖',
+    title: 'Special topics in mechatronics engineering', icon: '🤖',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj39: {
-    title: 'مادة 39', icon: '📖',
+    title: 'Robotics Dynamics and Analysis', icon: '🤖',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj40: {
-    title: 'مادة 40', icon: '📖',
+    title: 'Robotics engineering', icon: '🤖',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
   subj41: {
-    title: 'مادة 41', icon: '📖',
+    title: 'Robotics Dynamics and Analysis Lab', icon: '🤖',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
