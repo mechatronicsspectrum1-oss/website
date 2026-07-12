@@ -149,8 +149,9 @@ const subjectsData = {
   },
   subj10: {
     title: 'Signal and Systems', icon: '📡',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
+    books: [{ label: 'Signal & Systems Alan V.',  url: 'academic papers/signal and systems/Signals and Systems 2nd Edition by alan v..pdf', cover: 'books mockups/signal and systems alan v.png' },
+           { label: 'Signal and Systems Schaums outlines',  url: 'academic papers/signal and systems/signals and systems 2nd edition scham outline.pdf', cover: 'books mockups/signal and systems schaum outline.png' },],
+    summaries: [{ label: 'سلايدات د.جودت', url: 'academic papers/signal and systems/suammriez/سلايدات د.جودت.pdf' },{ label: 'Signal & Systems by MAE', url: 'academic papers/signal and systems/suammriez/Signals & Systems By MAE & AF.pdf' },{ label: 'دوسية م.نبال', url: 'academic papers/signal and systems/suammriez/دوسية م.نبال.pdf' },{ label: 'Fourier transform and Laplace transform table', url: 'academic papers/signal and systems/suammriez/Fourier transform and Laplace transform.pdf' }], videos: [{ label: 'بشار زيود', url: 'https://www.youtube.com/watch?v=SPskSm8N3FY' },{ label: 'ملخص سبيكتروم', url: 'https://www.youtube.com/watch?v=ARB7PBRlPGc' },{ label: 'شرح على سلايدات دكتور جودت', url: 'https://www.youtube.com/playlist?list=PLmtVLconakTY6y0Thd050QsvkHTJF8TWa' }], mid: [{ label: '2025', url: 'academic papers/signal and systems/pastpapers/ميد 2025.pdf' },{ label: '2024', url: 'academic papers/signal and systems/pastpapers/ميد 2024.pdf' },{ label: '2023', url: 'academic papers/signal and systems/pastpapers/ميد 2023.pdf' },{ label: '2023', url: 'academic papers/signal and systems/pastpapers/امتحان ميد 2023.pdf' },{ label: '2023', url: 'academic papers/signal and systems/pastpapers/Signal Mid 2023.pdf' },{ label: '2008', url: 'academic papers/signal and systems/pastpapers/ميد 2008.pdf' }], final: [{ label: '2025', url: 'academic papers/signal and systems/pastpapers/فاينل 2025.pdf' },{ label: '2023', url: 'academic papers/signal and systems/pastpapers/فاينل 2023.pdf' }]
   },
   subj11: {
     title: 'Power electronics', icon: '⚡',
