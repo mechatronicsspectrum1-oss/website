@@ -130,7 +130,7 @@ const subjectsData = {
     summaries: [], videos: [], mid: [], final: []
   },
   subj7: {
-    title: 'Communications and data messaging', icon: '📶',
+    title: 'Communications and data transmission', icon: '📶',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
