@@ -115,8 +115,9 @@ const subjectsData = {
   },
   subj4: {
     title: 'Electronics device (1)', icon: '💡',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
+    books: [{ label: 'Electronic devices and circuit theory',  url: 'academic papers/electronics 1/Electronics Devices and Circuit Theory 11th Edition.pdf', cover: 'books mockups/electronics devices and circuit theory.png' },
+           { label: 'Solutions of electronic devices and circuit theory',  url: 'academic papers/electronics 1/solution of Electronics Devices and Circuit Theory 11th Edition.pdf', cover: 'books mockups/solutions of electronics devices and circuit theory.png' }],
+    summaries: [{ label: 'سلايدات د.ماجد', url: 'academic papers/electronics 1/summarize/سلايدات د.ماجد.pdf' },{ label: 'دفتر م.خولة', url: 'academic papers/electronics 1/summarize/دفتر م.خولة.pdf' },{ label: 'سلايدات محمد عايد', url: 'academic papers/electronics 1/summarize/سلايدات محمد عايد.pdf' },{ label: 'دفتر سبيكتروم', url: '' }], videos: [{ label: 'سبارك', url: 'https://www.youtube.com/playlist?list=PL4Itv3LsZJuyt-6bhNl99zDhkwf2zyaHo' },{ label: 'محمد عايد', url: 'https://www.youtube.com/playlist?list=PLkXK5Ys6YkPJeYfEHo8Rei1dToH6hB5e1' }], mid: [{ label: '2026', url: 'academic papers/electronics 1/past papers/ميد 2026.pdf' },{ label: '2025', url: 'academic papers/electronics 1/past papers/ميد 2025.pdf' },{ label: '2024', url: 'academic papers/electronics 1/past papers/ميد 2024.pdf' },{ label: '2023', url: 'academic papers/electronics 1/past papers/ميد 2023.pdf' },{ label: '2022', url: 'academic papers/electronics 1/past papers/ميد 2022.pdf' },{ label: '2016', url: 'academic papers/electronics 1/past papers/ميد 2016.pdf' },{ label: '2012', url: 'academic papers/electronics 1/past papers/ميد 2012.pdf' }], final: [{ label: '2025', url: 'academic papers/electronics 1/past papers/فاينل 2025.pdf' },{ label: '2024', url: 'academic papers/electronics 1/past papers/فاينل 2024.pdf' },{ label: 'شاشات', url: 'academic papers/electronics 1/past papers/شاشات فاينل.pdf' }]
   },
   subj5: {
     title: 'Electronics 1 Lab', icon: '💡',
