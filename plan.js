@@ -141,8 +141,10 @@ const subjectsData = {
   },
   subj9: {
     title: 'Electrical machines 1', icon: '⚡',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
+    books: [{ label: 'Electric machinary fundamentals',  url: 'academic papers/electric machines 1/electric machinery fundamentals 4th edition.pdf', cover: 'books mockups/electric machinary fundamentals.png' },
+           { label: 'Solutions of electric machinary fundamentals.png',  url: 'academic papers/electric machines 1/solutions of electic machinary 4th edition.pdf', cover: 'books mockups/solutions of electric machinary fundamentals.png' },
+           { label: 'قوى كهربائية | الآلات الكهربائية',  url: 'academic papers/electric machines 1/الآلات الكهربائية.pdf', cover: 'books mockups/قوى كهربائية الالات الكهربائية.png' },],
+    summaries: [{ label: 'سلايدات م.ياسين', url: 'academic papers/electric machines 1/summary/Dr.Yassin Machine سلايدات.pdf' },{ label: 'Rules summary by MAE', url: 'academic papers/electric machines 1/summary/Machines Rules Summary By MAE.pdf' },{ label: 'سلايدات المادة', url: 'academic papers/electric machines 1/summary/سلايدات المادة.pdf' },{ label: 'ملخص سبارك', url: 'academic papers/electric machines 1/past papers/ملخص سبارك.pdf' }], videos: [{ label: 'سبارك', url: 'https://www.youtube.com/playlist?list=PL4Itv3LsZJuzUczJi0fCg8zknagNt3dzp' },{ label: 'حل سنوات (سبارك)', url: 'https://www.youtube.com/playlist?list=PL4Itv3LsZJuy_gf83Q3cuLTDWh0UU8Nbi' },{ label: 'د.احمد ابو الرب', url: 'https://www.youtube.com/playlist?list=PLdL3o9rqPLb5to3kyjXMawC14zsAWp6Uu' },{ label: 'لطفي الشريف', url: 'https://www.youtube.com/playlist?list=PLJqRpPcJQ_g3CwChbNr6GJkd8jbP-E7av' }], mid: [{ label: '2026', url: 'academic papers/electric machines 1/past papers/ميد 2026.pdf' },{ label: '2023', url: 'academic papers/electric machines 1/past papers/ميد 2023.pdf' }], final: [{ label: 'بنك اسئلة', url: 'academic papers/electric machines 1/past papers/Machines TEST BANK By MAE.pdf' },{ label: 'شاشات', url: 'academic papers/electric machines 1/past papers/شاشات سبارك.pdf' },{ label: '2010', url: 'academic papers/electric machines 1/past papers/فاينل 2010.pdf' },]
   },
   subj10: {
     title: 'Signal and Systems', icon: '📡',
