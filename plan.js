@@ -230,7 +230,9 @@ const subjectsData = {
   },
   subj25: {
     title: 'Protection', icon: '🔌',
-    books: [],
+    books: [ { label: 'Hand book for protection engineers',  url: 'academic papers/protection/HANDBOOK for protection engineers.pdf', cover: 'books mockups/Hand book for protection engineers.png' },
+           { label: 'Protective relaying principles and applications',  url: 'academic papers/protection/protection relaying principles and applications.pdf', cover: 'books mockups/protective relaying principles and applications.png' },
+           { label: 'Electrical installation hand book protection, control and electrical devices',  url: 'academic papers/protection/electrical installation hanbook protection, control and electrical devices.pdf', cover: 'books mockups/Electrical installation hand book protection, control and electrical devices.png' },],
     summaries: [], videos: [], mid: [], final: []
   },
   subj26: {
