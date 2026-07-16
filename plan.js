@@ -241,14 +241,28 @@ const subjectsData = {
       { label: 'Fuse characteristics', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/2_Fuse_Characteristics.pdf' },
       { label: 'Electrical installation practice', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/03 Fuses (1).pdf' },
       { label: 'Electrical components', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/ESD_1_Electrical_Components.pdf' },
-      { label: 'Fuses switch gear circuit breaker', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/Fuses Switch gear Circuit breakers.pdf' }
+      { label: 'Fuses switch gear circuit breaker', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/Fuses Switch gear Circuit breakers.pdf' },
       { label: 'General purpose fuses', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/GPEU_FerrulegG.pdf   fuses.pdf' },
       { label: 'Guide to fuse selection', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/Guide_to_Fuse_Selection.pdf' },
       { label: 'IP protection classes', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/IP_Protection_Classes_01.pdf' },
       { label: 'Fuseology', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/_Fuse_Classes.pdf' },
       { label: 'Safety switches fuses', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/safety_switches fuses.pdf' },
     ]
-      }
+      },
+      {
+    label: 'Electrical switches',
+    type: 'folder',
+    items: [
+      { label: 'Electrical Symbols', url: 'academic papers/protection/summaries/سلايدات المادة/Electrical Switches/3..pdf' },
+      { label: 'Electrical Symbols and Line Diagrams', url: 'academic papers/protection/summaries/سلايدات المادة/Electrical Switches/Electrical Symbols and Line Diagrams.pdf' },
+      { label: 'Switches for Industrial applications', url: 'academic papers/protection/summaries/سلايدات المادة/Electrical Switches/indrlcat.pdft ype of switches.pdf' },
+      { label: 'Industrial control', url: 'academic papers/protection/summaries/سلايدات المادة/Electrical Switches/industrial control.pdf' },
+      { label: 'Residentia electrical devices', url: 'academic papers/protection/summaries/سلايدات المادة/Electrical Switches/residentia electrical devices.pdf' },
+      { label: 'Switch Basics', url: 'academic papers/protection/summaries/سلايدات المادة/Electrical Switches/switch basics_web08.pdf' },
+      { label: 'Switches', url: 'academic papers/protection/summaries/سلايدات المادة/Electrical Switches/switches.pdf' },
+    ]
+      },
+  
     ], videos: [], mid: [], final: []
   },
   subj26: {
