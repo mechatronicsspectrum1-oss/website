@@ -131,8 +131,10 @@ const subjectsData = {
   },
   subj7: {
     title: 'Communications and data transmission', icon: '📶',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
+    books: [{ label: 'Data communictaions and networking',  url: 'academic papers/communication/data comunication and networking.pdf', cover: 'books mockups/data communictaions and networking.png' },
+            { label: 'Solutions of data communictaions and networking.png',  url: 'academic papers/communication/solutions of data comunication and networking.pdf', cover: 'books mockups/solutions of data communictaions and networking.png' },
+           { label: 'Data and computer communtications',  url: 'academic papers/communication/Data and computer comunications.pdf', cover: 'books mockups/data and computer communtications.png' }],
+    summaries: [{ label: 'Network Roaa Bassam', url: 'academic papers/communication/summarize/Network-Roaa Bassam2021-1.pdf' }], videos: [], mid: [{ label: '2024', url: 'academic papers/communication/pastpapers/mid 2024.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/Mid T2.2023.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/Mid T3.2023.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/mid 2023.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/mid 2022.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/ميد 2022.pdf' }], final: [{ label: '2023', url: 'academic papers/communication/pastpapers/فاينل اتصالات 2023 امتحان.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/امتحان فاينل اتصالات 2023.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/اتصالات فاينل 2023.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/final comm 2022.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/final 2022.pdf' }]
   },
   subj8: {
     
