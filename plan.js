@@ -232,13 +232,17 @@ const subjectsData = {
     title: 'Protection', icon: '🔌',
     books: [ { label: 'Hand book for protection engineers',  url: 'academic papers/protection/HANDBOOK for protection engineers.pdf', cover: 'books mockups/Hand book for protection engineers.png' },
            { label: 'Protective relaying principles and applications',  url: 'academic papers/protection/protection relaying principles and applications.pdf', cover: 'books mockups/protective relaying principles and applications.png' },
-           { label: 'Electrical installation hand book protection, control and electrical devices',  url: 'academic papers/protection/electrical installation hanbook protection, control and electrical devices.pdf', cover: 'books mockups/Electrical installation hand book protection, control and electrical devices.png' },],
-    summaries: [  {
+           { label: 'Electrical installation hand book protection, control and electrical devices',  url: 'academic papers/protection/electrical installation hanbook protection, control and electrical devices.pdf', cover: 'books mockups/Electrical installation hand book protection, control and electrical devices.png' }],
+    summaries: [  
+      {
     label: 'Fuses',
     type: 'folder',
     items: [
       { label: 'Fuse characteristics', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/2_Fuse_Characteristics.pdf' },
-      { label: 'Fuses switch gear circuit breaker', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/Fuses Switch gear Circuit breakers.pdf' }]}], videos: [], mid: [], final: []
+      { label: 'Fuses switch gear circuit breaker', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/Fuses Switch gear Circuit breakers.pdf' }
+    ]
+      }
+    ], videos: [], mid: [], final: []
   },
   subj26: {
     title: 'SCADA', icon: '📊',
