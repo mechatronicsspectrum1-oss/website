@@ -347,18 +347,69 @@ function handleHotspotClick(id) {
 // ─── SUBJECT MODAL ───
 
 // Render a simple link list (summaries, videos, mid, final)
+// ─── BUILD LINK LIST WITH FOLDER SUPPORT (USING <details>) ───
 function buildLinkList(containerId, items, emptyText) {
   const el = document.getElementById(containerId);
+  if (!el) return;
   if (!items || items.length === 0) {
     el.innerHTML = `<span class="subject-list-empty">${emptyText || 'لا يوجد محتوى مضاف بعد'}</span>`;
     return;
   }
-  el.innerHTML = items.map(it => `
-    <a class="subject-link-item" href="${it.url || '#'}" target="_blank" rel="noopener">
-      <span>${it.label}</span>
-      <span class="link-arrow">↗</span>
-    </a>
-  `).join('');
+
+  let html = '';
+  items.forEach(item => {
+    if (item.type === 'folder' && item.items && item.items.length > 0) {
+      // Folder – uses <details> for native expand/collapse
+      html += `
+        <details class="subject-folder">
+          <summary class="subject-folder-header">
+            <span class="subject-folder-label">${item.label}</span>
+            <span class="subject-folder-count">(${item.items.length})</span>
+          </summary>
+          <div class="subject-folder-content">
+            ${buildLinkListInner(item.items)}
+          </div>
+        </details>
+      `;
+    } else if (item.url) {
+      // Simple link
+      html += `
+        <a class="subject-link-item" href="${item.url}" target="_blank" rel="noopener">
+          <span>${item.label}</span>
+          <span class="link-arrow">↗</span>
+        </a>
+      `;
+    }
+  });
+  el.innerHTML = html;
+}
+
+// ─── HELPER: recursive rendering for nested folders ───
+function buildLinkListInner(items) {
+  let html = '';
+  items.forEach(item => {
+    if (item.type === 'folder' && item.items && item.items.length > 0) {
+      html += `
+        <details class="subject-folder" style="margin-right: 16px;">
+          <summary class="subject-folder-header">
+            <span class="subject-folder-label">${item.label}</span>
+            <span class="subject-folder-count">(${item.items.length})</span>
+          </summary>
+          <div class="subject-folder-content">
+            ${buildLinkListInner(item.items)}
+          </div>
+        </details>
+      `;
+    } else if (item.url) {
+      html += `
+        <a class="subject-link-item" href="${item.url}" target="_blank" rel="noopener" style="padding-right: 20px;">
+          <span>${item.label}</span>
+          <span class="link-arrow">↗</span>
+        </a>
+      `;
+    }
+  });
+  return html;
 }
 
 // Render book covers grid
