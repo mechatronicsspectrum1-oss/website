@@ -213,7 +213,7 @@ const subjectsData = {
     summaries: [], videos: [], mid: [], final: []
   },
   subj22: {
-    title: 'Digital computerized machines', icon: '🖥️',
+    title: 'CNC', icon: '🔩',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
@@ -293,7 +293,7 @@ const subjectsData = {
     summaries: [], videos: [], mid: [], final: []
   },
   subj31: {
-    title: 'Microelectromechanical systems', icon: '⚙️',
+    title: 'MEMs', icon: '⚙️',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
@@ -313,7 +313,7 @@ const subjectsData = {
     summaries: [], videos: [], mid: [], final: []
   },
   subj35: {
-    title: 'Machine element design and computer-aided design', icon: '🖥️ 🧊',
+    title: 'Machine element design', icon: '🧊',
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
