@@ -240,8 +240,10 @@ const subjectsData = {
   },
   subj27: {
     title: 'PLC', icon: '🎛️',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
+    books: [ { label: 'Programmable logic controllers',  url: 'academic papers/plc/Programmable Logic Controllers (Frank D. Petruzella).pdf', cover: 'books mockups/Programmable logic controllers.png' },
+           { label: 'Programmable controllers theory and implementation',  url: 'academic papers/plc/ourdev_259231.pdf', cover: 'books mockups/programmable controllers theory and implementation.png' },
+           { label: 'Process control instrumentation technology',  url: 'academic papers/plc/process control instrumentation technology.pdf', cover: 'books mockups/Process control instrumentation technology.png' },],
+    summaries: [{ label: 'سلايدات د.معزوز الصلاحات',  url: 'academic papers/plc/summaries/د.معزوز الصلاحات.pdf'},{ label: 'سلايدات المادة',  url: 'academic papers/plc/summaries/Plc slides.pdf'},{ label: 'ملخص سبيكتروم جديد',  url: 'academic papers/plc/summaries/ملخص PLC نظري.pdf'},{ label: 'Timer and counter examples',  url: 'academic papers/plc/summaries/16-Timers and counters example.pdf'},{ label: 'ملخص سبيكتروم',  url: 'academic papers/plc/summaries/ملخص.pdf'},], videos: [{ label: 'م.يامن الترك',  url: 'https://www.youtube.com/playlist?list=PLq3QKKpXDEYpcWftOlcyiJ99fs_7AsBJM'},], mid: [{ label: '2025',  url: 'academic papers/plc/pastpapers/mid 2025.pdf'},{ label: '2024',  url: 'academic papers/plc/pastpapers/mid 2024.pdf'},{ label: '2023',  url: 'academic papers/plc/pastpapers/mid2023.pdf'},{ label: '2016',  url: 'academic papers/plc/pastpapers/mid 2016.pdf'},{ label: '2016',  url: 'academic papers/plc/pastpapers/mid 2016 exam.pdf'}], final: [{ label: '2024',  url: 'academic papers/plc/pastpapers/final 2024.pdf'},{ label: 'شاشات',  url: 'academic papers/plc/pastpapers/final شاشات.pdf'},]
   },
   subj28: {
     title: 'Industrial Processes', icon: '🏭',
