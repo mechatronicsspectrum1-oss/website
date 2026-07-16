@@ -263,7 +263,7 @@ const subjectsData = {
     ]
       },
   
-    ], videos: [], mid: [], final: []
+    ], videos: [], mid: [{ label: '2025',  url: 'academic papers/protection/past papers/ميد 2025.pdf'},{ label: 'ميد',  url: 'academic papers/protection/past papers/ميد.pdf'},{ label: '2016',  url: 'academic papers/protection/past papers/ميد 2016.pdf'},{ label: '2015',  url: 'academic papers/protection/past papers/ميد 2015.pdf'},{ label: 'Circuit breakers test bank',  url: 'academic papers/protection/past papers/Circuit Breaker - Multiple Choice Questions.pdf'},], final: [{ label: 'شاشات',  url: 'academic papers/protection/past papers/فاينل شاشات.pdf'},]
   },
   subj26: {
     title: 'SCADA', icon: '📊',
