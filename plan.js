@@ -233,7 +233,23 @@ const subjectsData = {
     books: [ { label: 'Hand book for protection engineers',  url: 'academic papers/protection/HANDBOOK for protection engineers.pdf', cover: 'books mockups/Hand book for protection engineers.png' },
            { label: 'Protective relaying principles and applications',  url: 'academic papers/protection/protection relaying principles and applications.pdf', cover: 'books mockups/protective relaying principles and applications.png' },
            { label: 'Electrical installation hand book protection, control and electrical devices',  url: 'academic papers/protection/electrical installation hanbook protection, control and electrical devices.pdf', cover: 'books mockups/Electrical installation hand book protection, control and electrical devices.png' }],
-    summaries: [], videos: [], mid: [], final: []
+    summaries: [ 
+      {
+    label: 'Fuses',
+    type: 'folder',
+    items: [
+      { label: 'Fuse characteristics', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/2_Fuse_Characteristics.pdf' },
+      { label: 'Electrical installation practice', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/03 Fuses (1).pdf' },
+      { label: 'Electrical components', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/ESD_1_Electrical_Components.pdf' },
+      { label: 'Fuses switch gear circuit breaker', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/Fuses Switch gear Circuit breakers.pdf' }
+      { label: 'General purpose fuses', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/GPEU_FerrulegG.pdf   fuses.pdf' },
+      { label: 'Guide to fuse selection', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/Guide_to_Fuse_Selection.pdf' },
+      { label: 'IP protection classes', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/IP_Protection_Classes_01.pdf' },
+      { label: 'Fuseology', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/_Fuse_Classes.pdf' },
+      { label: 'Safety switches fuses', url: 'academic papers/protection/summaries/سلايدات المادة/Fuses/safety_switches fuses.pdf' },
+    ]
+      }
+    ], videos: [], mid: [], final: []
   },
   subj26: {
     title: 'SCADA', icon: '📊',
