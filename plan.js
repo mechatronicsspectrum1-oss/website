@@ -179,7 +179,7 @@ const subjectsData = {
     title: 'Digital logic design', icon: '1️⃣ 0️⃣ ',
     books: [{ label: 'Digital design with an introduction to verilog HDL',  url: 'academic papers/digital logic design/digital deisgn with an introduction to the verliog hdl.pdf', cover: 'books mockups/digital design with an introduction to verilog hdl.png' },
            { label: 'solutions of digital design with an introduction to verilog HDL',  url: 'academic papers/digital logic design/solutions of digital design with an introduction to the verliog hdl 5th edition.pdf', cover: 'books mockups/digital design with an introduction to verilog hdl solutions.png' }],
-    summaries: [{ label: 'تخطيط الكتاب د.مازن', url: 'academic papers/digital logic design/summaries/الكتاب مع تخطيط د.مازن.pdf' },{ label: 'دفتر م.سماح', url: 'academic papers/digital logic design/summaries/دفتر م.سماح.pdf' },{ label: 'دفتر المادة', url: 'academic papers/digital logic design/summaries/دفتر المادة.pdf' }], videos: [{ label: 'مهندس سامر', url: 'https://drive.google.com/drive/folders/1bN5m11Z-zCsAMwpOBeZ4bJ6BQ9GOkhht' },{ label: 'نتالي الكايد', url: 'https://www.youtube.com/playlist?list=PLjiyR6nPcbxy_nbEQHBj5MwGicZRTRM_w' }], mid: [{ label: '2026', url: 'academic papers/digital logic design/pastpapers/ميد لوجيك 2026 - فصل2.pdf' },{ label: '2025', url: 'academic papers/digital logic design/pastpapers/امتحان ميد 2025.pdf' },{ label: '2025', url: 'academic papers/digital logic design/pastpapers/ميد 2025.pdf' },{ label: '2023', url: 'academic papers/digital logic design/pastpapers/ميد 2023.pdf' },{ label: '2017', url: 'academic papers/digital logic design/pastpapers/ميد 2017.pdf' },{ label: '2016', url: 'academic papers/digital logic design/pastpapers/امتحان ميسد 2016.pdf' },{ label: '2016', url: 'academic papers/digital logic design/pastpapers/ميد 2016.pdf' }], final: [{ label: '2025', url: 'academic papers/digital logic design/pastpapers/فاينل 2025.pdf' },{ label: '2025', url: 'academic papers/digital logic design/pastpapers/فاينل2025.pdf' },{ label: 'شاشات زيرو ون', url: 'academic papers/digital logic design/pastpapers/شاشات زيرو ون.pdf' },{ label: 'شاشات سبارك', url: 'academic papers/digital logic design/pastpapers/شاشات سبارك.pdf' },{ label: 'فاينل', url: 'academic papers/digital logic design/pastpapers/فاينل.pdf' },{ label: '2018', url: 'academic papers/digital logic design/pastpapers/فاينل 2018.pdf' },{ label: '2016', url: 'academic papers/digital logic design/pastpapers/فاينل 2016.pdf' },]
+    summaries: [{ label: 'تخطيط الكتاب د.مازن', url: 'academic papers/digital logic design/summaries/الكتاب مع تخطيط د.مازن.pdf' },{ label: 'دفتر م.سماح', url: 'academic papers/digital logic design/summaries/دفتر م.سماح.pdf' },{ label: 'سلايدات د.شرحبيل', url: 'academic papers/digital logic design/summaries/سلايدات د.شرحبيل.pdf' },{ label: 'دفتر المادة', url: 'academic papers/digital logic design/summaries/دفتر المادة.pdf' }], videos: [{ label: 'مهندس سامر', url: 'https://drive.google.com/drive/folders/1bN5m11Z-zCsAMwpOBeZ4bJ6BQ9GOkhht' },{ label: 'نتالي الكايد', url: 'https://www.youtube.com/playlist?list=PLjiyR6nPcbxy_nbEQHBj5MwGicZRTRM_w' }], mid: [{ label: '2026', url: 'academic papers/digital logic design/pastpapers/ميد لوجيك 2026 - فصل2.pdf' },{ label: '2025', url: 'academic papers/digital logic design/pastpapers/امتحان ميد 2025.pdf' },{ label: '2025', url: 'academic papers/digital logic design/pastpapers/ميد 2025.pdf' },{ label: '2023', url: 'academic papers/digital logic design/pastpapers/ميد 2023.pdf' },{ label: '2017', url: 'academic papers/digital logic design/pastpapers/ميد 2017.pdf' },{ label: '2016', url: 'academic papers/digital logic design/pastpapers/امتحان ميسد 2016.pdf' },{ label: '2016', url: 'academic papers/digital logic design/pastpapers/ميد 2016.pdf' }], final: [{ label: '2025', url: 'academic papers/digital logic design/pastpapers/فاينل 2025.pdf' },{ label: '2025', url: 'academic papers/digital logic design/pastpapers/فاينل2025.pdf' },{ label: 'شاشات زيرو ون', url: 'academic papers/digital logic design/pastpapers/شاشات زيرو ون.pdf' },{ label: 'شاشات سبارك', url: 'academic papers/digital logic design/pastpapers/شاشات سبارك.pdf' },{ label: 'فاينل', url: 'academic papers/digital logic design/pastpapers/فاينل.pdf' },{ label: '2018', url: 'academic papers/digital logic design/pastpapers/فاينل 2018.pdf' },{ label: '2016', url: 'academic papers/digital logic design/pastpapers/فاينل 2016.pdf' },]
   },
   subj16: {
     title: 'Advance control systems', icon: '🧠',
@@ -275,12 +275,33 @@ const subjectsData = {
     ]
       },
        {
+    label: 'Circuit breakers',
+    type: 'folder',
+    items: [
+      { label: 'المصهرات والقواطع الآلية', url: 'academic papers/protection/summaries/سلايدات المادة/Circuit Breakers/التمديدات الكهربائية للدكتور محمد عالية.pdf' },
+      { label: 'The basic functions of LV switch gear', url: 'academic papers/protection/summaries/سلايدات المادة/Circuit Breakers/Fuses Switch gear Circuit breakers.pdf' },
+      { label: 'التحكم الكهربائي الصناعي والآلي', url: 'academic papers/protection/summaries/سلايدات المادة/Circuit Breakers/التحكم الكهربائي الصناعي والآلي.pdf' },
+      { label: 'LV switch gear: functions & selections', url: 'academic papers/protection/summaries/سلايدات المادة/Circuit Breakers/EIG-H-LV-switchgear.pdf' },
+      { label: 'Distribution boards', url: 'academic papers/protection/summaries/سلايدات المادة/Circuit Breakers/Distribution Boards.pdf' },
+      { label: 'Circuit breakers lighting', url: 'academic papers/protection/summaries/سلايدات المادة/Circuit Breakers/11 circuit breakers lighting.pdf' },
+    ]
+      },
+       {
     label: 'Contractors',
     type: 'folder',
     items: [
       { label: 'Motor control', url: 'academic papers/protection/summaries/سلايدات المادة/Contactors/Contactors relays.pdf' },
       { label: 'Motor starter', url: 'academic papers/protection/summaries/سلايدات المادة/Contactors/Motor Starter.pdf' },
       { label: 'Contractors & Relays', url: 'academic papers/protection/summaries/سلايدات المادة/Contactors/Contactors & Relays.pdf' },
+    ]
+      },
+         {
+    label: 'Sensors',
+    type: 'folder',
+    items: [
+      { label: 'Basics of sensors', url: 'academic papers/protection/summaries/سلايدات المادة/Sensors/Basic of ensors.pdf' },
+      { label: 'Fundamentals of sensing', url: 'academic papers/protection/summaries/سلايدات المادة/Sensors/FUNDAMENTALS OF SENSING.pdf' },
+      { label: '', url: '' },
     ]
       },
     ], videos: [], mid: [{ label: '2025',  url: 'academic papers/protection/past papers/ميد 2025.pdf'},{ label: 'ميد',  url: 'academic papers/protection/past papers/ميد.pdf'},{ label: '2016',  url: 'academic papers/protection/past papers/ميد 2016.pdf'},{ label: '2015',  url: 'academic papers/protection/past papers/ميد 2015.pdf'},{ label: 'Circuit breakers test bank',  url: 'academic papers/protection/past papers/Circuit Breaker - Multiple Choice Questions.pdf'},], final: [{ label: 'شاشات',  url: 'academic papers/protection/past papers/فاينل شاشات.pdf'},]
