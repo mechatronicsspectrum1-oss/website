@@ -301,10 +301,36 @@ const subjectsData = {
     items: [
       { label: 'Basics of sensors', url: 'academic papers/protection/summaries/سلايدات المادة/Sensors/Basic of ensors.pdf' },
       { label: 'Fundamentals of sensing', url: 'academic papers/protection/summaries/سلايدات المادة/Sensors/FUNDAMENTALS OF SENSING.pdf' },
-      { label: '', url: '' },
     ]
       },
-    ], videos: [], mid: [{ label: '2025',  url: 'academic papers/protection/past papers/ميد 2025.pdf'},{ label: 'ميد',  url: 'academic papers/protection/past papers/ميد.pdf'},{ label: '2016',  url: 'academic papers/protection/past papers/ميد 2016.pdf'},{ label: '2015',  url: 'academic papers/protection/past papers/ميد 2015.pdf'},{ label: 'Circuit breakers test bank',  url: 'academic papers/protection/past papers/Circuit Breaker - Multiple Choice Questions.pdf'},], final: [{ label: 'شاشات',  url: 'academic papers/protection/past papers/فاينل شاشات.pdf'},]
+           {
+    label: 'Relays',
+    type: 'folder',
+    items: [
+      { label: 'Relay', url: 'academic papers/protection/summaries/سلايدات المادة/Relays/Lect1.pdf' },
+      { label: 'Programming timer', url: 'academic papers/protection/summaries/سلايدات المادة/Relays/PLCHAPTER07 Timer relays.pdf' },
+      { label: 'Relays automobile types', url: 'academic papers/protection/summaries/سلايدات المادة/Relays/Relays Autombile types.pdf' },
+      { label: 'Sequential process control', url: 'academic papers/protection/summaries/سلايدات المادة/Relays/Relays.pdf' },
+      { label: 'schem contactors and relays', url: 'academic papers/protection/summaries/سلايدات المادة/Relays/schems contactors and relays(Autosaved).pdf' },
+      { label: 'Sheldon Munns', url: 'academic papers/protection/summaries/سلايدات المادة/Relays/sheldon-munns_a (1) (1).pdf' },
+      { label: 'Time delay relay', url: 'academic papers/protection/summaries/سلايدات المادة/Relays/time delay relaye applications.pdf' },
+    ]
+      },
+      },
+           {
+    label: 'Relays',
+    type: 'folder',
+    items: [
+      { label: 'Relay', url: 'academic papers/protection/summaries/سلايدات المادة/Relays/Lect1.pdf' },
+      { label: 'Programming timer', url: 'academic papers/protection/summaries/سلايدات المادة/Relays/PLCHAPTER07 Timer relays.pdf' },
+      { label: 'Relays automobile types', url: 'academic papers/protection/summaries/سلايدات المادة/Relays/Relays Autombile types.pdf' },
+      { label: 'Sequential process control', url: 'academic papers/protection/summaries/سلايدات المادة/Relays/Relays.pdf' },
+      { label: 'schem contactors and relays', url: 'academic papers/protection/summaries/سلايدات المادة/Relays/schems contactors and relays(Autosaved).pdf' },
+      { label: 'Sheldon Munns', url: 'academic papers/protection/summaries/سلايدات المادة/Relays/sheldon-munns_a (1) (1).pdf' },
+      { label: 'Time delay relay', url: 'academic papers/protection/summaries/سلايدات المادة/Relays/time delay relaye applications.pdf' },
+    ]
+      },
+    { label: 'Electrical components', url: 'academic papers/protection/summaries/سلايدات المادة/Others/elcromechancal components devices.pdf' }, ], videos: [], mid: [{ label: '2025',  url: 'academic papers/protection/past papers/ميد 2025.pdf'},{ label: 'ميد',  url: 'academic papers/protection/past papers/ميد.pdf'},{ label: '2016',  url: 'academic papers/protection/past papers/ميد 2016.pdf'},{ label: '2015',  url: 'academic papers/protection/past papers/ميد 2015.pdf'},{ label: 'Circuit breakers test bank',  url: 'academic papers/protection/past papers/Circuit Breaker - Multiple Choice Questions.pdf'},], final: [{ label: 'شاشات',  url: 'academic papers/protection/past papers/فاينل شاشات.pdf'},]
   },
   subj26: {
     title: 'SCADA', icon: '📊',
