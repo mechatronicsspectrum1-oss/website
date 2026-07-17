@@ -250,6 +250,18 @@ const subjectsData = {
     ]
       },
       {
+    label: 'Resistors',
+    type: 'folder',
+    items: [
+      { label: 'Linear Potentiometers for Structural Engineering', url: 'academic papers/protection/summaries/سلايدات المادة/resistors/Linear Potentiometers for Structural Engineering.pdf' },
+      { label: 'Resistance', url: 'academic papers/protection/summaries/سلايدات المادة/resistors/Resistance.pdf' },
+      { label: 'Resistors & Colour Coding', url: 'academic papers/protection/summaries/سلايدات المادة/resistors/Resistors & Colour Coding.pdf' },
+      { label: 'Resistors and resistance', url: 'academic papers/protection/summaries/سلايدات المادة/resistors/Resistors and resistance.pdf' },
+      { label: 'Resistors', url: 'academic papers/protection/summaries/سلايدات المادة/resistors/Resistors.pdf' },
+      { label: 'Semiconductor Electronics', url: 'academic papers/protection/summaries/سلايدات المادة/resistors/Semiconductor Electronics.pdf' },
+    ]
+      },
+      {
     label: 'Electrical switches',
     type: 'folder',
     items: [
@@ -262,7 +274,17 @@ const subjectsData = {
       { label: 'Switches', url: 'academic papers/protection/summaries/سلايدات المادة/Electrical Switches/switches.pdf' },
     ]
       },
-  
+       {
+    label: 'Contractors',
+    type: 'folder',
+    items: [
+      { label: 'Motor control', url: 'academic papers/protection/summaries/سلايدات المادة/Contactors/Contactors relays.pdf' },
+      { label: 'Motor starter', url: 'academic papers/protection/summaries/سلايدات المادة/Contactors/Motor Starter.pdf' },
+      { label: '', url: '' },
+      { label: '', url: '' },
+    ]
+      },
+   
     ], videos: [], mid: [{ label: '2025',  url: 'academic papers/protection/past papers/ميد 2025.pdf'},{ label: 'ميد',  url: 'academic papers/protection/past papers/ميد.pdf'},{ label: '2016',  url: 'academic papers/protection/past papers/ميد 2016.pdf'},{ label: '2015',  url: 'academic papers/protection/past papers/ميد 2015.pdf'},{ label: 'Circuit breakers test bank',  url: 'academic papers/protection/past papers/Circuit Breaker - Multiple Choice Questions.pdf'},], final: [{ label: 'شاشات',  url: 'academic papers/protection/past papers/فاينل شاشات.pdf'},]
   },
   subj26: {
