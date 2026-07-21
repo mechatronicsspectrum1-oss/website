@@ -388,7 +388,9 @@ const subjectsData = {
   },
   subj31: {
     title: 'MEMs', icon: '⚙️',
-    books: [],
+    books: [{ label: 'MEMs & Microsystems design and manufacture',  url: 'MEMs/MEMS and Microsystems Design and Manufacture.pdf', cover: 'books mockups/MEMs & Microsystems design and manufacture.png' },
+           { label: 'Foundations of mems',  url: 'MEMs/Foundations of MEMS.pdf', cover: 'books mockups/foundations of mems.png' },
+           { label: 'Microsystem technology and microrobotics',  url: 'MEMs/Microsystem Technology and Microrobotics.pdf', cover: 'books mockups/microsystem technology and microrobotics.png' },],
     summaries: [], videos: [], mid: [], final: []
   },
   subj32: {
