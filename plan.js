@@ -134,7 +134,34 @@ const subjectsData = {
     books: [{ label: 'Data communictaions and networking',  url: 'academic papers/communication/data comunication and networking.pdf', cover: 'books mockups/data communictaions and networking.png' },
             { label: 'Solutions of data communictaions and networking.png',  url: 'academic papers/communication/solutions of data comunication and networking.pdf', cover: 'books mockups/solutions of data communictaions and networking.png' },
            { label: 'Data and computer communtications',  url: 'academic papers/communication/Data and computer comunications.pdf', cover: 'books mockups/data and computer communtications.png' }],
-    summaries: [{ label: 'Network Roaa Bassam', url: 'academic papers/communication/summarize/Network-Roaa Bassam2021-1.pdf' }], videos: [], mid: [{ label: '2024', url: 'academic papers/communication/pastpapers/mid 2024.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/Mid T2.2023.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/Mid T3.2023.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/mid 2023.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/mid 2022.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/ميد 2022.pdf' }], final: [{ label: '2023', url: 'academic papers/communication/pastpapers/فاينل اتصالات 2023 امتحان.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/امتحان فاينل اتصالات 2023.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/اتصالات فاينل 2023.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/final comm 2022.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/final 2022.pdf' }]
+    summaries: [  {
+    label: 'سلايدات د.ماجد',
+    type: 'folder',
+    items: [
+      { label: 'Chapter 1 introduction', url: 'academic papers/communication/summarize/Dr.Majid Slides/Chapter 1-Introduction.pdf' },
+      { label: 'Chapter 2 network models', url: 'academic papers/communication/summarize/Dr.Majid Slides/Chapter 2 Network Models.pdf' },
+      { label: 'Chapter 3 Introduction to physical layer', url: 'academic papers/communication/summarize/Dr.Majid Slides/Chapter 3 Introduction to Phisical Layer.pdf' },
+      { label: 'Chapter 4 digital transmission', url: 'academic papers/communication/summarize/Dr.Majid Slides/Chapter 4 Digital Transmission.pdf' },
+      { label: 'Chapter 5 analog transmission', url: 'academic papers/communication/summarize/Dr.Majid Slides/Chapter 5 Analog Transmission.pdf' },
+      { label: 'Chapter 6 bandwidth utilization', url: 'academic papers/communication/summarize/Dr.Majid Slides/Chapter 6 Bandwidth Utilization.pdf' },
+      { label: 'Chapter 7 transmission media', url: 'academic papers/communication/summarize/Dr.Majid Slides/Chapter 7 Transmission Media.pdf' },
+      { label: 'Chapter 8 error detection', url: 'academic papers/communication/summarize/Dr.Majid Slides/Chapter 8   Error Detection.pdf' },
+    ]
+      },{
+    label: 'تخطيط الكتاب',
+    type: 'folder',
+    items: [
+      { label: 'Chapter 1 overview', url: 'academic papers/communication/summarize/سلايدات/Chapter 1_Highlighted.pdf' },
+      { label: 'Chapter 2 network models', url: 'academic papers/communication/summarize/سلايدات/Chapter 2_Highlighted.pdf' },
+      { label: 'Chapter 3 physical layer', url: 'academic papers/communication/summarize/سلايدات/Chapter 3_Highlighted.pdf' },
+      { label: 'Chapter 4 digital transmission', url: 'academic papers/communication/summarize/سلايدات/Chapter 4_Highlighted.pdf' },
+      { label: 'Chapter 5 analog transmission', url: 'academic papers/communication/summarize/سلايدات/Chapter 5_Highlighted.pdf' },
+      { label: 'Chapter 6 bandwidth utilization', url: 'academic papers/communication/summarize/سلايدات/Chapter 6_Highlighted.pdf' },
+      { label: 'Chapter 7 transmission media', url: 'academic papers/communication/summarize/سلايدات/Chapter 7_Highlighted.pdf' },
+      { label: 'Chapter 8 switching', url: 'academic papers/communication/summarize/سلايدات/Chapter 8.pdf' },
+      { label: 'Chapter 10 error detection and correction', url: 'academic papers/communication/summarize/سلايدات/Chapter 10.pdf' },
+    ]
+      },{ label: 'Network Roaa Bassam', url: 'academic papers/communication/summarize/Network-Roaa Bassam2021-1.pdf' }], videos: [], mid: [{ label: '2024', url: 'academic papers/communication/pastpapers/mid 2024.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/Mid T2.2023.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/Mid T3.2023.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/mid 2023.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/mid 2022.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/ميد 2022.pdf' }], final: [{ label: '2023', url: 'academic papers/communication/pastpapers/فاينل اتصالات 2023 امتحان.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/امتحان فاينل اتصالات 2023.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/اتصالات فاينل 2023.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/final comm 2022.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/final 2022.pdf' }]
   },
   subj8: {
     
