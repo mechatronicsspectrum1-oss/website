@@ -161,7 +161,21 @@ const subjectsData = {
       { label: 'Chapter 8 switching', url: 'academic papers/communication/summarize/سلايدات/Chapter 8.pdf' },
       { label: 'Chapter 10 error detection and correction', url: 'academic papers/communication/summarize/سلايدات/Chapter 10.pdf' },
     ]
-      },{ label: 'Network Roaa Bassam', url: 'academic papers/communication/summarize/Network-Roaa Bassam2021-1.pdf' }], videos: [], mid: [{ label: '2024', url: 'academic papers/communication/pastpapers/mid 2024.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/Mid T2.2023.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/Mid T3.2023.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/mid 2023.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/mid 2022.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/ميد 2022.pdf' }], final: [{ label: '2023', url: 'academic papers/communication/pastpapers/فاينل اتصالات 2023 امتحان.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/امتحان فاينل اتصالات 2023.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/اتصالات فاينل 2023.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/final comm 2022.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/final 2022.pdf' }]
+      },{ label: 'دفتر د.امجد الهندي', url: 'academic papers/communication/summarize/دفتر اتصالات د.امجد الهندي.pdf' },{ label: 'Network Roaa Bassam', url: 'academic papers/communication/summarize/Network-Roaa Bassam2021-1.pdf' },{
+    label: 'كويزات',
+    type: 'folder',
+    items: [
+      { label: 'Quiz 1 - 2023', url: 'academic papers/communication/pastpapers/كويزات/Quiz 1 , T3.2023.pdf' },
+      { label: 'Quiz 1 - 2022', url: 'academic papers/communication/pastpapers/كويزات/Quiz 1 , 2022.pdf' },
+      { label: 'Quiz 1', url: 'academic papers/communication/pastpapers/كويزات/quiz 1.pdf' },
+      { label: 'Quiz 2 - 2023', url: 'academic papers/communication/pastpapers/كويزات/Quiz 2 , T3.2023.pdf' },
+      { label: 'Quiz 2 - 2022', url: 'academic papers/communication/pastpapers/كويزات/Quiz 2 , 2022.pdf' },
+      { label: 'Quiz 2', url: 'academic papers/communication/pastpapers/كويزات/quiz2.pdf' },
+      { label: 'Quiz 3 - 2024', url: 'academic papers/communication/pastpapers/كويزات/Quiz CH.4 T2.2023-2024.pdf' },
+      { label: 'Quiz 3 - 2023', url: 'academic papers/communication/pastpapers/كويزات/Quiz 3 , T3.2023.pdf' },
+      { label: 'Quiz 3 - 2022', url: 'academic papers/communication/pastpapers/كويزات/Quiz 3 , 2022.pdf' },
+]
+      },], videos: [], mid: [{ label: '2026', url: 'academic papers/communication/pastpapers/mid 2026.pdf' },{ label: '2025', url: 'academic papers/communication/pastpapers/Communications 25-26 1st Semester MID Exam By MAE.pdf' },{ label: '2024', url: 'academic papers/communication/pastpapers/mid 2024.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/Mid T2.2023.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/Mid T3.2023.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/mid 2023.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/mid 2022.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/ميد 2022.pdf' }], final: [{ label: '2023', url: 'academic papers/communication/pastpapers/فاينل اتصالات 2023 امتحان.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/امتحان فاينل اتصالات 2023.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/اتصالات فاينل 2023.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/final comm 2022.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/final 2022.pdf' }]
   },
   subj8: {
     
