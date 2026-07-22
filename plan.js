@@ -277,6 +277,27 @@ const subjectsData = {
            { label: 'Electrical installation hand book protection, control and electrical devices',  url: 'academic papers/protection/electrical installation hanbook protection, control and electrical devices.pdf', cover: 'books mockups/Electrical installation hand book protection, control and electrical devices.png' }],
     summaries: [ 
       {
+    label: 'سلايدات المادة',
+    type: 'folder',
+    items: [
+      { label: 'Lect 1 | Fuses', url: 'academic papers/protection/summaries/slides/Presentation1-Fuses.pdf' },
+      { label: 'Lect 2 | Fuses types', url: 'academic papers/protection/summaries/slides/Presentation2-fuses.pdf' },
+      { label: 'Lect 3 | Classification of LV fuses', url: 'academic papers/protection/summaries/slides/Presentation3-FUSES.pdf' },
+      { label: 'Lect 4 | Circuit breakers', url: 'academic papers/protection/summaries/slides/Presentation4-Circuit Breakers .pdf' },
+      { label: 'Lect 5 | types of circuit breakers', url: 'academic papers/protection/summaries/slides/Presentation5-Circuit Breakers (1).pdf' },
+      { label: 'Lect 6 | Oil less circuit breakers', url: 'academic papers/protection/summaries/slides/Presentation6-Circuit Breakers (1).pdf' },
+      { label: 'Lect 7 | Circuit breakers', url: 'academic papers/protection/summaries/slides/Presentation7-Circuit Breakers (1).pdf' },
+      { label: 'Lect 8 | Low voltage AC circuit breaker', url: 'academic papers/protection/summaries/slides/Presentation8-Circuit Breakers (1).pdf' },
+      { label: 'Lect 9 | Low voltage circuit breaker', url: 'academic papers/protection/summaries/slides/Presentation9-Circuit Breakers (1).pdf' },
+      { label: 'Lect 10 | Tripping curve', url: 'academic papers/protection/summaries/slides/Presentation 10-Circuit Breakers (1).pdf' },
+      { label: 'Lect 12 | Control relay', url: 'academic papers/protection/summaries/slides/Presentation 12-Control Relays.pdf' },
+      { label: 'Lect 13 | Electrical contactor ', url: 'academic papers/protection/summaries/slides/Presentation 13-contactors.pdf' },
+      { label: 'Lect 14 | Solenoid valves', url: 'academic papers/protection/summaries/slides/Presentation 14-Solenoid Valves (2).pdf' },
+      { label: 'Lect 16 | Voltage and current transformers', url: 'academic papers/protection/summaries/slides/Presentation 16-Voltage and current transformers.pdf' },
+      { label: 'Lect 17 | Solid-State Relay', url: 'academic papers/protection/summaries/slides/Presentation 17-Solid-State Relay.pdf' },
+    ]
+      },
+      {
     label: 'Fuses',
     type: 'folder',
     items: [
