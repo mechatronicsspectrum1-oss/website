@@ -165,6 +165,7 @@ const subjectsData = {
     label: 'كويزات',
     type: 'folder',
     items: [
+      { label: 'Quiz 1 - 2026', url: 'academic papers/communication/pastpapers/كويزات/quiz 1 2026.pdf' },
       { label: 'Quiz 1 - 2023', url: 'academic papers/communication/pastpapers/كويزات/Quiz 1 , T3.2023.pdf' },
       { label: 'Quiz 1 - 2022', url: 'academic papers/communication/pastpapers/كويزات/Quiz 1 , 2022.pdf' },
       { label: 'Quiz 1', url: 'academic papers/communication/pastpapers/كويزات/quiz 1.pdf' },
