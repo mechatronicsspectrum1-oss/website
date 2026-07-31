@@ -117,7 +117,7 @@ const subjectsData = {
     title: 'Electronics device (1)', icon: '💡',
     books: [{ label: 'Electronic devices and circuit theory',  url: 'academic papers/electronics 1/Electronics Devices and Circuit Theory 11th Edition.pdf', cover: 'books mockups/electronics devices and circuit theory.png' },
            { label: 'Solutions of electronic devices and circuit theory',  url: 'academic papers/electronics 1/solution of Electronics Devices and Circuit Theory 11th Edition.pdf', cover: 'books mockups/solutions of electronics devices and circuit theory.png' }],
-    summaries: [{ label: 'سلايدات د.ماجد', url: 'academic papers/electronics 1/summarize/سلايدات د.ماجد.pdf' },{ label: 'دفتر م.خولة', url: 'academic papers/electronics 1/summarize/دفتر م.خولة.pdf' },{ label: 'سلايدات محمد عايد', url: 'academic papers/electronics 1/summarize/سلايدات محمد عايد.pdf' },{ label: 'دفتر سبيكتروم', url: 'academic papers/electronics 1/summarize/مخلص الكترونيات سبيكتروم.pdf' },{ label: 'دفتر د.امجد الهندي', url: 'academic papers/communication/summarize/دفتر اتصالات د.امجد الهندي.pdf' },{ label: 'Network Roaa Bassam', url: 'academic papers/communication/summarize/Network-Roaa Bassam2021-1.pdf' }
+    summaries: [{ label: 'سلايدات د.ماجد', url: 'academic papers/electronics 1/summarize/سلايدات د.ماجد.pdf' },{ label: 'دفتر م.خولة', url: 'academic papers/electronics 1/summarize/دفتر م.خولة.pdf' },{ label: 'سلايدات محمد عايد', url: 'academic papers/electronics 1/summarize/سلايدات محمد عايد.pdf' },{ label: 'دفتر سبيكتروم', url: 'academic papers/electronics 1/summarize/مخلص الكترونيات سبيكتروم.pdf' }
                 ,{
     label: 'كويزات',
     type: 'folder',
