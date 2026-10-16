@@ -400,10 +400,27 @@ const subjectsData = {
            { label: 'Process control instrumentation technology',  url: 'academic papers/plc/process control instrumentation technology.pdf', cover: 'books mockups/Process control instrumentation technology.png' },],
     summaries: [{ label: 'سلايدات د.معزوز الصلاحات',  url: 'academic papers/plc/summaries/د.معزوز الصلاحات.pdf'},{ label: 'سلايدات المادة',  url: 'academic papers/plc/summaries/Plc slides.pdf'},{ label: 'ملخص سبيكتروم جديد',  url: 'academic papers/plc/summaries/ملخص PLC نظري.pdf'},{ label: 'Timer and counter examples',  url: 'academic papers/plc/summaries/16-Timers and counters example.pdf'},{ label: 'ملخص سبيكتروم',  url: 'academic papers/plc/summaries/ملخص.pdf'},], videos: [{ label: 'م.يامن الترك',  url: 'https://www.youtube.com/playlist?list=PLq3QKKpXDEYpcWftOlcyiJ99fs_7AsBJM'},], mid: [{ label: '2025',  url: 'academic papers/plc/pastpapers/mid 2025.pdf'},{ label: '2024',  url: 'academic papers/plc/pastpapers/mid 2024.pdf'},{ label: '2023',  url: 'academic papers/plc/pastpapers/mid2023.pdf'},{ label: '2016',  url: 'academic papers/plc/pastpapers/mid 2016.pdf'},{ label: '2016',  url: 'academic papers/plc/pastpapers/mid 2016 exam.pdf'}], final: [{ label: '2024',  url: 'academic papers/plc/pastpapers/final 2024.pdf'},{ label: 'شاشات',  url: 'academic papers/plc/pastpapers/final شاشات.pdf'},{ label: 'فاينل',  url: 'academic papers/plc/pastpapers/فاينل محمود.pdf'},{ label: 'دوائر',  url: 'academic papers/plc/pastpapers/final mcqs.pdf'},]
   },
-  subj28: {
+ subj28: {
     title: 'Industrial Processes', icon: '🏭',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
+    books: [
+      { label: 'كتاب المادة', url: 'https://www.mediafire.com/?a1g18x5jduwcy01' }
+    ],
+    summaries: [
+      { label: 'ملخص فريق سبكتروم', url: 'https://www.mediafire.com/file/miobn07c5civdvb/' },
+      { label: 'ملخص شيت لابلاس', url: 'https://drive.google.com/drive/folders/1lSRB1o6FfFqnCl12IJw4hO43c0q2_c2M' },
+      { label: 'ملخص رموز الاجهزة الصناعية', url: 'https://drive.google.com/drive/folders/1oL7VqA3_ziWI6--dDqAHYNZJewSsbkpT' }
+    ],
+    videos: [
+      { label: 'فيديوهات شرح للمادة', url: 'https://www.youtube.com/watch?v=Wyao8DKlpmk&list=PLJqRpPcJQ_g2kxRhzhATLth3yh9GFcGjM' },
+      { label: 'شرح PID Controller', url: 'https://www.youtube.com/watch?v=C9ql2dwtIdQ&list=PLww54WQ2wa5rr-JuXDuI335sJJ37curM8' },
+      { label: 'شرح لابلاس', url: 'https://www.youtube.com/watch?v=nq-QNFWn-EM' }
+    ],
+    mid: [
+      { label: 'اسئلة سنوات ورقي', url: 'https://www.mediafire.com/file/2i525qxir8qitdb/%D8%A7%D9%...pdf' }
+    ],
+    final: [
+      { label: 'اسئلة سنوات الكتروني', url: 'https://drive.google.com/drive/folders/1p79fZ8GrlhKeFbrQwA2M0nrOw-_1AlfR' }
+    ]
   },
   subj29: {
     title: 'Hydraulic drives', icon: '🔩',
