@@ -400,7 +400,8 @@ const subjectsData = {
            { label: 'Process control instrumentation technology',  url: 'academic papers/plc/process control instrumentation technology.pdf', cover: 'books mockups/Process control instrumentation technology.png' },],
     summaries: [{ label: 'سلايدات د.معزوز الصلاحات',  url: 'academic papers/plc/summaries/د.معزوز الصلاحات.pdf'},{ label: 'سلايدات المادة',  url: 'academic papers/plc/summaries/Plc slides.pdf'},{ label: 'ملخص سبيكتروم جديد',  url: 'academic papers/plc/summaries/ملخص PLC نظري.pdf'},{ label: 'Timer and counter examples',  url: 'academic papers/plc/summaries/16-Timers and counters example.pdf'},{ label: 'ملخص سبيكتروم',  url: 'academic papers/plc/summaries/ملخص.pdf'},], videos: [{ label: 'م.يامن الترك',  url: 'https://www.youtube.com/playlist?list=PLq3QKKpXDEYpcWftOlcyiJ99fs_7AsBJM'},], mid: [{ label: '2025',  url: 'academic papers/plc/pastpapers/mid 2025.pdf'},{ label: '2024',  url: 'academic papers/plc/pastpapers/mid 2024.pdf'},{ label: '2023',  url: 'academic papers/plc/pastpapers/mid2023.pdf'},{ label: '2016',  url: 'academic papers/plc/pastpapers/mid 2016.pdf'},{ label: '2016',  url: 'academic papers/plc/pastpapers/mid 2016 exam.pdf'}], final: [{ label: '2024',  url: 'academic papers/plc/pastpapers/final 2024.pdf'},{ label: 'شاشات',  url: 'academic papers/plc/pastpapers/final شاشات.pdf'},{ label: 'فاينل',  url: 'academic papers/plc/pastpapers/فاينل محمود.pdf'},{ label: 'دوائر',  url: 'academic papers/plc/pastpapers/final mcqs.pdf'},]
   },
- subj28: {
+ 
+subj28: {
     title: 'Industrial Processes', icon: '🏭',
     books: [
       { label: 'كتاب المادة', url: 'https://www.mediafire.com/?a1g18x5jduwcy01' }
