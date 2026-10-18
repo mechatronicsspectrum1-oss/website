@@ -1218,4 +1218,18 @@ details summary::before {
 }
 details[open] summary::before {
   content: "▼";
+} 
+/* حل مشكلة تعليق ودقة اللمس للخطة الشجرية على الهواتف */
+@media screen and (max-width: 768px) {
+  .plan-container, img.study-plan-img {
+    max-width: 100% !important;
+    height: auto !important;
+    touch-action: manipulation;
+  }
+  
+  .hotspot, [id^="hs"] {
+    min-width: 24px !important;
+    min-height: 24px !important;
+    cursor: pointer;
+  }
 }
