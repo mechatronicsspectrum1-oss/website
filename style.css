@@ -1240,4 +1240,13 @@ details[open] summary::before {
     min-height: 24px !important;
     cursor: pointer;
   }
+  /* ضبط المسافة للأزرار على الهواتف المحمولة فقط دون التأثير على الكمبيوتر */
+@media (max-width: 768px) {
+  .content-cta {
+    margin-top: 15px !important;
+    margin-bottom: 40px !important;
+    position: static !important;
+    top: auto !important;
+  }
+}
 }
