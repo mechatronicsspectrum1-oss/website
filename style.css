@@ -1306,5 +1306,31 @@ img[src*="spectrum.png"], .hero-content img {
   .hero-content img {
     filter: drop-shadow(0 0 8px rgba(0, 243, 255, 0.4)) !important; /* تخفيف قوة الفلتر الهائل لتسريع الشاشة */
   }
+/* ═══════════════════════════════════════════════════════════════════════════
+   منع الزوم الإجباري واللاج عند فتح نوافذ المواد في الخطة الدراسية
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* 1. إلغاء أي تكبير تلقائي أو إعادة تحجيم إجباري بداخل النوافذ المنبثقة */
+.modal, .subject-modal, #subjectModal, [class*="modal"] {
+  touch-action: pan-x pan-y !important; /* السماح بالتمرير الطبيعي فقط ومنع التكبير التلقائي */
+  transform: none !important;           /* تثبيت الحجم عند 100% بدون Full Zoom */
+  max-width: 90vw !important;
+  margin: auto !important;
+  will-change: opacity;                 /* تسريع ظهور النافذة على كرت الشاشة */
+}
+
+/* 2. ضبط عرض محتوى ملفات المادة ليفتح بشفافية وسلاسة بدون تقطيع */
+.modal-content, .subject-modal-content {
+  zoom: 1 !important;                   /* إجبار المتصفح على الفتح بـ Zoom 100% ثابت */
+  -webkit-text-size-adjust: 100% !important;
+}
+
+/* 3. معالجة وتخفيف الشاشات للـ Mobile واللابتوب لمنع التجميد */
+@media (max-width: 768px) {
+  .modal, .subject-modal, #subjectModal {
+    width: 95% !important;
+    max-height: 85vh !important;
+    overflow-y: auto !important;
+  }
 
 }
