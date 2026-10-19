@@ -1248,5 +1248,10 @@ details[open] summary::before {
     position: static !important;
     top: auto !important;
   }
-}
+/* إيقاف تأثير التوهج على الهواتف فقط لتصبح سلسة وخفيفة جداً، مع إبقائه يعمل على اللابتوب */
+@media (max-width: 768px) {
+  #cursor-glow {
+    display: none !important;
+  }
+
 }
