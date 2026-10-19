@@ -303,7 +303,7 @@ nav.scrolled {
   position: relative; z-index: 2;
   text-align: center;
   padding: 0 1.5rem;
-  margin-top: -35px;
+  transform: translateY(-40px) !important;
   animation: fadeUp 1s ease both;
   animation-delay: 0.3s;
 }
