@@ -1,15 +1,15 @@
 :root {
-  --navy: #050A18;
-  --navy2: #0A1428;
-  --navy3: #0F1E3A;
-  --cyan: #2988D8;
-  --cyan2: #1A9EBD;
-  --cyan-glow: rgba(41, 184, 216, 0.15);
-  --white: #E8EDF5;
-  --white2: #B0BDD4;
-  --coral: #FF6B6B;
-  --glass: rgba(255,255,255,0.04);
-  --glass-border: rgba(41,184,216,0.18);
+  --navy: #081225;
+  --navy2: #0f2347;
+  --navy3: #030a18;
+  --cyan: #0084ff;
+  --cyan2: #00c3ff;
+  --cyan-glow: rgba(0, 195, 255, 0.25);
+  --white: #ffffff;
+  --white2: #e2e8f0;
+  --coral: #0066ff;
+  --glass: rgba(11, 28, 56, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.2);
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
