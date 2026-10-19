@@ -1253,5 +1253,19 @@ details[open] summary::before {
   #cursor-glow {
     display: none !important;
   }
+/* تثبيت حجم نوافذ ومحتويات المواد الدراسية على الهواتف والكمبيوتر بدون أي تكبير عشوائي */
+.subject-modal, .modal, .swal2-popup, .popup-container {
+  transform: none !important;
+  zoom: 1 !important;
+  max-width: 95vw !important;
+  width: auto !important;
+}
 
+/* منع الـ Full-screen الإجباري للصورة داخل النافذة */
+.subject-modal img, .modal img, .popup-content img {
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+  
   }
