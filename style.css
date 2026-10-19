@@ -340,8 +340,8 @@ nav.scrolled {
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: -25px;
 }
-
 /* ─── SECTIONS (GENERAL) ─── */
 section { padding: 7rem 3rem; }
 .section-eyebrow {
