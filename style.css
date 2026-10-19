@@ -1247,5 +1247,7 @@ details[open] summary::before {
   height: auto !important;
   object-fit: contain !important;
 }
-  
+ .content-cta {
+  margin-top: 55px !important;
+}
   }
