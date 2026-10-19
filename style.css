@@ -15,13 +15,18 @@
 html { scroll-behavior: smooth; }
 
 body {
-    font-family: 'Tajawal', sans-serif;
-    background: var(--navy);
-    color: var(--white);
-    direction: rtl;
-    overflow-x: hidden;
+  font-family: 'Tajawal', sans-serif;
+  background-color: #050d1a !important;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(0, 102, 255, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(0, 195, 255, 0.3) 0%, transparent 55%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 65%),
+    linear-gradient(135deg, #020813 0%, #0c2040 50%, #030a18 100%) !important;
+  background-attachment: fixed !important;
+  color: var(--white);
+  direction: rtl;
+  overflow-x: hidden;
 }
-
 /* ─── CURSOR GLOW ─── */
 #cursor-glow {
     position: fixed;
