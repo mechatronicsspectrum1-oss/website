@@ -1,24 +1,28 @@
 :root {
-  --navy: #081225;
-  --navy2: #0f2347;
-  --navy3: #030a18;
-  --cyan: #0084ff;
-  --cyan2: #00c3ff;
-  --cyan-glow: rgba(0, 195, 255, 0.25);
+  --navy: #0b2545;       /* أزرق هندسي عميق متناسق مع النافبار */
+  --navy2: #134074;      /* أزرق متوسّط ناعم */
+  --navy3: #8da9c4;      /* تدرج هادئ خفيف */
+  --cyan: #0077b6;       /* أزرق حيوي متناسق */
+  --cyan2: #90e0ef;      /* سماوي فاتح رايق */
+  --cyan-glow: rgba(0, 119, 182, 0.2);
   --white: #ffffff;
-  --white2: #e2e8f0;
-  --coral: #0066ff;
-  --glass: rgba(11, 28, 56, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.2);
+  --white2: #edf6f9;
+  --coral: #0077b6;
+  --glass: rgba(11, 37, 69, 0.75);
+  --glass-border: rgba(141, 169, 196, 0.3);
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Tajawal', sans-serif;
-  background-color: #050d1a;
-  background-image: radial-gradient(circle at 50% 30%, #0c2040 0%, #030a18 100%);
-  color: #ffffff;
+  background-color: #0b2545 !important;
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(144, 224, 239, 0.22) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(0, 119, 182, 0.25) 0%, transparent 50%),
+    linear-gradient(135deg, #0b2545 0%, #134074 50%, #081b33 100%) !important;
+  background-attachment: fixed !important;
+  color: var(--white);
   direction: rtl;
   overflow-x: hidden;
 }
