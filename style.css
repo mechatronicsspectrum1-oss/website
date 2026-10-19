@@ -1253,5 +1253,25 @@ details[open] summary::before {
   #cursor-glow {
     display: none !important;
   }
+/* إضافة متسقة وثابتة للموبايل بدون حذف أي كود قديم */
+@media (max-width: 768px) {
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+  }
+  .content-cta {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+  .content-cta a {
+    white-space: nowrap !important;
+    font-size: 0.85rem !important;
+  }
 
 }
