@@ -337,7 +337,8 @@ nav.scrolled {
     line-height: 1.8;
 }
 .hero-cta {
-    display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+  display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+  margin-top: -25px; 
 }
 
 /* ─── SECTIONS (GENERAL) ─── */
