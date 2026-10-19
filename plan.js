@@ -19,7 +19,7 @@ const planHotspots = [
   { id:'hs12', type:'link', top:21.19, left:57.26, w:6.90, h:3.96, url:'https://lagnetalsanafer.com/materials/physics-lab1/' },
   { id:'hs13', type:'link', top:21.56, left:35.40, w:7.03, h:3.96, url:'https://lagnetalsanafer.com/materials/statics/' },
   { id:'hs14', type:'link', top:21.56, left:24.65, w:7.69, h:3.96, url:'https://lagnetalsanafer.com/materials/linear-algebra/' },
-  { id:'hs15', type:'link', top:21.56, left:13.73, w:7.56, h:3.96, url:'https://lagnetalsanafer.com/materials/numerical-methods/' },
+  { id:'hs15', type:'subject', top:21.56, left:13.73, w:7.56, h:3.96, subject:'subj42' },
   { id:'hs16', type:'link', top:21.32, left:2.94, w:8.09, h:3.96, url:'https://lagnetalsanafer.com/materials/computer-science/' },
   { id:'hs17', type:'subject', top:31.20, left:90.05, w:6.89, h:3.94, subject:'subj1' },
   { id:'hs18', type:'subject', top:30.77, left:78.45, w:7.60, h:3.94, subject:'subj2' },
