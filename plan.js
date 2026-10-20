@@ -467,11 +467,32 @@ subj28: {
       { label: 'اسئلة سنوات الكتروني', url: 'https://drive.google.com/drive/folders/1p79fZ8GrlhKeFbrQwA2M0nrOw-_1AlfR' }
     ]
   },
-  subj29: {
-    title: 'Hydraulic drives', icon: '🔩',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
-  },
+ subj29: {
+  title: 'Hydraulic drives',
+  icon: '🔧',
+  books: [
+    { label: 'كتاب المادة', url: 'https://drive.google.com/drive/folders/12-57StdDarvyQXrnwTk4ThNR82hZcOPL' },
+    { label: 'حلول الكتاب', url: 'https://www.mediafire.com/file/gd71zktkcpag19x/pnuematic+solution.pdf' },
+    { label: 'كتب ومراجع عربية', url: 'https://drive.google.com/drive/folders/1x54eLXI5O6hvcZQ8cReklgy8Li3zJ907' }
+  ],
+  summaries: [
+    { label: 'سلايدات المادة (1)', url: 'https://drive.google.com/drive/folders/1gncKzznHPsQjC4B-NfSL1NryBN3vsBSI' },
+    { label: 'سلايدات المادة (2)', url: 'https://drive.google.com/drive/folders/1m9rkx84y_6APO3olGqFoORwGekM_RtU6' },
+    { label: 'سلايدات د. طارق يونس', url: 'https://www.mediafire.com/file/wn184xxkxdirvda/%D9%87%D9%8A%D8%AF%D8%B1%D9%88%D9%84%D9%8A%D9%83_-%D8%AF.%D8%B7%D8%A7%D8%B1%D9%82%D9%8A%D9%88%D9%86%D8%B3.zip' },
+    { label: 'الشيتات (Sheets)', url: 'https://drive.google.com/drive/folders/1_dqt70TToLsKnKmrm4KdIpG3VT-wn5GM' },
+    { label: 'كويزات', url: 'https://drive.google.com/drive/folders/1YK0VmctUtruazRykX0Yrq1tZfhcGtYhw' }
+  ],
+  videos: [
+    { label: 'فيديوهات شرح (1)', url: 'https://www.youtube.com/playlist?list=PLGX68VzbtqD_X5SyF9WtSfocshF1XVY4-' },
+    { label: 'فيديوهات شرح (2)', url: 'https://www.youtube.com/watch?v=2clSxtS_3rw&list=PLLV20d95DZpKuGFgbg1U-a_uBua_sVDA7' }
+  ],
+  mid: [
+    { label: 'أسئلة سنوات (1)', url: 'https://www.mediafire.com/file/0o0gt9swiozwps6/' },
+    { label: 'أسئلة سنوات (2)', url: 'https://drive.google.com/drive/u/0/folders/1djlUha5-iq8FTyw2iEV1MdgDwEg7SDdr' },
+    { label: 'أسئلة سنوات (3)', url: 'https://www.mediafire.com/file/0o0gt9swiozwps6/' }
+  ],
+  final: []
+},
   subj30: {
     title: 'Hydraulic drives Lab', icon: '🔩',
     books: [],
