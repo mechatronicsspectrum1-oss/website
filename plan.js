@@ -269,11 +269,32 @@ subj11: {
     { label: 'Modern control engineering solutions', url: 'https://drive.google.com/drive/folders/1IxOwEZ2ym7hLi8PNLwLGOWCiIgnVT1X-', cover: 'books mockups/Modern control engineering solutions.png' }],
     summaries: [ { label: 'سلايدات المادة', url: 'https://drive.google.com/drive/folders/1wjytH0OrjVi4b06_Flbez3hHsoKOJMn2' }, { label: 'مرجع عربي للمادة', url: 'https://drive.google.com/drive/folders/1N0pdQhTVJeNWr_1kOpirHQNbsDL32CwM' }, { label: 'دوسية المادة', url: 'https://drive.google.com/file/d/1RT2Xxt8szWKIAaASmrl0dT3ITsxmUhrM/view' }, { label: 'دفاتر المادة', url: 'https://drive.google.com/drive/folders/1-6YNC_Qo50_1NJs-Wyxmo6488iAqqarQ' }], videos: [ { label: 'شرح سبيكتروم', url: 'https://www.youtube.com/playlist?list=PLRNaExsfJ1qs6LF5rdDHq9w0S3YueJQwS' }], mid: [ { label: 'اسئلة سنوات الكتروني', url: 'https://drive.google.com/drive/folders/1EZfrqC35wE8xltmmdrd3_-et4mC90W8W' },  { label: 'اسئلة سنوات فريق سبارك', url: 'https://drive.google.com/drive/folders/1OlRE0jhoQ5Jn5EwdFA3UNlCCkcV2sW5V' }], final: [{ label: 'اسئلة سنوات سبيكتروم', url: 'https://drive.google.com/drive/folders/1rtgPqs_aTl8bJQSly3nfky6hLePyjk3K' }]
   },
-  subj19: {
+ subj19: {
     title: 'Electrical drive', icon: '⚡',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
-  },
+    books: [
+        { label: 'كتاب المادة الرئيسي', url: 'https://drive.google.com/file/d/12OcFuXEkRFubyWIddVCzKwHU3OO7SEsJ/view?fbclid=IwAR2R3Q-M1EgngE_1ZgJ_nbxHqObQww5b6zBPljPgdWJS0KE0QqqcYCedPpo' }
+    ],
+    summaries: [
+        { label: 'سلايدات المادة', url: 'https://drive.google.com/drive/folders/1daObmN6m-x1bZ62BqjSViLsC6iUwACUm?usp=sharing' },
+        { label: 'ملخص المادة 1', url: 'https://drive.google.com/drive/folders/1MRbk4aWh5nsu70FBkw7SQ73hUWF8RMeY?fbclid=IwAR1j5cODfGcAKbgTXLawigHlszg6YICNpkFC97hJomj_Vh1SAVxRWTt8xqg' },
+        { label: 'ملخص المادة 2', url: 'https://drive.google.com/file/d/1srec0lVk9xRmEhrIhEEEIEQE4eGatIQG/view?fbclid=IwAR02F-W7IKGNoTfhk0P5PMgGUNHl0vwLXaS3IlfMC5zReVIG1_s-PueM82o' },
+        { label: 'دفتر المادة', url: 'https://drive.google.com/file/d/1AsjtyAeiVnI8g9LqUMZ0pQ4zx1S2hybV/view?fbclid=IwAR0pA61ULmGtIs28tlXRohe-lrV1D_YvlBFIutlIXymGdCfULng2dIXwpQE' }
+    ],
+    videos: [
+        { label: 'فيديوهات شرح فريق سبارك', url: 'https://t.me/Spark_Team_Eg/545' },
+        { label: 'شرح سبارك (يوتيوب)', url: 'https://www.youtube.com/playlist?list=PL4Itv3LsZJuxNeiSqaSoPWQ4x_QBlCQqK' },
+        { label: 'شرح سبكتروم 1', url: 'https://www.youtube.com/playlist?list=PLRNaExsfJ1qsLxeTHh8K-zWiV0gBQErhE' },
+        { label: 'شرح سبكتروم 2', url: 'https://www.youtube.com/playlist?list=PLRNaExsfJ1qvMymozP8VDNVhUAU6TiyV3' }
+    ],
+    mid: [
+        { label: 'سنوات ميد خارجية', url: 'https://drive.google.com/file/d/1FF2NZeN5vVS9zPxplfIpMcB7DP4xuRho/view?fbclid=IwAR21d8jKdfhbC3GWpZknAAiSBhQ8B73KtaIOQnmvOJ1v-YwPLPbH5cbdr-c' },
+        { label: 'سنوات ميد ورقية (1)', url: 'https://drive.google.com/file/d/1xQxvePNeKZvJY36Cax6.../view' },
+        { label: 'ملف سنوات ميد إضافي', url: 'https://www.mediafire.com/?br56xfdvfhe7d9i' }
+    ],
+    final: [
+        { label: 'سنوات فاينل درايف', url: 'https://www.mediafire.com/download/t261b2l2t6zb9zp/%D8%AF%D8%B1%D8%A7%D9%8A%D9%811.pdf?fbclid=IwAR32F1B5hHVqyGMwjNJLit-p0-VW32xn5rwDR7taNAZaoK4k4L0aAT0IO-k' }
+    ]
+},
   subj20: {
     title: 'Electrical drive Lab', icon: '⚡',
     books: [],
