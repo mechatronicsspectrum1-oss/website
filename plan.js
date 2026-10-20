@@ -185,12 +185,26 @@ const subjectsData = {
 ]
       },], videos: [], mid: [{ label: '2026', url: 'academic papers/communication/pastpapers/mid 2026.pdf' },{ label: '2025', url: 'academic papers/communication/pastpapers/Communications 25-26 1st Semester MID Exam By MAE.pdf' },{ label: '2025', url: 'academic papers/communication/pastpapers/mid 2025.pdf' },{ label: '2024', url: 'academic papers/communication/pastpapers/mid exam 2024.pdf' },{ label: '2024', url: 'academic papers/communication/pastpapers/mid 2024.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/Mid T2.2023.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/Mid T3.2023.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/mid 2023.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/ميد 2022.pdf' }], final: [{ label: '2026', url: 'academic papers/communication/pastpapers/com summer final 2026.pdf' },{ label: '2026', url: 'academic papers/communication/pastpapers/2026 final.pdf' },{ label: '2024', url: 'academic papers/communication/pastpapers/final 2024 exam.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/فاينل اتصالات 2023 امتحان.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/امتحان فاينل اتصالات 2023.pdf' },{ label: '2023', url: 'academic papers/communication/pastpapers/اتصالات فاينل 2023.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/final comm 2022.pdf' },{ label: '2022', url: 'academic papers/communication/pastpapers/final 2022.pdf' }]
   },
-  subj8: {
-    
-    title: 'Electrical machines Lab', icon: '⚡',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
-  },
+subj8: {
+  title: 'Electrical machines Lab', icon: '⚡',
+  books: [],
+  summaries: [
+    { label: 'حلول التقارير', url: 'https://drive.google.com/file/d/1iMm3zAkBkXD0w3BZ3WTjA8FzK7mWQE1d/view' },
+    { label: 'ملخص المختبر (الميد) - سبارك', url: 'https://drive.google.com/file/d/1qt1ofDOIaUCaBCQdrRX6AmeFZAE_Gevj/view' },
+    { label: 'ملخص المختبر (الفاينل) - سبارك', url: 'https://drive.google.com/file/d/1yPATB1f2POW0dJ3m64cuNBseUbqJSISP/view' },
+    { label: 'ملخص فريق سبكتروم', url: 'https://drive.google.com/file/d/1R22SSB_mc1MiXmILjz4u4fa6VUFTI8qx/view' }
+  ],
+  videos: [
+    { label: 'فيديوهات التوصيلات العملية', url: 'https://www.youtube.com/playlist?list=PL4Itv3LsZJuxHF2OLhSrfavWT_6oOzRW5' }
+  ],
+  mid: [
+    { label: 'أسئلة سنوات (نموذج 1)', url: 'https://drive.google.com/drive/folders/1WQ6jkQ2SDtzGl14TMsiSxAFD17yuqukx' },
+    { label: 'أسئلة سنوات (نموذج 2)', url: 'https://drive.google.com/file/d/1RF0r5U58AITGpZ59Xoh07azTKFFOVIB6/view' },
+    { label: 'أسئلة السنوات الإلكترونية', url: 'https://drive.google.com/drive/folders/1uvSZPELeCYv3mD1LYDGvckFFzfiOuZ7d' },
+    { label: 'سنوات فريق سبكتروم', url: 'https://drive.google.com/drive/folders/1pywUuXTGPS3H0HmmnxeFIIztkQH6JsKH' }
+  ],
+  final: []
+},
   subj9: {
     title: 'Electrical machines 1', icon: '⚡',
     books: [{ label: 'Electric machinary fundamentals',  url: 'academic papers/electric machines 1/electric machinery fundamentals 4th edition.pdf', cover: 'books mockups/electric machinary fundamentals.png' },
