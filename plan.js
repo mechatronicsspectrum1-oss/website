@@ -204,7 +204,7 @@ const subjectsData = {
            { label: 'Signal and Systems Schaums outlines',  url: 'academic papers/signal and systems/signals and systems 2nd edition scham outline.pdf', cover: 'books mockups/signal and systems schaum outline.png' },],
     summaries: [{ label: 'سلايدات د.جودت', url: 'academic papers/signal and systems/suammriez/سلايدات د.جودت.pdf' },{ label: 'Signal & Systems by MAE', url: 'academic papers/signal and systems/suammriez/Signals & Systems By MAE & AF.pdf' },{ label: 'دوسية م.نبال', url: 'academic papers/signal and systems/suammriez/دوسية م.نبال.pdf' },{ label: 'Fourier transform and Laplace transform table', url: 'academic papers/signal and systems/suammriez/Fourier transform and Laplace transform.pdf' }], videos: [{ label: 'بشار زيود', url: 'https://www.youtube.com/watch?v=SPskSm8N3FY' },{ label: 'ملخص سبيكتروم', url: 'https://www.youtube.com/watch?v=ARB7PBRlPGc' },{ label: 'شرح على سلايدات دكتور جودت', url: 'https://www.youtube.com/playlist?list=PLmtVLconakTY6y0Thd050QsvkHTJF8TWa' }], mid: [{ label: '2025', url: 'academic papers/signal and systems/pastpapers/ميد 2025.pdf' },{ label: '2024', url: 'academic papers/signal and systems/pastpapers/ميد 2024.pdf' },{ label: '2023', url: 'academic papers/signal and systems/pastpapers/ميد 2023.pdf' },{ label: '2023', url: 'academic papers/signal and systems/pastpapers/امتحان ميد 2023.pdf' },{ label: '2023', url: 'academic papers/signal and systems/pastpapers/Signal Mid 2023.pdf' },{ label: '2004-2008', url: 'academic papers/signal and systems/pastpapers/ميد 2008.pdf' }], final: [{ label: '2025', url: 'academic papers/signal and systems/pastpapers/فاينل 2025.pdf' },{ label: '2023', url: 'academic papers/signal and systems/pastpapers/فاينل 2023.pdf' }]
   },
- subj11: {
+subj11: {
   title: 'الكترونيات القدرة',
   icon: '⚡',
   books: [
@@ -219,28 +219,16 @@ const subjectsData = {
     { label: 'برنامج محاكاة (NI Multisim)', url: 'https://getintopc.com/softwares/circuit-designing/ni-multisim-ultiboard-electronics-circuit-design-suite-free-download/?id=001973296735' }
   ],
   videos: [
-    {
-      label: 'فيديوهات شرح',
-      type: 'folder',
-      items: [
-        { label: 'قائمة تشغيل 1', url: 'https://www.youtube.com/playlist?list=PL4Itv3LsZJuxctb6U8uFfMWns1E7bvmO0' },
-        { label: 'قائمة تشغيل 2', url: 'https://www.youtube.com/watch?v=kbflZ8320lU&list=PL0Nqi1nmgoCvpVI7pkK4-IcJuL0I7aLM6' },
-        { label: 'قائمة تشغيل 3', url: 'https://www.youtube.com/watch?v=dWqKZ6lSB4s&list=PLRNaExsfJ1qvwe5jUJ-eKfH9AOuUEi6XK' },
-        { label: 'قائمة تشغيل 4', url: 'https://www.youtube.com/playlist?list=PLJqRpPcJQ_g0DlrD452NGJUOriJEXd2gH' }
-      ]
-    }
+    { label: 'قائمة تشغيل 1', url: 'https://www.youtube.com/playlist?list=PL4Itv3LsZJuxctb6U8uFfMWns1E7bvmO0' },
+    { label: 'قائمة تشغيل 2', url: 'https://www.youtube.com/watch?v=kbflZ8320lU&list=PL0Nqi1nmgoCvpVI7pkK4-IcJuL0I7aLM6' },
+    { label: 'قائمة تشغيل 3', url: 'https://www.youtube.com/watch?v=dWqKZ6lSB4s&list=PLRNaExsfJ1qvwe5jUJ-eKfH9AOuUEi6XK' },
+    { label: 'قائمة تشغيل 4', url: 'https://www.youtube.com/playlist?list=PLJqRpPcJQ_g0DlrD452NGJUOriJEXd2gH' }
   ],
   mid: [
-    {
-      label: 'أسئلة سنوات فريق سبارك',
-      type: 'folder',
-      items: [
-        { label: 'أسئلة سنوات (نموذج 1)', url: 'https://drive.google.com/file/d/1AQhf1jHpTF_Xb4-VF2i8jLQgklfqIlzU/view' },
-        { label: 'أسئلة سنوات (نموذج 2)', url: 'https://drive.google.com/file/d/1AOHi8JuUqDvmCqWuUwf87NBCuRmGXQGa/view' },
-        { label: 'أسئلة سنوات (نموذج 3)', url: 'https://drive.google.com/file/d/1qoyY0bvJBlNof3AHMpTSeKlfFOp04_kW/view' },
-        { label: 'أسئلة سنوات (تيليجرام)', url: 'https://t.me/Spark_Team_Eg/310' }
-      ]
-    }
+    { label: 'أسئلة سنوات (نموذج 1)', url: 'https://drive.google.com/file/d/1AQhf1jHpTF_Xb4-VF2i8jLQgklfqIlzU/view' },
+    { label: 'أسئلة سنوات (نموذج 2)', url: 'https://drive.google.com/file/d/1AOHi8JuUqDvmCqWuUwf87NBCuRmGXQGa/view' },
+    { label: 'أسئلة سنوات (نموذج 3)', url: 'https://drive.google.com/file/d/1qoyY0bvJBlNof3AHMpTSeKlfFOp04_kW/view' },
+    { label: 'أسئلة سنوات (تيليجرام)', url: 'https://t.me/Spark_Team_Eg/310' }
   ],
   final: []
 },
