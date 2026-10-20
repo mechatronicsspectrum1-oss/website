@@ -208,31 +208,42 @@ const subjectsData = {
   title: 'الكترونيات القدرة',
   icon: '⚡',
   books: [
-    { title: 'كتاب المادة', url: 'https://drive.google.com/file/d/1LD7TEAAtBw8yxje-XZR0HYxohqBEBpY-/view' },
-    { title: 'حلول الكتاب', url: 'https://drive.google.com/file/d/17AiEI7SqmQ_7KzqSzm0nAD78H-75gSCD/view' },
-    { title: 'مرجع عربي 1', url: 'https://drive.google.com/file/d/1sKlW787ajDkmmTgAnz22xtisy-_KelzE/view' },
-    { title: 'مرجع عربي 2 (مجلد)', url: 'https://drive.google.com/drive/folders/1V5Kg4m9lPWjAdwmm542tH-lJiTCKqI2T?usp=sharing' }
+    { label: 'كتاب المادة', url: 'https://drive.google.com/file/d/1LD7TEAAtBw8yxje-XZR0HYxohqBEBpY-/view' },
+    { label: 'حلول الكتاب', url: 'https://drive.google.com/file/d/17AiEI7SqmQ_7KzqSzm0nAD78H-75gSCD/view' },
+    { label: 'مرجع عربي 1', url: 'https://drive.google.com/file/d/1sKlW787ajDkmmTgAnz22xtisy-_KelzE/view' },
+    { label: 'مرجع عربي 2 (مجلد)', url: 'https://drive.google.com/drive/folders/1V5Kg4m9lPWjAdwmm542tH-lJiTCKqI2T?usp=sharing' }
   ],
   summaries: [
-    { title: 'شرح المادة', url: '#' }, 
-    { title: 'تلخيص فريق سبارك', url: 'https://drive.google.com/file/d/1aSrAF9RqqxcckVSrsnixd_w5nJUr27ns/view' },
-    { title: 'برنامج محاكاة (NI Multisim)', url: 'https://getintopc.com/softwares/circuit-designing/ni-multisim-ultiboard-electronics-circuit-design-suite-free-download/?id=001973296735' }
+    { label: 'شرح المادة', url: '#' },
+    { label: 'تلخيص فريق سبارك', url: 'https://drive.google.com/file/d/1aSrAF9RqqxcckVSrsnixd_w5nJUr27ns/view' },
+    { label: 'برنامج محاكاة (NI Multisim)', url: 'https://getintopc.com/softwares/circuit-designing/ni-multisim-ultiboard-electronics-circuit-design-suite-free-download/?id=001973296735' }
   ],
   videos: [
-    { title: 'قائمة تشغيل 1', url: 'https://www.youtube.com/playlist?list=PL4Itv3LsZJuxctb6U8uFfMWns1E7bvmO0' },
-    { title: 'قائمة تشغيل 2', url: 'https://www.youtube.com/watch?v=kbflZ8320lU&list=PL0Nqi1nmgoCvpVI7pkK4-IcJuL0I7aLM6' },
-    { title: 'قائمة تشغيل 3', url: 'https://www.youtube.com/watch?v=dWqKZ6lSB4s&list=PLRNaExsfJ1qvwe5jUJ-eKfH9AOuUEi6XK' },
-    { title: 'قائمة تشغيل 4', url: 'https://www.youtube.com/playlist?list=PLJqRpPcJQ_g0DlrD452NGJUOriJEXd2gH' }
+    {
+      label: 'فيديوهات شرح',
+      type: 'folder',
+      items: [
+        { label: 'قائمة تشغيل 1', url: 'https://www.youtube.com/playlist?list=PL4Itv3LsZJuxctb6U8uFfMWns1E7bvmO0' },
+        { label: 'قائمة تشغيل 2', url: 'https://www.youtube.com/watch?v=kbflZ8320lU&list=PL0Nqi1nmgoCvpVI7pkK4-IcJuL0I7aLM6' },
+        { label: 'قائمة تشغيل 3', url: 'https://www.youtube.com/watch?v=dWqKZ6lSB4s&list=PLRNaExsfJ1qvwe5jUJ-eKfH9AOuUEi6XK' },
+        { label: 'قائمة تشغيل 4', url: 'https://www.youtube.com/playlist?list=PLJqRpPcJQ_g0DlrD452NGJUOriJEXd2gH' }
+      ]
+    }
   ],
   mid: [
-    { title: 'أسئلة سنوات (نموذج 1)', url: 'https://drive.google.com/file/d/1AQhf1jHpTF_Xb4-VF2i8jLQgklfqIlzU/view' },
-    { title: 'أسئلة سنوات (نموذج 2)', url: 'https://drive.google.com/file/d/1AOHi8JuUqDvmCqWuUwf87NBCuRmGXQGa/view' },
-    { title: 'أسئلة سنوات (نموذج 3)', url: 'https://drive.google.com/file/d/1qoyY0bvJBlNof3AHMpTSeKlfFOp04_kW/view' },
-    { title: 'أسئلة سنوات (تيليجرام)', url: 'https://t.me/Spark_Team_Eg/310' }
+    {
+      label: 'أسئلة سنوات فريق سبارك',
+      type: 'folder',
+      items: [
+        { label: 'أسئلة سنوات (نموذج 1)', url: 'https://drive.google.com/file/d/1AQhf1jHpTF_Xb4-VF2i8jLQgklfqIlzU/view' },
+        { label: 'أسئلة سنوات (نموذج 2)', url: 'https://drive.google.com/file/d/1AOHi8JuUqDvmCqWuUwf87NBCuRmGXQGa/view' },
+        { label: 'أسئلة سنوات (نموذج 3)', url: 'https://drive.google.com/file/d/1qoyY0bvJBlNof3AHMpTSeKlfFOp04_kW/view' },
+        { label: 'أسئلة سنوات (تيليجرام)', url: 'https://t.me/Spark_Team_Eg/310' }
+      ]
+    }
   ],
   final: []
 },
-  },
   subj12: {
     title: 'Power electronics Lab', icon: '⚡',
     books: [],
