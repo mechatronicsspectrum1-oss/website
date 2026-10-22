@@ -1233,20 +1233,20 @@ details[open] summary::before {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  z-index: 999999 !important;
+  width: 100% !important;
+  height: 100% !important;
   background: rgba(5, 13, 26, 0.85) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  z-index: 999999 !important;
+  overflow-y: auto !important; /* لضمان السكرول لو المحتوى طويل على التلفون */
 }
 
 .subject-modal {
-  width: 90vw !important;
+  position: relative !important;
+  margin: 10vh auto !important; /* بتعمل سنتره عامودية طبيعية آمنة على الموبايل بدون تعليق */
+  width: 90% !important;
   max-width: 500px !important;
-  max-height: 85vh !important;
-  overflow-y: auto !important;
+  background: #0b192c !important; /* لون خلفية النافذة عشان تكون واضحة */
+  border-radius: 12px;
 }
 
   }
