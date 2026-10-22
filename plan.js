@@ -810,13 +810,13 @@ function openSubjectModal(subjectKey) {
   const data = subjectsData[subjectKey];
   if (!data) return;
 
-  // 1. إعادة زووم الشاشة للحجم الطبيعي (1:1)
+  // 1. إعادة زووم الشاشة للحجم الطبيعي
   const metaViewport = document.querySelector('meta[name="viewport"]');
   if (metaViewport) {
     metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
   }
 
-  // 2. إخفاء الخطة بالكامل وإظهار النافذة
+  // 2. إظهار النافذة
   document.body.classList.add('modal-open');
   const overlay = document.getElementById('subjectModalOverlay');
   if (overlay) overlay.style.display = 'flex';
@@ -838,13 +838,10 @@ function openSubjectModal(subjectKey) {
     const sumBlock = document.getElementById('subjectSummariesBlock');
     if (sumBlock) sumBlock.style.display = (data.summaries && data.summaries.length > 0) ? '' : 'none';
 
-    // 6. تعبئة الشروحات (يدعم subjectVideos و subjectLectures معاً لضمان عدم حدوث أي خطأ)
-    const videoItems = data.videos || data.lectures;
-    buildLinkList('subjectVideos', videoItems);
-    buildLinkList('subjectLectures', videoItems);
-    
-    const vidBlock = document.getElementById('subjectVideosBlock') || document.getElementById('subjectLecturesBlock');
-    if (vidBlock) vidBlock.style.display = (videoItems && videoItems.length > 0) ? '' : 'none';
+    // 6. تعبئة الشروحات (الفيديوهات) بالمعرّف الصحيح subjectVideos
+    buildLinkList('subjectVideos', data.videos);
+    const vidBlock = document.getElementById('subjectVideosBlock');
+    if (vidBlock) vidBlock.style.display = (data.videos && data.videos.length > 0) ? '' : 'none';
 
     // 7. تعبئة الميد والفاينل
     buildLinkList('subjectMid', data.mid);
@@ -860,16 +857,13 @@ function openSubjectModal(subjectKey) {
 function closeSubjectModal(event) {
   if (event) event.stopPropagation();
 
-  // 1. إخفاء النافذة وإعادة إظهار الخطة
+  // إخفاء النافذة وإعادة إظهار الخطة
   const overlay = document.getElementById('subjectModalOverlay');
   if (overlay) overlay.style.display = 'none';
   document.body.classList.remove('modal-open');
 
-  // 2. إعادة السماح بالزووم الطبيعي على الخطة
   const metaViewport = document.querySelector('meta[name="viewport"]');
   if (metaViewport) {
     metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
   }
-
-  
 }
