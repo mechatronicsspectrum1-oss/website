@@ -1227,9 +1227,15 @@ details[open] summary::before {
 
 
 
-/* إخفاء الخطة بالكامل لمنع أي زووم أو لاج خلف النافذة */
+/* إخفاء الخطة بالشفافية والـ visibility لمنع أي لاج أو تقطيع عند الفتح والإغلاق */
 body.modal-open .plan-img-wrap {
-  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.plan-img-wrap {
+  transition: opacity 0.1s ease !important;
 }
 
 #subjectModalOverlay {
