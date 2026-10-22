@@ -1255,5 +1255,18 @@ details[open] summary::before {
     -webkit-backdrop-filter: none !important;
     box-shadow: none !important;
   }
- 
+ /* تثبيت حجم نوافذ ومحتويات المواد الدراسية لتعرض بشكل طبيعي وغير متأثرة بالزووم */
+.subject-modal, .modal, .swal2-popup, .popup-container {
+  transform: none !important;
+  zoom: 1 !important;
+  max-width: 95vw !important;
+  width: auto !important;
+}
+
+/* منع التكبير الإجباري للصور داخل نافذة المادة */
+.subject-modal img, .modal img, .popup-content img {
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
   }
