@@ -814,7 +814,7 @@ function openSubjectModal(subjectKey) {
   const data = subjectsData[subjectKey];
   if (!data) return;
 
-  // إخفاء الخطة بالكامل وإظهار النافذة فوراً بدون تغيير الـ Viewport (لمنع اللاج)
+  // إخفاء الخلفية وإظهار النافذة فوراً بدون لاج
   document.body.classList.add('modal-open');
   const overlay = document.getElementById('subjectModalOverlay');
   if (overlay) overlay.style.display = 'flex';
