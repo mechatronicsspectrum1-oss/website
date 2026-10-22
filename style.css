@@ -1227,23 +1227,34 @@ details[open] summary::before {
 
 
 
-/* قفل الزووم نهائياً عن النافذة وتثبيتها بحجم طبيعي */
+/* إخفاء الخطة بالكامل لمنع أي زووم أو لاج خلف النافذة */
+body.modal-open .plan-img-wrap {
+  display: none !important;
+}
+
 #subjectModalOverlay {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
-  transform: none !important;
-  zoom: 1 !important;
+  background: rgba(5, 13, 26, 0.9) !important;
   z-index: 999999 !important;
+  display: none;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .subject-modal {
+  position: relative !important;
+  width: 90% !important;
+  max-width: 500px !important;
+  max-height: 85vh !important;
+  overflow-y: auto !important;
+  background: #0b192c !important;
+  border-radius: 12px;
   transform: none !important;
   zoom: 1 !important;
-  max-width: 500px !important;
-  width: 90% !important;
 }
 
   }
