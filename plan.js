@@ -825,11 +825,35 @@ function openSubjectModal(subjectKey) {
   const overlay = document.getElementById('subjectModalOverlay');
   if (overlay) overlay.style.display = 'flex';
 
-  // 3. تعبئة البيانات
+  // 3. تعبئة العنوان والأيقونة
   document.getElementById('subjectTitle').textContent = data.title;
   document.getElementById('subjectTitleIcon').textContent = data.icon || '📖';
-  buildBooksGrid('subjectBooks', data.books);
-  buildLinkList('subjectSummaries', data.summaries);
+
+  // 4. تعبئة الكتب
+  if (typeof buildBooksGrid === 'function') {
+    buildBooksGrid('subjectBooks', data.books);
+    const bookBlock = document.getElementById('subjectBooksBlock');
+    if (bookBlock) bookBlock.style.display = (data.books && data.books.length > 0) ? '' : 'none';
+  }
+
+  // 5. تعبئة الملخصات والشروحات والميد والفاينل
+  if (typeof buildLinkList === 'function') {
+    buildLinkList('subjectSummaries', data.summaries);
+    const sumBlock = document.getElementById('subjectSummariesBlock');
+    if (sumBlock) sumBlock.style.display = (data.summaries && data.summaries.length > 0) ? '' : 'none';
+
+    buildLinkList('subjectLectures', data.lectures || data.videos);
+    const lecBlock = document.getElementById('subjectLecturesBlock');
+    if (lecBlock) lecBlock.style.display = ((data.lectures || data.videos) && (data.lectures || data.videos).length > 0) ? '' : 'none';
+
+    buildLinkList('subjectMid', data.mid);
+    const midBlock = document.getElementById('subjectMidBlock');
+    if (midBlock) midBlock.style.display = (data.mid && data.mid.length > 0) ? '' : 'none';
+
+    buildLinkList('subjectFinal', data.final);
+    const finalBlock = document.getElementById('subjectFinalBlock');
+    if (finalBlock) finalBlock.style.display = (data.final && data.final.length > 0) ? '' : 'none';
+  }
 }
 
 function closeSubjectModal(event) {
@@ -845,4 +869,5 @@ function closeSubjectModal(event) {
   if (metaViewport) {
     metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
   }
+  
 }
