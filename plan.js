@@ -128,8 +128,23 @@ const subjectsData = {
   },
   subj5: {
     title: 'Electronics 1 Lab', icon: '💡',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
+    books: [
+      { label: 'مانيوال المختبر', url: 'https://drive.google.com/file/d/1rX04Tk477TgE0_mHu7vyTat46N3NRj6L/view?usp=sharing' },
+      { label: 'تقارير المختبر', url: 'https://drive.google.com/file/d/1GgE-a78xEG6Sn1yh86gAGgtAbTxe7QjJ/view?fbclid=IwAR03Ov1o7-YkuSwRUTxRD8bUMTtVhH9-cIWN-7stPOL7PVRDIVoFnBSksCI' }
+    ],
+    summaries: [
+      { label: 'ملخص المختبر - فريق سبكتروم (يحتوي روابط فيديوهات)', url: 'https://drive.google.com/file/d/1-9tIdLVSw7WnASAT7LaAcSjpZo6p3m_L/view?usp=sharing' },
+      { label: 'ملخص المختبر - فريق سبارك', url: 'https://drive.google.com/file/d/1fL8naMA2UUL91BvOrHSOHEVR5E9BNanV/view?fbclid=IwAR3Ls2wQ8W6XX0ysE8NGlTWPorNUhwh_ErKwxGyOQnebkRpHSrnRLDdWdls' },
+      { label: 'برنامج محاكاة الدوائر الإلكترونية (NI Multisim)', url: 'https://getintopc.com/softwares/circuit-designing/ni-multisim-ultiboard-electronics-circuit-design-suite-free-download/?id=001764774967' }
+    ],
+    videos: [
+      { label: 'فيديوهات شرح المختبر - فريق سبارك', url: 'https://www.youtube.com/playlist?list=PL4Itv3LsZJuy9CRXrmfS4W2KMIfzw9NGx' }
+    ],
+    mid: [
+      { label: 'أسئلة سنوات إلكترونية (1) - فريق سبارك', url: 'https://drive.google.com/drive/folders/1AkgWVdmBJbgl_rk60lQoh6rqqU-pP8-h?fbclid=IwAR2cf-gLJp1tc9rfChGj5QrtLZrmcuj0pLWCgwECLhMS9H237SpWlblg3XA' },
+      { label: 'أسئلة سنوات إلكترونية (2) - فريق سبارك', url: 'https://drive.google.com/file/d/1IJXagFF4IVSzQWzBdYiYZ-yR_lEQedXL/view' }
+    ],
+    final: []
   },
 subj6: {
     title: 'Machine components', icon: '⚙',
