@@ -729,4 +729,79 @@ function buildBooksGrid(containerId, books) {
   }).join('');
 }
 
+// ─── الدالة الآمنة لفتح نافذة المادة ───
+function openSubjectModal(subjectKey) {
+  const data = subjectsData[subjectKey];
+  if (!data) {
+    console.error('المادة غير موجودة:', subjectKey);
+    return;
+  }
+
+  // 1. إعادة زووم الشاشة للحجم الطبيعي
+  const metaViewport = document.querySelector('meta[name="viewport"]');
+  if (metaViewport) {
+    metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+  }
+
+  // 2. إظهار النافذة عبر الـ Overlay
+  document.body.classList.add('modal-open');
+  const overlay = document.getElementById('subjectModalOverlay');
+  if (overlay) {
+    overlay.style.display = 'flex';
+    overlay.classList.add('open');
+  }
+
+  // 3. تعبئة العنوان والأيقونة
+  const titleEl = document.getElementById('subjectTitle');
+  if (titleEl) titleEl.textContent = data.title;
+
+  const iconEl = document.getElementById('subjectTitleIcon');
+  if (iconEl) iconEl.textContent = data.icon || '📖';
+
+  // 4. تعبئة الكتب
+  if (typeof buildBooksGrid === 'function') {
+    buildBooksGrid('subjectBooks', data.books);
+    const bookBlock = document.getElementById('subjectBooksBlock');
+    if (bookBlock) bookBlock.style.display = (data.books && data.books.length > 0) ? '' : 'none';
+  }
+
+  // 5. تعبئة الملخصات والشروحات والميد والفاينل
+  if (typeof buildLinkList === 'function') {
+    buildLinkList('subjectSummaries', data.summaries);
+    const sumBlock = document.getElementById('subjectSummariesBlock');
+    if (sumBlock) sumBlock.style.display = (data.summaries && data.summaries.length > 0) ? '' : 'none';
+
+    buildLinkList('subjectVideos', data.videos);
+    const vidBlock = document.getElementById('subjectVideosBlock');
+    if (vidBlock) vidBlock.style.display = (data.videos && data.videos.length > 0) ? '' : 'none';
+
+    buildLinkList('subjectMid', data.mid);
+    const midBlock = document.getElementById('subjectMidBlock');
+    if (midBlock) midBlock.style.display = (data.mid && data.mid.length > 0) ? '' : 'none';
+
+    buildLinkList('subjectFinal', data.final);
+    const finalBlock = document.getElementById('subjectFinalBlock');
+    if (finalBlock) finalBlock.style.display = (data.final && data.final.length > 0) ? '' : 'none';
+  }
+}
+
+// ─── دالة إغلاق نافذة المادة ───
+function closeSubjectModal(event) {
+  if (event && event.target !== document.getElementById('subjectModalOverlay') && !event.target.classList.contains('close-btn')) {
+    // إذا لم يكن النقر على الخلفية أو زر الإغلاق المباشر، يمكن تجاهله أو ضبطه حسب رغبتك
+  }
+
+  const overlay = document.getElementById('subjectModalOverlay');
+  if (overlay) {
+    overlay.style.display = 'none';
+    overlay.classList.remove('open');
+  }
+  document.body.classList.remove('modal-open');
+  document.body.style.overflow = '';
+
+  const metaViewport = document.querySelector('meta[name="viewport"]');
+  if (metaViewport) {
+    metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+  }
+}
 
