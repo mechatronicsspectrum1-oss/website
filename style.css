@@ -1248,5 +1248,23 @@ details[open] summary::before {
   background: #0b192c !important; /* لون خلفية النافذة عشان تكون واضحة */
   border-radius: 12px;
 }
+/* تحسين أداء وحركة حاوية الخطة على الموبايل لمنع اللاج والكرشات */
+.plan-img-wrap {
+  width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  transform: none !important; /* إلغاء أي تحويلات ثقيلة مسببة للكرشات */
+  touch-action: pan-x pan-y !important;
+}
 
+.plan-img {
+  max-width: none !important;
+  width: 800px !important; /* تثبيت عرض مناسب يتيح التصفح بسلاسة باللمس */
+  height: auto !important;
+}
+
+.plan-hotspots {
+  transform: none !important;
+}
   }
