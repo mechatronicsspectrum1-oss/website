@@ -357,10 +357,26 @@ subj11: {
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
-  subj17: {
+ subj17: {
     title: 'Control systems Lab', icon: '🧠',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
+    books: [
+      { label: 'مانيوال المختبر', url: 'https://drive.google.com/file/d/11NPpHywLX_gCMkCVMi1xybDbbyUESF6M/view?usp=drivesdk&fbclid=IwAR394mzZ7IRwqWbMcwcMGy3ule007VmTQFA7n4w57hHFS6VQb_AgoNOMZQE' },
+      { label: 'حلول التقارير', url: 'https://drive.google.com/drive/u/0/folders/1mHp8wLuTRuDYWFFUUboP0Ud8sb3d7qrI?fbclid=IwAR1RZfat3Q2jTdJFVxL0ZJestXixwhY_BC3XBB3Q-4hbEXKT2SfEXkFCYHM' }
+    ],
+    summaries: [
+      { label: 'تلخيص المختبر - فريق سبارك', url: 'https://drive.google.com/file/d/18unHmoljzWAmW_xGPQDJigaQkxNm-Ure/view?fbclid=IwAR2wZfpAEddeGkxwvGoWr8qUkPi8HJ2fK9UYR-x3zh-dCxFu8R8dZc4PKbQ' },
+      { label: 'تنزيل برنامج الماتلاب (MATLAB R2020a)', url: 'https://getintopc.com/softwares/matlab-r2020a-free-download-3811895/?id=001402357526' },
+      { label: 'رابط برنامج الماتلاب أونلاين (MATLAB Online)', url: 'https://matlab.mathworks.com/' }
+    ],
+    videos: [
+      { label: 'فيديوهات شرح المختبر - فريق سبارك', url: 'https://www.youtube.com/playlist?app=desktop&list=PL4Itv3LsZJuy72JS58izWKMZ_-b5IDcR9&fbclid=IwAR030ddACK46PX99POxx1ORpGj86BuMooKfDigiUyvgOFLDDnz-F-7MU14c' }
+    ],
+    mid: [
+      { label: 'أسئلة سنوات ورقي', url: 'https://drive.google.com/drive/folders/1xUaCrniJWoBU5YBIFOuoEApS-6v9zpl8?usp=drive_link' }
+    ],
+    final: [
+      { label: 'أسئلة سنوات إلكتروني', url: 'https://drive.google.com/drive/folders/1ziaOoGZ8IHI_KdLWYS78mHsGgQpgo-LA?fbclid=IwAR2pcUOV9P_QqIvjirLPEAIJjFSX0JQtwBjk96vlnSoGWR8NLMxSQEfKJrY' }
+    ]
   },
   subj18: {
     title: 'Control systems', icon: '🧠',
@@ -409,10 +425,28 @@ subj11: {
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
-  subj23: {
-    title: 'Assembly Lab', icon: '💾 ',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
+ subj23: {
+    title: 'Assembly Lab', icon: '💾',
+    books: [
+      { label: 'مانيوال المختبر', url: 'https://drive.google.com/drive/folders/1UaTKh9u7ylXEkRc-2ICwSOYVDVNS8KOw?usp=drive_link' },
+      { label: 'حلول التقارير - فريق سبارك', url: 'https://drive.google.com/file/d/1JYS-Bznz8UraFPz_IHqrC8eYjOmT3tsr/view?fbclid=IwAR3U5oF5JcrktSF-GF6KOvqQRwbMHQqmrIIEqZ7RDi8sl1-L_aHKOeQdlO8' }
+    ],
+    summaries: [
+      { label: 'تلخيص المختبر - فريق سبارك', url: 'https://drive.google.com/file/d/1R17vkzUM9hxw9XGBnJLisdawdbASiN1R/view?fbclid=IwAR29ziAxLszgunTl0LmA7DsGfLmD3SQt5ZI-uR4ejztaQfzO47q8pqIkmbU' },
+      { label: 'تمارين للمختبر', url: 'https://drive.google.com/drive/folders/18wh9ALb3ijrEZjgV3ViEX4ZWo6-kDh9v?fbclid=IwAR3XMkZwh7aK71En21pQII59GNKwE-HSb7FiLrbFERKZHMhw-bBsk0wm70w' },
+      { label: 'برنامج التطبيق العملي', url: 'http://www.mediafire.com/file/smu2dzrpspuzpvl/' }
+    ],
+    videos: [
+      { label: 'قناة شرح التجارب (1)', url: 'https://www.youtube.com/channel/UCcHe2F6g0GMO78JazG-6gZw' },
+      { label: 'قائمة تشغيل شرح التجارب (2)', url: 'https://www.youtube.com/playlist?list=PLheAeBVbdpwcg2w9gvr9Sp30XpD1Q4lu2&fbclid=IwAR3wW6qCnmXIZ_j8dQkqLKM6X1GKlx2o-l4O6Y1ZyK5ofmsOvZVcFNJljrs' }
+    ],
+    mid: [
+      { label: 'أسئلة سنوات ميد - فريق الزيرون', url: 'https://drive.google.com/drive/folders/1r7qe6gXETdhQpp-jNg2C63cnPt8fp6-D?fbclid=IwAR3IjSy5AucSo0B2HjvWayB_sEOURIr3UXUGuM-kpSZdfyRWLbYmXAQa8wc' }
+    ],
+    final: [
+      { label: 'أسئلة سنوات فاينل - فريق الزيرون', url: 'https://drive.google.com/drive/folders/1__An5C7n7nE5APqjWgkMjryARcPoBzVJ?fbclid=IwAR3U5oF5JcrktSF-GF6KOvqQRwbMHQqmrIIEqZ7RDi8sl1-L_aHKOeQdlO8' },
+      { label: 'أسئلة سنوات محلولة إلكترونية - فريق سبارك', url: 'https://t.me/Spark_Team_Eg/293?single&fbclid=IwAR1BwDj5O2ok8XJxsjApa_bjwcuPimeo8o2WkWcOJKXX9RHn_-OlizyCgbQ' }
+    ]
   },
   subj24: {
     title: 'Assembly', icon: '💾 ',
@@ -606,13 +640,54 @@ subj28: {
   },
   subj32: {
     title: 'Sensors and Actuators Lab', icon: '📏',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
+    books: [
+      { label: 'مانيوال المختبر', url: 'https://drive.google.com/drive/folders/1KmQ-F1Pw5TN7wfH5q6IMFrjr87zH-zmF?usp=sharing' },
+      { label: 'حل تقارير المختبر', url: 'https://drive.google.com/drive/folders/1tG-VCYR5696GuHGGsc4ElI7KSz0QmaXP?usp=sharing' }
+    ],
+    summaries: [
+      { label: 'ملخص فريق سبكتروم (1)', url: 'https://drive.google.com/drive/folders/1hnaBDvrarMflFSL1yXFxcVtMM8TAgqbp?usp=sharing' },
+      { label: 'ملخص فريق سبكتروم (2)', url: 'https://www.mediafire.com/file/n7z14cjz3uv251i/' },
+      { label: 'برنامج محاكاة للحساسات (Tinkercad)', url: 'https://www.tinkercad.com/' }
+    ],
+    videos: [
+      { label: 'فيديوهات شرح وتوصيل', url: 'https://www.youtube.com/watch?v=G0fGLhMTr-k&list=PLm_LnUeSGkY5o_IuwvzY4zPx-oe99fzLB&pp=iAQB' }
+    ],
+    mid: [
+      { label: 'أسئلة سنوات', url: 'https://www.mediafire.com/?nr7n3nrhlzu9ov8' }
+    ],
+    final: []
   },
-  subj33: {
+ subj33: {
     title: 'Sensors and Actuators', icon: '📏',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
+    books: [
+      { label: 'كتاب المادة', url: 'https://drive.google.com/drive/folders/1RCE0zPjG1dkFPFHxzD5V08u9UsvNj2IW' },
+      { label: 'حلول الكتاب', url: 'https://www.mediafire.com/download/crn00642dvj07eg/%D9%86%D9%88%D8%A7%D9%82%D9%84.PDF' },
+      { label: 'مراجع ومصادر أخرى', url: 'https://drive.google.com/drive/folders/1JrCGOjsfwbd0wNUvbi1cx0UWvPzYp7vx' }
+    ],
+    summaries: [
+      { label: 'ملخص المادة', url: 'https://www.mediafire.com/file/gqdx2ccco7612hl/' },
+      { label: 'سلايدات الدكتور (1)', url: 'https://www.mediafire.com/file/5qjpbt41ralgfwo/%D8%A7%D9%84%D9%86%D9%88%D8%A7%D9%82%D9%84_-_%D8%AF.%D8%B7%D8%A7%D8%B1%D9%82.pdf' },
+      { label: 'سلايدات الدكتور (2)', url: 'https://drive.google.com/file/d/1pqr1dGNXXgTyUq6AdiJ1BgDh_bkcPaDl/view?usp=sharing' },
+      { label: 'سلايدات الدكتور (3 - مجلد)', url: 'https://drive.google.com/drive/folders/1bOYApg7rZfD_MTyx8zBw4nwG6BuGfmFL' },
+      { label: 'برنامج محاكاة عمل الحساسات (Proteus)', url: 'https://getintopc.com/softwares/electrical-engineering/proteus-professional-2022-free-download/?id=000132256305' },
+      { label: 'برنامج محاكاة (Tinkercad)', url: 'https://www.tinkercad.com/' }
+    ],
+    videos: [
+      { label: 'فيديوهات شرح للمادة (1)', url: 'https://www.youtube.com/watch?v=zxYeJW9v6OU&list=PLwymdQ84KI-w5DwDzqO_4hWsB2Jc4_eBy' },
+      { label: 'فيديوهات شرح للمادة (2)', url: 'https://www.youtube.com/watch?v=IIf7zH5cIX8&list=PL91lquAVmESBqKLU0Tn5gRVXVyW5KLgCa' },
+      { label: 'فيديو مشروع المادة', url: 'https://youtu.be/JmUt9O4c2-c?si=J2ECMqKROgwF7E34' }
+    ],
+    mid: [
+      { label: 'أسئلة سنوات - كويزات', url: 'https://drive.google.com/drive/folders/1h2FfHAUMR3jRpscHfIwxJkkOG93BSlrh' },
+      { label: 'أسئلة سنوات (1)', url: 'https://drive.google.com/drive/folders/1atdANnogkTWB51wtjLB5eJtNyrdseGw2' },
+      { label: 'أسئلة للمادة (بنك أسئلة)', url: 'https://drive.google.com/drive/folders/1zKZCFcVkfRXOpTrdSK_Pu0vhe3rnGIT9' }
+    ],
+    final: [
+      { label: 'أسئلة سنوات (2)', url: 'https://drive.google.com/drive/folders/1XEJy6aab5J2ZVmho_lgGMG7KuF8ZHh5R?fbclid=IwAR1yoIixtg9oyAKmFxnGoQLuI9lUlm-stXnbgKVKlo5zV8Nkmcv7zfTQiTo' },
+      { label: 'أسئلة سنوات (3)', url: 'https://drive.google.com/drive/folders/1SHW238JtstHTvEbKha7AlbNcnjuMLe6s?fbclid=IwAR1GDTYT26bzADdIp6mKANSJGCVhnV13ZXnRi0T_KIEsH92HQPAuE4_v7_w' },
+      { label: 'مشروع المادة (مجلد 1)', url: 'https://drive.google.com/drive/folders/11eqWQDDqR9MeT-jj1NsIVBtPuALcGnH5' },
+      { label: 'مشروع المادة (مجلد 2)', url: 'https://drive.google.com/drive/folders/1dv3iRb-fr4BAfeJyZTZTdiUFIHeLVHzA?usp=sharing' }
+    ]
   },
   subj34: {
     title: 'Applied Engineering Materials', icon: '🏗️ ',
