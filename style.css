@@ -1228,28 +1228,69 @@ details[open] summary::before {
 
 
 @media (max-width: 768px) {
+  /* نافذة تفاصيل المادة: ثابتة، تفتح فوراً وبدون أي زووم موروث */
   #subjectModalOverlay {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    transform: none !important;
-    zoom: 1 !important;
-    background: rgba(5, 13, 26, 0.85) !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(5, 13, 26, 0.9) !important;
     z-index: 999999 !important;
     overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    transition: none !important;
   }
 
   .subject-modal {
     position: relative !important;
-    margin: 10vh auto !important;
+    margin: 12vh auto !important;
     width: 90% !important;
-    max-width: 500px !important;
-    transform: none !important;
-    zoom: 1 !important;
+    max-width: 480px !important;
     background: #0b192c !important;
     border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+    transform: none !important;
+    zoom: 1 !important;
+    transition: none !important;
+  }
+
+  /* الحاوية الجامعة للخطة الدراسية */
+  .plan-img-wrap {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    overflow: hidden !important;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  /* صورة الخطة تتناسب مع عرض شاشة الهاتف تماماً وبدون زووم جانبي */
+  .plan-img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    max-width: none !important;
+  }
+
+  /* طبقة الكبسات مطابقة لأبعاد الصورة تماماً بنسبة 100% لتبقى فوق المواد بدقة */
+  .plan-hotspots {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: auto !important;
+    transform: none !important;
+  }
+
+  /* تسريع استجابة اللمس على الأزرار وإلغاء التبطيء والتأخير */
+  .plan-hotspots a, 
+  .plan-hotspots button, 
+  .hotspot-btn {
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
   }
 
   }
