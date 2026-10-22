@@ -868,6 +868,3 @@ function closeSubjectModal(event) {
 
   
 }
-
-  
-}
