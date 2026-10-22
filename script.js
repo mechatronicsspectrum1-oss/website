@@ -238,12 +238,12 @@ window.addEventListener('scroll', () => {
         }
     }
 
-    stage.addEventListener('mousedown', startDrag);
-    stage.addEventListener('touchstart', startDrag, { passive: false });
-    window.addEventListener('mousemove', onDrag);
-    window.addEventListener('touchmove', onDrag, { passive: false });
-    window.addEventListener('mouseup', endDrag);
-    window.addEventListener('touchend', endDrag);
+  stage.addEventListener('mousedown', startDrag);
+stage.addEventListener('touchstart', startDrag, { passive: true });
+window.addEventListener('mousemove', onDrag);
+window.addEventListener('touchmove', onDrag, { passive: true });
+window.addEventListener('mouseup', endDrag);
+window.addEventListener('touchend', endDrag);
 
     // Prevent default drag on images inside the grid
     container.addEventListener('dragstart', e => e.preventDefault());
