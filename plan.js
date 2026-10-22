@@ -86,8 +86,35 @@ const planHotspots = [
 const subjectsData = {
   subj1: {
     title: 'Circuit Lab', icon: '⚡',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
+    books: [
+      { label: 'مانيوال المختبر (القديم)', url: 'https://docs.google.com/document/d/1YJF4cbj6eGewQfg1q7Qj_YJ0DShc4_QG/edit?fbclid=IwAR0T0-zkvDcGZJFFJoLibrC1O5JTYQI-AQQjy2l_bLvrUrTap4k04luUPRY' },
+      { label: 'حلول التقارير', url: 'https://drive.google.com/drive/folders/1j3zvbiYpvqZkWxn2nH3EinRomyB1pLz7?fbclid=IwAR1-lCYOfeWGgTkTgSRYMAmKByeR4jAiVfPHQYeSevsrToaN5lkfkz5Eyew' }
+    ],
+    summaries: [
+      { label: 'ملخص المختبر - فريق سبارك', url: 'https://drive.google.com/file/d/1uI-Ni8wunxxxSk2wbizhR6Zt96zRh7le/view?fbclid=IwAR1oc0PkJF9ghBvd_wXnC3Y6ZHwImLmHL7QNnI5Fgfe_oFN5Ogonf5FvCgE' },
+      { label: 'برنامج محاكاة الدوائر الإلكترونية (NI Multisim)', url: 'https://getintopc.com/softwares/circuit-designing/ni-multisim-ultiboard-electronics-circuit-design-suite-free-download/?id=001119930239' }
+    ],
+    videos: [
+      { label: 'شرح التوصيلات (1)', url: 'https://drive.google.com/drive/folders/1XN5CfiHJ_MRdmOBUf7PbOacu0F2CuChD?fbclid=IwAR0D4TWpyjh1RiFFn7sq3MhhNMQhVAOZWF7WLWdCS7jG91yeoDqsadQcp90' },
+      { label: 'شرح التوصيلات - قناة يوتيوب', url: 'https://www.youtube.com/channel/UCQPwZRPQ-ygqCXblUTQxerg' },
+      { label: 'شرح التوصيلات - مجموعة الفيسبوك', url: 'https://m.facebook.com/groups/power.Communications.group/permalink/2232849780059461/' },
+      { label: 'فيديوهات شرح للمادة (1)', url: 'https://youtube.com/playlist?list=PLO2bLNTG3eMmjJcAfNrDx0rGZ_3z_nssa&si=NBXm9_NgzspKkRW9' },
+      { label: 'فيديوهات شرح للمادة (2)', url: 'https://www.youtube.com/watch?v=yoI2xDJX6mc&list=PLkgbZlu_ZYfk7-DZKFoCkwVgLn5xjF1Sg' },
+      { label: 'شرح فريق ELCOM', url: 'https://elcom-team.com/%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%AF-%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D9%8A%D8%A9/%D9%85%D9%88%D8%A7%D8%AF-%D9%87%D9%86%D8%AF%D8%B3%D8%A9-%D8%A7%D9%84%D9%85%D9%8A%D9%83%D8%A7%D8%AA%D8%B1%D9%88%D9%86%D9%8A%D9%83%D8%B3/%D9%84%D8%A7%D8%A8%D8%A7%D8%AA/%D9%85%D8%AE%D8%AA%D8%A8%D8%B1-%D8%AF%D9%88%D8%A7%D8%A6%D8%B1-%D9%83%D9%87%D8%B1%D8%A8%D8%A7%D8%A6%D9%8A%D8%A9/' }
+    ],
+    mid: [
+      { label: 'أسئلة سنوات ميد - فريق الزيرون', url: 'https://drive.google.com/file/d/1qaY-XMExnphfA69QgWeXnLVBqBDMRPaK/view?fbclid=IwAR3wQqqhyRAqtUr-k8n4c_miFf4jiBVbZk47Tgrr8cPKs2hD7Xsr1BoaSPI' },
+      { label: 'أسئلة سنوات ورقي (مجلد)', url: 'https://drive.google.com/drive/folders/1-7BpX-c4mUo9ZmCnXkWyGHL4Ijr9rLmi?fbclid=IwAR2ke1beWjNv6n9C7tLAc2IWilDMLpniuueEjw2MSJaZAA5TUORumXaOzWs' }
+    ],
+    final: [
+      { label: 'أسئلة سنوات فاينل - فريق الزيرون', url: 'https://drive.google.com/file/d/1at3oCX6nYee9rW9pyMuC8uZ46jUZX95r/view?fbclid=IwAR0d4nIcY4i61GQHsG_tHVpMctBF8z7ejjIHlPClGixg5dhssKv9x57TvPQ' },
+      { label: 'أسئلة سنوات إلكتروني - تليجرام فريق سبارك', url: 'https://t.me/Spark_Team_Eg/558' },
+      { label: 'أسئلة سنوات إلكتروني (د్రايف)', url: 'https://drive.google.com/drive/folders/1UKJxf8Whatv4hm2XdXgAJMYLmvi8hjUX?fbclid=IwAR0H-Ak-Z5N43kObksjQE4SzdonKUjlkK2h2Z4Uz3XnLhtiTDkwLwUzMqRs' },
+      { label: 'أسئلة سنوات ورقي (فيسبوك 1)', url: 'https://m.facebook.com/groups/285572364787222?view=permalink&id=2252221271455645' },
+      { label: 'أسئلة سنوات ورقي (فيسبوك 2)', url: 'https://m.facebook.com/groups/285572364787222?view=permalink&id=2252123871465385' },
+      { label: 'أسئلة سنوات ورقي (مجلد إضافي)', url: 'https://drive.google.com/drive/folders/1e3Two5NLGXP1HOF9VmmguLCbZDDn9NMQ?fbclid=IwAR0d4nIcY4i61GQHsG_tHVpMctBF8z7ejjIHlPClGixg5dhssKv9x57TvPQ' },
+      { label: 'أسئلة سنوات ورقي (ملف إضافي)', url: 'https://drive.google.com/file/d/1cfbPmfkgdkLJ-iTU1rjf2f0O427DSz_6/view?fbclid=IwAR27IOWj4f1fFmN77Wa0bxNECUU4BLTHVGYK53V2iQ3mdSEOdAV_52vMhhc' }
+    ]
   },
   subj2: {
     title: 'Circuit 2', icon: '⚡',
