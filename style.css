@@ -1227,16 +1227,16 @@ details[open] summary::before {
 
 
 
-/* إخفاء الخطة بالشفافية والـ visibility لمنع أي لاج أو تقطيع عند الفتح والإغلاق */
-body.modal-open .plan-img-wrap {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
+/* تجهيز كرت الشاشة في الموبايل لظهور وإخفاء الخطة بدون أي لاج عند الإغلاق */
+  .plan-img-wrap {
+    will-change: opacity !important;
+    transition: opacity 0.1s ease-out !important;
+  }
 
-.plan-img-wrap {
-  transition: opacity 0.1s ease !important;
-}
+  body.modal-open .plan-img-wrap {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
 
 #subjectModalOverlay {
   position: fixed !important;
