@@ -131,56 +131,48 @@ const subjectsData = {
     books: [],
     summaries: [], videos: [], mid: [], final: []
   },
- subj6: {
+subj6: {
     title: 'Machine components', icon: '⚙',
-    description: 'تتحدث هذه المادة عن المكونات الأساسية لعلم الميكانيكا بشكل عام وكيفية ارتباطها مع بعضها بحسابات دقيقة كالسننات والكامات، مع دراسة الإزاحة والسرعة والتسارع تحليلياً أو بالرسم.',
-    prerequisites: 'يجب أن تكون ملماً بمادتين: 1. الاستاتيك، 2. الرسم الهندسي (باستخدام برامج الأوتوكاد 2020 وفوق أو سوليدوورك).',
     books: [
-        { name: 'كتاب المادة', url: 'http://www.mediafire.com/file/z9o0r0ywa8q557z' },
-        { name: 'حلول الكتاب', url: 'http://www.mediafire.com/file/j3eh7ju3krk6zr3' }
+        { label: 'كتاب المادة', url: 'http://www.mediafire.com/file/z9o0r0ywa8q557z', cover: 'books mockups/placeholder.png' },
+        { label: 'حلول الكتاب', url: 'http://www.mediafire.com/file/j3eh7ju3krk6zr3', cover: 'books mockups/placeholder.png' }
     ],
     summaries: [
-        { name: 'سلايدات المادة (1)', url: 'http://www.mediafire.com/file/ewmyg2jkbdu8a5o' },
-        { name: 'سلايدات المادة (2)', url: 'https://www.mediafire.com/file/ewmyg2jkbdu8a5o/Machine+Components+Slides.pdf' },
-        { name: 'سلايدات المادة (3)', url: 'https://www.mediafire.com/file/w6lze65mk9311ue/' },
-        { name: 'سلايدات إضافية (Google Drive)', url: 'https://drive.google.com/drive/folders/1p_8QNTTB02tbmdn7gsdJQa710ryVKEDQ' }
-    ], 
-    videos: [
-        { name: 'شرح فريق سبكتروم', url: 'https://www.youtube.com/playlist?app=desktop&list=PLRNaExsfJ1qvaFB57bZ2XRIdLXYuKo1jm' },
-        { name: 'شرح إضافي للمادة', url: 'https://www.youtube.com/watch?v=hIc-7iZExVw&list=PL08ef9eJxtJa7pTrrUTVfOstF0agR5iSY' },
-        { name: 'شرح الفاينل - الجزء الأول (لجنة الميكانيك)', url: 'https://youtu.be/fgGuTQrXwsI' },
-        { name: 'شرح الفاينل - الجزء الثاني (لجنة الميكانيك)', url: 'https://youtu.be/f2hXtI62dn8' },
-        { name: 'شرح الفاينل - الجزء الثالث (لجنة الميكانيك)', url: 'https://youtu.be/UEbhd0DDsoQ' },
-        { name: 'شرح الفاينل - الجزء الرابع (لجنة الميكانيك)', url: 'https://youtu.be/wQ8I1P_GAuM' },
-        { name: 'شرح الفاينل - الجزء الخامس (لجنة الميكانيك)', url: 'https://youtu.be/1odXtp4_r9E' },
-        { name: 'شرح الفاينل - الجزء السادس (لجنة الميكانيك)', url: 'https://youtu.be/AF_JmsEGGhw' },
-        { name: 'شرح الفاينل - الجزء السابع (لجنة الميكانيك)', url: 'https://youtu.be/YaBYCB234QM' },
-        { name: 'شرح الفاينل - الجزء الثامن (لجنة الميكانيك)', url: 'https://www.youtube.com/watch?v=LTGPFYAFI3Y' },
-        { name: 'شرح الفاينل - الجزء التاسع (لجنة الميكانيك)', url: 'https://youtu.be/giITUXHRCbk' },
-        { name: 'شرح الفاينل - الجزء العاشر (لجنة الميكانيك)', url: 'https://youtu.be/nOBYnJFty7g' },
-        { name: 'شرح الفاينل - الجزء الحادي عشر (لجنة الميكانيك)', url: 'https://youtu.be/9KmzKdBQiD0' },
-        { name: 'شرح الفاينل - الجزء الثاني عشر (لجنة الميكانيك)', url: 'https://youtu.be/lJX673q9k_E' },
-        { name: 'شرح الفاينل - الجزء الثالث عشر (لجنة الميكانيك)', url: 'https://youtu.be/CTb4A_NUkaM' },
-        { name: 'شرح الفاينل - الجزء الرابع عشر (لجنة الميكانيك)', url: 'https://youtu.be/-KIoGlywass' },
-        { name: 'شرح الفاينل - الجزء الخامس عشر (لجنة الميكانيك)', url: 'https://youtu.be/lk26HMdasmQ' },
-        { name: 'شرح الفاينل - الجزء السادس عشر (لجنة الميكانيك)', url: 'https://youtu.be/68J46hsnr4U' },
-        { name: 'شرح الفاينل - الجزء السابع عشر (لجنة الميكانيك)', url: 'https://youtu.be/aT_KF0SfCsg' }
-    ], 
-    mid: [
-        { name: 'أسئلة ميد وراكتس سابقة (1)', url: 'http://www.mediafire.com/file/q2987i8aux25j2b' },
-        { name: 'أسئلة ميد (Google Drive 1)', url: 'https://drive.google.com/drive/folders/1DKYl3gjfPzAJWDOCAsFFUztwHOFEaXes' },
-        { name: 'أرشيف الميد (ميد)', url: 'https://drive.google.com/drive/folders/1Up1S8oLveAe6LZRZqffm3gTUjqlbSIBP' }
-    ], 
-    final: [
-        { name: 'أسئلة سنوات سبكتروم (2)', url: 'https://drive.google.com/drive/folders/1v5u4oOH2_bV8Fi_rNDIPzACp9ZiP2gFe' },
-        { name: 'أسئلة سنوات سبكتروم (3)', url: 'https://drive.google.com/drive/folders/1vA_Jh-rfJ4TlwesOqVQi3KpkYMVTYMd6?usp=sharing' },
-        { name: 'أسئلة سنوات سبكتروم (4)', url: 'https://drive.google.com/drive/folders/1qoKQK7b78LvCWJQ3YoaOLwDEIZVNmrks' }
+        { label: 'سلايدات المادة (1)', url: 'http://www.mediafire.com/file/ewmyg2jkbdu8a5o' },
+        { label: 'سلايدات المادة (2)', url: 'https://www.mediafire.com/file/ewmyg2jkbdu8a5o/Machine+Components+Slides.pdf' },
+        { label: 'سلايدات المادة (3)', url: 'https://www.mediafire.com/file/w6lze65mk9311ue/' },
+        { label: 'سلايدات إضافية (Google Drive)', url: 'https://drive.google.com/drive/folders/1p_8QNTTB02tbmdn7gsdJQa710ryVKEDQ' }
     ],
-    extras: [
-        { name: 'رابط برنامج الأوتوكاد', url: 'https://getintopc.com/softwares/3d-cad/autodesk-autocad-2020-x64-free-download-1221549/?id=001210307777' },
-        { name: 'رابط برنامج SolidWorks', url: 'https://getintopc.com/softwares/3d-designing/eficad-swood-2020-for-solidworks-free-download/?id=001910737080' },
-        { name: 'مشروع المادة (1)', url: 'https://drive.google.com/drive/folders/1CeRZ4YpKglMqMGqFhkcq4RaPzLGYQcNj' },
-        { name: 'مشروع المادة (2)', url: 'https://drive.google.com/drive/folders/1MgnZOhmftmVrvaKVS5vaSD3c2SmH1frZ?usp=sharing' }
+    videos: [
+        { label: 'شرح فريق سبكتروم', url: 'https://www.youtube.com/playlist?app=desktop&list=PLRNaExsfJ1qvaFB57bZ2XRIdLXYuKo1jm' },
+        { label: 'شرح إضافي للمادة', url: 'https://www.youtube.com/watch?v=hIc-7iZExVw&list=PL08ef9eJxtJa7pTrrUTVfOstF0agR5iSY' },
+        { label: 'شرح الفاينل - 1 (لجنة الميكانيك)', url: 'https://youtu.be/fgGuTQrXwsI' },
+        { label: 'شرح الفاينل - 2 (لجنة الميكانيك)', url: 'https://youtu.be/f2hXtI62dn8' },
+        { label: 'شرح الفاينل - 3 (لجنة الميكانيك)', url: 'https://youtu.be/UEbhd0DDsoQ' },
+        { label: 'شرح الفاينل - 4 (لجنة الميكانيك)', url: 'https://youtu.be/wQ8I1P_GAuM' },
+        { label: 'شرح الفاينل - 5 (لجنة الميكانيك)', url: 'https://youtu.be/1odXtp4_r9E' },
+        { label: 'شرح الفاينل - 6 (لجنة الميكانيك)', url: 'https://youtu.be/AF_JmsEGGhw' },
+        { label: 'شرح الفاينل - 7 (لجنة الميكانيك)', url: 'https://youtu.be/YaBYCB234QM' },
+        { label: 'شرح الفاينل - 8 (لجنة الميكانيك)', url: 'https://www.youtube.com/watch?v=LTGPFYAFI3Y' },
+        { label: 'شرح الفاينل - 9 (لجنة الميكانيك)', url: 'https://youtu.be/giITUXHRCbk' },
+        { label: 'شرح الفاينل - 10 (لجنة الميكانيك)', url: 'https://youtu.be/nOBYnJFty7g' },
+        { label: 'شرح الفاينل - 11 (لجنة الميكانيك)', url: 'https://youtu.be/9KmzKdBQiD0' },
+        { label: 'شرح الفاينل - 12 (لجنة الميكانيك)', url: 'https://youtu.be/lJX673q9k_E' },
+        { label: 'شرح الفاينل - 13 (لجنة الميكانيك)', url: 'https://youtu.be/CTb4A_NUkaM' },
+        { label: 'شرح الفاينل - 14 (لجنة الميكانيك)', url: 'https://youtu.be/-KIoGlywass' },
+        { label: 'شرح الفاينل - 15 (لجنة الميكانيك)', url: 'https://youtu.be/lk26HMdasmQ' },
+        { label: 'شرح الفاينل - 16 (لجنة الميكانيك)', url: 'https://youtu.be/68J46hsnr4U' },
+        { label: 'شرح الفاينل - 17 (لجنة الميكانيك)', url: 'https://youtu.be/aT_KF0SfCsg' }
+    ],
+    mid: [
+        { label: 'أسئلة ميد وراكتس سابقة (1)', url: 'http://www.mediafire.com/file/q2987i8aux25j2b' },
+        { label: 'أسئلة ميد (Google Drive)', url: 'https://drive.google.com/drive/folders/1DKYl3gjfPzAJWDOCAsFFUztwHOFEaXes' },
+        { label: 'أرشيف الميد', url: 'https://drive.google.com/drive/folders/1Up1S8oLveAe6LZRZqffm3gTUjqlbSIBP' }
+    ],
+    final: [
+        { label: 'أسئلة سنوات سبكتروم (2)', url: 'https://drive.google.com/drive/folders/1v5u4oOH2_bV8Fi_rNDIPzACp9ZiP2gFe' },
+        { label: 'أسئلة سنوات سبكتروم (3)', url: 'https://drive.google.com/drive/folders/1vA_Jh-rfJ4TlwesOqVQi3KpkYMVTYMd6?usp=sharing' },
+        { label: 'أسئلة سنوات سبكتروم (4)', url: 'https://drive.google.com/drive/folders/1qoKQK7b78LvCWJQ3YoaOLwDEIZVNmrks' }
     ]
 },
   subj7: {
