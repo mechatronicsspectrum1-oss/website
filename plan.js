@@ -331,15 +331,48 @@ subj11: {
   ],
   final: []
 },
-  subj12: {
+ subj12: {
     title: 'Power electronics Lab', icon: '⚡',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
+    books: [
+      { label: 'مانيوال المختبر', url: 'https://drive.google.com/file/d/1fJGYUoFaQ3Uz7UuwTuFjxOOSU1I_C1wK/view?fbclid=IwAR3BYJezQ-r8HeN-JAermfDsXzwjA2HmDYEvJXjdz8ZYpBSoHk77vSSIG1Y' },
+      { label: 'حلول التقارير - فريق سبارك', url: 'https://drive.google.com/drive/folders/1_DvxZ3PJaxxBqBEKazAussO-c6OY0WDO?fbclid=IwAR1jrVTZjYeLk73Hk1czoF0Or6xZ7jSvzl75uVpb78LbjuJnLhyIemKvt9c' },
+      { label: 'حلول التقارير - فريق سبكتروم', url: 'https://drive.google.com/drive/folders/1U5kCQ0yYdTQR2rGu1AtbemTctz-y3rG4?usp=sharing' }
+    ],
+    summaries: [
+      { label: 'ملخص فريق سبكتروم', url: 'https://drive.google.com/file/d/1VEesZ3HCF5M7K_FxS3lzAzjPmQYw7QH9/view?usp=sharing' },
+      { label: 'ملخص فريق سبارك', url: 'https://m.facebook.com/groups/285572364787222?view=permalink&id=2460803607264076' },
+      { label: 'التوصيلات العملية (مجلد)', url: 'https://drive.google.com/drive/folders/1QtHgzIfK9XJpVxFUfwXptDs0SeYdCZkP?fbclid=IwAR3CBM8CxnBW2ZSVMSZJGXBRBzgOo_LUMoX0tk9ZKC8SvF0wTYcnZqPec6E' },
+      { label: 'شرح برنامج الماتلاب (فيديو)', url: 'https://youtu.be/IEHP7MOaUy8?si=wHCYLWfijMbpLf3M' },
+      { label: 'رابط برنامج المالتزم (NI Multisim)', url: 'https://getintopc.com/softwares/circuit-designing/ni-multisim-ultiboard-electronics-circuit-design-suite-free-download/?id=001548687319' }
+    ],
+    videos: [
+      { label: 'فيديوهات التوصيلات العملية - فريق سبارك', url: 'https://www.youtube.com/playlist?list=PL4Itv3LsZJuz4DNZNMTBEUvVVvyxHoctT' },
+      { label: 'فيديوهات شرح التجارب على برنامج ماتلاب - فريق سبارك', url: 'https://www.youtube.com/playlist?list=PL4Itv3LsZJux4gBndDAMJe4XgdT6PNpPN' }
+    ],
+    mid: [
+      { label: 'أسئلة سنوات ورقي', url: 'https://drive.google.com/file/d/1BPV2uquNEUzBgZIznPrJBE_JmYpAtVPC/view?fbclid=IwAR1iXkquItT3wUeWG_tbOwVU9hwUs29yce44ma40NHShIQj-EmlMbGDm5Jc' }
+    ],
+    final: [
+      { label: 'أسئلة سنوات إلكتروني (1)', url: 'https://drive.google.com/drive/folders/1e792W93j4ijQsdYpLptTgr6gfq7V64Lo?fbclid=IwAR2EMKZbA6KHj7TyKWb-4YC7nc82egjFeGHFDxFxzF7rrvoMVqLfnlZmR8c' },
+      { label: 'أسئلة سنوات إلكتروني (2)', url: 'https://drive.google.com/drive/folders/1nOh8bK6DX-Z5k9k3MftqCyhjs-mrCZ8Y?usp=sharing' }
+    ]
   },
   subj13: {
     title: 'Dynamics and vibration', icon: '🌀',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
+    books: [
+      { label: 'الكتاب المعتمد (1)', url: 'https://drive.google.com/file/d/1e06dGh_vAqsofA-bkG9GtnjfXIUeR8ne/view?usp=drivesdk' },
+      { label: 'الكتاب المعتمد (2)', url: 'https://drive.google.com/file/d/1yy9VXhrISuii0XNPVynonJoJ87iN8-mB/view?usp=drivesdk' },
+      { label: 'حلول الكتاب', url: 'https://drive.google.com/file/d/1OYLOS6m3G0-8DisAyvOcwcyoaVUfOnr_/view?usp=drivesdk' }
+    ],
+    summaries: [
+      { label: 'تلخيص المادة (ملف 1)', url: 'https://drive.google.com/file/d/1OfF8vA3CE3uh3WiJw53ozBIhFLCCLvf4/view?usp=drivesdk' },
+      { label: 'تلخيص المادة (مجلد 2)', url: 'https://drive.google.com/drive/folders/1OUXesbBC4yVSQl5070gXBOa9XVADb3vi' }
+    ],
+    videos: [
+      { label: 'فيديوهات شرح المادة', url: 'https://youtube.com/playlist?list=PLaTQXfTK2nJcAowaG2Xb15BzZd_seMFgg&si=qNWWcYOPNqSVS-7s' }
+    ],
+    mid: [],
+    final: []
   },
   subj14: {
     title: 'Mechatronics applications in renewable energy', icon: '🪫🍃',
@@ -412,8 +445,21 @@ subj11: {
 },
   subj20: {
     title: 'Electrical drive Lab', icon: '⚡',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
+    books: [
+      { label: 'مانيوال المختبر', url: 'https://www.mediafire.com/download/9sfta67bbklzkm3/Drive_-_Manual_Lab.pdf' },
+      { label: 'حلول المانيوال (ملف 1)', url: 'https://drive.google.com/file/d/1-oG_R2jCDqNWLJu5pC5j9h28ezJAtd0z/view?fbclid=IwAR2774Yc0Xxb4tuqTzaIsu-9inTI_G4v_-4AQ85tqVVcjrYqKcJaf-HADyg' },
+      { label: 'حلول المانيوال (مجلد 2)', url: 'https://drive.google.com/drive/u/0/folders/1qbgkpLz1cykDUL8bMAy3vhPI9cYi-AjK?fbclid=IwAR01CfPV426bLsG2ljdG6nxmTcSuxW6aTdU_TVQt3ZEjbNu84E3ADgdZ73s' }
+    ],
+    summaries: [
+      { label: 'ملخص فريق سبارك', url: 'https://drive.google.com/file/d/1cfo35S9IsExagWLcYY7P4d1_hVPYQPYn/view?fbclid=IwAR3QMoD3iPY1s9sy9drnLc61lUkyVSXv6CTLfeKcdq6GERje2naL9KjZi1M&fbclid=IwAR0UuXMvJLg-0m_kPS9U-EEbX5NZ2n9h5zobKduaU7mrbxEL1T4eVGFNwEs' }
+    ],
+    videos: [],
+    mid: [
+      { label: 'أسئلة سنوات فريق سبارك (نموذج 1)', url: 'https://drive.google.com/drive/folders/1mWRJMsep9RZoDuAThRDUwm43GfkMBUwY?fbclid=IwAR1MGL49DXVT-21pr9WoyTBJWxPp_wS2srD5_7ItEuDJrDMDVB5v6BiPGfg' }
+    ],
+    final: [
+      { label: 'أسئلة سنوات فريق سبارك (نموذج 2)', url: 'https://drive.google.com/drive/folders/1mWRJMsep9RZoDuAThRDUwm43GfkMBUwY?fbclid=IwAR07y_h_IzaFc-sor57HKxmiVc_BOeguOILBzAoskN0d6cuu_TM3r_QcKlA' }
+    ]
   },
   subj21: {
     title: 'Mechatronics Systems Design', icon: '🦾',
@@ -422,8 +468,22 @@ subj11: {
   },
   subj22: {
     title: 'CNC', icon: '🔩',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
+    books: [
+      { label: 'مراجع المادة', url: 'https://drive.google.com/drive/folders/145G3FCSQcpJXT0EIs8UDcc4FlQr1iSly?usp=sharing' }
+    ],
+    summaries: [
+      { label: 'سلايدات المادة', url: 'https://drive.google.com/drive/folders/10KxnHuklTwHJxIP7MKRe552xQ8kj8WC2?usp=sharing' },
+      { label: 'برنامج Carbide 3D (رسم وتصميم)', url: 'https://carbide3d.com/learn/free-cnc-software/' },
+      { label: 'برامج CNC من Softonic', url: 'https://en.softonic.com/downloads/cnc' },
+      { label: 'برنامج CNC Simulator Pro (محاكاة)', url: 'https://cncsimulator.com/h/Download.html' }
+    ],
+    videos: [
+      { label: 'فيديوهات شرح المادة', url: 'https://youtu.be/FNYEXjRmDtI?si=zDUnbeDEtUf3YR6M' }
+    ],
+    mid: [
+      { label: 'أسئلة سنوات', url: 'https://drive.google.com/drive/folders/1SUI-xCatz3MYrER1QCp22KZ4tspz6rX5?usp=sharing' }
+    ],
+    final: []
   },
  subj23: {
     title: 'Assembly Lab', icon: '💾',
@@ -568,7 +628,16 @@ subj11: {
   subj26: {
     title: 'SCADA', icon: '📊',
     books: [],
-    summaries: [], videos: [], mid: [], final: []
+    summaries: [
+      { label: 'سلايدات المادة وشرح', url: 'https://drive.google.com/drive/folders/1YAiB4Vi446WtUl56Z78kbHThhD_eg6M0' },
+      { label: 'رابط تنزيل لاب فيو (LabVIEW)', url: 'https://igetintopc.com/download-labview-2018-toolkits-modules/' }
+    ],
+    videos: [
+      { label: 'شرح لاب فيو (1)', url: 'https://www.youtube.com/watch?v=qDyyikvPC2k&list=PLTt5NdVlUjdfgvUY7D6DAd9VsRtFJoL5R' },
+      { label: 'شرح لاب فيو (2)', url: 'https://www.youtube.com/watch?v=qDyyikvPC2k&list=PLxjvtPyEgX2N1r4KXkWhdLqYx9NL2wxGV' }
+    ],
+    mid: [],
+    final: []
   },
   subj27: {
     title: 'PLC', icon: '🎛️',
@@ -629,7 +698,12 @@ subj28: {
   subj30: {
     title: 'Hydraulic drives Lab', icon: '🔩',
     books: [],
-    summaries: [], videos: [], mid: [], final: []
+    summaries: [],
+    videos: [],
+    mid: [
+      { label: 'أسئلة سنوات', url: 'https://drive.google.com/drive/folders/1lHdqSR9d7kKxBy-r6s9abCtS6yKGv8DE?usp=sharing' }
+    ],
+    final: []
   },
   subj31: {
     title: 'MEMs', icon: '⚙️',
@@ -700,19 +774,41 @@ subj28: {
     summaries: [], videos: [], mid: [], final: []
   },
   subj36: {
-    title: 'PLC Lab', icon: '🎛️',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
+    title: 'PLC Lab', icon: '💻',
+    books: [
+      { label: 'مانيوال المختبر', url: 'https://drive.google.com/drive/folders/1wz0tXbxHAQJR_2Beh0rsC-em3j4xXNev?usp=sharing' },
+      { label: 'حلول التقارير', url: 'https://drive.google.com/drive/folders/1SeJyYPUaKuKcZ8igF-RgyX0sqUATQoCI?usp=sharing' }
+    ],
+    summaries: [
+      { label: 'ملخص فريق سبكتروم (يحتوي روابط الفيديوهات وبرنامج المحاكاة)', url: 'https://drive.google.com/file/d/1kv5kPINrNRCFfjH6jWg5E1v-th1-w-y0/view?usp=sharing' }
+    ],
+    videos: [],
+    mid: [],
+    final: [
+      { label: 'أسئلة سنوات', url: 'https://drive.google.com/drive/folders/13spmpFSybYkq98ee_F3iu0MewE0S_Hli?usp=drive_link' }
+    ]
   },
-  subj37: {
-    title: 'Industrial Processes', icon: '🏭',
+ subj37: {
+    title: 'Process Control Lab', icon: '🎛️',
     books: [],
-    summaries: [], videos: [], mid: [], final: []
+    summaries: [
+      { label: 'ملخص فريق سبكتروم', url: 'https://drive.google.com/drive/folders/1shPdO1R2HeRXYdb9KU56dhxY2HEcOtOh?usp=sharing' }
+    ],
+    videos: [],
+    mid: [],
+    final: [
+      { label: 'أسئلة سنوات', url: 'https://drive.google.com/drive/folders/12kW1JsIc8qELVMIgIHtMi3xateuGXUfH?usp=sharing' }
+    ]
   },
-  subj38: {
-    title: 'Special topics in mechatronics engineering', icon: '🤖',
+subj38: {
+    title: 'Special Topics in Mechatronics', icon: '🔍',
     books: [],
-    summaries: [], videos: [], mid: [], final: []
+    summaries: [],
+    videos: [],
+    mid: [],
+    final: [
+      { label: 'أسئلة سنوات - د. محمد أبو زلطة', url: 'https://drive.google.com/drive/folders/10hUkvpFdBm1Gz95mB9CymWcXeO7zq5BC?usp=sharing' }
+    ]
   },
   subj39: {
     title: 'Robotics Dynamics and Analysis', icon: '🤖',
@@ -720,9 +816,19 @@ subj28: {
     summaries: [], videos: [], mid: [], final: []
   },
   subj40: {
-    title: 'Robotics engineering', icon: '🤖',
+    title: 'Robotics Engineering', icon: '🤖',
     books: [],
-    summaries: [], videos: [], mid: [], final: []
+    summaries: [
+      { label: 'سلايدات المادة', url: 'http://www.mediafire.com/file/33xut29jmg53kgc' },
+      { label: 'ملخصات المادة', url: 'https://drive.google.com/file/d/1sWZ6FdOMjketeV5YJXvN0VumqDvfsLcN/view' }
+    ],
+    videos: [],
+    mid: [],
+    final: [
+      { label: 'أسئلة سنوات (1)', url: 'https://www.mediafire.com/?5phoec6c43dl9ey' },
+      { label: 'أسئلة سنوات (2)', url: 'https://www.mediafire.com/?owdxma7f03pr1u7' },
+      { label: 'أسئلة سنوات (3)', url: 'http://www.mediafire.com/file/tbdn901z9djerxr' }
+    ]
   },
   subj41: {
     title: 'Robotics Dynamics and Analysis Lab', icon: '🤖',
