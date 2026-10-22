@@ -1224,47 +1224,51 @@ details[open] summary::before {
   content: "▼";
 } 
 
-/* إيقاف تأثير التوهج على الهواتف فقط لتصبح سلسة وخفيفة جداً، مع إبقائه يعمل على اللابتوب */
+
+
+
 @media (max-width: 768px) {
-  #cursor-glow {
-    display: none !important;
+  #subjectModalOverlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(5, 13, 26, 0.85) !important;
+    z-index: 999999 !important;
+    overflow-y: auto !important;
   }
-#subjectModalOverlay {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  background: rgba(5, 13, 26, 0.85) !important;
-  z-index: 999999 !important;
-  overflow-y: auto !important; /* لضمان السكرول لو المحتوى طويل على التلفون */
-}
 
-.subject-modal {
-  position: relative !important;
-  margin: 10vh auto !important; /* بتعمل سنتره عامودية طبيعية آمنة على الموبايل بدون تعليق */
-  width: 90% !important;
-  max-width: 500px !important;
-  background: #0b192c !important; /* لون خلفية النافذة عشان تكون واضحة */
-  border-radius: 12px;
-}
-/* تحسين أداء وحركة حاوية الخطة على الموبايل لمنع اللاج والكرشات */
-.plan-img-wrap {
-  width: 100% !important;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-  -webkit-overflow-scrolling: touch !important;
-  transform: none !important; /* إلغاء أي تحويلات ثقيلة مسببة للكرشات */
-  touch-action: pan-x pan-y !important;
-}
+  .subject-modal {
+    position: relative !important;
+    margin: 10vh auto !important;
+    width: 90% !important;
+    max-width: 500px !important;
+    background: #0b192c !important;
+    border-radius: 12px;
+  }
 
-.plan-img {
-  max-width: none !important;
-  width: 800px !important; /* تثبيت عرض مناسب يتيح التصفح بسلاسة باللمس */
-  height: auto !important;
-}
+  /* تثبيت الخطة والكبسات معاً بشكل متطابق ومرن على الموبايل */
+  .plan-img-wrap {
+    position: relative !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    transform: none !important;
+  }
 
-.plan-hotspots {
-  transform: none !important;
-}
+  .plan-img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: none !important;
+    display: block !important;
+  }
+
+  .plan-hotspots {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important;
+  }
   }
