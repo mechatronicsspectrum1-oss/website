@@ -238,10 +238,10 @@ window.addEventListener('scroll', () => {
         }
     }
 
-  stage.addEventListener('mousedown', startDrag);
-stage.addEventListener('touchstart', startDrag, { passive: true });
+ stage.addEventListener('mousedown', startDrag);
+stage.addEventListener('touchstart', startDrag, { passive: false });
 window.addEventListener('mousemove', onDrag);
-window.addEventListener('touchmove', onDrag, { passive: true });
+window.addEventListener('touchmove', onDrag, { passive: false });
 window.addEventListener('mouseup', endDrag);
 window.addEventListener('touchend', endDrag);
 
