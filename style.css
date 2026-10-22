@@ -1236,7 +1236,9 @@ details[open] summary::before {
     height: 100% !important;
     background: rgba(5, 13, 26, 0.85) !important;
     z-index: 999999 !important;
-    overflow-y: auto !important;
+    /* إلغاء أي تأثيرات حركية ثقيلة تسبب لاج عند الفتح والإغلاق */
+    transition: none !important;
+    animation: none !important;
   }
 
   .subject-modal {
@@ -1246,14 +1248,18 @@ details[open] summary::before {
     max-width: 500px !important;
     background: #0b192c !important;
     border-radius: 12px;
+    transition: none !important;
+    animation: none !important;
   }
 
-  /* تثبيت الخطة والكبسات معاً بشكل متطابق ومرن على الموبايل */
+  /* تحرير حركة اللمس والزووم ومنع التعارض مع المتصفح */
   .plan-img-wrap {
     position: relative !important;
     width: 100% !important;
-    overflow: hidden !important;
-    transform: none !important;
+    touch-action: pan-x pan-y pinch-zoom !important; /* تفعيل الزووم والسكرول الطبيعي بسلاسة تامة */
+    -webkit-overflow-scrolling: touch !important;
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
   }
 
   .plan-img {
@@ -1269,6 +1275,7 @@ details[open] summary::before {
     left: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    transform: none !important;
+    pointer-events: auto !important;
   }
+}
   }
