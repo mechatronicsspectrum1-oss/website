@@ -172,7 +172,11 @@ subj6: {
     final: [
         { label: 'أسئلة سنوات سبكتروم (2)', url: 'https://drive.google.com/drive/folders/1v5u4oOH2_bV8Fi_rNDIPzACp9ZiP2gFe' },
         { label: 'أسئلة سنوات سبكتروم (3)', url: 'https://drive.google.com/drive/folders/1vA_Jh-rfJ4TlwesOqVQi3KpkYMVTYMd6?usp=sharing' },
-        { label: 'أسئلة سنوات سبكتروم (4)', url: 'https://drive.google.com/drive/folders/1qoKQK7b78LvCWJQ3YoaOLwDEIZVNmrks' }
+        { label: 'أسئلة سنوات سبكتروم (4)', url: 'https://drive.google.com/drive/folders/1qoKQK7b78LvCWJQ3YoaOLwDEIZVNmrks' },
+        { label: 'رابط برنامج الأوتوكاد', url: 'https://getintopc.com/softwares/3d-cad/autodesk-autocad-2020-x64-free-download-1221549/?id=001210307777' },
+        { label: 'رابط برنامج SolidWorks', url: 'https://getintopc.com/softwares/3d-designing/eficad-swood-2020-for-solidworks-free-download/?id=001910737080' },
+        { label: 'مشروع المادة (1)', url: 'https://drive.google.com/drive/folders/1CeRZ4YpKglMqMGqFhkcq4RaPzLGYQcNj' },
+        { label: 'مشروع المادة (2)', url: 'https://drive.google.com/drive/folders/1MgnZOhmftmVrvaKVS5vaSD3c2SmH1frZ?usp=sharing' }
     ]
 },
   subj7: {
