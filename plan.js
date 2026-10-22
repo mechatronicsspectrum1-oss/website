@@ -810,3 +810,39 @@ document.addEventListener('DOMContentLoaded', () => {
   renderPlanHotspots();
 });
 
+function openSubjectModal(subjectKey) {
+  const data = subjectsData[subjectKey];
+  if (!data) return;
+
+  // 1. إعادة زووم الشاشة للحجم الطبيعي (1:1)
+  const metaViewport = document.querySelector('meta[name="viewport"]');
+  if (metaViewport) {
+    metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+  }
+
+  // 2. إخفاء الخطة بالكامل لمنع اللاج وإظهار النافذة
+  document.body.classList.add('modal-open');
+  const overlay = document.getElementById('subjectModalOverlay');
+  if (overlay) overlay.style.display = 'flex';
+
+  // 3. تعبئة البيانات
+  document.getElementById('subjectTitle').textContent = data.title;
+  document.getElementById('subjectTitleIcon').textContent = data.icon || '📖';
+  buildBooksGrid('subjectBooks', data.books);
+  buildLinkList('subjectSummaries', data.summaries);
+}
+
+function closeSubjectModal(event) {
+  if (event) event.stopPropagation();
+
+  // 1. إخفاء النافذة وإعادة إظهار الخطة
+  const overlay = document.getElementById('subjectModalOverlay');
+  if (overlay) overlay.style.display = 'none';
+  document.body.classList.remove('modal-open');
+
+  // 2. إعادة السماح بالزووم الطبيعي على الخطة
+  const metaViewport = document.querySelector('meta[name="viewport"]');
+  if (metaViewport) {
+    metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+  }
+}
