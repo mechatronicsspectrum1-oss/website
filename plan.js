@@ -814,21 +814,29 @@ function openSubjectModal(subjectKey) {
   const data = subjectsData[subjectKey];
   if (!data) return;
 
-  // إخفاء الخلفية وإظهار النافذة فوراً بدون لاج
+  // 1. إعادة زووم الشاشة للحجم الطبيعي (1:1)
+  const metaViewport = document.querySelector('meta[name="viewport"]');
+  if (metaViewport) {
+    metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+  }
+
+  // 2. إخفاء الخطة بالكامل لمنع اللاج وإظهار النافذة
   document.body.classList.add('modal-open');
   const overlay = document.getElementById('subjectModalOverlay');
   if (overlay) overlay.style.display = 'flex';
 
-  // تعبئة البيانات
+  // 3. تعبئة العنوان والأيقونة
   document.getElementById('subjectTitle').textContent = data.title;
   document.getElementById('subjectTitleIcon').textContent = data.icon || '📖';
 
+  // 4. تعبئة الكتب
   if (typeof buildBooksGrid === 'function') {
     buildBooksGrid('subjectBooks', data.books);
     const bookBlock = document.getElementById('subjectBooksBlock');
     if (bookBlock) bookBlock.style.display = (data.books && data.books.length > 0) ? '' : 'none';
   }
 
+  // 5. تعبئة الملخصات والشروحات والميد والفاينل
   if (typeof buildLinkList === 'function') {
     buildLinkList('subjectSummaries', data.summaries);
     const sumBlock = document.getElementById('subjectSummariesBlock');
@@ -851,10 +859,16 @@ function openSubjectModal(subjectKey) {
 function closeSubjectModal(event) {
   if (event) event.stopPropagation();
 
-  // إغلاق فوري ونظيف بدون لاج
+  // 1. إخفاء النافذة وإعادة إظهار الخطة
   const overlay = document.getElementById('subjectModalOverlay');
   if (overlay) overlay.style.display = 'none';
   document.body.classList.remove('modal-open');
-}
+
+  // 2. إعادة السماح بالزووم الطبيعي على الخطة
+  const metaViewport = document.querySelector('meta[name="viewport"]');
+  if (metaViewport) {
+    metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+  }
+
   
 }
