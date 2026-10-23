@@ -956,7 +956,7 @@ function openSubjectModal(subjectKey) {
   const data = subjectsData[subjectKey];
   if (!data) return;
 
-  // إخفاء الخطة بالكامل وإظهار النافذة فوراً بدون تغيير الـ Viewport (لمنع اللاج)
+  // إخفاء الخلفية وإظهار النافذة فوراً بدون لاج
   document.body.classList.add('modal-open');
   const overlay = document.getElementById('subjectModalOverlay');
   if (overlay) overlay.style.display = 'flex';
@@ -976,9 +976,10 @@ function openSubjectModal(subjectKey) {
     const sumBlock = document.getElementById('subjectSummariesBlock');
     if (sumBlock) sumBlock.style.display = (data.summaries && data.summaries.length > 0) ? '' : 'none';
 
-    buildLinkList('subjectLectures', data.lectures || data.videos);
+    const videosData = data.videos || data.lectures || [];
+    buildLinkList('subjectLectures', videosData);
     const lecBlock = document.getElementById('subjectLecturesBlock');
-    if (lecBlock) lecBlock.style.display = ((data.lectures || data.videos) && (data.lectures || data.videos).length > 0) ? '' : 'none';
+    if (lecBlock) lecBlock.style.display = (videosData.length > 0) ? '' : 'none';
 
     buildLinkList('subjectMid', data.mid);
     const midBlock = document.getElementById('subjectMidBlock');
