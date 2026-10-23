@@ -1060,11 +1060,9 @@ function openSubjectModal(subjectKey) {
     const sumBlock = document.getElementById('subjectSummariesBlock');
     if (sumBlock) sumBlock.style.display = (data.summaries && data.summaries.length > 0) ? '' : 'none';
 
-    // الشروحات (دعم videos و lectures معاً لمنع اختفائها)
-    const lecturesData = data.videos || data.lectures || [];
-    buildLinkList('subjectLectures', lecturesData);
+    buildLinkList('subjectLectures', data.lectures || data.videos);
     const lecBlock = document.getElementById('subjectLecturesBlock');
-    if (lecBlock) lecBlock.style.display = (lecturesData.length > 0) ? '' : 'none';
+    if (lecBlock) lecBlock.style.display = ((data.lectures || data.videos) && (data.lectures || data.videos).length > 0) ? '' : 'none';
 
     buildLinkList('subjectMid', data.mid);
     const midBlock = document.getElementById('subjectMidBlock');
@@ -1089,7 +1087,6 @@ function closeSubjectModal(event) {
   if (metaViewport) {
     metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
   }
-
 
   
 }
