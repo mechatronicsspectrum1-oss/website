@@ -952,53 +952,6 @@ function buildBooksGrid(containerId, books) {
   }).join('');
 }
 
-function openSubjectModal(subjectKey) {
-  const data = subjectsData[subjectKey];
-  if (!data) return;
-
-  // إخفاء الخلفية وإظهار النافذة فوراً بدون لاج
-  document.body.classList.add('modal-open');
-  const overlay = document.getElementById('subjectModalOverlay');
-  if (overlay) overlay.style.display = 'flex';
-
-  // تعبئة البيانات
-  document.getElementById('subjectTitle').textContent = data.title;
-  document.getElementById('subjectTitleIcon').textContent = data.icon || '📖';
-
-  if (typeof buildBooksGrid === 'function') {
-    buildBooksGrid('subjectBooks', data.books);
-    const bookBlock = document.getElementById('subjectBooksBlock');
-    if (bookBlock) bookBlock.style.display = (data.books && data.books.length > 0) ? '' : 'none';
-  }
-
-  if (typeof buildLinkList === 'function') {
-    buildLinkList('subjectSummaries', data.summaries);
-    const sumBlock = document.getElementById('subjectSummariesBlock');
-    if (sumBlock) sumBlock.style.display = (data.summaries && data.summaries.length > 0) ? '' : 'none';
-
-    const videosData = data.videos || data.lectures || [];
-    buildLinkList('subjectLectures', videosData);
-    const lecBlock = document.getElementById('subjectLecturesBlock');
-    if (lecBlock) lecBlock.style.display = (videosData.length > 0) ? '' : 'none';
-
-    buildLinkList('subjectMid', data.mid);
-    const midBlock = document.getElementById('subjectMidBlock');
-    if (midBlock) midBlock.style.display = (data.mid && data.mid.length > 0) ? '' : 'none';
-
-    buildLinkList('subjectFinal', data.final);
-    const finalBlock = document.getElementById('subjectFinalBlock');
-    if (finalBlock) finalBlock.style.display = (data.final && data.final.length > 0) ? '' : 'none';
-  }
-}
-
-function closeSubjectModal(event) {
-  if (event) event.stopPropagation();
-
-  // إغلاق فوري ونظيف بدون لاج
-  const overlay = document.getElementById('subjectModalOverlay');
-  if (overlay) overlay.style.display = 'none';
-  document.body.classList.remove('modal-open');
-}
 
   
 }
