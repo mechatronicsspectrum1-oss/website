@@ -956,119 +956,40 @@ function openSubjectModal(subjectKey) {
   const data = subjectsData[subjectKey];
   if (!data) return;
 
-  // Header
-  document.getElementById('subjectTitle').textContent = data.title;
-  document.getElementById('subjectTitleIcon').textContent = data.icon || '📖';
-
-  // Books
-  buildBooksGrid('subjectBooks', data.books);
-  document.getElementById('subjectBooksBlock').style.display =
-    (data.books && data.books.length > 0) ? '' : 'none';
-
-  // Summaries
-  buildLinkList('subjectSummaries', data.summaries);
-  document.getElementById('subjectSummariesBlock').style.display =
-    (data.summaries && data.summaries.length > 0) ? '' : 'none';
-
-  // Videos
-  buildLinkList('subjectVideos', data.videos);
-  document.getElementById('subjectVideosBlock').style.display =
-    (data.videos && data.videos.length > 0) ? '' : 'none';
-
-  // Past papers
-  const hasPapers = (data.mid && data.mid.length > 0) || (data.final && data.final.length > 0);
-  buildLinkList('subjectMid', data.mid);
-  buildLinkList('subjectFinal', data.final);
-  document.getElementById('subjectPapersBlock').style.display = hasPapers ? '' : 'none';
-
-  // If nothing at all, show a message somewhere
-  const hasAny = (data.books && data.books.length) ||
-    (data.summaries && data.summaries.length) ||
-    (data.videos && data.videos.length) ||
-    (data.mid && data.mid.length) ||
-    (data.final && data.final.length);
-  if (!hasAny) {
-    // Show all blocks hidden but add a general message
-    document.getElementById('subjectBooksBlock').style.display = '';
-    document.getElementById('subjectBooks').innerHTML =
-      `<span class="subject-list-empty">لا يوجد محتوى مضاف لهذه المادة بعد</span>`;
-  }
-
-  document.getElementById('subjectModalOverlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeSubjectModal(e) {
-  if (e && e.target !== document.getElementById('subjectModalOverlay')) return;
-  document.getElementById('subjectModalOverlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-// ─── CALIBRATION MODE (لمساعدتك بتحديد/تعديل مواقع الأزرار يدويًا) ───
-let calibrationMode = false;
-function toggleCalibration() {
-  calibrationMode = !calibrationMode;
-  document.getElementById('planImgWrap').classList.toggle('calib-mode', calibrationMode);
-  const readout = document.getElementById('calibReadout');
-  readout.style.display = calibrationMode ? 'block' : 'none';
-  readout.textContent = calibrationMode
-    ? 'وضع التحديد مفعّل: اضغط في أي مكان على الصورة لمعرفة نسبة top/left الخاصة بهذه النقطة'
-    : '';
-}
-document.addEventListener('DOMContentLoaded', () => {
-  const img = document.getElementById('planImg');
-  if (img) {
-    img.addEventListener('click', (e) => {
-      if (!calibrationMode) return;
-      const rect = img.getBoundingClientRect();
-      const left = ((e.clientX - rect.left) / rect.width * 100).toFixed(2);
-      const top = ((e.clientY - rect.top) / rect.height * 100).toFixed(2);
-      document.getElementById('calibReadout').textContent = `top: ${top}%   left: ${left}%`;
-    });
-  }
-  renderPlanHotspots();
-});
-
-function openSubjectModal(subjectKey) {
-  const data = subjectsData[subjectKey];
-  if (!data) return;
-
-  // 1. إعادة زووم الشاشة للحجم الطبيعي (1:1)
-  const metaViewport = document.querySelector('meta[name="viewport"]');
-  if (metaViewport) {
-    metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
-  }
-
-  // 2. إخفاء الخطة بالكامل لمنع اللاج وإظهار النافذة
+  // إخفاء الخلفية وإظهار النافذة فوراً بدون لاج
   document.body.classList.add('modal-open');
   const overlay = document.getElementById('subjectModalOverlay');
   if (overlay) overlay.style.display = 'flex';
 
-  // 3. تعبئة العنوان والأيقونة
+  // تعبئة العنوان والأيقونة
   document.getElementById('subjectTitle').textContent = data.title;
   document.getElementById('subjectTitleIcon').textContent = data.icon || '📖';
 
-  // 4. تعبئة الكتب
+  // تعبئة الكتب
   if (typeof buildBooksGrid === 'function') {
     buildBooksGrid('subjectBooks', data.books);
     const bookBlock = document.getElementById('subjectBooksBlock');
     if (bookBlock) bookBlock.style.display = (data.books && data.books.length > 0) ? '' : 'none';
   }
 
-  // 5. تعبئة الملخصات والشروحات والميد والفاينل
   if (typeof buildLinkList === 'function') {
+    // تعبئة الملخصات
     buildLinkList('subjectSummaries', data.summaries);
     const sumBlock = document.getElementById('subjectSummariesBlock');
     if (sumBlock) sumBlock.style.display = (data.summaries && data.summaries.length > 0) ? '' : 'none';
 
-    buildLinkList('subjectLectures', data.lectures || data.videos);
+    // تعبئة الشروحات (الاعتماد على videos كما هي في قاعدة البيانات)
+    const videosData = data.videos || data.lectures || [];
+    buildLinkList('subjectLectures', videosData);
     const lecBlock = document.getElementById('subjectLecturesBlock');
-    if (lecBlock) lecBlock.style.display = ((data.lectures || data.videos) && (data.lectures || data.videos).length > 0) ? '' : 'none';
+    if (lecBlock) lecBlock.style.display = (videosData.length > 0) ? '' : 'none';
 
+    // تعبئة أسئلة سنوات (ميد)
     buildLinkList('subjectMid', data.mid);
     const midBlock = document.getElementById('subjectMidBlock');
     if (midBlock) midBlock.style.display = (data.mid && data.mid.length > 0) ? '' : 'none';
 
+    // تعبئة أسئلة سنوات (فاينل)
     buildLinkList('subjectFinal', data.final);
     const finalBlock = document.getElementById('subjectFinalBlock');
     if (finalBlock) finalBlock.style.display = (data.final && data.final.length > 0) ? '' : 'none';
@@ -1078,16 +999,11 @@ function openSubjectModal(subjectKey) {
 function closeSubjectModal(event) {
   if (event) event.stopPropagation();
 
-  // 1. إخفاء النافذة وإعادة إظهار الخطة
+  // إغلاق فوري ونظيف بدون لاج
   const overlay = document.getElementById('subjectModalOverlay');
   if (overlay) overlay.style.display = 'none';
   document.body.classList.remove('modal-open');
-
-  // 2. إعادة السماح بالزووم الطبيعي على الخطة
-  const metaViewport = document.querySelector('meta[name="viewport"]');
-  if (metaViewport) {
-    metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
-  }
+}
 
   
 }
