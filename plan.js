@@ -956,14 +956,19 @@ function openSubjectModal(subjectKey) {
   const data = subjectsData[subjectKey];
   if (!data) return;
 
-  // إخفاء الخلفية وإظهار النافذة فوراً بدون لاج
+  // إخفاء الخلفية وإظهار النافذة فوراً
   document.body.classList.add('modal-open');
   const overlay = document.getElementById('subjectModalOverlay');
-  if (overlay) overlay.style.display = 'flex';
+  if (overlay) {
+    overlay.style.display = 'flex';
+  }
 
   // تعبئة العنوان والأيقونة
-  document.getElementById('subjectTitle').textContent = data.title;
-  document.getElementById('subjectTitleIcon').textContent = data.icon || '📖';
+  const titleEl = document.getElementById('subjectTitle');
+  if (titleEl) titleEl.textContent = data.title;
+  
+  const iconEl = document.getElementById('subjectTitleIcon');
+  if (iconEl) iconEl.textContent = data.icon || '📖';
 
   // تعبئة الكتب
   if (typeof buildBooksGrid === 'function') {
@@ -978,7 +983,7 @@ function openSubjectModal(subjectKey) {
     const sumBlock = document.getElementById('subjectSummariesBlock');
     if (sumBlock) sumBlock.style.display = (data.summaries && data.summaries.length > 0) ? '' : 'none';
 
-    // تعبئة الشروحات (الاعتماد على videos كما هي في قاعدة البيانات)
+    // تعبئة الشروحات (الاعتماد على videos أولاً ثم lectures لضمان عدم اختفائها)
     const videosData = data.videos || data.lectures || [];
     buildLinkList('subjectLectures', videosData);
     const lecBlock = document.getElementById('subjectLecturesBlock');
@@ -999,9 +1004,11 @@ function openSubjectModal(subjectKey) {
 function closeSubjectModal(event) {
   if (event) event.stopPropagation();
 
-  // إغلاق فوري ونظيف بدون لاج
+  // إخفاء النافذة وإعادة تفعيل كبسات الخطة في الخلفية فوراً
   const overlay = document.getElementById('subjectModalOverlay');
-  if (overlay) overlay.style.display = 'none';
+  if (overlay) {
+    overlay.style.display = 'none';
+  }
   document.body.classList.remove('modal-open');
 }
 
