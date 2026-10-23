@@ -1061,9 +1061,9 @@ function openSubjectModal(subjectKey) {
     const sumBlock = document.getElementById('subjectSummariesBlock');
     if (sumBlock) sumBlock.style.display = (data.summaries && data.summaries.length > 0) ? '' : 'none';
 
-    buildLinkList('subjectLectures', data.lectures || data.videos);
-    const lecBlock = document.getElementById('subjectLecturesBlock');
-    if (lecBlock) lecBlock.style.display = ((data.lectures || data.videos) && (data.lectures || data.videos).length > 0) ? '' : 'none';
+   buildLinkList('subjectVideos', data.videos);
+const vidBlock = document.getElementById('subjectVideosBlock');
+if (vidBlock) vidBlock.style.display = (data.videos && data.videos.length > 0) ? '' : 'none';
 
     buildLinkList('subjectMid', data.mid);
     const midBlock = document.getElementById('subjectMidBlock');
