@@ -1089,5 +1089,4 @@ function closeSubjectModal(event) {
     metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
   }
 
-
 }
