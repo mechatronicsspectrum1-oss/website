@@ -1032,44 +1032,34 @@ function openSubjectModal(subjectKey) {
   const data = subjectsData[subjectKey];
   if (!data) return;
 
-  // 1. إعادة زووم الشاشة للحجم الطبيعي (1:1)
-  const metaViewport = document.querySelector('meta[name="viewport"]');
-  if (metaViewport) {
-    metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
-  }
-
-  // 2. إخفاء الخطة بالكامل لمنع اللاج وإظهار النافذة
-  document.body.classList.add('modal-open');
+  // إظهار النافذة المنبثقة وتفعيل الخلفية
   const overlay = document.getElementById('subjectModalOverlay');
   if (overlay) overlay.style.display = 'flex';
+  document.body.classList.add('modal-open');
 
-  // 3. تعبئة العنوان والأيقونة
+  // تعبئة العنوان والأيقونة
   document.getElementById('subjectTitle').textContent = data.title;
   document.getElementById('subjectTitleIcon').textContent = data.icon || '📖';
 
-  // 4. تعبئة الكتب
+  // تعبئة الكتب
   if (typeof buildBooksGrid === 'function') {
     buildBooksGrid('subjectBooks', data.books);
     const bookBlock = document.getElementById('subjectBooksBlock');
     if (bookBlock) bookBlock.style.display = (data.books && data.books.length > 0) ? '' : 'none';
   }
 
-  // 5. تعبئة الملخصات والشروحات والميد والفاينل
+  // تعبئة باقي الأقسام (الملخصات، الشروحات، الميد، الفاينل)
   if (typeof buildLinkList === 'function') {
     // الملخصات
     buildLinkList('subjectSummaries', data.summaries);
     const sumBlock = document.getElementById('subjectSummariesBlock');
     if (sumBlock) sumBlock.style.display = (data.summaries && data.summaries.length > 0) ? '' : 'none';
 
-    // الشروحات (دعم جميع المسميات المحتملة videos أو lectures أو explain وفحص الحاويتين معاً)
+    // الشروحات (دعم videos أو lectures لضمان عدم اختفائها نهائياً)
     const lecturesData = data.videos || data.lectures || data.explain || data.explanation || [];
     buildLinkList('subjectLectures', lecturesData);
-    
     const lecBlock = document.getElementById('subjectLecturesBlock');
     if (lecBlock) lecBlock.style.display = (lecturesData.length > 0) ? '' : 'none';
-
-    const vidBlock = document.getElementById('subjectVideosBlock');
-    if (vidBlock) vidBlock.style.display = (lecturesData.length > 0) ? '' : 'none';
 
     // الميد
     buildLinkList('subjectMid', data.mid);
@@ -1086,16 +1076,10 @@ function openSubjectModal(subjectKey) {
 function closeSubjectModal(event) {
   if (event) event.stopPropagation();
 
-  // 1. إخفاء النافذة وإعادة إظهار الخطة
+  // إغلاق النافذة تماماً وإعادة الكبسات للخطة
   const overlay = document.getElementById('subjectModalOverlay');
   if (overlay) overlay.style.display = 'none';
   document.body.classList.remove('modal-open');
-
-  // 2. إعادة السماح بالزووم الطبيعي على الخطة
-  const metaViewport = document.querySelector('meta[name="viewport"]');
-  if (metaViewport) {
-    metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
-  }
-
+}
   
 }
