@@ -1227,51 +1227,7 @@ details[open] summary::before {
 
 
 
-/* تجهيز كرت الشاشة في الموبايل لظهور وإخفاء الخطة بدون أي لاج عند الإغلاق */
-  .plan-img-wrap {
-    will-change: opacity !important;
-    transition: opacity 0.1s ease-out !important;
-  }
 
-  body.modal-open .plan-img-wrap {
-    opacity: 0 !important;
-    visibility: hidden !important;
-  }
-
-#subjectModalOverlay {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  background: rgba(5, 13, 26, 0.9) !important;
-  z-index: 999999 !important;
-  display: none;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.subject-modal {
-  position: relative !important;
-  width: 90% !important;
-  max-width: 500px !important;
-  max-height: 85vh !important;
-  overflow-y: auto !important;
-  background: #0b192c !important;
-  border-radius: 12px;
-  transform: none !important;
-  zoom: 1 !important;
-}
-@media (max-width: 768px) {
-  /* إلغاء التوهج والظلال والفلترات نهائياً على التلفون لضمان السرعة */
-  #cursor-glow, 
-  .subject-modal, 
-  #subjectModalOverlay {
-    box-shadow: none !important;
-    backdrop-filter: none !important;
-   -webkit-backdrop-filter: none !important;
-    display: none !important;
-  }
   
 
   }
