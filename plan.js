@@ -956,21 +956,15 @@ function openSubjectModal(subjectKey) {
   const data = subjectsData[subjectKey];
   if (!data) return;
 
-  // إخفاء الخلفية وإظهار النافذة فوراً
+  // إخفاء الخطة بالكامل وإظهار النافذة فوراً بدون تغيير الـ Viewport (لمنع اللاج)
   document.body.classList.add('modal-open');
   const overlay = document.getElementById('subjectModalOverlay');
-  if (overlay) {
-    overlay.style.display = 'flex';
-  }
+  if (overlay) overlay.style.display = 'flex';
 
-  // تعبئة العنوان والأيقونة
-  const titleEl = document.getElementById('subjectTitle');
-  if (titleEl) titleEl.textContent = data.title;
-  
-  const iconEl = document.getElementById('subjectTitleIcon');
-  if (iconEl) iconEl.textContent = data.icon || '📖';
+  // تعبئة البيانات
+  document.getElementById('subjectTitle').textContent = data.title;
+  document.getElementById('subjectTitleIcon').textContent = data.icon || '📖';
 
-  // تعبئة الكتب
   if (typeof buildBooksGrid === 'function') {
     buildBooksGrid('subjectBooks', data.books);
     const bookBlock = document.getElementById('subjectBooksBlock');
@@ -978,23 +972,18 @@ function openSubjectModal(subjectKey) {
   }
 
   if (typeof buildLinkList === 'function') {
-    // تعبئة الملخصات
     buildLinkList('subjectSummaries', data.summaries);
     const sumBlock = document.getElementById('subjectSummariesBlock');
     if (sumBlock) sumBlock.style.display = (data.summaries && data.summaries.length > 0) ? '' : 'none';
 
-    // تعبئة الشروحات (الاعتماد على videos أولاً ثم lectures لضمان عدم اختفائها)
-    const videosData = data.videos || data.lectures || [];
-    buildLinkList('subjectLectures', videosData);
+    buildLinkList('subjectLectures', data.lectures || data.videos);
     const lecBlock = document.getElementById('subjectLecturesBlock');
-    if (lecBlock) lecBlock.style.display = (videosData.length > 0) ? '' : 'none';
+    if (lecBlock) lecBlock.style.display = ((data.lectures || data.videos) && (data.lectures || data.videos).length > 0) ? '' : 'none';
 
-    // تعبئة أسئلة سنوات (ميد)
     buildLinkList('subjectMid', data.mid);
     const midBlock = document.getElementById('subjectMidBlock');
     if (midBlock) midBlock.style.display = (data.mid && data.mid.length > 0) ? '' : 'none';
 
-    // تعبئة أسئلة سنوات (فاينل)
     buildLinkList('subjectFinal', data.final);
     const finalBlock = document.getElementById('subjectFinalBlock');
     if (finalBlock) finalBlock.style.display = (data.final && data.final.length > 0) ? '' : 'none';
@@ -1004,11 +993,9 @@ function openSubjectModal(subjectKey) {
 function closeSubjectModal(event) {
   if (event) event.stopPropagation();
 
-  // إخفاء النافذة وإعادة تفعيل كبسات الخطة في الخلفية فوراً
+  // إغلاق فوري ونظيف بدون لاج
   const overlay = document.getElementById('subjectModalOverlay');
-  if (overlay) {
-    overlay.style.display = 'none';
-  }
+  if (overlay) overlay.style.display = 'none';
   document.body.classList.remove('modal-open');
 }
 
