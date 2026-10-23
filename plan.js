@@ -1057,23 +1057,21 @@ function openSubjectModal(subjectKey) {
 
   // 5. تعبئة الملخصات والشروحات والميد والفاينل
   if (typeof buildLinkList === 'function') {
-    // الملخصات
     buildLinkList('subjectSummaries', data.summaries);
     const sumBlock = document.getElementById('subjectSummariesBlock');
     if (sumBlock) sumBlock.style.display = (data.summaries && data.summaries.length > 0) ? '' : 'none';
 
-    // الشروحات (دعم videos أو lectures بشكل موحد وآمن لكي لا تختفي أبداً)
-    const lecturesData = data.videos || data.lectures || [];
+   const lecturesData = data.videos || data.lectures || data.explain || [];
     buildLinkList('subjectLectures', lecturesData);
-    const lecBlock = document.getElementById('subjectLecturesBlock');
-    if (lecBlock) lecBlock.style.display = (lecturesData.length > 0) ? '' : 'none';
+    const lecBlock = document.getElementById('subjectLecturesBlock') || document.getElementById('subjectlecturesBlock');
+    if (lecBlock) {
+      lecBlock.style.display = (lecturesData.length > 0) ? '' : 'none';
+    
 
-    // الميد
     buildLinkList('subjectMid', data.mid);
     const midBlock = document.getElementById('subjectMidBlock');
     if (midBlock) midBlock.style.display = (data.mid && data.mid.length > 0) ? '' : 'none';
 
-    // الفاينل
     buildLinkList('subjectFinal', data.final);
     const finalBlock = document.getElementById('subjectFinalBlock');
     if (finalBlock) finalBlock.style.display = (data.final && data.final.length > 0) ? '' : 'none';
@@ -1083,7 +1081,7 @@ function openSubjectModal(subjectKey) {
 function closeSubjectModal(event) {
   if (event) event.stopPropagation();
 
-  // 1. إغلاق النافذة وإعادة إظهار الخطة
+  // 1. إخفاء النافذة وإعادة إظهار الخطة
   const overlay = document.getElementById('subjectModalOverlay');
   if (overlay) overlay.style.display = 'none';
   document.body.classList.remove('modal-open');
