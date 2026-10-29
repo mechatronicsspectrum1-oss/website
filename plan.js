@@ -394,7 +394,7 @@ subj11: {
     title: 'Control systems Lab', icon: '🧠',
     books: [
       { label: 'مانيوال المختبر', url: 'https://drive.google.com/file/d/1INCMmTwv6miex-siPu-U6UnJ-7WfT6X1/view?usp=drivesdk' },
-      { label: 'حلول التقارير', url: 'https://drive.google.com/drive/u/0/folders/1mHp8wLuTRuDYWFFUUboP0Ud8sb3d7qrI?fbclid=IwAR1RZfat3Q2jTdJFVxL0ZJestXixwhY_BC3XBB3Q-4hbEXKT2SfEXkFCYHM' }
+      { label: 'حلول التقارير', url: 'https://drive.google.com/drive/folders/18EM5jnJUrkApkVIomb0aXQE5sosT5P0Y' }
     ],
     summaries: [
       { label: 'تلخيص المختبر - فريق سبارك', url: 'https://drive.google.com/file/d/18unHmoljzWAmW_xGPQDJigaQkxNm-Ure/view?fbclid=IwAR2wZfpAEddeGkxwvGoWr8qUkPi8HJ2fK9UYR-x3zh-dCxFu8R8dZc4PKbQ' },
@@ -408,7 +408,7 @@ subj11: {
       { label: 'أسئلة سنوات ورقي', url: 'https://drive.google.com/drive/folders/1xUaCrniJWoBU5YBIFOuoEApS-6v9zpl8?usp=drive_link' }
     ],
     final: [
-      { label: 'أسئلة سنوات إلكتروني', url: 'https://drive.google.com/drive/folders/1ziaOoGZ8IHI_KdLWYS78mHsGgQpgo-LA?fbclid=IwAR2pcUOV9P_QqIvjirLPEAIJjFSX0JQtwBjk96vlnSoGWR8NLMxSQEfKJrY' }
+      { label: 'أسئلة سنوات إلكتروني', url: 'https://drive.google.com/file/d/1eVHOubM5s6b-BJMGRGoWROQvwt4feZsj/view?usp=drivesdk' }
     ]
   },
   subj18: {
