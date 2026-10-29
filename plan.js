@@ -394,23 +394,23 @@ subj17: {
   title: 'Control systems Lab', icon: '🔵',
   books: [
     { label: 'المانيوال', url: 'https://drive.google.com/drive/folders/11jslFk-0qslyXvsGfwSdf4NpCNHdIsvD' },
-    { label: 'حلول التقارير', url: 'https://drive.google.com/drive/folders/18EM5jnJUrkApkVIomb0aXQE5sosT5P0Y' },
+    { label: 'حلول التقارير', url: 'https://drive.google.com/drive/folders/18EM5jnJUrkApkVIomb0aXQE5sosT5P0Y' }
   ],
   summaries: [
     { label: 'رابط الماتلاب أونلاين', url: 'https://drive.google.com/drive/folders/1qYxybV8-CKlCbq1E5NBZT5rbBdkpyCpx' },
     { label: 'رابط برنامج ماتلاب', url: 'https://drive.google.com/drive/folders/1EeFdkhpsE2JFVM3c7irK6AsSdkrlNGGn' },
-    { label: 'ملخص سبارك', url: 'https://drive.google.com/drive/folders/1vo6GkIT9M3W71L5Ehm7jGGSsKwX0EuXr' },
-  ],
-  videos: [
     { label: 'شرح المادة', url: 'https://drive.google.com/drive/folders/17ngO0IZ6G2B-wf80cfgM7xs0IjTkrv7q' },
     { label: 'شرح الماتلاب', url: 'https://drive.google.com/drive/folders/1IziRkpRlMbhoqp9SpxQHlP-18tR9HNQd' },
     { label: 'شرح سبارك', url: 'https://drive.google.com/drive/folders/118FgM0-jOVW7B4qp77RP7Yt80KTszlmu' },
+    { label: 'ملخص سبارك', url: 'https://drive.google.com/drive/folders/1vo6GkIT9M3W71L5Ehm7jGGSsKwX0EuXr' }
   ],
+  videos: [],
   mid: [],
   final: [
     { label: 'سنوات إلكتروني', url: 'https://drive.google.com/drive/folders/1L7Mv_M0iIRkK3O41puQ9yPyYq_ZrQ_bf' },
-    { label: 'سنوات ورقي', url: 'https://drive.google.com/drive/folders/1S1yYXP6_duLbeFqnZImUd5NhQSPepZwM' },
-  },
+    { label: 'سنوات ورقي', url: 'https://drive.google.com/drive/folders/1S1yYXP6_duLbeFqnZImUd5NhQSPepZwM' }
+  ]
+},
   subj18: {
     title: 'Control systems', icon: '🧠',
     books: [ { label: 'Modern control engineering',  url: 'https://drive.google.com/drive/folders/1dwU_9bNs5So3XGK4hN3hQhXXAAAaTuEm', cover: 'books mockups/Modern control engineering.png' },
