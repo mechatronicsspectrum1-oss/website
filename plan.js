@@ -391,26 +391,23 @@ subj11: {
     summaries: [], videos: [], mid: [], final: []
   },
 subj17: {
-  title: 'Control systems Lab', icon: '🔵',
-  books: [
-    { label: 'المانيوال', url: 'https://drive.google.com/drive/folders/11jslFk-0qslyXvsGfwSdf4NpCNHdIsvD' },
-    { label: 'حلول التقارير', url: 'https://drive.google.com/drive/folders/18EM5jnJUrkApkVIomb0aXQE5sosT5P0Y' }
-  ],
-  summaries: [
-    { label: 'رابط الماتلاب أونلاين', url: 'https://drive.google.com/drive/folders/1qYxybV8-CKlCbq1E5NBZT5rbBdkpyCpx' },
-    { label: 'رابط برنامج ماتلاب', url: 'https://drive.google.com/drive/folders/1EeFdkhpsE2JFVM3c7irK6AsSdkrlNGGn' },
-    { label: 'شرح المادة', url: 'https://drive.google.com/drive/folders/17ngO0IZ6G2B-wf80cfgM7xs0IjTkrv7q' },
-    { label: 'شرح الماتلاب', url: 'https://drive.google.com/drive/folders/1IziRkpRlMbhoqp9SpxQHlP-18tR9HNQd' },
-    { label: 'شرح سبارك', url: 'https://drive.google.com/drive/folders/118FgM0-jOVW7B4qp77RP7Yt80KTszlmu' },
-    { label: 'ملخص سبارك', url: 'https://drive.google.com/drive/folders/1vo6GkIT9M3W71L5Ehm7jGGSsKwX0EuXr' }
-  ],
-  videos: [],
-  mid: [],
-  final: [
-    { label: 'سنوات إلكتروني', url: 'https://drive.google.com/drive/folders/1L7Mv_M0iIRkK3O41puQ9yPyYq_ZrQ_bf' },
-    { label: 'سنوات ورقي', url: 'https://drive.google.com/drive/folders/1S1yYXP6_duLbeFqnZImUd5NhQSPepZwM' }
-  ]
-},
+    title: 'Control systems Lab', icon: '🧠',
+    books: [
+      { label: 'مانيوال المختبر', url: 'https://drive.google.com/file/d/1INCMmTwv6miex-siPu-U6UnJ-7WfT6X1/view?usp=drivesdk' },
+      { label: 'حلول التقارير', url: 'https://drive.google.com/drive/u/0/folders/1mHp8wLuTRuDYWFFUUboP0Ud8sb3d7qrI?fbclid=IwAR1RZfat3Q2jTdJFVxL0ZJestXixwhY_BC3XBB3Q-4hbEXKT2SfEXkFCYHM' },
+      { label: 'حلول التقارير', url: 'https://drive.google.com/drive/folders/18EM5jnJUrkApkVIomb0aXQE5sosT5P0Y' }
+    ],
+    summaries: [
+      { label: 'تلخيص المختبر - فريق سبارك', url: 'https://drive.google.com/file/d/18unHmoljzWAmW_xGPQDJigaQkxNm-Ure/view?fbclid=IwAR2wZfpAEddeGkxwvGoWr8qUkPi8HJ2fK9UYR-x3zh-dCxFu8R8dZc4PKbQ' },
+      { label: 'أسئلة سنوات ورقي', url: 'https://drive.google.com/drive/folders/1xUaCrniJWoBU5YBIFOuoEApS-6v9zpl8?usp=drive_link' }
+    ],
+    videos: [],
+    mid: [],
+    final: [
+      { label: 'أسئلة سنوات إلكتروني', url: 'https://drive.google.com/drive/folders/1ziaOoGZ8IHI_KdLWYS78mHsGgQpgo-LA?fbclid=IwAR2pcUOV9P_QqIvjirLPEAIJjFSX0JQtwBjk96vlnSoGWR8NLMxSQEfKJrY' },
+      { label: 'أسئلة سنوات إلكتروني', url: 'https://drive.google.com/file/d/1eVHOubM5s6b-BJMGRGoWROQvwt4feZsj/view?usp=drivesdk' }
+    ]
+  },
   subj18: {
     title: 'Control systems', icon: '🧠',
     books: [ { label: 'Modern control engineering',  url: 'https://drive.google.com/drive/folders/1dwU_9bNs5So3XGK4hN3hQhXXAAAaTuEm', cover: 'books mockups/Modern control engineering.png' },
