@@ -460,8 +460,21 @@ subj17: {
   },
   subj21: {
     title: 'Mechatronics Systems Design', icon: '🦾',
-    books: [],
-    summaries: [], videos: [], mid: [], final: []
+    books: [
+        { label: 'كتاب المادة', url: 'https://drive.google.com/file/d/1Mmu_Y9ocnq9OM1GxefjnI9AHFNEfHB4C/view?usp=drivesdk' }
+    ],
+    summaries: [
+        { label: 'سلايدات ديزاين', url: 'https://drive.google.com/drive/folders/1xFsDySan5zvs6AmHuj4YVN25-2PyRSxm' }
+    ],
+    videos: [],
+    mid: [
+        { label: 'سنوات م. مجد أبو بكر', url: 'https://drive.google.com/file/d/1_7g0vHUuQaJxuTO3osRfhvTvxg6SWYou/view?usp=drivesdk' },
+        { label: 'أسئلة سنوات (ميد وفاينل)', url: 'https://drive.google.com/file/d/1FgGeA26et9jZayrJzLu7k8MCPvvy2FbA/view?usp=drivesdk' },
+        { label: 'أسئلة سنوات', url: 'https://drive.google.com/file/d/1JfTglIy5rHoDRz77k4oSzJjqdLTQT4Kf/view?usp=drivesdk' }
+    ],
+    final: [
+        { label: 'أسئلة سنوات (ميد وفاينل)', url: 'https://drive.google.com/file/d/1FgGeA26et9jZayrJzLu7k8MCPvvy2FbA/view?usp=drivesdk' }
+    ]
   },
   subj22: {
     title: 'CNC', icon: '🔩',
