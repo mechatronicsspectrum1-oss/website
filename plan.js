@@ -397,12 +397,12 @@ subj17: {
       { label: 'حلول التقارير', url: 'https://drive.google.com/drive/folders/18EM5jnJUrkApkVIomb0aXQE5sosT5P0Y' }
     ],
     summaries: [
-      { label: 'تلخيص المختبر - فريق سبارك', url: 'https://drive.google.com/file/d/18unHmoljzWAmW_xGPQDJigaQkxNm-Ure/view?fbclid=IwAR2wZfpAEddeGkxwvGoWr8qUkPi8HJ2fK9UYR-x3zh-dCxFu8R8dZc4PKbQ' },
-      { label: 'أسئلة سنوات ورقي', url: 'https://drive.google.com/drive/folders/1xUaCrniJWoBU5YBIFOuoEApS-6v9zpl8?usp=drive_link' }
+      { label: 'تلخيص المختبر - فريق سبارك', url: 'https://drive.google.com/file/d/18unHmoljzWAmW_xGPQDJigaQkxNm-Ure/view?fbclid=IwAR2wZfpAEddeGkxwvGoWr8qUkPi8HJ2fK9UYR-x3zh-dCxFu8R8dZc4PKbQ' }
     ],
     videos: [],
     mid: [
-      { label: 'أسئلة الميد', url: 'https://drive.google.com/drive/mobile/folders/1gKOHs3PwkZzemAVG3oxbQv0z5p51DTwO/1OOvodVbuD5tTEIYfcZY7KAR59lTrjCqt/1gDk3ZA3l4Jg6Th-Yb4PdxzEbg5-o_tIh?sort=13&direction=a&fbclid=IwVERDUAVP0lNleHRuA2FlbQIxMABwZG9mBXNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHzHcxQybFoHGSVNiXN43MYfp4dd6JW8VjlZJVq5tvpgpNVAsHFLqUuTqVdpe_aem_qoTrC5M8IIRT2Cam2hy8XA' }
+      { label: 'أسئلة الميد', url: 'https://drive.google.com/drive/mobile/folders/1gKOHs3PwkZzemAVG3oxbQv0z5p51DTwO/1OOvodVbuD5tTEIYfcZY7KAR59lTrjCqt/1gDk3ZA3l4Jg6Th-Yb4PdxzEbg5-o_tIh?sort=13&direction=a&fbclid=IwVERDUAVP0lNleHRuA2FlbQIxMABwZG9mBXNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHzHcxQybFoHGSVNiXN43MYfp4dd6JW8VjlZJVq5tvpgpNVAsHFLqUuTqVdpe_aem_qoTrC5M8IIRT2Cam2hy8XA' },
+      { label: 'أسئلة سنوات ورقي', url: 'https://drive.google.com/drive/folders/1xUaCrniJWoBU5YBIFOuoEApS-6v9zpl8?usp=drive_link' }
     ],
     final: [
       { label: 'أسئلة سنوات إلكتروني', url: 'https://drive.google.com/drive/folders/1ziaOoGZ8IHI_KdLWYS78mHsGgQpgo-LA?fbclid=IwAR2pcUOV9P_QqIvjirLPEAIJjFSX0JQtwBjk96vlnSoGWR8NLMxSQEfKJrY' },
