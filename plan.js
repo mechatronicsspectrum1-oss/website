@@ -393,7 +393,7 @@ subj11: {
  subj17: {
     title: 'Control systems Lab', icon: '🧠',
     books: [
-      { label: 'مانيوال المختبر', url: 'https://drive.google.com/file/d/11NPpHywLX_gCMkCVMi1xybDbbyUESF6M/view?usp=drivesdk&fbclid=IwAR394mzZ7IRwqWbMcwcMGy3ule007VmTQFA7n4w57hHFS6VQb_AgoNOMZQE' },
+      { label: 'مانيوال المختبر', url: 'https://drive.google.com/file/d/1INCMmTwv6miex-siPu-U6UnJ-7WfT6X1/view?usp=drivesdk' },
       { label: 'حلول التقارير', url: 'https://drive.google.com/drive/u/0/folders/1mHp8wLuTRuDYWFFUUboP0Ud8sb3d7qrI?fbclid=IwAR1RZfat3Q2jTdJFVxL0ZJestXixwhY_BC3XBB3Q-4hbEXKT2SfEXkFCYHM' }
     ],
     summaries: [
