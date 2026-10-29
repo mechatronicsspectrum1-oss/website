@@ -394,7 +394,6 @@ subj17: {
     title: 'Control systems Lab', icon: '🧠',
     books: [
       { label: 'مانيوال المختبر', url: 'https://drive.google.com/file/d/1INCMmTwv6miex-siPu-U6UnJ-7WfT6X1/view?usp=drivesdk' },
-      { label: 'حلول التقارير', url: 'https://drive.google.com/drive/u/0/folders/1mHp8wLuTRuDYWFFUUboP0Ud8sb3d7qrI?fbclid=IwAR1RZfat3Q2jTdJFVxL0ZJestXixwhY_BC3XBB3Q-4hbEXKT2SfEXkFCYHM' },
       { label: 'حلول التقارير', url: 'https://drive.google.com/drive/folders/18EM5jnJUrkApkVIomb0aXQE5sosT5P0Y' }
     ],
     summaries: [
@@ -402,10 +401,13 @@ subj17: {
       { label: 'أسئلة سنوات ورقي', url: 'https://drive.google.com/drive/folders/1xUaCrniJWoBU5YBIFOuoEApS-6v9zpl8?usp=drive_link' }
     ],
     videos: [],
-    mid: [],
+    mid: [
+      { label: 'أسئلة الميد', url: 'https://drive.google.com/drive/mobile/folders/1gKOHs3PwkZzemAVG3oxbQv0z5p51DTwO/1OOvodVbuD5tTEIYfcZY7KAR59lTrjCqt/1gDk3ZA3l4Jg6Th-Yb4PdxzEbg5-o_tIh?sort=13&direction=a&fbclid=IwVERDUAVP0lNleHRuA2FlbQIxMABwZG9mBXNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHzHcxQybFoHGSVNiXN43MYfp4dd6JW8VjlZJVq5tvpgpNVAsHFLqUuTqVdpe_aem_qoTrC5M8IIRT2Cam2hy8XA' }
+    ],
     final: [
       { label: 'أسئلة سنوات إلكتروني', url: 'https://drive.google.com/drive/folders/1ziaOoGZ8IHI_KdLWYS78mHsGgQpgo-LA?fbclid=IwAR2pcUOV9P_QqIvjirLPEAIJjFSX0JQtwBjk96vlnSoGWR8NLMxSQEfKJrY' },
-      { label: 'أسئلة سنوات إلكتروني', url: 'https://drive.google.com/file/d/1eVHOubM5s6b-BJMGRGoWROQvwt4feZsj/view?usp=drivesdk' }
+      { label: 'أسئلة سنوات إلكتروني', url: 'https://drive.google.com/file/d/1eVHOubM5s6b-BJMGRGoWROQvwt4feZsj/view?usp=drivesdk' },
+      { label: 'أسئلة الفاينل', url: 'https://drive.google.com/drive/mobile/folders/1gKOHs3PwkZzemAVG3oxbQv0z5p51DTwO/1OOvodVbuD5tTEIYfcZY7KAR59lTrjCqt/1xdUMJPV1uGI9FQYPfVHgvUGJdxL6Ioy7?sort=13&direction=a&fbclid=IwVERDUAVP0nVleHRuA2FlbQIxMABwZG9mBXNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHzHcxQybFoHGSVNiXN43MYfp4dd6JW8VjlZJVq5tvpgpNVAsHFLqUuTqVdpe_aem_qoTrC5M8IIRT2Cam2hy8XA' }
     ]
   },
   subj18: {
