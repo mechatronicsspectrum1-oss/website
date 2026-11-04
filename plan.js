@@ -816,7 +816,9 @@ subj38: {
     title: 'Special Topics in Mechatronics',
     icon: '🔍',
     books: [
-      { label: 'كتاب المادة', url: 'https://drive.google.com/drive/folders/1vbuow9fOAHQRBapVxn61GP8r4q9hWoNq?usp=drive_link' }
+      { label: 'الكتاب الأول', url: 'https://drive.google.com/file/d/1el_4VdgefBoG-tXxi68q-VTMGrFV7-pv/view?usp=sharing' },
+      { label: 'الكتاب الثاني', url: 'https://drive.google.com/file/d/15jlKZihw181qWhtIREbtaIvz52XUG1vr/view?usp=sharing' },
+      { label: 'الكتاب الثالث', url: 'https://drive.google.com/file/d/1cPEOqayOUobl_NLVHZnQkIc37l3N-kwJ/view?usp=sharing' }
     ],
     summaries: [],
     videos: [],
