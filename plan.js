@@ -823,7 +823,7 @@ subj38: {
       { label: 'أسئلة سنوات', url: 'https://drive.google.com/drive/folders/1UbtFpK3MeKOzAUX4iWvL08gFZuSSnAOv?usp=drive_link' }
     ],
     final: [
-      { label: 'أسئلة سنوات', url: 'https://drive.google.com/drive/folders/1UbtFpK3MeKOzAUX4iWvL08gFZuSSnAOv?usp=drive_link' }
+      { label: 'أسئلة سنوات - د. محمد أبو زلطة', url: 'https://drive.google.com/drive/folders/1UbtFpK3MeKOzAUX4iWvL08gFZuSSnAOv?usp=drive_link' }
     ]
   }
   subj39: {
