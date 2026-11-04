@@ -816,9 +816,21 @@ subj38: {
     title: 'Special Topics in Mechatronics',
     icon: '🔍',
     books: [
-      { label: 'الكتاب الأول', url: 'https://drive.google.com/file/d/1el_4VdgefBoG-tXxi68q-VTMGrFV7-pv/view?usp=sharing' },
-      { label: 'الكتاب الثاني', url: 'https://drive.google.com/file/d/15jlKZihw181qWhtIREbtaIvz52XUG1vr/view?usp=sharing' },
-      { label: 'الكتاب الثالث', url: 'https://drive.google.com/file/d/1cPEOqayOUobl_NLVHZnQkIc37l3N-kwJ/view?usp=sharing' }
+      { 
+        label: 'The Mechatronics Handbook', 
+        url: 'https://drive.google.com/file/d/1el_4VdgefBoG-tXxi68q-VTMGrFV7-pv/view?usp=sharing',
+        cover: 'رابط_غلاف_الكتاب_الأول' 
+      },
+      { 
+        label: 'Fundamentals of Industrial Instrumentation and Process Control', 
+        url: 'https://drive.google.com/file/d/15jlKZihw181qWhtIREbtaIvz52XUG1vr/view?usp=sharing',
+        cover: 'رابط_غلاف_الكتاب_الثاني' 
+      },
+      { 
+        label: 'Embedded Microprocessor Systems: Real World Design', 
+        url: 'https://drive.google.com/file/d/1cPEOqayOUobl_NLVHZnQkIc37l3N-kwJ/view?usp=sharing',
+        cover: 'رابط_غلاف_الكتاب_الثالث' 
+      }
     ],
     summaries: [],
     videos: [],
@@ -826,7 +838,7 @@ subj38: {
       { label: 'أسئلة سنوات', url: 'https://drive.google.com/drive/folders/1UbtFpK3MeKOzAUX4iWvL08gFZuSSnAOv?usp=drive_link' }
     ],
     final: [
-      { label: 'أسئلة سنوات - د. محمد أبو زلطة', url: 'https://drive.google.com/drive/folders/10hUkvpFDBm1Gz95mB9CymbNcXeO7zqSBC?usp=sharing' },
+      { label: 'أسئلة سنوات - د. محمد أبو زلطة', url: 'https://drive.google.com/drive/folders/1GjJAYQT8ifw7J7YvN9LPvheG8RSZ73nB?usp=sharing' },
       { label: 'أسئلة سنوات', url: 'https://drive.google.com/drive/folders/1UbtFpK3MeKOzAUX4iWvL08gFZuSSnAOv?usp=drive_link' }
     ]
   },
