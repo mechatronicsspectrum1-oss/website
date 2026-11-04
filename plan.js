@@ -813,7 +813,7 @@ subj28: {
     ]
   },
 subj38: {
-    title: 'Robotics Dynamics and Analysis',
+    title: 'Special Topics in Mechatronics',
     icon: '🔍',
     books: [
       { label: 'كتاب المادة', url: 'https://drive.google.com/drive/folders/1vbuow9fOAHQRBapVxn61GP8r4q9hWoNq?usp=drive_link' }
