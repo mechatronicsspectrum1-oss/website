@@ -863,9 +863,17 @@ subj38: {
     ]
   },
   subj41: {
-    title: 'Robotics Dynamics and Analysis Lab', icon: '🤖',
+    title: 'Robotics Dynamics and Analysis Lab',
+    icon: '🤖',
     books: [],
-    summaries: [], videos: [], mid: [], final: []
+    summaries: [
+      { label: 'ملخص المادة', url: 'https://drive.google.com/file/d/1fScYS59e8gMICdykpNcSovPsqnqDFtwl/view?usp=sharing' }
+    ],
+    videos: [],
+    mid: [
+      { label: 'أسئلة سنوات', url: 'https://drive.google.com/file/d/1Wv1nwLkKY9RwW1B64grdkPaNLDpK0oF-/view?usp=sharing' }
+    ],
+    final: []
   },
 };
 
