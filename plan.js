@@ -842,10 +842,20 @@ subj38: {
       { label: 'أسئلة سنوات', url: 'https://drive.google.com/drive/folders/1UbtFpK3MeKOzAUX4iWvL08gFZuSSnAOv?usp=drive_link' }
     ]
   },
-  subj39: {
-    title: 'Robotics Dynamics and Analysis', icon: '🤖',
+subj39: {
+    title: 'Robotics Dynamics and Analysis',
+    icon: '🤖',
     books: [],
-    summaries: [], videos: [], mid: [], final: []
+    summaries: [
+      { label: 'سلايدات المادة', url: 'https://drive.google.com/drive/folders/19wsEr2Yo1WMaGCYZl-6vaeCJxqeolnfT?usp=sharing' },
+      { label: 'ملخص المادة', url: 'https://drive.google.com/file/d/1IJ3sci4cJ3eX6ZCq67CmvRR1BthkTIXg/view?usp=sharing' },
+      { label: 'ملخص روبوت', url: 'https://drive.google.com/file/d/1y_pxhfYLtvT7HdNUMKZ3AYokYBwnXSQA/view?usp=sharing' }
+    ],
+    videos: [],
+    mid: [
+      { label: 'أسئلة سنوات', url: 'https://drive.google.com/drive/folders/1C6LjbahnbSd7GukEH_CcKkX4x7elDWrS?usp=sharing' }
+    ],
+    final: []
   },
   subj40: {
     title: 'Robotics Engineering', icon: '🤖',
