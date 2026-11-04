@@ -813,15 +813,19 @@ subj28: {
     ]
   },
 subj38: {
-    title: 'Special Topics in Mechatronics', icon: '🔍',
-    books: [],
+    title: 'Special Topics in Mechatronics', icon: '🔩',
+    books: [
+      { label: 'الكتب', url: 'https://drive.google.com/drive/folders/1vbuow9fOAHQRBapVxn61GP8r4q9hWoNq?usp=drive_link' }
+    ],
     summaries: [],
     videos: [],
-    mid: [],
+    mid: [
+      { label: 'أسئلة سنوات', url: 'https://drive.google.com/drive/folders/1UbtFpK3MeKOzAUX4iWvL08gFZuSSnAOv?usp=drive_link' }
+    ],
     final: [
-      { label: 'أسئلة سنوات - د. محمد أبو زلطة', url: 'https://drive.google.com/drive/folders/10hUkvpFdBm1Gz95mB9CymWcXeO7zq5BC?usp=sharing' }
+      { label: 'أسئلة سنوات', url: 'https://drive.google.com/drive/folders/1UbtFpK3MeKOzAUX4iWvL08gFZuSSnAOv?usp=drive_link' }
     ]
-  },
+  }
   subj39: {
     title: 'Robotics Dynamics and Analysis', icon: '🤖',
     books: [],
