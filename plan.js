@@ -442,24 +442,26 @@ subj17: {
         { label: 'سنوات فاينل درايف', url: 'https://www.mediafire.com/download/t261b2l2t6zb9zp/%D8%AF%D8%B1%D8%A7%D9%8A%D9%811.pdf?fbclid=IwAR32F1B5hHVqyGMwjNJLit-p0-VW32xn5rwDR7taNAZaoK4k4L0aAT0IO-k' }
     ]
 },
-  subj20: {
-    title: 'Electrical drive Lab', icon: '⚡',
+subj20: {
+    title: 'Electrical drive Lab', 
+    icon: '⚡',
     books: [
-      { label: 'مانيوال المختبر', url: 'https://www.mediafire.com/download/9sfta67bbklzkm3/Drive_-_Manual_Lab.pdf' },
-      { label: 'حلول المانيوال (ملف 1)', url: 'https://drive.google.com/file/d/1-oG_R2jCDqNWLJu5pC5j9h28ezJAtd0z/view?fbclid=IwAR2774Yc0Xxb4tuqTzaIsu-9inTI_G4v_-4AQ85tqVVcjrYqKcJaf-HADyg' },
-      { label: 'حلول المانيوال (مجلد 2)', url: 'https://drive.google.com/drive/u/0/folders/1qbgkpLz1cykDUL8bMAy3vhPI9cYi-AjK?fbclid=IwAR01CfPV426bLsG2ljdG6nxmTcSuxW6aTdU_TVQt3ZEjbNu84E3ADgdZ73s' }
+        { label: 'المانيوال', url: 'https://drive.google.com/drive/folders/1zYgABBOriPFiJmuLfWfVh5uLyWuqEezi' },
+        { label: 'حلول التقارير', url: 'https://drive.google.com/drive/folders/1A2OA978Pw-l8no6-Z7PmCs5C8C36GENa' }
     ],
     summaries: [
-      { label: 'ملخص فريق سبارك', url: 'https://drive.google.com/file/d/1cfo35S9IsExagWLcYY7P4d1_hVPYQPYn/view?fbclid=IwAR3QMoD3iPY1s9sy9drnLc61lUkyVSXv6CTLfeKcdq6GERje2naL9KjZi1M&fbclid=IwAR0UuXMvJLg-0m_kPS9U-EEbX5NZ2n9h5zobKduaU7mrbxEL1T4eVGFNwEs' }
+        { label: 'ملخصات المادة', url: 'https://drive.google.com/drive/folders/1P0G8EXKZgQ-MVFn4vm21smug5OBAKceS' }
     ],
-    videos: [],
-    mid: [
-      { label: 'أسئلة سنوات فريق سبارك (نموذج 1)', url: 'https://drive.google.com/drive/folders/1mWRJMsep9RZoDuAThRDUwm43GfkMBUwY?fbclid=IwAR1MGL49DXVT-21pr9WoyTBJWxPp_wS2srD5_7ItEuDJrDMDVB5v6BiPGfg' }
+    videos: [
+        { label: 'شرح المادة', url: 'https://drive.google.com/drive/folders/1ig0J6QT4P4lY5rG_lkpmhnTeVdRXasKs' }
     ],
-    final: [
-      { label: 'أسئلة سنوات فريق سبارك (نموذج 2)', url: 'https://drive.google.com/drive/folders/1mWRJMsep9RZoDuAThRDUwm43GfkMBUwY?fbclid=IwAR07y_h_IzaFc-sor57HKxmiVc_BOeguOILBzAoskN0d6cuu_TM3r_QcKlA' }
-    ]
-  },
+    years: [
+        { label: 'أسئلة سنوات', url: 'https://drive.google.com/drive/folders/1VYkWPqzVEyptaJlA8kIajjxji-VJzQrN' },
+        { label: 'أسئلة سنوات فريق سبارك', url: 'https://drive.google.com/drive/folders/1nLwAAMNjW1t4nEGlgg5NlAi3jWMVA3G-' }
+    ],
+    mid: [],
+    final: []
+},
   subj21: {
     title: 'Mechatronics Systems Design', icon: '🦾',
     books: [
