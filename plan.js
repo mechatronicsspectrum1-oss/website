@@ -455,12 +455,12 @@ subj20: {
     videos: [
         { label: 'شرح المادة', url: 'https://drive.google.com/drive/folders/1ig0J6QT4P4lY5rG_lkpmhnTeVdRXasKs' }
     ],
-    years: [
-        { label: 'أسئلة سنوات', url: 'https://drive.google.com/drive/folders/1VYkWPqzVEyptaJlA8kIajjxji-VJzQrN' },
-        { label: 'أسئلة سنوات فريق سبارك', url: 'https://drive.google.com/drive/folders/1nLwAAMNjW1t4nEGlgg5NlAi3jWMVA3G-' }
+    mid: [
+        { label: 'ميد وفاينل', url: 'https://drive.google.com/drive/folders/1VYkWPqzVEyptaJlA8kIajjxji-VJzQrN' }
     ],
-    mid: [],
-    final: []
+    final: [
+        { label: 'ميد وفاينل سبارك', url: 'https://drive.google.com/drive/folders/1nLwAAMNjW1t4nEGlgg5NlAi3jWMVA3G-' }
+    ]
 },
   subj21: {
     title: 'Mechatronics Systems Design', icon: '🦾',
