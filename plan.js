@@ -803,14 +803,16 @@ subj28: {
       { label: 'أسئلة سنوات', url: 'https://drive.google.com/drive/folders/13spmpFSybYkq98ee_F3iu0MewE0S_Hli?usp=drive_link' }
     ]
   },
- subj37: {
+subj37: {
     title: 'Process Control Lab', icon: '🎛️',
     books: [],
     summaries: [
       { label: 'ملخص فريق سبكتروم', url: 'https://drive.google.com/drive/folders/1shPdO1R2HeRXYdb9KU56dhxY2HEcOtOh?usp=sharing' }
     ],
     videos: [],
-    mid: [],
+    mid: [
+      { label: 'أسئلة سنوات ميد', url: 'https://drive.google.com/file/d/13u-bGIKGizRAl1HNfkL1_8RVqXjAtcRh/view?usp=drivesdk' }
+    ],
     final: [
       { label: 'أسئلة سنوات', url: 'https://drive.google.com/drive/folders/12kW1JsIc8qELVMIgIHtMi3xateuGXUfH?usp=sharing' }
     ]
