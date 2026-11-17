@@ -811,7 +811,7 @@ subj37: {
     ],
     videos: [],
     mid: [
-      { label: 'أسئلة سنوات ميد', url: 'https://drive.google.com/file/d/13u-bGIKGizRAl1HNfkL1_8RVqXjAtcRh/view?usp=drivesdk' }
+      { label: 'أسئلة سنوات ميد', url: 'https://drive.google.com/file/d/1ZHBKZR6bI4OXHEdQUm3TJqWGeyoyjUsR/view?usp=drivesdk' }
     ],
     final: [
       { label: 'أسئلة سنوات', url: 'https://drive.google.com/drive/folders/12kW1JsIc8qELVMIgIHtMi3xateuGXUfH?usp=sharing' }
