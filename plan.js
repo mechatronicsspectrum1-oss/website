@@ -677,7 +677,7 @@ subj28: {
       { label: 'شرح لابلاس', url: 'https://www.youtube.com/watch?v=nq-QNFWn-EM' }
     ],
     mid: [
-      { label: 'اسئلة سنوات ورقي', url: 'https://www.mediafire.com/file/2i525qxir8qitdb/%D8%A7%D9%...pdf' }
+      { label: 'اسئلة سنوات', url: 'https://drive.google.com/drive/folders/1ZxoFrDKVvsCBaLLpqt2LyCqUVH0jtOxx' }
     ],
     final: [
       { label: 'اسئلة سنوات الكتروني', url: 'https://drive.google.com/drive/folders/1p79fZ8GrlhKeFbrQwA2M0nrOw-_1AlfR' }
